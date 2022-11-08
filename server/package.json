@@ -1,0 +1,16 @@
+{
+  "name": "nodebird",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bsfla",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.25.5",
+    "sequelize-cli": "^6.5.2"
+  }
+}
