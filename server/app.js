@@ -7,6 +7,7 @@ const session = require("express-session");
 const dotenv = require("dotenv");
 const user = require("./routes/user");
 const passport = require("passport");
+const morgan = require("morgan");
 
 const app = express();
 
@@ -24,7 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "*",
+    origin: true,
     credentials: true,
   })
 );
@@ -38,6 +39,7 @@ app.use(
     secret: process.env.COOKIE_SECRET,
   })
 );
+app.use(morgan("dev"));
 
 app.use("/user", user);
 app.listen(3065, () => {
