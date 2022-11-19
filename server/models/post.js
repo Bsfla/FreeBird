@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     //Retweet
   );
   Post.associate = (db) => {
-    db.Post.belongsTo(db.User);
+    db.Post.belongsTo(db.User);//post.addUser post.getUser
     db.Post.belongsToMany(db.Hashtag, { through: "PostHashtag" });
     db.Post.belongsToMany(db.User, { through: "Like", as: "Likers" });
     db.Post.hasMany(db.Comment);
