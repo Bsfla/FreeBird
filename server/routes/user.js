@@ -178,4 +178,42 @@ router.delete("/follower/:userId", async (req, res, next) => {
   }
 });
 
+router.get("/followers", async (req, res, next) => {
+  try {
+    const user = await User.findOne({
+      where: { id: req.user.id },
+    });
+
+    if (!user) {
+      return res.status(403).send("없는 사람을 찾으려고 하시네요?");
+    }
+
+    const followers = user.getFollowers();
+
+    res.status(200).json(followers);
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+});
+
+router.get("/followings", async (req, res, next) => {
+  try {
+    const user = await User.findOne({
+      where: { id: req.user.id },
+    });
+
+    if (!user) {
+      return res.status(403).send("없는 사람을 찾으려고 하시네요?");
+    }
+
+    const followings = user.getFollowings();
+
+    res.status(200).json(followings);
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+});
+
 module.exports = router;

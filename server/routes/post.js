@@ -1,7 +1,5 @@
 const express = require("express");
 const { Comment, Post, Image, User } = require("../models");
-const db = require("../models");
-const user = require("../models/user");
 
 const router = express.router();
 
@@ -31,6 +29,19 @@ router.post("/", async (req, res, next) => {
     });
 
     res.status(201).json(fullPost);
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+});
+
+router.delete("/:postId", async (req, res, next) => {
+  try {
+    await Post.destory({
+      where: { id: req.params.postId, UserId: req.user.id },
+    });
+
+    res.status(200).json({ PostId: parseInt(req.params.postId, 10) });
   } catch (err) {
     console.error(err);
     next(err);
