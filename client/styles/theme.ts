@@ -11,8 +11,15 @@ const breakpoints = {
 const colors = {
   main: '#e0e0e0',
   sub: '#9c4dcc',
+  sub2: '#6a1b9a',
+  sub3: '#7b1fa2',
   light: '#4b3d31',
+  white: '#ffff',
 } as const;
+
+const font = {
+  title: '"Poppins", sans-serif',
+};
 
 const media = {
   mobile1: `(max-width: ${breakpoints.mobile1})`,
@@ -25,6 +32,7 @@ const media = {
 const theme: DefaultTheme = {
   colors,
   media,
+  font,
 } as const;
 
 export default theme;

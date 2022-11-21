@@ -1,11 +1,11 @@
 import React from 'react';
-import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import { QueryClient, QueryClientProvider, Hydrate } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import GlobalStyle from 'styles/globalStyles';
 import { ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient();
@@ -15,6 +15,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Hydrate state={pageProps.dehydratedState}>
         <Head>
           <title>PokeBird</title>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Catamaran:wght@700&family=Poppins:wght@600&display=swap"
+            rel="stylesheet"></link>
         </Head>
         <GlobalStyle />
         <ThemeProvider theme={theme}>

@@ -5,7 +5,10 @@ declare module 'styled-components' {
     colors: {
       main: string;
       sub: string;
+      sub2: string;
+      sub3: string;
       light: string;
+      white: string;
     };
     media: {
       mobile1: string;
@@ -13,6 +16,10 @@ declare module 'styled-components' {
       tablet: string;
       laptop: string;
       desktop: string;
+    };
+
+    font: {
+      title: string;
     };
   }
 }
