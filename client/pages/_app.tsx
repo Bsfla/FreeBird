@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Next tutoria</title>
+        <title>PokeBird</title>
       </Head>
 
       <Component {...pageProps} />
