@@ -11,8 +11,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>PokeBird</title>
       </Head>
-
-      <Component {...pageProps} />
+      <GlobalStyle />
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }

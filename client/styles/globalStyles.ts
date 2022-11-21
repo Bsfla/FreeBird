@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import theme from './theme';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -14,6 +15,8 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     margin: 0 auto;
     font-family: 'Noto Sans KR', sans-serif;
+    background-color: ${theme.colors.main};
+   
   }
 
   ul, li, ol {
