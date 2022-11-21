@@ -10,7 +10,7 @@ const breakpoints = {
 
 const colors = {
   main: '#e0e0e0',
-  sub: '#996b41',
+  sub: '#9c4dcc',
   light: '#4b3d31',
 } as const;
 
