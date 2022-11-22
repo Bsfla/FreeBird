@@ -17,6 +17,7 @@ module.exports = withImages({
     config.resolve = {
       alias: {
         '@components': path.resolve(__dirname, './components'),
+        '@assets': path.resolve(__dirname, './assets'),
       },
       ...config.resolve,
     };

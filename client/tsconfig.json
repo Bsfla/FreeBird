@@ -20,7 +20,7 @@
       "pages/*": ["pages/*"],
       "types/*": ["types/*"],
       "styles/*": ["styles/*"],
-      "assets/*": ["assets/*"],
+      "@assets/*": ["./assets/*"],
       "hooks/*": ["hooks/*"]
     },
     "incremental": true

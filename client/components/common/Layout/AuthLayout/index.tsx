@@ -1,5 +1,6 @@
 import React from 'react';
-import { Header } from './style';
+
+import { Header } from '@components/common';
 
 const AuthLayout = () => {
   return <Header />;
