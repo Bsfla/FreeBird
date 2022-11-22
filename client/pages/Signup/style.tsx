@@ -17,11 +17,9 @@ export const Wrapper = styled.form`
   flex-direction: column;
   align-items: center;
   width: 50rem;
-  height: 37rem;
+  height: 35rem;
   background-color: ${theme.colors.white};
   border-radius: 20px;
-  margin: 0 auto;
-  transition: all 0.25s;
   animation: ${SlideUp} 0.5s;
 
   span {
@@ -30,7 +28,9 @@ export const Wrapper = styled.form`
     margin-bottom: 25px;
   }
 
-  
+  ${theme.media.laptop} {
+    width: 80%;
+  }
 `;
 
 export const Title = styled.span`
@@ -52,6 +52,10 @@ export const Input = styled.input`
   &:focus {
     outline: solid ${theme.colors.sub};
     border: none;
+  }
+
+  ${theme.media.laptop} {
+    width: 60%;
   }
 `;
 

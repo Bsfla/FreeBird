@@ -1,8 +1,12 @@
 import React from 'react';
 import { StyledButton } from './style';
 
-const Button = () => {
-  return <StyledButton />;
+interface Props {
+  name: string;
+}
+
+const Button = ({ name }: Props) => {
+  return <StyledButton>{name}</StyledButton>;
 };
 
 export default Button;

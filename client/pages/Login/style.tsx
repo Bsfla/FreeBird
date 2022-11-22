@@ -19,7 +19,7 @@ export const Wrapper = styled.form`
   height: 32rem;
   background-color: ${theme.colors.white};
   border-radius: 20px;
-  margin: 0 auto;
+
   animation: ${SlideUp} 0.5s;
 
   span {

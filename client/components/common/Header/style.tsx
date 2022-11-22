@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 import theme from 'styles/theme';
 
@@ -5,7 +6,7 @@ export const Wrapper = styled.header`
   width: 100%;
   padding: 30px;
   background-color: ${theme.colors.main};
-  margin-bottom: 70px;
+  margin-bottom: 23px;
   display: flex;
   justify-content: space-between;
 `;
