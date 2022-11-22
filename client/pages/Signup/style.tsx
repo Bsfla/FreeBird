@@ -1,5 +1,16 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import theme from 'styles/theme';
+
+const SlideUp = keyframes`
+  from {
+    opacity:0;
+    transform: translateY(5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export const Wrapper = styled.form`
   display: flex;
@@ -10,12 +21,16 @@ export const Wrapper = styled.form`
   background-color: ${theme.colors.white};
   border-radius: 20px;
   margin: 0 auto;
+  transition: all 0.25s;
+  animation: ${SlideUp} 0.5s;
 
   span {
     color: ${theme.colors.sub};
     font-weight: bold;
     margin-bottom: 25px;
   }
+
+  
 `;
 
 export const Title = styled.span`

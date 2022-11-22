@@ -8,6 +8,8 @@ const breakpoints = {
   desktop: '1200px',
 } as const;
 
+const mediaQuery = (maxWidth: string) => `@media (max-width: ${maxWidth})`;
+
 const colors = {
   main: '#e0e0e0',
   sub: '#9c4dcc',
@@ -22,10 +24,10 @@ const font = {
 };
 
 const media = {
-  mobile1: `(max-width: ${breakpoints.mobile1})`,
+  mobile1: mediaQuery(breakpoints.mobile1),
   mobile2: `(max-width: ${breakpoints.mobile2})`,
-  tablet: `(max-width: ${breakpoints.tablet})`,
-  laptop: `(max-width: ${breakpoints.laptop})`,
+  tablet: mediaQuery(breakpoints.tablet),
+  laptop: mediaQuery(breakpoints.laptop),
   desktop: `(max-width: ${breakpoints.desktop})`,
 } as const;
 

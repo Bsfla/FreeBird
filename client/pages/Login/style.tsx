@@ -1,20 +1,35 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import theme from 'styles/theme';
 
+const SlideUp = keyframes`
+  from {
+    opacity:0;
+    transform: translateY(5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 export const Wrapper = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50rem;
+  width: 50%;
   height: 32rem;
   background-color: ${theme.colors.white};
   border-radius: 20px;
   margin: 0 auto;
+  animation: ${SlideUp} 0.5s;
 
   span {
     color: ${theme.colors.sub};
     font-weight: bold;
     margin-bottom: 25px;
+  }
+
+  ${theme.media.laptop} {
+    width: 80%;
   }
 `;
 
@@ -38,6 +53,10 @@ export const Input = styled.input`
     outline: solid ${theme.colors.sub};
     border: none;
   }
+
+  ${theme.media.laptop} {
+    width: 60%;
+  }
 `;
 
 export const Button = styled.button`
@@ -57,5 +76,9 @@ export const Button = styled.button`
 
   &:hover {
     background-color: ${theme.colors.sub3};
+  }
+
+  ${theme.media.laptop} {
+    width: 50%;
   }
 `;
