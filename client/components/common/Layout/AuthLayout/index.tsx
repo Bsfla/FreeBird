@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-
 import { Header } from '@components/common';
 import { Wrrper } from './style';
 

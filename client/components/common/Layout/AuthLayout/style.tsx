@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import theme from 'styles/theme';
 
-export const Wrrper = styled.div`
+export const Wrrper = styled.main`
   display: flex;
   justify-content: center;
 `;
