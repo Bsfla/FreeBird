@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import theme from 'styles/theme';
+
 export const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -12,7 +13,7 @@ export const LogoWrapper = styled.div`
   span {
     color: ${theme.colors.sub};
     font-family: ${theme.font.title};
-    font-size: 36px;
+    font-size: 30px;
     margin-left: 10px;
   }
 `;

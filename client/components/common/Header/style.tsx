@@ -18,8 +18,8 @@ export const ButtonGroup = styled.div`
 `;
 
 export const HeaderButton = styled.button`
-  width: 120px;
-  padding: 15px;
+  width: 100px;
+  padding: 12px;
   background-color: ${theme.colors.sub};
   border: none;
   border-radius: 10px;

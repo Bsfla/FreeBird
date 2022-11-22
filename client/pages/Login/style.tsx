@@ -15,8 +15,8 @@ export const Wrapper = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
-  height: 32rem;
+  width: 40rem;
+  height: 26rem;
   background-color: ${theme.colors.white};
   border-radius: 20px;
 
@@ -42,7 +42,7 @@ export const Title = styled.span`
 
 export const Input = styled.input`
   width: 30rem;
-  padding: 20px;
+  padding: 15px;
   border: solid ${theme.colors.main};
   border-radius: 20px;
   font-weight: bold;

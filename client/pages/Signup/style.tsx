@@ -16,11 +16,12 @@ export const Wrapper = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50rem;
-  height: 35rem;
+  width: 40rem;
+  height: 30rem;
   background-color: ${theme.colors.white};
   border-radius: 20px;
   animation: ${SlideUp} 0.5s;
+  margin-bottom: 50px;
 
   span {
     color: ${theme.colors.sub};
@@ -35,14 +36,14 @@ export const Wrapper = styled.form`
 
 export const Title = styled.span`
   font-family: ${theme.font.title};
-  font-size: 40px;
+  font-size: 32px;
   color: ${theme.colors.sub};
   margin-bottom: 30px;
 `;
 
 export const Input = styled.input`
   width: 30rem;
-  padding: 20px;
+  padding: 15px;
   border: solid ${theme.colors.main};
   border-radius: 20px;
   font-weight: bold;
@@ -56,25 +57,5 @@ export const Input = styled.input`
 
   ${theme.media.laptop} {
     width: 60%;
-  }
-`;
-
-export const Button = styled.button`
-  width: 20rem;
-  padding: 20px;
-  background-color: ${theme.colors.sub};
-  color: ${theme.colors.white};
-  font-size: 20px;
-  margin-top: 40px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-
-  &:active {
-    background-color: ${theme.colors.sub2};
-  }
-
-  &:hover {
-    background-color: ${theme.colors.sub3};
   }
 `;
