@@ -21,25 +21,27 @@ db.sequelize
   .catch(console.error);
 passportConfig();
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: true,
     credentials: true,
   })
 );
-app.use(passport.initialize());
-app.use(session());
+app.use(morgan("dev"));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser("poketbirdsecret"));
 app.use(
-  passport.session({
+  session({
     saveUnitialized: false,
     resave: false,
     secret: process.env.COOKIE_SECRET,
   })
 );
-app.use(morgan("dev"));
+
+app.use(passport.initialize());
+app.use(session());
 
 app.use("/user", user);
 app.listen(3065, () => {

@@ -82,7 +82,7 @@ router.post("/login", isNotLoggedIn, (req, res, next) => {
   })(req, res, next);
 });
 
-router.post("/", isLoggedIn, async (req, res) => {
+router.post("/logout", isLoggedIn, async (req, res) => {
   req.logOut();
   req.session.destroy();
   res.send("ok");
@@ -90,7 +90,7 @@ router.post("/", isLoggedIn, async (req, res) => {
 
 router.post("/", isNotLoggedIn, async (req, res, next) => {
   try {
-    const exUser = User.findOne({
+    const exUser = await User.findOne({
       where: {
         email: req.body.email,
       },
@@ -98,7 +98,8 @@ router.post("/", isNotLoggedIn, async (req, res, next) => {
     if (exUser) {
       return res.status(403).send("이미 사용중인 아이디 입니다");
     }
-    const hashPassword = await bcrypt.hash(req.body.password);
+
+    const hashPassword = await bcrypt.hash(req.body.password, 12);
     await User.create({
       email: req.body.email,
       nickname: req.body.nickname,
