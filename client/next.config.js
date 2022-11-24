@@ -20,6 +20,7 @@ module.exports = withImages({
         '@assets': path.resolve(__dirname, './assets'),
         '@apis': path.resolve(__dirname, './apis'),
         '@consts': path.resolve(__dirname, './consts'),
+        '@lib': path.resolve(__dirname, './lib'),
       },
       ...config.resolve,
     };
