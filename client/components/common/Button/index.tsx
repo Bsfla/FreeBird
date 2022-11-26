@@ -3,10 +3,11 @@ import { StyledButton } from './style';
 
 interface Props {
   name: string;
+  disabled?: boolean;
 }
 
-const Button = ({ name }: Props) => {
-  return <StyledButton>{name}</StyledButton>;
+const Button = ({ name, disabled }: Props) => {
+  return <StyledButton disabled={disabled}>{name}</StyledButton>;
 };
 
 export default Button;

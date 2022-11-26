@@ -19,4 +19,8 @@ export const StyledButton = styled.button`
   ${theme.media.laptop} {
     width: 50%;
   }
+
+  &:disabled {
+    background-color: ${theme.colors.gray2};
+  }
 `;

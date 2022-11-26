@@ -4,7 +4,7 @@ import { Button } from '@components/common';
 import { useSignup } from '@hooks/page';
 
 const RegisterForm = () => {
-  const { form, handleChangeInput, handleSignup } = useSignup();
+  const { form, isDisabled, handleChangeInput, handleSignup } = useSignup();
   const { nickname, email, password, passwordconfirm } = form;
 
   return (
@@ -37,7 +37,7 @@ const RegisterForm = () => {
         value={passwordconfirm}
         onChange={handleChangeInput}
       />
-      <Button name="가입하기" />
+      <Button name="가입하기" disabled={isDisabled} />
     </Wrapper>
   );
 };
