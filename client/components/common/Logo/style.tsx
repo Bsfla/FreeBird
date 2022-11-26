@@ -4,6 +4,7 @@ import theme from 'styles/theme';
 export const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   svg {
     width: 40px;

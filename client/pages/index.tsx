@@ -1,12 +1,8 @@
 import React from 'react';
+import { MainLayout } from '@components/common';
 import type { NextPage } from 'next';
-import Head from 'next/head';
 
-const Home: NextPage = () => {
-  return (
-    <>
-      ;<div>d</div>
-    </>
-  );
+const Main: NextPage = () => {
+  return <MainLayout />;
 };
-export default Home;
+export default Main;
