@@ -21,6 +21,7 @@ module.exports = withImages({
         '@apis': path.resolve(__dirname, './apis'),
         '@consts': path.resolve(__dirname, './consts'),
         '@lib': path.resolve(__dirname, './lib'),
+        '@hooks': path.resolve(__dirname, './hooks'),
       },
       ...config.resolve,
     };

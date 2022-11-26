@@ -59,26 +59,3 @@ export const Input = styled.input`
   }
 `;
 
-export const Button = styled.button`
-  width: 20rem;
-  padding: 20px;
-  background-color: ${theme.colors.sub};
-  color: ${theme.colors.white};
-  font-size: 20px;
-  margin-top: 40px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-
-  &:active {
-    background-color: ${theme.colors.sub2};
-  }
-
-  &:hover {
-    background-color: ${theme.colors.sub3};
-  }
-
-  ${theme.media.laptop} {
-    width: 50%;
-  }
-`;
