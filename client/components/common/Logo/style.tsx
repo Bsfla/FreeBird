@@ -18,3 +18,7 @@ export const LogoWrapper = styled.div`
     margin-left: 10px;
   }
 `;
+
+export const Button = styled.button`
+  
+`
