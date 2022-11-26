@@ -4,11 +4,11 @@ import { useLogin } from '@hooks/page';
 import { Wrapper, Title, Input } from './style';
 
 const LoginForm = () => {
-  const { form, handleChangeInput, isDisabled } = useLogin();
+  const { form, handleChangeInput, isDisabled, handleLogin } = useLogin();
   const { email, password } = form;
 
   return (
-    <Wrapper>
+    <Wrapper onSubmit={handleLogin}>
       <Title>Login</Title>
       <span>로그인이 필요한 서비스입니다</span>
       <Input

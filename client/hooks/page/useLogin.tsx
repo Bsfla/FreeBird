@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 import { useInput } from '@hooks/common';
 import { LoginFormType } from '@lib/types';
-import { signUp } from '@apis/user';
+import { login } from '@apis/user';
 import { AxiosError } from 'axios';
-import { LOGIN_PAGE } from '@consts/route';
+import { MAIN_PAGE } from '@consts/route';
 
 const useLogin = () => {
   const { form, handleChangeInput } = useInput<LoginFormType>({
@@ -14,22 +14,21 @@ const useLogin = () => {
   const { email, password } = form;
 
   const isDisabled = !email || !password;
-  /*
-  const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
+
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      await signUp(form);
-      alert('회원가입에 성공했습니다');
-      router.push(LOGIN_PAGE);
+      await login(form);
+      router.push(MAIN_PAGE);
     } catch (err) {
-      if (err instanceof AxiosError)
-        return alert('이미 등록되어 있는 아이디입니다');
+      if (err instanceof AxiosError) {
+        alert(err.response?.data);
+      }
     }
   };
-  */
 
-  return { form, isDisabled, handleChangeInput };
+  return { form, isDisabled, handleChangeInput, handleLogin };
 };
 
 export default useLogin;
