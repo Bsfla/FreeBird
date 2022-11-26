@@ -4,3 +4,5 @@ export interface UserFormType {
   password: string;
   passwordconfirm: string;
 }
+
+export type LoginFormType = Pick<UserFormType, 'email' | 'password'>;
