@@ -9,6 +9,7 @@ declare module 'styled-components' {
       sub3: string;
       light: string;
       white: string;
+      gray1: string;
       gray2: string;
     };
     media: {
