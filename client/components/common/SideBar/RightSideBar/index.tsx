@@ -1,5 +1,8 @@
 import React from 'react';
+import { Wrrapper } from './style';
 
-const RightSideBar = () => {};
+const RightSideBar = () => {
+  return <Wrrapper>d</Wrrapper>;
+};
 
 export default RightSideBar;
