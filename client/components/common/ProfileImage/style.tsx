@@ -14,3 +14,4 @@ export const Image = styled.div`
     height: 100%;
   }
 `;
+

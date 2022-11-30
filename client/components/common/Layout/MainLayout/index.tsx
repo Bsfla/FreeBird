@@ -1,5 +1,5 @@
 import React from 'react';
-import { LeftSideBar, RightSideBar, PostCard } from '@components/common';
+import { LeftSideBar, RightSideBar, PostCard } from '@components/index';
 import { Wrapper, MainContents, IntroBar } from './style';
 
 const MainLayout = () => {
