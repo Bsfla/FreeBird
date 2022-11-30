@@ -2,6 +2,9 @@ import styled from 'styled-components';
 import theme from 'styles/theme';
 
 export const Wrraper = styled.nav`
+  position: sticky;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   width: 22rem;

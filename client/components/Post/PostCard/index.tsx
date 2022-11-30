@@ -10,6 +10,7 @@ import {
   CommentButton,
 } from './style';
 import { ProfileImage } from '@components/common';
+import { PostImage } from '@components/Post';
 import {
   AiOutlineRetweet,
   AiTwotoneHeart,
@@ -29,6 +30,7 @@ const PostCard = () => {
       <PostContent>
         <span>오늘 새로운 포켓몬을 잡았다 너무 좋았다</span>
       </PostContent>
+      <PostImage />
       <PostButtonGroup>
         <RetwwetButton>
           <AiOutlineRetweet size={22} />
