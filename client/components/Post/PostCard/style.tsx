@@ -41,7 +41,7 @@ export const PostContent = styled.div`
 
 export const PostButtonGroup = styled.div`
   width: 100%;
-  height: 20%;
+
   display: flex;
   justify-content: center;
   gap: 29px;
