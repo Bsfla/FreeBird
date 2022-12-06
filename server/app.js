@@ -41,7 +41,7 @@ app.use(
 );
 
 app.use(passport.initialize());
-app.use(session());
+app.use(passport.session());
 
 app.use("/user", user);
 app.listen(3065, () => {

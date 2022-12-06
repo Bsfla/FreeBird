@@ -1,14 +1,15 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
-const { User } = require("../models");
+const { User, Post } = require("../models");
 const db = require("../models");
 
 const { isLoggedIn, isNotLoggedIn } = require("./middleware");
 
 const router = express.Router();
 
-router.get("/", async (req, res, next) => {
+router.get("/", isLoggedIn, async (req, res, next) => {
+  console.log(req.isAuthenticated());
   try {
     if (req.user) {
       const user = await User.findOne({

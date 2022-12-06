@@ -14,3 +14,9 @@ export const login = (data: LoginFormType) => {
     data,
   });
 };
+
+export const loadMyInfo = () => {
+  return api.get({
+    url: '/user',
+  });
+};
