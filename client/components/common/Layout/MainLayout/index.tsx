@@ -1,14 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { ReactNode } from 'react';
 import { LeftSideBar, RightSideBar } from '@components/common';
 import { PostCard, PostForm } from '@components/Post';
 import { Wrapper, MainContents, IntroBar } from './style';
-import { loadMyInfo } from '@apis/user';
+
+interface Props {
+  children: ReactNode;
+}
 
 const MainLayout = () => {
-  useEffect(() => {
-    loadMyInfo().then((res) => console.log(res));
-  }, []);
-
   return (
     <Wrapper>
       <LeftSideBar />

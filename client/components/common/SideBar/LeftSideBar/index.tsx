@@ -13,8 +13,22 @@ import profile from '@assets/img/profile.png';
 import { ImProfile } from 'react-icons/im';
 import { FaUserFriends } from 'react-icons/fa';
 import { MdPersonAddAlt1 } from 'react-icons/md';
+import { logout } from '@apis/user';
+import { useRouter } from 'next/router';
+import { LOGIN_PAGE } from '@consts/route';
 
 const LeftSideBar = () => {
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      router.replace(LOGIN_PAGE);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <Wrraper>
       <Logo />
@@ -24,7 +38,7 @@ const LeftSideBar = () => {
         </Image>
         <ProfileWrapper>
           <span className="nickname">랜턴랜턴 님</span>
-          <Button>로그아웃</Button>
+          <Button onClick={handleLogout}>로그아웃</Button>
         </ProfileWrapper>
       </MainProfile>
       <PageMenuList>

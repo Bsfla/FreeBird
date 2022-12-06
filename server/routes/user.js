@@ -84,9 +84,15 @@ router.post("/login", isNotLoggedIn, (req, res, next) => {
 });
 
 router.post("/logout", isLoggedIn, async (req, res) => {
-  req.logOut();
-  req.session.destroy();
-  res.send("ok");
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+    req.session.destroy(() => {
+      res.clearCookie("connect.sid");
+      res.status(200).send("로그아웃을 완료하였습니다.");
+    });
+  });
 });
 
 router.post("/", isNotLoggedIn, async (req, res, next) => {

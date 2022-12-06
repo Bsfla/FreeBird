@@ -15,6 +15,12 @@ export const login = (data: LoginFormType) => {
   });
 };
 
+export const logout = () => {
+  return api.post({
+    url: '/user/logout',
+  });
+};
+
 export const loadMyInfo = () => {
   return api.get({
     url: '/user',
