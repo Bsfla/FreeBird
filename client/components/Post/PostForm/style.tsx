@@ -5,7 +5,7 @@ export const Wrraper = styled.div`
   display: flex;
   flex-direction: column;
   width: 36rem;
-  height: 20rem;
+  min-height: 20rem;
   background-color: ${theme.colors.white};
   border-radius: 20px;
   padding: 20px;
@@ -50,5 +50,29 @@ export const TextForm = styled.textarea`
   &:focus {
     outline: solid ${theme.colors.sub};
     border: none;
+  }
+`;
+
+export const ImagesContainer = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+`;
+
+export const Image = styled.div`
+  width: 120px;
+  height: 160px;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  svg {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
   }
 `;

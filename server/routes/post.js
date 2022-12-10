@@ -48,25 +48,9 @@ router.post("/", isLoggedIn, upload.none(), async (req, res, next) => {
       await post.addImages(image);
     }
 
-    const fullPost = await Post.findOne({
-      where: {
-        id: post.id,
-      },
-
-      include: [
-        {
-          model: Image,
-        },
-        {
-          model: User,
-        },
-        {
-          model: Comment,
-        },
-      ],
-    });
-
-    res.status(201).json(fullPost);
+    res
+      .status(201)
+      .json({ success: true, message: "게시글 생성에 성공했습니다" });
   } catch (err) {
     console.error(err);
     next(err);
