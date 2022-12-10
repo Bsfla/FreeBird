@@ -16,7 +16,7 @@ const useSignup = () => {
   const router = useRouter();
   const { email, nickname, password, passwordconfirm } = form;
 
-  const isDisabled =
+  const isDisabled = 
     !email ||
     !nickname ||
     !password ||
