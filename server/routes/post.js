@@ -5,7 +5,7 @@ const fs = require("fs");
 const { Comment, Post, Image, User } = require("../models");
 const { isLoggedIn } = require("./middleware");
 
-const router = express.router();
+const router = express.Router();
 
 try {
   fs.accessSync("uploads");
@@ -31,7 +31,7 @@ const upload = multer({
 
 router.post("/", isLoggedIn, upload.none(), async (req, res, next) => {
   try {
-    const post = Post.create({
+    const post = await Post.create({
       content: req.body.content,
       UserId: req.user.id,
     });
@@ -41,7 +41,6 @@ router.post("/", isLoggedIn, upload.none(), async (req, res, next) => {
         const images = Promise.all(
           req.body.image.map((image) => Image.create({ src: image }))
         );
-
         await post.addImages(images);
       }
     } else {
@@ -49,7 +48,7 @@ router.post("/", isLoggedIn, upload.none(), async (req, res, next) => {
       await post.addImages(image);
     }
 
-    const fullPost = Post.findOne({
+    const fullPost = await Post.findOne({
       where: {
         id: post.id,
       },
@@ -74,7 +73,7 @@ router.post("/", isLoggedIn, upload.none(), async (req, res, next) => {
   }
 });
 
-router.delete("/:postId", async (req, res, next) => {
+router.delete("/:postId", isLoggedIn, async (req, res, next) => {
   try {
     await Post.destory({
       where: { id: req.params.postId, UserId: req.user.id },
@@ -87,7 +86,7 @@ router.delete("/:postId", async (req, res, next) => {
   }
 });
 
-router.post("/:postId/comment", async (req, res, next) => {
+router.post("/:postId/comment", isLoggedIn, async (req, res, next) => {
   try {
     const post = Post.findOne({
       where: {
@@ -110,7 +109,7 @@ router.post("/:postId/comment", async (req, res, next) => {
   }
 });
 
-router.patch("/:postId/like", async (req, res, next) => {
+router.patch("/:postId/like", isLoggedIn, async (req, res, next) => {
   try {
     const post = await Post.findOne({
       where: { id: req.params.postId },
@@ -129,7 +128,7 @@ router.patch("/:postId/like", async (req, res, next) => {
   }
 });
 
-router.delete("/:postId/like", async (req, res, next) => {
+router.delete("/:postId/like", isLoggedIn, async (req, res, next) => {
   try {
     const post = await Post.findOne({
       where: { id: req.params.postId },
@@ -153,3 +152,5 @@ router.post("/images", isLoggedIn, upload.array("image"), (req, res, next) => {
   console.log(req.files);
   res.json(req.files.map((v) => v.location.replace(/\/original\//, "/thumb/")));
 });
+
+module.exports = router;

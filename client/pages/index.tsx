@@ -1,11 +1,17 @@
 import React from 'react';
 import { MainLayout } from '@components/common';
+import { PostForm, PostCard } from '@components/Post';
 import type { GetServerSideProps, NextPage } from 'next';
 import { loadMyInfo } from '@apis/user';
 import axios from 'axios';
 
 const Main: NextPage = () => {
-  return <MainLayout />;
+  return (
+    <MainLayout>
+      <PostForm />
+      <PostCard />
+    </MainLayout>
+  );
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {

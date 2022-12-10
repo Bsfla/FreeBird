@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const dotenv = require("dotenv");
 const user = require("./routes/user");
+const post = require("./routes/post");
 const passport = require("passport");
 const morgan = require("morgan");
 const path = require("path");
@@ -15,7 +16,9 @@ const app = express();
 dotenv.config();
 
 db.sequelize
-  .sync()
+  .sync({
+    alter: true,
+  })
   .then(() => {
     console.log("db연결 성공");
   })
@@ -45,6 +48,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/user", user);
+app.use("/post", post);
 app.listen(3065, () => {
   console.log("서버 실행 중!");
   console.log(process.env.PASSWORD);
