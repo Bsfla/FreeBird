@@ -16,7 +16,14 @@ const PostForm = () => {
   };
 
   const handlePostSubmit = () => {
-    mutate({ content: text });
+    if (text.length === 0) return alert('글을 작성해주세요');
+
+    const formData = new FormData();
+
+    imgPaths.forEach((imgPath) => formData.append('image', imgPath));
+    formData.append('content', text);
+
+    mutate(formData);
   };
 
   const handleImagesChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,6 +40,12 @@ const PostForm = () => {
       console.log(err);
     }
   };
+
+  const handleRemoveImage = (fileName: string) => {
+    setImagePaths(imgPaths.filter((imgPath) => fileName !== imgPath));
+  };
+
+  console.log(imgPaths);
 
   return (
     <Wrraper>
@@ -52,7 +65,11 @@ const PostForm = () => {
       </form>
       <ImagesContainer>
         {imgPaths.map((imgPath) => (
-          <Image key={imgPath} imgPath={imgPath} />
+          <Image
+            key={imgPath}
+            imgPath={imgPath}
+            handleRemoveImage={handleRemoveImage}
+          />
         ))}
       </ImagesContainer>
       <Button name="작성하기" onClick={handlePostSubmit} />
