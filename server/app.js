@@ -49,7 +49,7 @@ app.use(passport.session());
 
 app.use("/user", user);
 app.use("/post", post);
+
 app.listen(3065, () => {
   console.log("서버 실행 중!");
-  console.log(process.env.PASSWORD);
 });

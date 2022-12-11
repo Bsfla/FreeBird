@@ -30,6 +30,10 @@ export const Wrraper = styled.div`
     position: relative;
     margin-bottom: 20px;
 
+    input {
+      display: none;
+    }
+
     svg {
       margin-top: 15px;
       position: relative;

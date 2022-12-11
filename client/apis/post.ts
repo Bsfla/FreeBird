@@ -7,3 +7,10 @@ export const createPost = (data: PostFormType) => {
     data,
   });
 };
+
+export const upLoadImages = (data: FormData) => {
+  return api.post({
+    url: '/post/images',
+    data,
+  });
+};

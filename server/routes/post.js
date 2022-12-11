@@ -20,13 +20,17 @@ const upload = multer({
       done(null, "uploads");
     },
     filename(req, file, done) {
-      //제로초.Png
       const ext = path.extname(file.originalname); //확장자 추출
       const basename = path.basename(file.originalname, ext); //제로초
       done(null, basename + "_" + new Date().getTime() + ext); //제로초150252.Png
     },
     limits: { fileSize: 20 * 1824 * 1824 }, //20MB
   }),
+});
+
+router.post("/images", upload.array("image"), (req, res, next) => {
+  console.log(req.files);
+  res.json(req.files.map((v) => v.filename));
 });
 
 router.post("/", isLoggedIn, upload.none(), async (req, res, next) => {
@@ -129,12 +133,6 @@ router.delete("/:postId/like", isLoggedIn, async (req, res, next) => {
     console.error(err);
     next(err);
   }
-});
-
-router.post("/images", isLoggedIn, upload.array("image"), (req, res, next) => {
-  // POST /post/images
-  console.log(req.files);
-  res.json(req.files.map((v) => v.location.replace(/\/original\//, "/thumb/")));
 });
 
 module.exports = router;
