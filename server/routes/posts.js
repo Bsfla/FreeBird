@@ -1,8 +1,11 @@
 const express = require("express");
+const { Op } = require("sequelize");
 
-const { Post, User, Comment } = require("../models");
+const { Post, User, Comment, Image } = require("../models");
+const { isLoggedIn } = require("./middleware");
 const router = express.Router();
 
+/*
 router.get("/", async (req, res, next) => {
   try {
     const posts = Post.findAll({
@@ -38,4 +41,37 @@ router.get("/", async (req, res, next) => {
     console.error(err);
     next(err);
   }
+});
+
+*/
+
+router.get("/", isLoggedIn, async (req, res, next) => {
+  try {
+    const where = {};
+    const lastId = req.query.lastId;
+
+    if (lastId) {
+      where.id = { [Op.lt]: parseInt(lastId) };
+    }
+
+    const posts = await Post.findAll({
+      where,
+      limit: 10,
+      order: [
+        ["createdAt", "DESC"],
+        [Comment, "createdAt", "DESC"],
+      ],
+      include: [
+        {
+          model: User,
+          attributes: ["id", "nickname"],
+        },
+        {
+          model: Image,
+        },
+      ],
+    });
+
+    res.status(200).json(posts);
+  } catch {}
 });

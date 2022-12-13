@@ -1,7 +1,6 @@
 import api from '@apis/base';
-import { PostFormType } from '@lib/types';
 
-export const createPost = (data: PostFormType) => {
+export const createPost = (data: FormData) => {
   return api.post({
     url: '/post',
     data,
