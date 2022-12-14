@@ -43,7 +43,8 @@ router.post("/", upload.none(), async (req, res, next) => {
 
     if (req.body.image) {
       if (Array.isArray(req.body.image)) {
-        const images = Promise.all(
+        console.log("그랩");
+        const images = await Promise.all(
           req.body.image.map((image) => Image.create({ src: image }))
         );
         await post.addImages(images);

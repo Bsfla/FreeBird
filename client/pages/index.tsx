@@ -1,27 +1,17 @@
 import React from 'react';
 import { MainLayout } from '@components/common';
-import { PostForm, PostCard } from '@components/Post';
-import { dehydrate, QueryClient, useInfiniteQuery } from 'react-query';
+import { PostForm } from '@components/Post';
+import { MainPosts } from '@components/Main';
+import { dehydrate, QueryClient } from 'react-query';
 import type { GetServerSideProps, NextPage } from 'next';
 import { getPosts } from '@apis/post';
 import axios from 'axios';
 
 const Main: NextPage = () => {
-  const { data } = useInfiniteQuery(
-    'posts',
-    ({ pageParam = '' }) => getPosts(pageParam),
-    {
-      staleTime: 300000,
-      refetchOnWindowFocus: false,
-    }
-  );
-
-  console.log(data);
-
   return (
     <MainLayout>
       <PostForm />
-      <PostCard />
+      <MainPosts />
     </MainLayout>
   );
 };
@@ -29,16 +19,15 @@ const Main: NextPage = () => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const cookie = context.req ? context.req.headers.cookie : '';
   axios.defaults.headers.Cookie = '';
+  const queryClient = new QueryClient();
 
   if (context.req && cookie) {
     axios.defaults.headers.Cookie = cookie;
+
+    await queryClient.prefetchInfiniteQuery('posts', () => getPosts());
   } else {
     return { redirect: { destination: '/Login', permanent: false } };
   }
-
-  const queryClient = new QueryClient();
-
-  await queryClient.prefetchInfiniteQuery('posts', () => getPosts());
 
   return {
     props: {

@@ -2,10 +2,9 @@ const express = require("express");
 const { Op } = require("sequelize");
 
 const { Post, User, Comment, Image } = require("../models");
-const { isLoggedIn } = require("./middleware");
 const router = express.Router();
 
-router.get("/", isLoggedIn, async (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
     const where = {};
     const lastId = parseInt(req.query.lastId, 10);

@@ -9,6 +9,7 @@ import {
   LikeButton,
   CommentButton,
 } from './style';
+import { PostType } from '@lib/types';
 import { ProfileImage } from '@components/common';
 import { PostImage } from '@components/Post';
 import {
@@ -17,20 +18,24 @@ import {
   AiOutlineComment,
 } from 'react-icons/ai';
 
-const PostCard = () => {
+interface Props {
+  post: PostType;
+}
+
+const PostCard = ({ post }: Props) => {
   return (
     <Wrraper>
       <PostHead>
         <ProfileImage />
         <PostInfo>
-          <span className="user_name">찬규</span>
+          <span className="user_name">{post.User.nickname}</span>
           <span className="date">2022년 11월 29일</span>
         </PostInfo>
       </PostHead>
       <PostContent>
-        <span>오늘 새로운 포켓몬을 잡았다 너무 좋았다</span>
+        <span>{post.content}</span>
       </PostContent>
-      <PostImage />
+      <PostImage images={post.Images} />
       <PostButtonGroup>
         <RetwwetButton>
           <AiOutlineRetweet size={22} />

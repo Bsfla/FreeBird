@@ -1,22 +1,25 @@
 import React from 'react';
 import { ImageWrapper, ImageSection } from './style';
+import { createImagePath } from '@lib/utils';
 
-const PostImage = () => {
-  const images = [1, 2, 3];
+interface Props {
+  images: { src: string }[];
+}
 
+const PostImage = ({ images }: Props) => {
   if (images.length === 2) {
     return (
       <ImageWrapper>
         <ImageSection>
           <img
-            src="https://pbs.twimg.com/media/FhlwJXyacAIw7IZ?format=png&name=small"
+            src={createImagePath(images[0].src)}
             alt="이미지"
             className="first_image"
           />
         </ImageSection>
         <ImageSection>
           <img
-            src="https://pbs.twimg.com/media/FhlwJXyacAIw7IZ?format=png&name=small"
+            src={createImagePath(images[1].src)}
             alt="이미지"
             className="second_image"
           />
@@ -30,21 +33,21 @@ const PostImage = () => {
       <ImageWrapper>
         <ImageSection>
           <img
-            src="https://pbs.twimg.com/media/FhlwJXyacAIw7IZ?format=png&name=small"
+            src={createImagePath(images[0].src)}
             alt="이미지"
             className="first_image"
           />
         </ImageSection>
         <ImageSection>
           <img
-            src="https://pbs.twimg.com/media/FhlwJXyacAIw7IZ?format=png&name=small"
+            src={createImagePath(images[1].src)}
             alt="이미지"
             className="center_image"
           />
         </ImageSection>
         <ImageSection>
           <img
-            src="https://pbs.twimg.com/media/FhlwJXyacAIw7IZ?format=png&name=small"
+            src={createImagePath(images[2].src)}
             alt="이미지"
             className="second_image"
           />
@@ -53,15 +56,19 @@ const PostImage = () => {
     );
   }
 
-  return (
-    <ImageWrapper>
-      <img
-        src="https://pbs.twimg.com/media/FhlwJXyacAIw7IZ?format=png&name=small"
-        alt="이미지"
-        className="image_content"
-      />
-    </ImageWrapper>
-  );
+  if (images.length === 1) {
+    return (
+      <ImageWrapper>
+        <img
+          src={createImagePath(images[0].src)}
+          alt="이미지"
+          className="image_content"
+        />
+      </ImageWrapper>
+    );
+  }
+
+  return <></>;
 };
 
 export default PostImage;
