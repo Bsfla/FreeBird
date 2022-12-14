@@ -32,12 +32,14 @@ router.post("/images", upload.array("image"), (req, res, next) => {
   res.json(req.files.map((v) => v.filename));
 });
 
-router.post("/", isLoggedIn, upload.none(), async (req, res, next) => {
+router.post("/", upload.none(), async (req, res, next) => {
   try {
     const post = await Post.create({
       content: req.body.content,
       UserId: req.user.id,
     });
+
+    console.log(req.body.image);
 
     if (req.body.image) {
       if (Array.isArray(req.body.image)) {
@@ -45,10 +47,10 @@ router.post("/", isLoggedIn, upload.none(), async (req, res, next) => {
           req.body.image.map((image) => Image.create({ src: image }))
         );
         await post.addImages(images);
+      } else {
+        const image = await Image.create({ src: req.body.image });
+        await post.addImages(image);
       }
-    } else {
-      const image = await Image.create({ src: req.body.image });
-      await post.addImages(image);
     }
 
     res

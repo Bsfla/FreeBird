@@ -13,3 +13,14 @@ export const upLoadImages = (data: FormData) => {
     data,
   });
 };
+
+export const getPosts = async (lastId?: number) => {
+  const response = await api.get({
+    url: '/posts',
+    params: {
+      lastId,
+    },
+  });
+
+  return response.data;
+};

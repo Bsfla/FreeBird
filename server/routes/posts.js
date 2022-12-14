@@ -5,10 +5,16 @@ const { Post, User, Comment, Image } = require("../models");
 const { isLoggedIn } = require("./middleware");
 const router = express.Router();
 
-/*
-router.get("/", async (req, res, next) => {
+router.get("/", isLoggedIn, async (req, res, next) => {
   try {
-    const posts = Post.findAll({
+    const where = {};
+    const lastId = parseInt(req.query.lastId, 10);
+
+    if (lastId) {
+      where.id = { [Op.lt]: lastId };
+    }
+    const posts = await Post.findAll({
+      where,
       limit: 10,
       order: [
         ["createdAt", "DESC"],
@@ -17,7 +23,7 @@ router.get("/", async (req, res, next) => {
       include: [
         {
           model: User,
-          attributes: ["id", nickname],
+          attributes: ["id", "nickname"],
         },
         {
           model: Comment,
@@ -29,13 +35,16 @@ router.get("/", async (req, res, next) => {
           ],
         },
         {
+          model: Image,
+          attributes: ["src"],
+        },
+        {
           model: User,
           as: "Likers",
           attributes: ["id"],
         },
       ],
     });
-
     res.status(200).json(posts);
   } catch (err) {
     console.error(err);
@@ -43,15 +52,14 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-*/
-
-router.get("/", isLoggedIn, async (req, res, next) => {
+/*
+router.get("/", async (req, res, next) => {
   try {
     const where = {};
-    const lastId = req.query.lastId;
+    const lastId = parseInt(req.query.lastId, 10);
 
     if (lastId) {
-      where.id = { [Op.lt]: parseInt(lastId) };
+      where.id = { [Op.lt]: lastId };
     }
 
     const posts = await Post.findAll({
@@ -73,5 +81,10 @@ router.get("/", isLoggedIn, async (req, res, next) => {
     });
 
     res.status(200).json(posts);
-  } catch {}
+  } catch (err) {
+    next(err);
+  }
 });
+*/
+
+module.exports = router;

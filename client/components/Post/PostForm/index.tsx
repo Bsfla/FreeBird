@@ -45,8 +45,6 @@ const PostForm = () => {
     setImagePaths(imgPaths.filter((imgPath) => fileName !== imgPath));
   };
 
-  console.log(imgPaths);
-
   return (
     <Wrraper>
       <span>게시글 작성하기</span>
