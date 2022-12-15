@@ -4,7 +4,7 @@ import { PostType } from '@lib/types';
 import { PostCard } from '@components/Post';
 
 interface Props {
-  posts: PostType[];
+  posts?: PostType[];
 }
 
 const PostList = ({ posts }: Props) => {
