@@ -37,18 +37,8 @@ const PostCard = ({ post }: Props) => {
       <PostContent>
         {post.content.split(/(#[^\s#]+)/g).map((v: string, index: number) => {
           if (!v.match(/(#[^\s#]+)/)) {
-            return <span>{v}</span>;
+            return <span key={index}>{v}</span>;
           }
-          return (
-            <PostHashTag>
-              <Link
-                href={`/hashtag/${v.slice(1)}`}
-                prefetch={false}
-                key={index}>
-                <span>{v}</span>
-              </Link>
-            </PostHashTag>
-          );
         })}
       </PostContent>
       <PostImage images={post.Images} />

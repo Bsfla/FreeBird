@@ -1,7 +1,7 @@
 const express = require("express");
 const { Op } = require("sequelize");
 
-const { Post, User, Comment, Image } = require("../models");
+const { Post, User, Comment, Image, Hashtag } = require("../models");
 const router = express.Router();
 
 router.get("/", async (req, res, next) => {
@@ -38,6 +38,10 @@ router.get("/", async (req, res, next) => {
           attributes: ["src"],
         },
         {
+          model: Hashtag,
+          attributes: ["name"],
+        },
+        {
           model: User,
           as: "Likers",
           attributes: ["id"],
@@ -50,7 +54,5 @@ router.get("/", async (req, res, next) => {
     next(err);
   }
 });
-
-
 
 module.exports = router;
