@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useMutation, useQueryClient } from 'react-query';
-import { createPost, upLoadImages } from '@apis/post';
+import { useCreatePost } from '@hooks/api';
+import { upLoadImages } from '@apis/post';
 import Image from './Image';
 import { Wrraper, TextForm, ImagesContainer } from './style';
 import { Button } from '@components/common';
@@ -9,17 +9,7 @@ import { BsCardImage } from 'react-icons/bs';
 const PostForm = () => {
   const [text, setText] = useState<string>('');
   const [imgPaths, setImagePaths] = useState<string[]>([]);
-  const queryClient = useQueryClient();
-  const { mutate } = useMutation(createPost, {
-    onSuccess: () => {
-      alert('게시글 생성에 성공했습니다');
-      queryClient.invalidateQueries('posts');
-    },
-
-    onError: (error) => {
-      alert(error);
-    },
-  });
+  const { mutate } = useCreatePost();
 
   const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
@@ -33,7 +23,14 @@ const PostForm = () => {
     imgPaths.forEach((imgPath) => formData.append('image', imgPath));
     formData.append('content', text);
 
-    mutate(formData);
+    try {
+      mutate(formData);
+
+      setText('');
+      setImagePaths([]);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleImagesChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
