@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useCreatePost } from '@hooks/api';
 import { upLoadImages } from '@apis/post';
+import { Button } from '@components/common';
 import Image from './Image';
 import { Wrraper, TextForm, ImagesContainer } from './style';
-import { Button } from '@components/common';
 import { BsCardImage } from 'react-icons/bs';
 
 const PostForm = () => {

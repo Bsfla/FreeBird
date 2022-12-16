@@ -39,6 +39,17 @@ export const PostContent = styled.div`
   flex: 1;
 `;
 
+export const PostHashTag = styled.div`
+  display: flex;
+  margin-top: 50px;
+  cursor: pointer;
+
+  span {
+    color: blue;
+    font-weight: bold;
+  }
+`;
+
 export const PostButtonGroup = styled.div`
   width: 100%;
 

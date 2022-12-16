@@ -3,6 +3,7 @@ import { MainLayout } from '@components/common';
 import { PostForm } from '@components/Post';
 import { MainPosts } from '@components/Main';
 import { dehydrate, QueryClient } from 'react-query';
+import { queryKeys, LOGIN_PAGE } from '@consts/index';
 import type { GetServerSideProps, NextPage } from 'next';
 import { getPosts } from '@apis/post';
 import axios from 'axios';
@@ -24,9 +25,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   if (context.req && cookie) {
     axios.defaults.headers.Cookie = cookie;
 
-    await queryClient.prefetchInfiniteQuery('posts', () => getPosts());
+    await queryClient.prefetchInfiniteQuery(queryKeys.posts, () => getPosts());
   } else {
-    return { redirect: { destination: '/Login', permanent: false } };
+    return { redirect: { destination: LOGIN_PAGE, permanent: false } };
   }
 
   return {

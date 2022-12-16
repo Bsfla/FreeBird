@@ -4,6 +4,7 @@ import {
   PostInfo,
   PostHead,
   PostContent,
+  PostHashTag,
   PostButtonGroup,
   RetwwetButton,
   LikeButton,
@@ -17,6 +18,7 @@ import {
   AiTwotoneHeart,
   AiOutlineComment,
 } from 'react-icons/ai';
+import Link from 'next/link';
 
 interface Props {
   post: PostType;
@@ -33,7 +35,21 @@ const PostCard = ({ post }: Props) => {
         </PostInfo>
       </PostHead>
       <PostContent>
-        <span>{post.content}</span>
+        {post.content.split(/(#[^\s#]+)/g).map((v: string, index: number) => {
+          if (!v.match(/(#[^\s#]+)/)) {
+            return <span>{v}</span>;
+          }
+          return (
+            <PostHashTag>
+              <Link
+                href={`/hashtag/${v.slice(1)}`}
+                prefetch={false}
+                key={index}>
+                <span>{v}</span>
+              </Link>
+            </PostHashTag>
+          );
+        })}
       </PostContent>
       <PostImage images={post.Images} />
       <PostButtonGroup>
