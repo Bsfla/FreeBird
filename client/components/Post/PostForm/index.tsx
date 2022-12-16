@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useMutation } from 'react-query';
+import { useMutation, useQueryClient } from 'react-query';
 import { createPost, upLoadImages } from '@apis/post';
 import Image from './Image';
 import { Wrraper, TextForm, ImagesContainer } from './style';
@@ -9,7 +9,17 @@ import { BsCardImage } from 'react-icons/bs';
 const PostForm = () => {
   const [text, setText] = useState<string>('');
   const [imgPaths, setImagePaths] = useState<string[]>([]);
-  const { mutate } = useMutation(createPost);
+  const queryClient = useQueryClient();
+  const { mutate } = useMutation(createPost, {
+    onSuccess: () => {
+      alert('게시글 생성에 성공했습니다');
+      queryClient.invalidateQueries('posts');
+    },
+
+    onError: (error) => {
+      alert(error);
+    },
+  });
 
   const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);

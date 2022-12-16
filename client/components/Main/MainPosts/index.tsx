@@ -22,7 +22,6 @@ const MainPosts = () => {
   const posts = data?.pages.flat();
   const isLast = data && data?.pages[data.pages.length - 1]?.length < 10;
 
-  console.log(inView, data);
 
   useEffect(() => {
     if (!isLast && hasNextPage && inView) fetchNextPage();
