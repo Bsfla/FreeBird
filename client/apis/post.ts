@@ -1,4 +1,5 @@
 import api from '@apis/base';
+import { PostType } from '@lib/types';
 
 export const createPost = (data: FormData) => {
   return api.post({
@@ -14,7 +15,7 @@ export const upLoadImages = (data: FormData) => {
   });
 };
 
-export const getPosts = async (lastId?: number) => {
+export const getPosts = async (lastId?: number): Promise<PostType[]> => {
   const response = await api.get({
     url: '/posts',
     params: {

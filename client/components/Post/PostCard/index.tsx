@@ -40,6 +40,11 @@ const PostCard = ({ post }: Props) => {
             return <span key={index}>{v}</span>;
           }
         })}
+        <PostHashTag>
+          {post.Hashtags?.map((el) => (
+            <span>#{el.name}</span>
+          ))}
+        </PostHashTag>
       </PostContent>
       <PostImage images={post.Images} />
       <PostButtonGroup>

@@ -10,6 +10,7 @@ export interface PostFormResponseType {
 export interface PostType {
   Comments: [];
   Images: { src: string }[];
+  Hashtags: HashTagType[];
   Likers: [];
   RetweetId: number;
   User: {
@@ -20,4 +21,14 @@ export interface PostType {
   createdAt: string;
   updateAt: string;
   id: number;
+}
+
+export interface HashTagType {
+  name: string;
+  PostHashtag: {
+    HashtagId: number;
+    PostId: number;
+    createdAt: string;
+    updatedAt: string;
+  };
 }

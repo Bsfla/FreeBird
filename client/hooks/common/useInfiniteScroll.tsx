@@ -19,6 +19,7 @@ const useInfiniteScroll = <T extends FetchingDataType[]>(
     staleTime: Infinity,
     refetchOnWindowFocus: false,
   });
+
   const [ref, inView] = useInView();
   const resultData = data?.pages.flat();
   const isLast = data && data?.pages[data.pages.length - 1]?.length < 10;

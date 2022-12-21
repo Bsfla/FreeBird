@@ -42,6 +42,7 @@ export const PostContent = styled.div`
 export const PostHashTag = styled.div`
   display: flex;
   margin-top: 50px;
+  gap: 10px;
   cursor: pointer;
 
   span {
