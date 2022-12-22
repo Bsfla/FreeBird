@@ -16,74 +16,14 @@ import {
 } from 'react-query';
 import { addLike, deleteLike } from '@apis/post';
 import { loadMyInfo } from '@apis/user';
+import { usePostLike } from '@hooks/page';
 
 interface Props {
   post: PostType;
 }
 
 const PostButtonGroup = ({ post }: Props) => {
-  const queryClient = useQueryClient();
-  const { data: user } = useQuery<UserInfoType>('user', loadMyInfo);
-  const isLike = post.Likers.find((found) => found.id === user?.id);
-
-  const { mutate: addLikeMutate } = useMutation(addLike, {
-    onMutate() {
-      if (!user) return;
-
-      queryClient.setQueryData<InfiniteData<PostType>>(
-        queryKeys.posts,
-        (data) => {
-          const foundPost = data?.pages
-            .flat()
-            .find((found) => found.id === post.id);
-
-          if (foundPost) {
-            foundPost.Likers.push({ id: user.id });
-          }
-
-          return {
-            pageParams: data?.pageParams || [],
-            pages: data?.pages || [],
-          };
-        }
-      );
-    },
-  });
-
-  const handleAddLike = () => {
-    addLikeMutate(post.id);
-  };
-
-  const { mutate: deleteLikeMutate } = useMutation(deleteLike, {
-    onMutate() {
-      if (!user) return;
-
-      queryClient.setQueryData<InfiniteData<PostType>>(
-        queryKeys.posts,
-        (data) => {
-          const posts = data?.pages.flat();
-          const foundPost = posts?.find((found) => found.id === post.id);
-
-          if (foundPost) {
-            const foundPostIndex = foundPost.Likers.findIndex(
-              (found) => found.id === post.id
-            );
-
-            foundPost.Likers.splice(foundPostIndex, 1);
-          }
-
-          return {
-            pageParams: data?.pageParams || [],
-            pages: data?.pages || [],
-          };
-        }
-      );
-    },
-  });
-
-  const handleDeleteLike = () => {
-    deleteLikeMutate(post.id);
-  };
+  const { isLike, handleAddLike, handleDeleteLike } = usePostLike(post);
 
   return (
     <ButtonGroup>
