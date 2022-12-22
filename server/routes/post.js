@@ -89,7 +89,7 @@ router.delete("/:postId", isLoggedIn, async (req, res, next) => {
 
 router.post("/:postId/comment", isLoggedIn, async (req, res, next) => {
   try {
-    const post = Post.findOne({
+    const post = await Post.findOne({
       where: {
         id: req.params.postId,
       },
@@ -146,6 +146,44 @@ router.delete("/:postId/like", isLoggedIn, async (req, res, next) => {
     console.error(err);
     next(err);
   }
+});
+
+route.post("/:postId/Retweet", isLoggedIn, async (req, res, next) => {
+  try {
+    const post = await Post.findOne({
+      where: { id: req.params.postId },
+      include: [
+        {
+          model: Post,
+          as: "Retweet",
+        },
+      ],
+    });
+
+    if (!post) return res.status(403).send("게시물이 존재하지 않습니다");
+
+    if (req.user.id === post.UserId || post.Retweet?.UserId === req.user.id)
+      return res.status(403).send("자신의 글은 공유할 수 없습니다");
+
+    const retweetTargetId = post.RetweetId || post.id;
+
+    const exPost = await Post.findOne({
+      where: {
+        UserId: req.user.id,
+        RetweetId: retweetTargetId,
+      },
+    });
+
+    if (exPost) return res.status(403).send("이미 공유했습니다");
+
+    await Post.create({
+      UserId: req.user.id,
+      RetweetId: retweetTargetId,
+      content: "retweet",
+    });
+
+    return res.status(200).send("게시글을 공유했습니다");
+  } catch (err) {}
 });
 
 module.exports = router;

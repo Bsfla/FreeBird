@@ -11,8 +11,8 @@ import { addLike, deleteLike } from '@apis/post';
 import { loadMyInfo } from '@apis/user';
 
 const usePostLike = (post: PostType) => {
-  const queryClient = useQueryClient();
   const { data: user } = useQuery<UserInfoType>('user', loadMyInfo);
+  const queryClient = useQueryClient();
   const isLike = post.Likers.find((found) => found.id === user?.id);
 
   const { mutate: addLikeMutate } = useMutation(addLike, {
