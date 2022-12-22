@@ -26,14 +26,14 @@ export const getPosts = async (lastId?: number): Promise<PostType[]> => {
   return response.data;
 };
 
-export const addLike = async (postId: string) => {
+export const addLike = (postId: number) => {
   return api.patch({
-    url: `${postId}/like`,
+    url: `/post/${postId}/like`,
   });
 };
 
-export const deleteLike = async (postId: string) => {
+export const deleteLike = (postId: number) => {
   return api.delete({
-    url: `${postId}/like`,
+    url: `/post/${postId}/like`,
   });
 };

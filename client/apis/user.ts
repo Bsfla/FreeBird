@@ -1,4 +1,4 @@
-import { UserFormType, LoginFormType } from '@lib/types';
+import { UserFormType, LoginFormType, UserInfoType } from '@lib/types';
 import api from '@apis/base';
 
 export const signUp = (data: Omit<UserFormType, 'passwordconfirm'>) => {
@@ -21,8 +21,10 @@ export const logout = () => {
   });
 };
 
-export const loadMyInfo = () => {
-  return api.get({
+export const loadMyInfo = async (): Promise<UserInfoType> => {
+  const response = await api.get({
     url: '/user',
   });
+
+  return response.data;
 };

@@ -11,7 +11,7 @@ export interface PostType {
   Comments: [];
   Images: { src: string }[];
   Hashtags: HashTagType[];
-  Likers: [];
+  Likers: { id: number }[];
   RetweetId: number;
   User: {
     id: number;

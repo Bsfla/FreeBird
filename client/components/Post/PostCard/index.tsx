@@ -1,24 +1,11 @@
 import React from 'react';
-import {
-  Wrraper,
-  PostInfo,
-  PostHead,
-  PostContent,
-  PostHashTag,
-  PostButtonGroup,
-  RetwwetButton,
-  LikeButton,
-  CommentButton,
-} from './style';
+import { Wrraper, PostInfo, PostHead, PostContent, PostHashTag } from './style';
 import { PostType } from '@lib/types';
 import { ProfileImage } from '@components/common';
 import { PostImage } from '@components/Post';
-import {
-  AiOutlineRetweet,
-  AiTwotoneHeart,
-  AiOutlineComment,
-} from 'react-icons/ai';
 import Link from 'next/link';
+
+import PostButtonGroup from './PostButtonGroup';
 
 interface Props {
   post: PostType;
@@ -42,25 +29,12 @@ const PostCard = ({ post }: Props) => {
         })}
         <PostHashTag>
           {post.Hashtags?.map((el) => (
-            <span>#{el.name}</span>
+            <span key={el.name}>#{el.name}</span>
           ))}
         </PostHashTag>
       </PostContent>
       <PostImage images={post.Images} />
-      <PostButtonGroup>
-        <RetwwetButton>
-          <AiOutlineRetweet size={22} />
-          <span>12</span>
-        </RetwwetButton>
-        <LikeButton>
-          <AiTwotoneHeart size={22} />
-          <span>12</span>
-        </LikeButton>
-        <CommentButton>
-          <AiOutlineComment size={22} />
-          <span>12</span>
-        </CommentButton>
-      </PostButtonGroup>
+      <PostButtonGroup post={post} />
     </Wrraper>
   );
 };

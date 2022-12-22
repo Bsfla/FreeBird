@@ -11,6 +11,7 @@ declare module 'styled-components' {
       white: string;
       gray1: string;
       gray2: string;
+      pink: string;
     };
     media: {
       mobile1: string;
