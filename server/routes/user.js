@@ -9,7 +9,6 @@ const { isLoggedIn, isNotLoggedIn } = require("./middleware");
 const router = express.Router();
 
 router.get("/", isLoggedIn, async (req, res, next) => {
-  console.log(req.isAuthenticated());
   try {
     if (req.user) {
       const user = await User.findOne({

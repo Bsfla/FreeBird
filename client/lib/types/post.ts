@@ -8,7 +8,7 @@ export interface PostFormResponseType {
 }
 
 export interface PostType {
-  Comments: [];
+  Comments?: [];
   Images: { src: string }[];
   Hashtags: HashTagType[];
   Likers: { id: number }[];

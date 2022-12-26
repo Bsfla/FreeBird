@@ -37,3 +37,9 @@ export const deleteLike = (postId: number) => {
     url: `/post/${postId}/like`,
   });
 };
+
+export const sharePost = (postId: number) => {
+  return api.post({
+    url: `/post/${postId}/Retweet`,
+  });
+};

@@ -148,7 +148,7 @@ router.delete("/:postId/like", isLoggedIn, async (req, res, next) => {
   }
 });
 
-route.post("/:postId/Retweet", isLoggedIn, async (req, res, next) => {
+router.post("/:postId/Retweet", isLoggedIn, async (req, res, next) => {
   try {
     const post = await Post.findOne({
       where: { id: req.params.postId },
@@ -183,7 +183,9 @@ route.post("/:postId/Retweet", isLoggedIn, async (req, res, next) => {
     });
 
     return res.status(200).send("게시글을 공유했습니다");
-  } catch (err) {}
+  } catch (err) {
+    next(err);
+  }
 });
 
 module.exports = router;
