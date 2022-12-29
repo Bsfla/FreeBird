@@ -11,8 +11,6 @@ const MainPosts = () => {
     getPosts
   );
 
-  console.log(posts);
-
   return (
     <>
       {posts && <PostList posts={posts} />}

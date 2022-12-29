@@ -54,7 +54,6 @@ router.post("/", upload.none(), async (req, res, next) => {
 
     if (req.body.image) {
       if (Array.isArray(req.body.image)) {
-        console.log("그랩");
         const images = await Promise.all(
           req.body.image.map((image) => Image.create({ src: image }))
         );
@@ -181,6 +180,8 @@ router.post("/:postId/Retweet", isLoggedIn, async (req, res, next) => {
       RetweetId: retweetTargetId,
       content: "retweet",
     });
+
+    await post.addShareUser(req.user.id);
 
     return res.status(200).send("게시글을 공유했습니다");
   } catch (err) {

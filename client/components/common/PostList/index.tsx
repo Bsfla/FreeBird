@@ -4,13 +4,13 @@ import { PostType } from '@lib/types';
 import { PostCard } from '@components/Post';
 
 interface Props {
-  posts?: PostType[];
+  posts: PostType[];
 }
 
 const PostList = ({ posts }: Props) => {
   return (
     <Wrapper>
-      {posts?.map((post) => (
+      {posts.map((post) => (
         <PostCard post={post} key={post.id} />
       ))}
     </Wrapper>

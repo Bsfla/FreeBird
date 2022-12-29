@@ -1,4 +1,3 @@
-import React from 'react';
 import { PostType, UserInfoType } from '@lib/types';
 import { queryKeys } from '@consts/queryKeys';
 import {

@@ -7,9 +7,7 @@ import {
 } from 'react-icons/ai';
 import { ButtonGroup, RetwwetButton, LikeButton, CommentButton } from './style';
 import { PostType } from '@lib/types';
-import { usePostLike } from '@hooks/page';
-import { useMutation } from 'react-query';
-import { sharePost } from '@apis/post';
+import { usePostLike, useSharePost } from '@hooks/index';
 
 interface Props {
   post: PostType;
@@ -17,11 +15,7 @@ interface Props {
 
 const PostButtonGroup = ({ post }: Props) => {
   const { isLike, handleAddLike, handleDeleteLike } = usePostLike(post);
-  const { mutate } = useMutation(sharePost);
-
-  const handleSharePost = () => {
-    mutate(post.id);
-  };
+  const { handleSharePost } = useSharePost(post);
 
   return (
     <ButtonGroup>
