@@ -77,6 +77,12 @@ router.get("/:postId", async (req, res, next) => {
   try {
     const post = await Post.findOne({
       where: { id: req.params.postId },
+    });
+
+    if (!post) return res.status(404).send("존재하지 않는 게시물입니다");
+
+    const fullPost = await Post.findOne({
+      where: { id: post.id },
       include: [
         {
           model: User,
@@ -117,9 +123,7 @@ router.get("/:postId", async (req, res, next) => {
       ],
     });
 
-    if (!post) return res.status(404).send("존재하지 않는 게시물입니다");
-
-    res.status(200).json(post);
+    res.status(200).json(fullPost);
   } catch (err) {
     next(err);
   }

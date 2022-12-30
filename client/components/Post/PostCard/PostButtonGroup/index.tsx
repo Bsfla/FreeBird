@@ -13,7 +13,7 @@ interface Props {
   post: PostType;
 }
 
- const PostButtonGroup = ({ post }: Props) => {
+const PostButtonGroup = ({ post }: Props) => {
   const { isLike, handleAddLike, handleDeleteLike } = usePostLike(post);
   const { handleSharePost } = useSharePost(post);
 

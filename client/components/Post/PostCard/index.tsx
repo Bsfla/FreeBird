@@ -4,6 +4,8 @@ import { PostType } from '@lib/types';
 import PostButtonGroup from './PostButtonGroup';
 import PostContainer from './PostContainer';
 import { WriteInfo } from '@components/Post';
+import Link from 'next/link';
+import { POST_PAGE } from '@consts/route';
 
 interface Props {
   post: PostType;
@@ -14,21 +16,25 @@ const PostCard = ({ post }: Props) => {
     const { Retweet: sharePost, User: user } = post;
 
     return (
-      <Wrraper>
-        <WriteInfo nickName={user.nickname} />
-        <SharePostBlock>
-          <PostContainer post={sharePost} />
-        </SharePostBlock>
-        <PostButtonGroup post={post} />
-      </Wrraper>
+      <Link href={`${POST_PAGE}/${post.id}`}>
+        <Wrraper>
+          <WriteInfo nickName={user.nickname} />
+          <SharePostBlock>
+            <PostContainer post={sharePost} />
+          </SharePostBlock>
+          <PostButtonGroup post={post} />
+        </Wrraper>
+      </Link>
     );
   }
 
   return (
-    <Wrraper>
-      <PostContainer post={post} />
-      <PostButtonGroup post={post} />
-    </Wrraper>
+    <Link href={`${POST_PAGE}/${post.id}`}>
+      <Wrraper>
+        <PostContainer post={post} />
+        <PostButtonGroup post={post} />
+      </Wrraper>
+    </Link>
   );
 };
 

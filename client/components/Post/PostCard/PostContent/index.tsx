@@ -1,6 +1,8 @@
 import React from 'react';
 import { PostType } from '@lib/index';
 import { Wrapper, HashTag } from './style';
+import Link from 'next/link';
+import { LOGIN_PAGE } from '@consts/route';
 
 interface Props {
   post: PostType;
@@ -16,7 +18,9 @@ const PostContent = ({ post }: Props) => {
       })}
       <HashTag>
         {post.Hashtags?.map((el) => (
-          <span key={el.name}>#{el.name}</span>
+          <Link href={LOGIN_PAGE}>
+            <span key={el.name}>#{el.name}</span>
+          </Link>
         ))}
       </HashTag>
     </Wrapper>

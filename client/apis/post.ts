@@ -26,6 +26,14 @@ export const getPosts = async (lastId?: number): Promise<PostType[]> => {
   return response.data;
 };
 
+export const getPost = async (postId: number): Promise<PostType> => {
+  const response = await api.get({
+    url: `/post/${postId}`,
+  });
+
+  return response.data;
+};
+
 export const addLike = (postId: number) => {
   return api.patch({
     url: `/post/${postId}/like`,

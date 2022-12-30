@@ -36,6 +36,10 @@ const usePostLike = (post: PostType) => {
         }
       );
     },
+
+    onSuccess() {
+      queryClient.invalidateQueries(queryKeys.post);
+    },
   });
 
   const { mutate: deleteLikeMutate } = useMutation(deleteLike, {
@@ -63,13 +67,20 @@ const usePostLike = (post: PostType) => {
         }
       );
     },
+    onSuccess() {
+      queryClient.invalidateQueries(queryKeys.post);
+    },
   });
 
-  const handleAddLike = () => {
+  const handleAddLike = (e: React.MouseEvent<Element, MouseEvent>) => {
+    e.stopPropagation();
+
     addLikeMutate(post.id);
   };
 
-  const handleDeleteLike = () => {
+  const handleDeleteLike = (e: React.MouseEvent<Element, MouseEvent>) => {
+    e.stopPropagation();
+
     deleteLikeMutate(post.id);
   };
 

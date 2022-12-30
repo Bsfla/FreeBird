@@ -19,6 +19,7 @@ const colors = {
   white: '#ffff',
   gray1: '#9e9e9e',
   gray2: '#efebe9',
+  gray3: '#eeeeee',
   pink: '#f06292',
 } as const;
 

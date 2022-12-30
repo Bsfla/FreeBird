@@ -19,7 +19,9 @@ const useSharePost = (post: PostType) => {
     },
   });
 
-  const handleSharePost = () => {
+  const handleSharePost = (e: React.MouseEvent<Element, MouseEvent>) => {
+    e.stopPropagation();
+
     mutate(post.id);
   };
 

@@ -9,27 +9,7 @@ export const Wrraper = styled.article`
   background-color: ${theme.colors.white};
   border-radius: 20px;
   padding: 18px;
-`;
-
-export const PostInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-left: 15px;
-
-  .user_name {
-    color: ${theme.colors.gray1};
-    font-weight: bold;
-    font-size: 13px;
-  }
-
-  .date {
-    font-size: 11px;
-  }
-`;
-
-export const PostHead = styled.div`
-  display: flex;
-  align-items: center;
+  cursor: pointer;
 `;
 
 export const SharePostBlock = styled.div`
