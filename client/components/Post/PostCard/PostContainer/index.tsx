@@ -1,24 +1,18 @@
 import React from 'react';
-import { Wrraper, PostHead, PostInfo } from './style';
-import { ProfileImage } from '@components/common';
+import { Wrraper } from './style';
 import { PostType } from '@lib/types';
 import PostContent from '../PostContent';
-import { PostImage } from '@components/Post';
+import { PostImage, WriteInfo } from '@components/Post';
 
 interface Props {
   post: PostType;
 }
 
 const PostContainer = ({ post }: Props) => {
+  console.log(post);
   return (
     <Wrraper>
-      <PostHead>
-        <ProfileImage />
-        <PostInfo>
-          <span className="user_name">{post.User.nickname}</span>
-          <span className="date">2022년 11월 29일</span>
-        </PostInfo>
-      </PostHead>
+      <WriteInfo nickName={post.User.nickname} date={post.createdAt} />
       <PostContent post={post} />
       <PostImage images={post.Images} />
     </Wrraper>

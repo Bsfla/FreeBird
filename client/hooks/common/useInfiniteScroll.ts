@@ -22,9 +22,12 @@ const useInfiniteScroll = <T extends FetchingDataType[]>(
 
   const [ref, inView] = useInView();
   const resultData = data?.pages.flat();
-  const isLast = data && data?.pages[data.pages.length - 1]?.length < 10;
 
   useEffect(() => {
+    if (!data) return;
+
+    const isLast = data.pages?.[data.pages.length - 1].length < 10;
+
     if (!isLast && hasNextPage && inView) fetchNextPage();
   }, [inView]);
 

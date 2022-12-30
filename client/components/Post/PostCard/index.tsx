@@ -1,9 +1,9 @@
 import React from 'react';
-import { PostHead, PostInfo, Wrraper, SharePostBlock } from './style';
+import { Wrraper, SharePostBlock } from './style';
 import { PostType } from '@lib/types';
 import PostButtonGroup from './PostButtonGroup';
 import PostContainer from './PostContainer';
-import { ProfileImage } from '@components/common';
+import { WriteInfo } from '@components/Post';
 
 interface Props {
   post: PostType;
@@ -11,17 +11,11 @@ interface Props {
 
 const PostCard = ({ post }: Props) => {
   if (post.RetweetId && post.Retweet) {
-    const { Retweet: sharePost } = post;
+    const { Retweet: sharePost, User: user } = post;
 
     return (
       <Wrraper>
-        <PostHead>
-          <ProfileImage />
-          <PostInfo>
-            <span className="user_name">{post.User.nickname}</span>
-            <span className="date">2022년 11월 29일</span>
-          </PostInfo>
-        </PostHead>
+        <WriteInfo nickName={user.nickname} />
         <SharePostBlock>
           <PostContainer post={sharePost} />
         </SharePostBlock>
