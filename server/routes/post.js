@@ -73,6 +73,58 @@ router.post("/", upload.none(), async (req, res, next) => {
   }
 });
 
+router.get("/:postId", async (req, res, next) => {
+  try {
+    const post = await Post.findOne({
+      where: { id: req.params.postId },
+      include: [
+        {
+          model: User,
+          attributes: ["id", "nickname"],
+        },
+        {
+          model: Image,
+          attributes: ["src"],
+        },
+        {
+          model: Hashtag,
+          attributes: ["name"],
+        },
+        {
+          model: User,
+          as: "Likers",
+          attributes: ["id"],
+        },
+        {
+          model: User,
+          as: "ShareUser",
+          attributes: ["id"],
+        },
+        {
+          model: Post,
+          as: "Retweet",
+          include: [
+            {
+              model: User,
+              attributes: ["id", "nickname"],
+            },
+            {
+              model: Image,
+              attributes: ["src"],
+            },
+          ],
+        },
+      ],
+    });
+
+    if (!post) return res.status(404).send("존재하지 않는 게시물입니다");
+
+    res.status(200).json(post);
+  } catch (err) {
+    next(err);
+  }
+});
+
 router.delete("/:postId", isLoggedIn, async (req, res, next) => {
   try {
     await Post.destory({
