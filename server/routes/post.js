@@ -129,6 +129,40 @@ router.get("/:postId", async (req, res, next) => {
   }
 });
 
+router.patch("/:postId", async (req, res, next) => {
+  const hashtags = req.body.content.match(/#[^\s#]+/g);
+
+  try {
+    await Post.update(
+      {
+        content: req.body.content,
+      },
+      {
+        where: {
+          id: req.params.postId,
+          UserId: req.user.id,
+        },
+      }
+    );
+
+    if (hashtags) {
+      const result = await Promise.all(
+        hashtags.map((tag) =>
+          Hashtag.findOrCreate({
+            where: { name: tag.slice(1).toLowerCase() },
+          })
+        )
+      ); // [[노드, true], [리액트, true]]
+      await post.setHashtags(result.map((v) => v[0]));
+    }
+
+    res.status(200).send("글 수정 완료");
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
 router.delete("/:postId", isLoggedIn, async (req, res, next) => {
   try {
     await Post.destory({

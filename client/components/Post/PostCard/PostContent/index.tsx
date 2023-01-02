@@ -18,8 +18,8 @@ const PostContent = ({ post }: Props) => {
       })}
       <HashTag>
         {post.Hashtags?.map((el) => (
-          <Link href={LOGIN_PAGE}>
-            <span key={el.name}>#{el.name}</span>
+          <Link href={LOGIN_PAGE} key={el.name}>
+            <span>#{el.name}</span>
           </Link>
         ))}
       </HashTag>

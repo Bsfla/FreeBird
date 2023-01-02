@@ -58,7 +58,7 @@ const PostButtonGroup = ({ post }: Props) => {
 
       <Option>
         <SlOptions size={22} onClick={handleToggleOption} />
-        {isOpenOption && <Tooltip isOpenOption={isOpenOption} />}
+        {isOpenOption && <Tooltip setIsOpenOption={setIsOpenOption} />}
       </Option>
     </ButtonGroup>
   );

@@ -34,6 +34,18 @@ export const getPost = async (postId: number): Promise<PostType> => {
   return response.data;
 };
 
+export const editPost = (postId: number) => {
+  return api.patch({
+    url: `/post/${postId}`,
+  });
+};
+
+export const deletePost = (postId: number) => {
+  return api.delete({
+    url: `/post/${postId}`,
+  });
+};
+
 export const addLike = (postId: number) => {
   return api.patch({
     url: `/post/${postId}/like`,

@@ -1,15 +1,31 @@
-import React from 'react';
+import { useRef, useEffect, MouseEvent } from 'react';
 import { Wrapper } from './style';
 
 interface Props {
-  isOpenOption: boolean;
+  setIsOpenOption: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Tooltip = ({ isOpenOption }: Props) => {
+const Tooltip = ({ setIsOpenOption }: Props) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: any) => {
+      if (ref.current && !ref.current.contains(e.target)) {
+        setIsOpenOption(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <Wrapper>
       <div className="rect" />
-      <div className="option">
+      <div className="option" ref={ref}>
         <span className="edit">수정</span>
         <span className="delete">삭제</span>
       </div>
