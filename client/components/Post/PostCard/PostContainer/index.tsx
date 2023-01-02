@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrraper } from './style';
+import { PostHeader, Wrraper } from './style';
 import { PostType } from '@lib/types';
 import PostContent from '../PostContent';
 import { PostImage, WriteInfo } from '@components/Post';
@@ -9,10 +9,11 @@ interface Props {
 }
 
 const PostContainer = ({ post }: Props) => {
-  console.log(post);
   return (
     <Wrraper>
-      <WriteInfo nickName={post.User.nickname} date={post.createdAt} />
+      <PostHeader>
+        <WriteInfo nickName={post.User.nickname} date={post.createdAt} />
+      </PostHeader>
       <PostContent post={post} />
       <PostImage images={post.Images} />
     </Wrraper>

@@ -51,3 +51,7 @@ export const CommentButton = styled.button`
     margin-right: 15px;
   }
 `;
+
+export const Option = styled.div`
+  position: relative;
+`;

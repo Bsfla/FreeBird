@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   AiOutlineRetweet,
   AiTwotoneHeart,
   AiOutlineHeart,
   AiOutlineComment,
 } from 'react-icons/ai';
-import { ButtonGroup, RetwwetButton, LikeButton, CommentButton } from './style';
+import { SlOptions } from 'react-icons/sl';
+import {
+  ButtonGroup,
+  RetwwetButton,
+  LikeButton,
+  CommentButton,
+  Option,
+} from './style';
 import { PostType } from '@lib/types';
 import { usePostLike, useSharePost } from '@hooks/index';
+import Tooltip from '../Tooltip/index.';
 
 interface Props {
   post: PostType;
@@ -16,6 +24,13 @@ interface Props {
 const PostButtonGroup = ({ post }: Props) => {
   const { isLike, handleAddLike, handleDeleteLike } = usePostLike(post);
   const { handleSharePost } = useSharePost(post);
+  const [isOpenOption, setIsOpenOption] = useState<boolean>(false);
+
+  const handleToggleOption = (e: React.MouseEvent<Element, MouseEvent>) => {
+    e.stopPropagation();
+
+    setIsOpenOption(!isOpenOption);
+  };
 
   return (
     <ButtonGroup>
@@ -40,6 +55,11 @@ const PostButtonGroup = ({ post }: Props) => {
         <AiOutlineComment size={22} />
         <span>10</span>
       </CommentButton>
+
+      <Option>
+        <SlOptions size={22} onClick={handleToggleOption} />
+        {isOpenOption && <Tooltip isOpenOption={isOpenOption} />}
+      </Option>
     </ButtonGroup>
   );
 };

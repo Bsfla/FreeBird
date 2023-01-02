@@ -7,3 +7,7 @@ export const Wrraper = styled.div`
   padding: 8px;
   width: 100%;
 `;
+
+export const PostHeader = styled.div`
+  display: flex;
+`;
