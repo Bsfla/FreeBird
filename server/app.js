@@ -7,6 +7,7 @@ const session = require("express-session");
 const dotenv = require("dotenv");
 const user = require("./routes/user");
 const post = require("./routes/post");
+const hashtags = require("./routes/hashtags");
 const posts = require("./routes/posts");
 const passport = require("passport");
 const morgan = require("morgan");
@@ -49,6 +50,7 @@ app.use(passport.session());
 app.use("/user", user);
 app.use("/post", post);
 app.use("/posts", posts);
+app.use("/hashtags", hashtags);
 
 app.listen(3065, () => {
   console.log("서버 실행 중!");

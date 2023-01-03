@@ -26,6 +26,15 @@ router.get("/", async (req, res, next) => {
           attributes: ["src"],
         },
         {
+          model: Comment,
+          include: [
+            {
+              model: User, // 댓글 작성자
+              attributes: ["id", "nickname"],
+            },
+          ],
+        },
+        {
           model: Hashtag,
           attributes: ["name"],
         },
