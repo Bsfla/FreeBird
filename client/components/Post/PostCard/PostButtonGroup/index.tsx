@@ -19,9 +19,12 @@ import Tooltip from '../Tooltip/index.';
 
 interface Props {
   post: PostType;
+  handleToggleEdit: (
+    e: React.MouseEvent<HTMLSpanElement, globalThis.MouseEvent>
+  ) => void;
 }
 
-const PostButtonGroup = ({ post }: Props) => {
+const PostButtonGroup = ({ post, handleToggleEdit }: Props) => {
   const { isLike, handleAddLike, handleDeleteLike } = usePostLike(post);
   const { handleSharePost } = useSharePost(post);
   const [isOpenOption, setIsOpenOption] = useState<boolean>(false);
@@ -58,7 +61,12 @@ const PostButtonGroup = ({ post }: Props) => {
 
       <Option>
         <SlOptions size={22} onClick={handleToggleOption} />
-        {isOpenOption && <Tooltip setIsOpenOption={setIsOpenOption} />}
+        {isOpenOption && (
+          <Tooltip
+            setIsOpenOption={setIsOpenOption}
+            handleToggleEdit={handleToggleEdit}
+          />
+        )}
       </Option>
     </ButtonGroup>
   );

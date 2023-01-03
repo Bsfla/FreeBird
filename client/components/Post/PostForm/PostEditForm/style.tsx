@@ -19,6 +19,27 @@ export const Wrraper = styled.div`
   span {
     color: ${theme.colors.sub};
     font-weight: bold;
-    margin-bottom: 20px;
+  }
+`;
+
+export const FormHeader = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+
+  span {
+    flex: 1;
+  }
+
+  button {
+    width: 5rem;
+    border-radius: 10px;
+    margin-right: 15px;
+    background-color: ${theme.colors.gray3};
+    border: none;
+    padding: 6px;
+    cursor: pointer;
+    font-size: 12px;
   }
 `;

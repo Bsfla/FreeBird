@@ -1,5 +1,5 @@
 import api from '@apis/base';
-import { PostType } from '@lib/types';
+import { PostEditType, PostType } from '@lib/types';
 
 export const createPost = (data: FormData) => {
   return api.post({
@@ -34,9 +34,12 @@ export const getPost = async (postId: number): Promise<PostType> => {
   return response.data;
 };
 
-export const editPost = (postId: number) => {
+export const editPost = (body: PostEditType): Promise<any> => {
+  const { postId, data } = body;
+
   return api.patch({
     url: `/post/${postId}`,
+    data,
   });
 };
 

@@ -24,6 +24,11 @@ export interface PostType {
   id: number;
 }
 
+export interface PostEditType {
+  postId: number;
+  data: FormData;
+}
+
 export interface HashTagType {
   name: string;
   PostHashtag: {

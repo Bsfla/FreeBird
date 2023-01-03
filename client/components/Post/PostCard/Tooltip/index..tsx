@@ -3,9 +3,12 @@ import { Wrapper } from './style';
 
 interface Props {
   setIsOpenOption: React.Dispatch<React.SetStateAction<boolean>>;
+  handleToggleEdit: (
+    e: React.MouseEvent<HTMLSpanElement, globalThis.MouseEvent>
+  ) => void;
 }
 
-const Tooltip = ({ setIsOpenOption }: Props) => {
+const Tooltip = ({ setIsOpenOption, handleToggleEdit }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -26,7 +29,9 @@ const Tooltip = ({ setIsOpenOption }: Props) => {
     <Wrapper>
       <div className="rect" />
       <div className="option" ref={ref}>
-        <span className="edit">수정</span>
+        <span className="edit" onClick={handleToggleEdit}>
+          수정
+        </span>
         <span className="delete">삭제</span>
       </div>
     </Wrapper>

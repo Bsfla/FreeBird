@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
-import { useCreatePost } from '@hooks/api';
+import React, { useState, useEffect } from 'react';
+import { useEditPost } from '@hooks/page';
 import { upLoadImages } from '@apis/post';
 import { Button } from '@components/common';
-import WriteForm from './WriteForm';
-import Image from './Image';
-import { Wrraper } from './style';
-import { BsCardImage } from 'react-icons/bs';
+import WriteForm from '../WriteForm';
+import { PostType } from '@lib/types';
+import { FormHeader, Wrraper } from './style';
 
-const PostForm = () => {
-  const [text, setText] = useState<string>('');
-  const [imgPaths, setImagePaths] = useState<string[]>([]);
-  const { mutate } = useCreatePost();
+interface Props {
+  post: PostType;
+  setIsEdit: React.Dispatch<React.SetStateAction<boolean>>;
+  handleToggleEdit: (
+    e: React.MouseEvent<HTMLSpanElement, globalThis.MouseEvent>
+  ) => void;
+}
+
+const PostEditForm = ({ post, handleToggleEdit, setIsEdit }: Props) => {
+  const [text, setText] = useState<string>(post.content);
+  const [imgPaths, setImagePaths] = useState<string[]>(
+    post.Images.map((image) => image.src)
+  );
+  const { mutate, isSuccess } = useEditPost();
 
   const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
@@ -24,9 +33,10 @@ const PostForm = () => {
     imgPaths.forEach((imgPath) => formData.append('image', imgPath));
     formData.append('content', text);
 
-    try {
-      mutate(formData);
+    const body = { postId: post.id, data: formData };
 
+    try {
+      mutate(body);
       setText('');
       setImagePaths([]);
     } catch (err) {
@@ -53,9 +63,16 @@ const PostForm = () => {
     setImagePaths(imgPaths.filter((imgPath) => fileName !== imgPath));
   };
 
+  useEffect(() => {
+    if (isSuccess) setIsEdit(false);
+  }, [isSuccess]);
+
   return (
     <Wrraper>
-      <span>게시글 작성하기</span>
+      <FormHeader>
+        <span>게시글 수정하기</span>
+        <button onClick={handleToggleEdit}>수정 취소</button>
+      </FormHeader>
       <WriteForm
         text={text}
         imgPaths={imgPaths}
@@ -64,9 +81,9 @@ const PostForm = () => {
         handlePostSubmit={handlePostSubmit}
         handleRemoveImage={handleRemoveImage}
       />
-      <Button name="작성하기" onClick={handlePostSubmit} />
+      <Button name="수정하기" onClick={handlePostSubmit} />
     </Wrraper>
   );
 };
 
-export default PostForm;
+export default PostEditForm;

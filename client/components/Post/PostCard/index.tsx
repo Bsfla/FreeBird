@@ -1,9 +1,9 @@
-import React from 'react';
-import { Wrraper, SharePostBlock } from './style';
+import React, { useState } from 'react';
+import { Wrraper } from './style';
 import { PostType } from '@lib/types';
 import PostButtonGroup from './PostButtonGroup';
 import PostContainer from './PostContainer';
-import { WriteInfo } from '@components/Post';
+import PostEditForm from '../PostForm/PostEditForm';
 import Link from 'next/link';
 import { POST_PAGE } from '@consts/route';
 
@@ -12,19 +12,23 @@ interface Props {
 }
 
 const PostCard = ({ post }: Props) => {
-  if (post.RetweetId && post.Retweet) {
-    const { Retweet: sharePost, User: user } = post;
+  const [isEdit, setIsEdit] = useState<boolean>(false);
 
+  const handleToggleEdit = (
+    e: React.MouseEvent<HTMLSpanElement, globalThis.MouseEvent>
+  ) => {
+    e.stopPropagation();
+
+    setIsEdit(!isEdit);
+  };
+
+  if (isEdit) {
     return (
-      <Link href={`${POST_PAGE}/${post.id}`}>
-        <Wrraper>
-          <WriteInfo nickName={user.nickname} />
-          <SharePostBlock>
-            <PostContainer post={sharePost} />
-          </SharePostBlock>
-          <PostButtonGroup post={post} />
-        </Wrraper>
-      </Link>
+      <PostEditForm
+        post={post}
+        handleToggleEdit={handleToggleEdit}
+        setIsEdit={setIsEdit}
+      />
     );
   }
 
@@ -32,7 +36,7 @@ const PostCard = ({ post }: Props) => {
     <Link href={`${POST_PAGE}/${post.id}`}>
       <Wrraper>
         <PostContainer post={post} />
-        <PostButtonGroup post={post} />
+        <PostButtonGroup post={post} handleToggleEdit={handleToggleEdit} />
       </Wrraper>
     </Link>
   );

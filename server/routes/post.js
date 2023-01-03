@@ -88,6 +88,7 @@ router.get("/:postId", async (req, res, next) => {
           model: User,
           attributes: ["id", "nickname"],
         },
+
         {
           model: Image,
           attributes: ["src"],
@@ -129,10 +130,9 @@ router.get("/:postId", async (req, res, next) => {
   }
 });
 
-router.patch("/:postId", async (req, res, next) => {
-  const hashtags = req.body.content.match(/#[^\s#]+/g);
-
+router.patch("/:postId", upload.none(), async (req, res, next) => {
   try {
+    const hashtags = req.body.content.match(/#[^\s#]+/g);
     await Post.update(
       {
         content: req.body.content,
@@ -144,6 +144,7 @@ router.patch("/:postId", async (req, res, next) => {
         },
       }
     );
+    const post = await Post.findOne({ where: { id: req.params.postId } });
 
     if (hashtags) {
       const result = await Promise.all(
@@ -154,7 +155,19 @@ router.patch("/:postId", async (req, res, next) => {
         )
       ); // [[노드, true], [리액트, true]]
       await post.setHashtags(result.map((v) => v[0]));
-    }
+    } else await post.setHashtags([]);
+
+    if (req.body.image) {
+      if (Array.isArray(req.body.image)) {
+        const images = await Promise.all(
+          req.body.image.map((image) => Image.create({ src: image }))
+        );
+        await post.setImages(images);
+      } else {
+        const image = await Image.create({ src: req.body.image });
+        await post.setImages(image);
+      }
+    } else await post.setImages([]);
 
     res.status(200).send("글 수정 완료");
   } catch (error) {

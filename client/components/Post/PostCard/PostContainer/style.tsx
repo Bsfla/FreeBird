@@ -11,3 +11,11 @@ export const Wrraper = styled.div`
 export const PostHeader = styled.div`
   display: flex;
 `;
+
+export const SharePostBlock = styled.div`
+  margin-top: 20px;
+  border: 3px solid #eeeeee;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+`;
