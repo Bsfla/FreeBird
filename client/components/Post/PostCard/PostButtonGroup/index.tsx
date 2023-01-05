@@ -16,6 +16,7 @@ import {
 import { PostType } from '@lib/types';
 import { usePostLike, useSharePost } from '@hooks/index';
 import Tooltip from '../Tooltip/index.';
+import useDeletePost from '@hooks/page/useDeletePost';
 
 interface Props {
   post: PostType;
@@ -27,6 +28,7 @@ interface Props {
 const PostButtonGroup = ({ post, handleToggleEdit }: Props) => {
   const { isLike, handleAddLike, handleDeleteLike } = usePostLike(post);
   const { handleSharePost } = useSharePost(post);
+  const { handleDeletePost } = useDeletePost(post);
   const [isOpenOption, setIsOpenOption] = useState<boolean>(false);
 
   const handleToggleOption = (e: React.MouseEvent<Element, MouseEvent>) => {
@@ -65,6 +67,7 @@ const PostButtonGroup = ({ post, handleToggleEdit }: Props) => {
           <Tooltip
             setIsOpenOption={setIsOpenOption}
             handleToggleEdit={handleToggleEdit}
+            handleDeletePost={handleDeletePost}
           />
         )}
       </Option>

@@ -178,7 +178,7 @@ router.patch("/:postId", upload.none(), async (req, res, next) => {
 
 router.delete("/:postId", isLoggedIn, async (req, res, next) => {
   try {
-    await Post.destory({
+    await Post.destroy({
       where: { id: req.params.postId, UserId: req.user.id },
     });
 

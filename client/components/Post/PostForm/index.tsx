@@ -3,9 +3,7 @@ import { useCreatePost } from '@hooks/api';
 import { upLoadImages } from '@apis/post';
 import { Button } from '@components/common';
 import WriteForm from './WriteForm';
-import Image from './Image';
 import { Wrraper } from './style';
-import { BsCardImage } from 'react-icons/bs';
 
 const PostForm = () => {
   const [text, setText] = useState<string>('');
@@ -26,7 +24,6 @@ const PostForm = () => {
 
     try {
       mutate(formData);
-
       setText('');
       setImagePaths([]);
     } catch (err) {

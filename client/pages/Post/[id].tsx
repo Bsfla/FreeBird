@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { MainLayout } from '@components/common';
 import { PostCard } from '@components/Post';
@@ -7,6 +7,7 @@ import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { queryKeys } from '@consts/queryKeys';
 import { getPost } from '@apis/post';
 import { PostType } from '@lib/types';
+import useDeletePost from '@hooks/page/useDeletePost';
 
 const Post: NextPage = () => {
   const router = useRouter();

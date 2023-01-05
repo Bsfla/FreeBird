@@ -1,4 +1,4 @@
-import { useRef, useEffect, MouseEvent } from 'react';
+import { useRef, useEffect } from 'react';
 import { Wrapper } from './style';
 
 interface Props {
@@ -6,9 +6,16 @@ interface Props {
   handleToggleEdit: (
     e: React.MouseEvent<HTMLSpanElement, globalThis.MouseEvent>
   ) => void;
+  handleDeletePost: (
+    e: React.MouseEvent<HTMLSpanElement, globalThis.MouseEvent>
+  ) => void;
 }
 
-const Tooltip = ({ setIsOpenOption, handleToggleEdit }: Props) => {
+const Tooltip = ({
+  setIsOpenOption,
+  handleToggleEdit,
+  handleDeletePost,
+}: Props) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -32,7 +39,9 @@ const Tooltip = ({ setIsOpenOption, handleToggleEdit }: Props) => {
         <span className="edit" onClick={handleToggleEdit}>
           수정
         </span>
-        <span className="delete">삭제</span>
+        <span className="delete" onClick={handleDeletePost}>
+          삭제
+        </span>
       </div>
     </Wrapper>
   );
