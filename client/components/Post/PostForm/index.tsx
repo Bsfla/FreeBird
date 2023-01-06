@@ -58,7 +58,6 @@ const PostForm = () => {
         imgPaths={imgPaths}
         handleImagesChange={handleImagesChange}
         handleTextChange={handleTextChange}
-        handlePostSubmit={handlePostSubmit}
         handleRemoveImage={handleRemoveImage}
       />
       <Button name="작성하기" onClick={handlePostSubmit} />

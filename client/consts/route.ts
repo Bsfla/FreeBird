@@ -1,4 +1,4 @@
-export const LOGIN_PAGE = '/Login';
-export const SIGNUP_PAGE = '/Signup';
+export const LOGIN_PAGE = '/login';
+export const SIGNUP_PAGE = '/signup';
 export const MAIN_PAGE = '/';
-export const POST_PAGE = '/Post';
+export const POST_PAGE = '/post';

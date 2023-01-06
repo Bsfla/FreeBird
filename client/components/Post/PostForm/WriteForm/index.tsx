@@ -7,7 +7,6 @@ import { BsCardImage } from 'react-icons/bs';
 interface Props {
   imgPaths: string[];
   text: string;
-  handlePostSubmit: () => void;
   handleImagesChange: (e: React.ChangeEvent<HTMLInputElement>) => Promise<void>;
   handleRemoveImage: (fileName: string) => void;
   handleTextChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
@@ -19,7 +18,6 @@ const WriteForm = ({
   handleImagesChange,
   handleTextChange,
   handleRemoveImage,
-  handlePostSubmit,
 }: Props) => {
   return (
     <Wrraper>

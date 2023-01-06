@@ -78,7 +78,6 @@ const PostEditForm = ({ post, handleToggleEdit, setIsEdit }: Props) => {
         imgPaths={imgPaths}
         handleImagesChange={handleImagesChange}
         handleTextChange={handleTextChange}
-        handlePostSubmit={handlePostSubmit}
         handleRemoveImage={handleRemoveImage}
       />
       <Button name="수정하기" onClick={handlePostSubmit} />

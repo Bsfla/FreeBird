@@ -55,12 +55,6 @@ const PostButtonGroup = ({ post, handleToggleEdit }: Props) => {
         )}
         <span>{post.Likers.length}</span>
       </LikeButton>
-
-      <CommentButton>
-        <AiOutlineComment size={22} />
-        <span>10</span>
-      </CommentButton>
-
       <Option>
         <SlOptions size={22} onClick={handleToggleOption} />
         {isOpenOption && (
