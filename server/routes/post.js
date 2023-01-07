@@ -189,29 +189,6 @@ router.delete("/:postId", isLoggedIn, async (req, res, next) => {
   }
 });
 
-router.post("/:postId/comment", isLoggedIn, async (req, res, next) => {
-  try {
-    const post = await Post.findOne({
-      where: {
-        id: req.params.postId,
-      },
-    });
-
-    if (!post) return res.status(403).send("존재하지 않는 게시물입니다");
-
-    const comment = Comment.create({
-      content: req.body.content,
-      PostId: req.params.postId,
-      UserId: req.user.id,
-    });
-
-    res.status(201).json(comment);
-  } catch (err) {
-    console.error(err);
-    next(err);
-  }
-});
-
 router.patch("/:postId/like", isLoggedIn, async (req, res, next) => {
   try {
     const post = await Post.findOne({
