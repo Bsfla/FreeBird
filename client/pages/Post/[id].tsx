@@ -1,7 +1,7 @@
 import React from 'react';
 import { GetServerSideProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { PostCard, CommentForm, MainLayout } from '@components/index';
+import { PostCard, CommentContainer, MainLayout } from '@components/index';
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { queryKeys } from '@consts/queryKeys';
 import { getPost } from '@apis/post';
@@ -22,7 +22,7 @@ const Post: NextPage = () => {
   return (
     <MainLayout>
       {post && <PostCard post={post} />}
-      <CommentForm />
+      <CommentContainer />
     </MainLayout>
   );
 };
