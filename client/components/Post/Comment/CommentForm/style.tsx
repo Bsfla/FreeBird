@@ -4,6 +4,7 @@ import theme from 'styles/theme';
 export const Wrraper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
 
   .button_wrapper {
     display: flex;

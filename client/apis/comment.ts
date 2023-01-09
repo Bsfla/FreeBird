@@ -1,7 +1,7 @@
 import api from '@apis/base';
-import { CommentFormType } from '@lib/types';
+import { CommentFormType, CommentType } from '@lib/types';
 
-export const getComments = async (postId: number) => {
+export const getComments = async (postId: number): Promise<CommentType[]> => {
   const response = await api.get({
     url: `/comment/${postId}`,
   });

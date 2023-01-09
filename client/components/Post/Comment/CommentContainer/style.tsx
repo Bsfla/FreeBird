@@ -8,4 +8,9 @@ export const Wrraper = styled.section`
   border-radius: 20px;
   padding: 18px;
   margin-top: 20px;
+  margin-bottom: 20px;
+
+  .comment_count {
+    font-weight: bold;
+  }
 `;
