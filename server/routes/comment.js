@@ -40,6 +40,7 @@ router.get("/:postId", async (req, res, next) => {
       where: {
         PostId: req.params.postId,
       },
+      attributes: ["id", "content", "createdAt"],
       include: [
         {
           model: User,
