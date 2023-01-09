@@ -41,6 +41,7 @@ router.get("/:postId", async (req, res, next) => {
         PostId: req.params.postId,
       },
       attributes: ["id", "content", "createdAt"],
+      order: [["createdAt", "DESC"]],
       include: [
         {
           model: User,
@@ -50,6 +51,41 @@ router.get("/:postId", async (req, res, next) => {
     });
 
     res.status(200).json(comments);
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.patch("/:commentId", async (req, res, next) => {
+  try {
+    await Comment.update(
+      {
+        content: req.body.content,
+      },
+      {
+        where: {
+          id: req.params.commentId,
+          UserId: req.user.id,
+        },
+      }
+    );
+
+    res.status(200).send("댓글 수정에 성공했습니다");
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.delete("/:commentId", async (req, res, next) => {
+  try {
+    await Comment.delete({
+      where: {
+        id: req.params.commentId,
+        UserId: req.user.id,
+      },
+    });
+
+    res.status(200).send("댓글 삭제에 성공했습니다");
   } catch (err) {
     next(err);
   }
