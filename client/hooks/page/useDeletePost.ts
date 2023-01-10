@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 const useDeletePost = (post?: PostType) => {
   const router = useRouter();
   const queryClient = useQueryClient();
-  const { mutate, isSuccess } = useMutation(deletePost, {
+  const { mutate } = useMutation(deletePost, {
     onSuccess: () => {
       alert('게시글을 삭제했습니다 ');
       queryClient.invalidateQueries('posts');

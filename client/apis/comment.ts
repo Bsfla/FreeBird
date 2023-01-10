@@ -17,3 +17,18 @@ export const createComment = (body: CommentFormType) => {
     data: { content },
   });
 };
+
+export const editComment = (body: CommentFormType) => {
+  const { postId: commentId, content } = body;
+
+  return api.patch({
+    url: `/comment/${commentId}`,
+    data: { content },
+  });
+};
+
+export const deleteComment = (commentId: number) => {
+  return api.delete({
+    url: `/comment/${commentId}`,
+  });
+};
