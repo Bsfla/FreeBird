@@ -78,7 +78,7 @@ router.patch("/:commentId", async (req, res, next) => {
 
 router.delete("/:commentId", async (req, res, next) => {
   try {
-    await Comment.delete({
+    await Comment.destroy({
       where: {
         id: req.params.commentId,
         UserId: req.user.id,
