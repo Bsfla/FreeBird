@@ -26,15 +26,6 @@ router.get("/", async (req, res, next) => {
           attributes: ["src"],
         },
         {
-          model: Comment,
-          include: [
-            {
-              model: User, // 댓글 작성자
-              attributes: ["id", "nickname"],
-            },
-          ],
-        },
-        {
           model: Hashtag,
           attributes: ["name"],
         },
@@ -43,11 +34,7 @@ router.get("/", async (req, res, next) => {
           as: "Likers",
           attributes: ["id"],
         },
-        {
-          model: User,
-          as: "ShareUser",
-          attributes: ["id"],
-        },
+
         {
           model: Post,
           as: "Retweet",

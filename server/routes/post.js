@@ -261,8 +261,6 @@ router.post("/:postId/Retweet", isLoggedIn, async (req, res, next) => {
       content: "retweet",
     });
 
-    await post.addShareUser(req.user.id);
-
     return res.status(200).send("게시글을 공유했습니다");
   } catch (err) {
     next(err);

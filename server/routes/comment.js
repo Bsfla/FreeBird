@@ -91,4 +91,29 @@ router.delete("/:commentId", async (req, res, next) => {
   }
 });
 
+router.post("/:commentId/reply", async (req, res, next) => {
+  try {
+    const comment = Comment.findOne({
+      where: {
+        id: req.params.commentId,
+      },
+    });
+
+    if (!comment) return res.status(403).send("존재하지 않는 댓글입니다");
+
+    const replyComment = await Comment.create({
+      content: req.body.content,
+      isReply: true,
+      UserId: req.user.id,
+      PostId: req.params.postId,
+    });
+
+    await comment.addReply(replyComment);
+
+    res.status(200).send("댓글 생성에 성공했습니다");
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;

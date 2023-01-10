@@ -6,6 +6,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
+      isReply: {
+        type: DataTypes.BOOLEAN,
+        allowNull: true,
+      },
     },
     {
       charset: "utf8mb4",
@@ -15,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   Comment.associate = (db) => {
     db.Comment.belongsTo(db.User);
     db.Comment.belongsTo(db.Post);
+    db.Comment.hasMany(db.Comment, { as: "Reply" });
   };
   return Comment;
 };
