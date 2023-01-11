@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
-import { WriteInfo, CommentEditForm } from '@components/index';
-import { Wrapper, CommentHead, CommentEdit } from './style';
+import {
+  WriteInfo,
+  CommentEditForm,
+  CommentReplyForm,
+  CommentList,
+} from '@components/index';
+import { Wrapper, CommentHead, CommentEdit, ReplyWrapper } from './style';
 import { CommentType } from '@lib/types';
 import useDeleteComment from '@hooks/page/useDeleteComment';
 
@@ -11,7 +16,13 @@ interface Props {
 const CommentItem = ({ comment }: Props) => {
   const [isEdit, setIsEdit] = useState<boolean>(false);
   const { handleDeleteComment } = useDeleteComment(comment.id);
-  const { content, createdAt, User: writer } = comment;
+  const {
+    content,
+    createdAt,
+    User: writer,
+    Reply: replyComments,
+    isReply,
+  } = comment;
 
   const handleToggleEditMode = () => {
     setIsEdit(!isEdit);
@@ -34,6 +45,10 @@ const CommentItem = ({ comment }: Props) => {
       ) : (
         <span>{content}</span>
       )}
+      <ReplyWrapper>
+        {replyComments && <CommentList comments={replyComments} />}
+        {!isReply && <CommentReplyForm parentComment={comment} />}
+      </ReplyWrapper>
     </Wrapper>
   );
 };

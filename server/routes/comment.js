@@ -18,6 +18,7 @@ router.post("/:postId", async (req, res, next) => {
       content: req.body.content,
       UserId: req.user.id,
       PostId: req.params.postId,
+      isReply: false,
     });
 
     res.status(201).send("댓글을 생성했습니다");
@@ -40,12 +41,23 @@ router.get("/:postId", async (req, res, next) => {
       where: {
         PostId: req.params.postId,
       },
-      attributes: ["id", "content", "createdAt"],
+      attributes: ["id", "content", "createdAt", "isReply"],
       order: [["createdAt", "DESC"]],
       include: [
         {
           model: User,
           attributes: ["id", "nickname"],
+        },
+        {
+          model: Comment,
+          as: "Reply",
+          attributes: ["id", "content", "createdAt", "isReply"],
+          include: [
+            {
+              model: User,
+              attributes: ["id", "nickname"],
+            },
+          ],
         },
       ],
     });
@@ -93,7 +105,7 @@ router.delete("/:commentId", async (req, res, next) => {
 
 router.post("/:commentId/reply", async (req, res, next) => {
   try {
-    const comment = Comment.findOne({
+    const comment = await Comment.findOne({
       where: {
         id: req.params.commentId,
       },
@@ -103,15 +115,16 @@ router.post("/:commentId/reply", async (req, res, next) => {
 
     const replyComment = await Comment.create({
       content: req.body.content,
-      isReply: true,
       UserId: req.user.id,
       PostId: req.params.postId,
+      isReply: true,
     });
 
     await comment.addReply(replyComment);
 
     res.status(200).send("댓글 생성에 성공했습니다");
   } catch (err) {
+    console.log(err);
     next(err);
   }
 });

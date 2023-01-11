@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import theme from 'styles/theme';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -21,4 +22,15 @@ export const CommentEdit = styled.div`
   display: flex;
   gap: 10px;
   font-size: 11px;
+`;
+
+export const ReplyWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fafafa;
+  margin-top: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
 `;

@@ -16,7 +16,7 @@ const useInfiniteScroll = <T extends FetchingDataType[]>(
     getNextPageParam: (lastPage) => {
       return lastPage?.[lastPage.length - 1]?.id;
     },
-    staleTime: Infinity,
+    staleTime: 3000,
     refetchOnWindowFocus: false,
   });
 

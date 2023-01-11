@@ -14,7 +14,11 @@ const CommentForm = ({
 }: Props) => {
   return (
     <Wrraper>
-      <Form onChange={handleChangeComment} value={form} />
+      <Form
+        onChange={handleChangeComment}
+        value={form}
+        placeholder="댓글을 작성하세요"
+      />
       <div className="button_wrapper">
         <Button onClick={handleSubmitComment}>댓글 작성</Button>
       </div>

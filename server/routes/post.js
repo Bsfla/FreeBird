@@ -103,11 +103,6 @@ router.get("/:postId", async (req, res, next) => {
           attributes: ["id"],
         },
         {
-          model: User,
-          as: "ShareUser",
-          attributes: ["id"],
-        },
-        {
           model: Post,
           as: "Retweet",
           include: [

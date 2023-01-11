@@ -34,7 +34,6 @@ router.get("/", async (req, res, next) => {
           as: "Likers",
           attributes: ["id"],
         },
-
         {
           model: Post,
           as: "Retweet",
