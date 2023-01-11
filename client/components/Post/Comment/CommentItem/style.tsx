@@ -11,6 +11,21 @@ export const Wrapper = styled.div`
   span {
     margin-top: 15px;
   }
+
+  .reply_comment {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
+    span {
+      display: flex;
+      align-items: center;
+    }
+
+    svg {
+      margin-right: 5px;
+    }
+  }
 `;
 
 export const CommentHead = styled.div`

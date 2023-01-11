@@ -8,6 +8,7 @@ import {
 import { Wrapper, CommentHead, CommentEdit, ReplyWrapper } from './style';
 import { CommentType } from '@lib/types';
 import useDeleteComment from '@hooks/page/useDeleteComment';
+import { AiOutlinePlusSquare, AiOutlineMinusSquare } from 'react-icons/ai';
 
 interface Props {
   comment: CommentType;
@@ -15,6 +16,7 @@ interface Props {
 
 const CommentItem = ({ comment }: Props) => {
   const [isEdit, setIsEdit] = useState<boolean>(false);
+  const [isOpenReplyComment, setIsOpenReplyComment] = useState<boolean>(false);
   const { handleDeleteComment } = useDeleteComment(comment.id);
   const {
     content,
@@ -26,6 +28,10 @@ const CommentItem = ({ comment }: Props) => {
 
   const handleToggleEditMode = () => {
     setIsEdit(!isEdit);
+  };
+
+  const handleOpenReplyComment = () => {
+    setIsOpenReplyComment(!isOpenReplyComment);
   };
 
   return (
@@ -45,10 +51,29 @@ const CommentItem = ({ comment }: Props) => {
       ) : (
         <span>{content}</span>
       )}
-      <ReplyWrapper>
-        {replyComments && <CommentList comments={replyComments} />}
-        {!isReply && <CommentReplyForm parentComment={comment} />}
-      </ReplyWrapper>
+      {!isReply && (
+        <div className="reply_comment" onClick={handleOpenReplyComment}>
+          {isOpenReplyComment ? (
+            <span>
+              <AiOutlineMinusSquare />
+              숨기기
+            </span>
+          ) : (
+            <span>
+              <AiOutlinePlusSquare />
+              {replyComments?.length
+                ? `${replyComments.length}개의 답글`
+                : '답글 달기'}
+            </span>
+          )}
+        </div>
+      )}
+      {isOpenReplyComment && (
+        <ReplyWrapper>
+          {replyComments && <CommentList comments={replyComments} />}
+          {!isReply && <CommentReplyForm parentComment={comment} />}
+        </ReplyWrapper>
+      )}
     </Wrapper>
   );
 };
