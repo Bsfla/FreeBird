@@ -16,24 +16,8 @@ router.get("/", isLoggedIn, async (req, res, next) => {
           id: req.user.id,
         },
         attributes: {
-          exclude: ["password"],
+          exclude: ["password", "createdAt", "updatedAt"],
         },
-        include: [
-          {
-            model: Post,
-            attributes: ["id"],
-          },
-          {
-            model: User,
-            as: "Followings",
-            attributes: ["id"],
-          },
-          {
-            model: User,
-            as: "Followers",
-            attributes: ["id"],
-          },
-        ],
       });
       res.status(200).json(user);
     } else res.status(200).json(null);
@@ -63,19 +47,6 @@ router.post("/login", isNotLoggedIn, (req, res, next) => {
         attributes: {
           exclude: ["password"],
         },
-        include: [
-          {
-            model: db.Post,
-          },
-          {
-            model: db.User,
-            as: "Followings",
-          },
-          {
-            model: db.User,
-            as: "Followers",
-          },
-        ],
       });
       return res.status(200).json(fullUserWithoutPassword);
     });

@@ -21,7 +21,8 @@
       "@lib/*": ["./lib/*"],
       "@consts/*": ["./consts/*"],
       "@assets/*": ["./assets/*"],
-      "@hooks/*": ["hooks/*"]
+      "@hooks/*": ["hooks/*"],
+      "@recoil/*": ["recoil/*"]
     },
     "incremental": true
   },

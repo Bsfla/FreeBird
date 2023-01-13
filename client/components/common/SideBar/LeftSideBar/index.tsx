@@ -16,9 +16,11 @@ import { MdPersonAddAlt1 } from 'react-icons/md';
 import { logout } from '@apis/user';
 import { useRouter } from 'next/router';
 import { LOGIN_PAGE } from '@consts/route';
+import { useSetUserAtomState } from '@hooks/page';
 
 const LeftSideBar = () => {
   const router = useRouter();
+  const { user } = useSetUserAtomState();
 
   const handleLogout = async () => {
     try {
@@ -37,7 +39,7 @@ const LeftSideBar = () => {
           <img src={profile} alt="프로필 이미지" />
         </Image>
         <ProfileWrapper>
-          <span className="nickname">랜턴랜턴 님</span>
+          <span className="nickname">{user.nickname}</span>
           <Button onClick={handleLogout}>로그아웃</Button>
         </ProfileWrapper>
       </MainProfile>

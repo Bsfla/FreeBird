@@ -7,6 +7,8 @@ import { queryKeys, LOGIN_PAGE } from '@consts/index';
 import type { GetServerSideProps, NextPage } from 'next';
 import { getPosts } from '@apis/post';
 import axios from 'axios';
+import { loadMyInfo } from '@apis/user';
+import { customAxios } from '@apis/base';
 
 const Main: NextPage = () => {
   return (
@@ -19,16 +21,17 @@ const Main: NextPage = () => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const cookie = context.req ? context.req.headers.cookie : '';
-  axios.defaults.headers.Cookie = '';
+  customAxios.defaults.headers.Cookie = '';
   const queryClient = new QueryClient();
 
   if (context.req && cookie) {
-    axios.defaults.headers.Cookie = cookie;
+    customAxios.defaults.headers.Cookie = cookie;
 
-    await queryClient.prefetchInfiniteQuery(queryKeys.posts, () => getPosts());
+    await queryClient.prefetchQuery(queryKeys.user, () => loadMyInfo());
   } else {
     return { redirect: { destination: LOGIN_PAGE, permanent: false } };
   }
+  await queryClient.prefetchInfiniteQuery(queryKeys.posts, () => getPosts());
 
   return {
     props: {

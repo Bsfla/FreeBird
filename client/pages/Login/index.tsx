@@ -12,6 +12,7 @@ const Login: NextPage = () => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const cookie = context.req ? context.req.headers.cookie : '';
+  console.log(cookie);
 
   return {
     props: {},

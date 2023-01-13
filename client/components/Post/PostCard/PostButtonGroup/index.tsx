@@ -3,17 +3,12 @@ import {
   AiOutlineRetweet,
   AiTwotoneHeart,
   AiOutlineHeart,
-  AiOutlineComment,
 } from 'react-icons/ai';
 import { SlOptions } from 'react-icons/sl';
-import {
-  ButtonGroup,
-  RetwwetButton,
-  LikeButton,
-  CommentButton,
-  Option,
-} from './style';
+import { ButtonGroup, RetwwetButton, LikeButton, Option } from './style';
 import { PostType } from '@lib/types';
+import { useRecoilValue } from 'recoil';
+import { userAtomState } from '@recoil/user';
 import { usePostLike, useSharePost } from '@hooks/index';
 import Tooltip from '../Tooltip/index.';
 import useDeletePost from '@hooks/page/useDeletePost';
@@ -29,6 +24,7 @@ const PostButtonGroup = ({ post, handleToggleEdit }: Props) => {
   const { isLike, handleAddLike, handleDeleteLike } = usePostLike(post);
   const { handleSharePost } = useSharePost(post);
   const { handleDeletePost } = useDeletePost(post);
+  const user = useRecoilValue(userAtomState);
   const [isOpenOption, setIsOpenOption] = useState<boolean>(false);
 
   const handleToggleOption = (e: React.MouseEvent<Element, MouseEvent>) => {
@@ -55,16 +51,18 @@ const PostButtonGroup = ({ post, handleToggleEdit }: Props) => {
         )}
         <span>{post.Likers.length}</span>
       </LikeButton>
-      <Option>
-        <SlOptions size={22} onClick={handleToggleOption} />
-        {isOpenOption && (
-          <Tooltip
-            setIsOpenOption={setIsOpenOption}
-            handleToggleEdit={handleToggleEdit}
-            handleDeletePost={handleDeletePost}
-          />
-        )}
-      </Option>
+      {post.User.id === user.id && (
+        <Option>
+          <SlOptions size={22} onClick={handleToggleOption} />
+          {isOpenOption && (
+            <Tooltip
+              setIsOpenOption={setIsOpenOption}
+              handleToggleEdit={handleToggleEdit}
+              handleDeletePost={handleDeletePost}
+            />
+          )}
+        </Option>
+      )}
     </ButtonGroup>
   );
 };

@@ -8,6 +8,8 @@ import {
 import { Wrapper, CommentHead, CommentEdit, ReplyWrapper } from './style';
 import { CommentType } from '@lib/types';
 import useDeleteComment from '@hooks/page/useDeleteComment';
+import { useRecoilValue } from 'recoil';
+import { userAtomState } from '@recoil/user';
 import { AiOutlinePlusSquare, AiOutlineMinusSquare } from 'react-icons/ai';
 
 interface Props {
@@ -25,6 +27,7 @@ const CommentItem = ({ comment }: Props) => {
     Reply: replyComments,
     isReply,
   } = comment;
+  const user = useRecoilValue(userAtomState);
 
   const handleToggleEditMode = () => {
     setIsEdit(!isEdit);
@@ -38,10 +41,12 @@ const CommentItem = ({ comment }: Props) => {
     <Wrapper>
       <CommentHead>
         <WriteInfo nickName={writer.nickname} date={createdAt} />
-        <CommentEdit>
-          <span onClick={handleToggleEditMode}>수정</span>
-          <span onClick={handleDeleteComment}>삭제</span>
-        </CommentEdit>
+        {writer.id === user.id && (
+          <CommentEdit>
+            <span onClick={handleToggleEditMode}>수정</span>
+            <span onClick={handleDeleteComment}>삭제</span>
+          </CommentEdit>
+        )}
       </CommentHead>
       {isEdit ? (
         <CommentEditForm

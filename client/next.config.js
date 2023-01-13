@@ -22,6 +22,7 @@ module.exports = withImages({
         '@consts': path.resolve(__dirname, './consts'),
         '@lib': path.resolve(__dirname, './lib'),
         '@hooks': path.resolve(__dirname, './hooks'),
+        '@recoil': path.resolve(__dirname, './recoil'),
       },
       ...config.resolve,
     };
