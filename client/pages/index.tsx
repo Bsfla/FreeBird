@@ -6,7 +6,6 @@ import { dehydrate, QueryClient } from 'react-query';
 import { queryKeys, LOGIN_PAGE } from '@consts/index';
 import type { GetServerSideProps, NextPage } from 'next';
 import { getPosts } from '@apis/post';
-import axios from 'axios';
 import { loadMyInfo } from '@apis/user';
 import { customAxios } from '@apis/base';
 

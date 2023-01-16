@@ -1,6 +1,5 @@
 import api from '@apis/base';
 import { CommentFormType, CommentType } from '@lib/types';
-import { AiFillPushpin } from 'react-icons/ai';
 
 export const getComments = async (postId: number): Promise<CommentType[]> => {
   const response = await api.get({

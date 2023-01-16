@@ -15,8 +15,9 @@ import { FaUserFriends } from 'react-icons/fa';
 import { MdPersonAddAlt1 } from 'react-icons/md';
 import { logout } from '@apis/user';
 import { useRouter } from 'next/router';
-import { LOGIN_PAGE } from '@consts/route';
+import { LOGIN_PAGE, PROFILE_PAGE } from '@consts/route';
 import { useSetUserAtomState } from '@hooks/page';
+import Link from 'next/link';
 
 const LeftSideBar = () => {
   const router = useRouter();
@@ -44,10 +45,12 @@ const LeftSideBar = () => {
         </ProfileWrapper>
       </MainProfile>
       <PageMenuList>
-        <PageMenu>
-          <ImProfile size={20} />
-          <span>프로필 정보</span>
-        </PageMenu>
+        <Link href={`${PROFILE_PAGE}/${user.id}`}>
+          <PageMenu>
+            <ImProfile size={20} />
+            <span>프로필 정보</span>
+          </PageMenu>
+        </Link>
         <PageMenu>
           <FaUserFriends size={20} />
           친구 목록
