@@ -7,4 +7,5 @@ export interface FetchingDataType {
 export interface ModalProps {
   isOpen: boolean;
   children: ReactNode | string;
+  handleCloseModal: () => void;
 }

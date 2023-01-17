@@ -28,20 +28,14 @@ export const StyleModalFrame = styled.div<{ isOpen: boolean }>`
   flex-direction: column;
   z-index: 1000;
   width: 20rem;
-  height: 15rem;
   position: absolute;
-  top: 10rem;
   animation: ${popUpAnimation} 0.2s linear;
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 0.625rem;
 `;
 export const StyleModalHeader = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   color: ${({ theme }) => theme.colors.white};
-  background-color: blue;
   border-radius: 0.625rem 0.625rem 0rem 0rem;
 `;
 export const StyleModalBody = styled.div`
@@ -51,4 +45,5 @@ export const StyleModalBody = styled.div`
 export const StyleModalFooter = styled.div`
   display: flex;
   justify-content: center;
+  height: 100%;
 `;

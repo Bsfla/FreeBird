@@ -6,3 +6,4 @@ export { default as Button } from './Button';
 export { default as ProfileImage } from './ProfileImage';
 export { default as PostList } from './PostList';
 export { default as Modal } from './Modal';
+export { default as Tooltip } from './Tooltip';

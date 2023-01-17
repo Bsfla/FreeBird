@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, ReactNode } from 'react';
+import React from 'react';
 import {
   StyleModalBody,
   StyleModalFooter,
@@ -9,10 +9,10 @@ import {
 
 import { ModalProps } from '@lib/types';
 
-const ModalFrame = ({ isOpen, children }: ModalProps) => {
+const ModalFrame = ({ isOpen, children, handleCloseModal }: ModalProps) => {
   return (
     <>
-      <StyleOverlay isOpen={isOpen} />
+      <StyleOverlay isOpen={isOpen} onClick={handleCloseModal} />
       <StyleModalFrame isOpen={isOpen}>{children}</StyleModalFrame>
     </>
   );
