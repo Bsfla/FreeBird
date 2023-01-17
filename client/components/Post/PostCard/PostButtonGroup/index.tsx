@@ -37,7 +37,7 @@ const PostButtonGroup = ({ post, handleToggleEdit }: Props) => {
     <ButtonGroup>
       <RetwwetButton>
         <AiOutlineRetweet size={22} onClick={handleSharePost} />
-        <span>12</span>
+        <span>{post.Retweets.length}</span>
       </RetwwetButton>
       <LikeButton>
         {isLike ? (

@@ -1,5 +1,3 @@
-
-
 export interface PostFormResponseType {
   success: boolean;
   message: string;
@@ -11,6 +9,7 @@ export interface PostType {
   Hashtags: HashTagType[];
   Likers: { id: number }[];
   Retweet?: PostType;
+  Retweets: PostType[];
   RetweetId: number;
   User: {
     id: number;

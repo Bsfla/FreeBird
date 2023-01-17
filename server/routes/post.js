@@ -250,11 +250,13 @@ router.post("/:postId/Retweet", isLoggedIn, async (req, res, next) => {
 
     if (exPost) return res.status(403).send("이미 공유했습니다");
 
-    await Post.create({
+    const retweet = await Post.create({
       UserId: req.user.id,
       RetweetId: retweetTargetId,
       content: "retweet",
     });
+
+    await post.addRetweet(retweet);
 
     return res.status(200).send("게시글을 공유했습니다");
   } catch (err) {
