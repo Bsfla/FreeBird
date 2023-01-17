@@ -15,6 +15,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING(100),
         allowNull: false,
       },
+      intro: {
+        type: DataTypes.STRING(30),
+        allowNull: true,
+      },
     },
     {
       charset: "utf8",
@@ -24,6 +28,7 @@ module.exports = (sequelize, DataTypes) => {
   User.associate = (db) => {
     db.User.hasMany(db.Post);
     db.User.hasMany(db.Comment);
+    db.User.hasOne(db.Image, { as: "ProfileImage" });
     db.User.belongsToMany(db.Post, { through: "Like", as: "Liked" });
     db.User.belongsToMany(db.User, {
       through: "Follow",

@@ -11,14 +11,25 @@ import {
 } from './style';
 import { useRecoilState } from 'recoil';
 import { modalAtomState } from '@recoil/modal';
+import { UserInfoType } from '@lib/types';
+import { useInput } from '@hooks/index';
 
-const ProfileEditModal = () => {
+interface Props {
+  profile: UserInfoType;
+}
+
+const ProfileEditModal = ({ profile }: Props) => {
   const [isModalOpen, setIsModalOpen] = useRecoilState(modalAtomState);
+  const { form, handleChangeInput } = useInput({
+    nickname: profile.nickname,
+    intro: '',
+  });
 
   const handleCloseModal = () => {
-    console.log(1);
     setIsModalOpen(false);
   };
+
+  console.log(form.nickname);
 
   return (
     <Modal.Frame isOpen={isModalOpen} handleCloseModal={handleCloseModal}>
@@ -35,7 +46,7 @@ const ProfileEditModal = () => {
           </ImageWrapper>
           <ModalEditContent>
             <label>닉네임</label>
-            <Input />
+            <Input value={form.nickname} onChange={handleChangeInput} />
             <label>1줄 자기소개</label>
             <Input placeholder="자기 소개를 입력해주세요" />
           </ModalEditContent>

@@ -8,7 +8,6 @@ interface Props {
 }
 
 const PostList = ({ posts }: Props) => {
-  console.log(posts);
   return (
     <Wrapper>
       {posts.map((post) => (

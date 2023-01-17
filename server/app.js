@@ -10,6 +10,7 @@ const post = require("./routes/post");
 const hashtags = require("./routes/hashtags");
 const posts = require("./routes/posts");
 const comment = require("./routes/comment");
+const profile = require("./routes/profile");
 const passport = require("passport");
 const morgan = require("morgan");
 const path = require("path");
@@ -19,9 +20,7 @@ const app = express();
 dotenv.config();
 
 db.sequelize
-  .sync({
-    force: true,
-  })
+  .sync()
   .then(() => {
     console.log("db연결 성공");
   })
@@ -55,6 +54,7 @@ app.use("/post", post);
 app.use("/posts", posts);
 app.use("/hashtags", hashtags);
 app.use("/comment", comment);
+app.use("/profile", profile);
 
 app.listen(3065, () => {
   console.log("서버 실행 중!");

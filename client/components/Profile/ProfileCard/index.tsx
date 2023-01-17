@@ -3,8 +3,13 @@ import { ProfileImage } from '@components/index';
 import { Wrapper, Button } from './style';
 import { useSetRecoilState } from 'recoil';
 import { modalAtomState } from '@recoil/modal';
+import { UserInfoType } from '@lib/types';
 
-const ProfileCard = () => {
+interface Props {
+  profile: UserInfoType;
+}
+
+const ProfileCard = ({ profile }: Props) => {
   const setModalState = useSetRecoilState(modalAtomState);
 
   const handleOpenModal = () => {
@@ -15,7 +20,7 @@ const ProfileCard = () => {
     <Wrapper>
       <ProfileImage />
       <div>
-        <span className="nickname">랜턴랜턴</span>님
+        <span className="nickname">{profile.nickname}</span>님
       </div>
       <span className="intro">소개글이 비어있습니다</span>
       <div className="follow">
