@@ -33,6 +33,10 @@ export const ImageWrapper = styled.div`
     width: 8rem;
     height: 8rem;
   }
+
+  input {
+    display: none;
+  }
 `;
 
 export const ModalEditContent = styled.div`

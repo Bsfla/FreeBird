@@ -6,13 +6,14 @@ import { queryKeys } from '@consts/queryKeys';
 import { customAxios } from '@apis/base';
 import { getProfile } from '@apis/profile';
 import { useRouter } from 'next/router';
-import { UserInfoType } from '@lib/types';
 
 const Profile: NextPage = () => {
   const router = useRouter();
   const { data: profile } = useQuery(queryKeys.profile, () =>
     getProfile(Number(router.query.id))
   );
+
+  console.log(profile);
 
   return (
     <MainLayout>
