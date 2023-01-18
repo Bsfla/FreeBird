@@ -6,7 +6,7 @@ import WriteForm from './WriteForm';
 import { Wrraper } from './style';
 
 const PostForm = () => {
-  const [text, setText] = useState<string>('');
+  const [text, setText] = useState('');
   const [imgPaths, setImagePaths] = useState<string[]>([]);
   const { mutate } = useCreatePost();
 

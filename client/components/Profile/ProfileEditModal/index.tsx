@@ -29,7 +29,6 @@ const ProfileEditModal = ({ profile }: Props) => {
     setIsModalOpen(false);
   };
 
-  console.log(form.nickname);
 
   return (
     <Modal.Frame isOpen={isModalOpen} handleCloseModal={handleCloseModal}>

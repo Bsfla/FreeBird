@@ -25,7 +25,7 @@ const PostButtonGroup = ({ post, handleToggleEdit }: Props) => {
   const { handleSharePost } = useSharePost(post);
   const { handleDeletePost } = useDeletePost(post);
   const user = useRecoilValue(userAtomState);
-  const [isOpenOption, setIsOpenOption] = useState<boolean>(false);
+  const [isOpenOption, setIsOpenOption] = useState(false);
 
   const handleToggleOption = (e: React.MouseEvent<Element, MouseEvent>) => {
     e.stopPropagation();
