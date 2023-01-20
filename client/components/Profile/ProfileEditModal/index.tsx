@@ -11,10 +11,9 @@ import {
 } from './style';
 import { useRecoilState } from 'recoil';
 import { modalAtomState } from '@recoil/modal';
-import { UserInfoType, UserProfileEditType } from '@lib/types';
-import { useInput } from '@hooks/index';
+import { ProfileImageType, UserInfoType } from '@lib/types';
+import { useInput, useEditProfile } from '@hooks/index';
 import { upLoadImages } from '@apis/post';
-import { editProfile } from '@apis/profile';
 
 interface Props {
   profile: UserInfoType;
@@ -22,14 +21,22 @@ interface Props {
 
 const ProfileEditModal = ({ profile }: Props) => {
   const [isModalOpen, setIsModalOpen] = useRecoilState(modalAtomState);
-  const { form, handleChangeInput } = useInput({
+  const { form, setForm, handleChangeInput } = useInput({
     nickname: profile.nickname,
-    intro: '',
+    intro: profile.intro,
   });
-  const [imgPath, setImagePath] = useState('');
+  const { mutate } = useEditProfile();
+  const [imgPath, setImagePath] = useState<ProfileImageType>(
+    profile.ProfileImage
+  );
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+    setImagePath(profile.ProfileImage);
+    setForm({
+      nickname: profile.nickname,
+      intro: profile.intro,
+    });
   };
 
   const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,26 +49,30 @@ const ProfileEditModal = ({ profile }: Props) => {
     try {
       const { data } = await upLoadImages(imageFormData);
 
-      setImagePath(data[0]);
+      setImagePath({ src: data[0] });
     } catch (err: any) {
       console.log(err);
     }
   };
 
+  const handleremoveImage = () => {
+    setImagePath(null);
+  };
+
   const handleSubmitProfile = async () => {
+    if (form.nickname.length === 0) {
+      alert('닉네임을 적어주세요');
+      return;
+    }
     const formData = new FormData();
     const { nickname, intro } = form;
 
     formData.append('nickname', nickname);
     formData.append('intro', intro);
-    formData.append('image', imgPath);
 
-    try {
-      const response = await editProfile({ formData, userId: profile.id });
-      console.log(response);
-    } catch (err) {
-      console.log(err);
-    }
+    if (imgPath) formData.append('image', imgPath.src);
+
+    mutate({ formData, userId: profile.id });
   };
 
   return (
@@ -75,7 +86,7 @@ const ProfileEditModal = ({ profile }: Props) => {
         <ModalBodyLayout>
           <ImageWrapper>
             <label>
-              <ProfileImage />
+              <ProfileImage imgPath={imgPath} />
               <input
                 type="file"
                 name="image"
@@ -84,7 +95,9 @@ const ProfileEditModal = ({ profile }: Props) => {
                 multiple
               />
             </label>
-            <ImageEditButton>이미지 삭제</ImageEditButton>
+            <ImageEditButton onClick={handleremoveImage}>
+              이미지 삭제
+            </ImageEditButton>
           </ImageWrapper>
           <ModalEditContent>
             <label>닉네임</label>

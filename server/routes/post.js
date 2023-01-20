@@ -116,6 +116,20 @@ router.get("/:postId", async (req, res, next) => {
             },
           ],
         },
+        {
+          model: Post,
+          as: "Retweets",
+          include: [
+            {
+              model: User,
+              attributes: ["id", "nickname"],
+            },
+            {
+              model: Image,
+              attributes: ["src"],
+            },
+          ],
+        },
       ],
     });
 

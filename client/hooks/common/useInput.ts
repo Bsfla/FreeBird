@@ -12,7 +12,7 @@ const useInput = <T extends {}>(initialValue: T) => {
     });
   };
 
-  return { form, handleChangeInput };
+  return { form, handleChangeInput, setForm };
 };
 
 export default useInput;

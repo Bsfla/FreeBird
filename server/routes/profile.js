@@ -1,8 +1,32 @@
 const express = require("express");
 const { Image, User, Post } = require("../models");
 const { isLoggedIn } = require("./middleware");
+const multer = require("multer");
+const path = require("path");
+const fs = require("fs");
 
 const router = express.Router();
+
+try {
+  fs.accessSync("uploads");
+} catch (error) {
+  console.log("uploads 폴더가 없으므로 생성합니다.");
+  fs.mkdirSync("uploads");
+}
+
+const upload = multer({
+  storage: multer.diskStorage({
+    destination(req, file, done) {
+      done(null, "uploads");
+    },
+    filename(req, file, done) {
+      const ext = path.extname(file.originalname); //확장자 추출
+      const basename = path.basename(file.originalname, ext); //제로초
+      done(null, basename + "_" + new Date().getTime() + ext); //제로초150252.Png
+    },
+    limits: { fileSize: 20 * 1824 * 1824 }, //20MB
+  }),
+});
 
 router.get("/:userId", isLoggedIn, async (req, res, next) => {
   try {
@@ -42,7 +66,7 @@ router.get("/:userId", isLoggedIn, async (req, res, next) => {
   }
 });
 
-router.post(":/userId", isLoggedIn, async (req, res, next) => {
+router.patch("/:userId", upload.none(), isLoggedIn, async (req, res, next) => {
   try {
     const user = await User.findOne({
       where: {
@@ -50,7 +74,10 @@ router.post(":/userId", isLoggedIn, async (req, res, next) => {
       },
     });
 
-    if (!user) res.status(403).send("유저가 존재하지 않습니다");
+    if (!user) return res.status(403).send("유저가 존재하지 않습니다");
+    else if (req.params.userId != req.user.id) {
+      return res.status(201).send("다른 사람의 정보를 수정할 수 없습니다");
+    }
 
     await User.update(
       {
@@ -60,14 +87,13 @@ router.post(":/userId", isLoggedIn, async (req, res, next) => {
       {
         where: {
           id: req.params.userId,
-          UserId: req.user.id,
         },
       }
     );
     if (req.body.image) {
       const image = await Image.create({ src: req.body.image });
-      await user.setImage(image);
-    } else await user.setImage({});
+      await user.setProfileImage(image);
+    } else await user.setProfileImage(null);
 
     res.status(200).send("프로필 수정에 성공했습니다");
   } catch (err) {

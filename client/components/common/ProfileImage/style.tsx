@@ -10,9 +10,6 @@ export const Image = styled.div`
   border-radius: 5px;
 
   img {
-    width: 80%;
     height: 100%;
   }
 `;
-
-

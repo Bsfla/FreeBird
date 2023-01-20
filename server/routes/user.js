@@ -81,6 +81,7 @@ router.post("/", isNotLoggedIn, async (req, res, next) => {
       email: req.body.email,
       nickname: req.body.nickname,
       password: hashPassword,
+      intro: "",
     });
     res.status(201).send("ok");
   } catch (error) {

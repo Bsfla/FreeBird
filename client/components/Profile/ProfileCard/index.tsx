@@ -18,11 +18,13 @@ const ProfileCard = ({ profile }: Props) => {
 
   return (
     <Wrapper>
-      <ProfileImage />
+      <ProfileImage imgPath={profile.ProfileImage} />
       <div>
         <span className="nickname">{profile.nickname}</span>님
       </div>
-      <span className="intro">소개글이 비어있습니다</span>
+      <span className="intro">
+        {profile.intro.length ? profile.intro : '소개글이 비어있습니다'}
+      </span>
       <div className="follow">
         <span>팔로워 20 |</span>
         <span> 팔로잉 20</span>

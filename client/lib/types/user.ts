@@ -4,12 +4,14 @@ export interface UserFormType {
   password: string;
   passwordconfirm: string;
 }
+export type ProfileImageType = { src: string } | null;
 
 export interface UserInfoType {
   id: number;
   nickname: string;
   email: string;
   intro: string;
+  ProfileImage: ProfileImageType;
 }
 
 export interface UserProfileEditType {
