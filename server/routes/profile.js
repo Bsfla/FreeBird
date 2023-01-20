@@ -43,19 +43,6 @@ router.get("/:userId", isLoggedIn, async (req, res, next) => {
           as: "ProfileImage",
           attributes: ["src"],
         },
-        {
-          model: Post,
-          include: [
-            {
-              model: User,
-              attributes: ["id", "nickname"],
-            },
-            {
-              model: Image,
-              attributes: ["src"],
-            },
-          ],
-        },
       ],
     });
 
@@ -98,6 +85,75 @@ router.patch("/:userId", upload.none(), isLoggedIn, async (req, res, next) => {
     res.status(200).send("프로필 수정에 성공했습니다");
   } catch (err) {
     console.log(err);
+    next(err);
+  }
+});
+
+router.get("/posts/:userId", async (req, res, next) => {
+  try {
+    const where = {
+      UserId: req.params.userId,
+    };
+    const lastId = parseInt(req.query.lastId, 10);
+
+    if (lastId) {
+      where.id = { [Op.lt]: lastId };
+    }
+    const posts = await Post.findAll({
+      where,
+      limit: 10,
+      order: [["createdAt", "DESC"]],
+      include: [
+        {
+          model: User,
+          attributes: ["id", "nickname"],
+        },
+        {
+          model: Image,
+          attributes: ["src"],
+        },
+        {
+          model: Hashtag,
+          attributes: ["name"],
+        },
+        {
+          model: User,
+          as: "Likers",
+          attributes: ["id"],
+        },
+        {
+          model: Post,
+          as: "Retweet",
+          include: [
+            {
+              model: User,
+              attributes: ["id", "nickname"],
+            },
+            {
+              model: Image,
+              attributes: ["src"],
+            },
+          ],
+        },
+        {
+          model: Post,
+          as: "Retweets",
+          include: [
+            {
+              model: User,
+              attributes: ["id", "nickname"],
+            },
+            {
+              model: Image,
+              attributes: ["src"],
+            },
+          ],
+        },
+      ],
+    });
+    res.status(200).json(posts);
+  } catch (err) {
+    console.error(err);
     next(err);
   }
 });
