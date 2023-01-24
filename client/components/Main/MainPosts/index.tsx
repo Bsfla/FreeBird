@@ -1,6 +1,6 @@
 import React from 'react';
 import { getPosts } from '@apis/post';
-import { PostList } from '@components/common';
+import { PostList, PostEndBar } from '@components/index';
 import { PostType } from '@lib/types';
 import { useInfiniteScroll } from '@hooks/common';
 import { queryKeys } from '@consts/queryKeys';
@@ -10,11 +10,11 @@ const MainPosts = () => {
     queryKeys.posts,
     getPosts
   );
-
+  console.log(posts);
   return (
     <>
       {posts && <PostList posts={posts} />}
-      <div ref={ref} />
+      <PostEndBar endPost={ref} />
     </>
   );
 };

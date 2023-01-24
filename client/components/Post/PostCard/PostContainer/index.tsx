@@ -14,7 +14,11 @@ const PostContainer = ({ post }: Props) => {
 
     return (
       <Wrraper>
-        <WriteInfo nickName={user.nickname} date={post.createdAt} />
+        <WriteInfo
+          nickName={user.nickname}
+          date={post.createdAt}
+          imgPath={user.ProfileImage}
+        />
         <SharePostBlock>
           <PostContainer post={sharePost} />
         </SharePostBlock>
@@ -25,7 +29,11 @@ const PostContainer = ({ post }: Props) => {
   return (
     <Wrraper>
       <PostHeader>
-        <WriteInfo nickName={post.User.nickname} date={post.createdAt} />
+        <WriteInfo
+          nickName={post.User.nickname}
+          date={post.createdAt}
+          imgPath={post.User.ProfileImage}
+        />
       </PostHeader>
       <PostContent post={post} />
       <PostImage images={post.Images} />

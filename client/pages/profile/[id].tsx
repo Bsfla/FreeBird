@@ -1,5 +1,10 @@
 import React from 'react';
-import { MainLayout, ProfileCard, ProfileEditModal } from '@components/index';
+import {
+  MainLayout,
+  ProfileCard,
+  ProfileEditModal,
+  ProfilePosts,
+} from '@components/index';
 import { GetServerSideProps, NextPage } from 'next';
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { queryKeys } from '@consts/queryKeys';
@@ -13,12 +18,11 @@ const Profile: NextPage = () => {
     getProfile(Number(router.query.id))
   );
 
-  console.log(profile);
-
   return (
     <MainLayout>
       {profile && <ProfileCard profile={profile} />}
       {profile && <ProfileEditModal profile={profile} />}
+      {profile && <ProfilePosts profile={profile} />}
     </MainLayout>
   );
 };

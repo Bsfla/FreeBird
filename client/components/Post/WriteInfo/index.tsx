@@ -1,16 +1,19 @@
 import { ProfileImage } from '@components/common';
+import { ProfileImageType } from '@lib/types';
 import { createDate } from '@lib/utils';
 import React from 'react';
 import { PostHead, PostInfo } from './style';
 
 interface Props {
-  [key: string]: string;
+  nickName: string;
+  date: string;
+  imgPath: ProfileImageType;
 }
 
-const WriteInfo = ({ nickName, date }: Props) => {
+const WriteInfo = ({ nickName, date, imgPath }: Props) => {
   return (
     <PostHead>
-      <ProfileImage />
+      <ProfileImage imgPath={imgPath} />
       <PostInfo>
         <span className="user_name">{nickName}</span>
         <span className="date">{createDate(date)}</span>

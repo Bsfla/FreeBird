@@ -1,5 +1,11 @@
 import api from '@apis/base';
-import { UserInfoType, UserProfileEditType } from '@lib/types';
+import {
+  InfiniteFetchingType,
+  PostType,
+  ProfileImageType,
+  UserInfoType,
+  UserProfileEditType,
+} from '@lib/types';
 
 export const getProfile = async (userId: number): Promise<UserInfoType> => {
   const response = await api.get({
@@ -15,4 +21,19 @@ export const editProfile = (body: UserProfileEditType) => {
     url: `/profile/${userId}`,
     data: formData,
   });
+};
+
+export const getProfilePosts = async (
+  body: InfiniteFetchingType
+): Promise<PostType[]> => {
+  const { lastId, optionId } = body;
+
+  const response = await api.get({
+    url: `/profile/posts/${optionId}`,
+    params: {
+      lastId,
+    },
+  });
+
+  return response.data;
 };

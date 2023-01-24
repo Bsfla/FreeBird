@@ -1,9 +1,10 @@
 const express = require("express");
-const { Image, User, Post } = require("../models");
+const { Image, User, Post, Hashtag } = require("../models");
 const { isLoggedIn } = require("./middleware");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
+const { Op } = require("sequelize");
 
 const router = express.Router();
 
@@ -107,6 +108,13 @@ router.get("/posts/:userId", async (req, res, next) => {
         {
           model: User,
           attributes: ["id", "nickname"],
+          include: [
+            {
+              model: Image,
+              as: "ProfileImage",
+              attributes: ["src"],
+            },
+          ],
         },
         {
           model: Image,

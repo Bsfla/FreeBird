@@ -1,3 +1,5 @@
+import { ProfileImageType } from './user';
+
 export interface PostFormResponseType {
   success: boolean;
   message: string;
@@ -14,6 +16,7 @@ export interface PostType {
   User: {
     id: number;
     nickname: string;
+    ProfileImage: ProfileImageType;
   };
   content: string;
   createdAt: string;
@@ -34,4 +37,9 @@ export interface HashTagType {
     createdAt: string;
     updatedAt: string;
   };
+}
+
+export interface InfiniteFetchingType {
+  lastId?: number;
+  optionId?: number;
 }

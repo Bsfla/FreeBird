@@ -1,5 +1,5 @@
 import api from '@apis/base';
-import { PostEditType, PostType } from '@lib/types';
+import { InfiniteFetchingType, PostEditType, PostType } from '@lib/types';
 
 export const createPost = (data: FormData) => {
   return api.post({
@@ -15,7 +15,10 @@ export const upLoadImages = (data: FormData) => {
   });
 };
 
-export const getPosts = async (lastId?: number): Promise<PostType[]> => {
+export const getPosts = async (
+  body: InfiniteFetchingType
+): Promise<PostType[]> => {
+  const { lastId } = body;
   const response = await api.get({
     url: '/posts',
     params: {

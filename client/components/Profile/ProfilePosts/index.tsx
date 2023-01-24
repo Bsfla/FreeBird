@@ -1,20 +1,30 @@
 import React from 'react';
-import { getPosts } from '@apis/post';
-import { PostList } from '@components/common';
-import { PostType } from '@lib/types';
+import { PostList, PostEndBar, PostIntroBar } from '@components/index';
+import { PostType, UserInfoType } from '@lib/types';
 import { useInfiniteScroll } from '@hooks/common';
 import { queryKeys } from '@consts/queryKeys';
+import { getProfilePosts } from '@apis/profile';
+import { useRouter } from 'next/router';
 
-const ProfilePosts = () => {
+interface Props {
+  profile: UserInfoType;
+}
+
+const ProfilePosts = ({ profile }: Props) => {
+  const router = useRouter();
+  const userId = Number(router.query.id);
+
   const { ref, resultData: posts } = useInfiniteScroll<PostType[]>(
     queryKeys.posts,
-    getPosts
+    getProfilePosts,
+    userId
   );
 
   return (
     <>
+      <PostIntroBar userName={profile.nickname} />
       {posts && <PostList posts={posts} />}
-      <div ref={ref} />
+      <PostEndBar endPost={ref} />
     </>
   );
 };

@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   border-radius: 20px;
   width: 28rem;
   height: 15rem;
+  margin-bottom: 50px;
 
   div:nth-of-type(1) {
     margin-top: 15px;
@@ -51,6 +52,7 @@ export const Button = styled.button`
   color: ${theme.colors.white};
   font-size: 13px;
   margin-top: 20px;
+  margin-bottom: 20px;
   border-radius: 20px;
   border: none;
   cursor: pointer;

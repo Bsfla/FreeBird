@@ -1,18 +1,19 @@
 import { useEffect } from 'react';
 import { QueryKey, useInfiniteQuery } from 'react-query';
 import { useInView } from 'react-intersection-observer';
-import { FetchingDataType } from '@lib/types';
+import { FetchingDataType, InfiniteFetchingType } from '@lib/types';
 import { AxiosError } from 'axios';
 
 const useInfiniteScroll = <T extends FetchingDataType[]>(
   queryKey: QueryKey,
-  api: (lastId?: number) => Promise<T>
+  api: (body: InfiniteFetchingType) => Promise<T>,
+  optionId?: number
 ) => {
   const { data, fetchNextPage, hasNextPage } = useInfiniteQuery<
     T,
     AxiosError,
     T
-  >(queryKey, ({ pageParam = '' }) => api(pageParam), {
+  >(queryKey, ({ pageParam = 0 }) => api({ lastId: pageParam, optionId }), {
     getNextPageParam: (lastPage) => {
       return lastPage?.[lastPage.length - 1]?.id;
     },
