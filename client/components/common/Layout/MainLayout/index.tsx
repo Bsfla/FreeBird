@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { LeftSideBar, RightSideBar } from '@components/common';
-import { Wrapper, MainContents, IntroBar } from './style';
+import { Wrapper, MainContents } from './style';
 
 interface Props {
   children: ReactNode;

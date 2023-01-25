@@ -15,7 +15,7 @@ import { FaUserFriends } from 'react-icons/fa';
 import { MdPersonAddAlt1 } from 'react-icons/md';
 import { logout } from '@apis/user';
 import { useRouter } from 'next/router';
-import { LOGIN_PAGE, PROFILE_PAGE } from '@consts/route';
+import { LOGIN_PAGE, PROFILE_PAGE, FOLLOW_PAGE } from '@consts/route';
 import { useSetUserAtomState } from '@hooks/page';
 import Link from 'next/link';
 
@@ -51,14 +51,12 @@ const LeftSideBar = () => {
             <span>프로필 정보</span>
           </PageMenu>
         </Link>
-        <PageMenu>
-          <FaUserFriends size={20} />
-          친구 목록
-        </PageMenu>
-        <PageMenu>
-          <MdPersonAddAlt1 size={20} />
-          친구 찾기
-        </PageMenu>
+        <Link href={`${FOLLOW_PAGE}/${user.id}/following`}>
+          <PageMenu>
+            <FaUserFriends size={20} />
+            팔로우 목록
+          </PageMenu>
+        </Link>
       </PageMenuList>
     </Wrraper>
   );

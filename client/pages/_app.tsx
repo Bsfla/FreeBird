@@ -1,5 +1,7 @@
 import React from 'react';
+import type { ReactElement, ReactNode } from 'react';
 import type { AppProps } from 'next/app';
+import type { NextPage } from 'next';
 import { QueryClient, QueryClientProvider, Hydrate } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { RecoilRoot } from 'recoil';
@@ -8,8 +10,17 @@ import { ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';
 import Head from 'next/head';
 
-function MyApp({ Component, pageProps }: AppProps) {
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+export type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const [queryClient] = React.useState(() => new QueryClient());
+  const getLayout = Component.getLayout ?? ((page) => page);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -22,9 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </Head>
         <GlobalStyle />
         <ThemeProvider theme={theme}>
-          <RecoilRoot>
-            <Component {...pageProps} />
-          </RecoilRoot>
+          <RecoilRoot>{getLayout(<Component {...pageProps} />)}</RecoilRoot>
         </ThemeProvider>
         <ReactQueryDevtools initialIsOpen={false} />
       </Hydrate>
