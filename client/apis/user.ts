@@ -28,3 +28,10 @@ export const loadMyInfo = async (): Promise<UserInfoType> => {
 
   return response.data;
 };
+
+export const followUser = (userId: number) => {
+  console.log(1);
+  return api.patch({
+    url: `/user/${userId}/follow`,
+  });
+};

@@ -10,7 +10,6 @@ const MainPosts = () => {
     queryKeys.posts,
     getPosts
   );
-  console.log(posts);
   return (
     <>
       {posts && <PostList posts={posts} />}

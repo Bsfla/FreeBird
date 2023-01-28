@@ -57,6 +57,10 @@ export const Button = styled.button`
   border: none;
   cursor: pointer;
 
+  svg {
+    margin-right: 8px;
+  }
+
   &:active {
     background-color: ${theme.colors.sub2};
   }

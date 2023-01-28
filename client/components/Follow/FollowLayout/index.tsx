@@ -24,7 +24,7 @@ const FollowPageLayout = ({ children }: Props) => {
     <MainLayout>
       <Header>
         <span className="user_nickname">
-          <span className="nickname">#랜턴랜턴</span>님의 팔로우
+          <span className="nickname">#랜턴랜턴</span>님의 친구
         </span>
         <Navigation>
           <Link href={`${FOLLOWER_PAGE(Number(id))}`}>

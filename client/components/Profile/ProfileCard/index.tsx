@@ -1,8 +1,9 @@
 import React from 'react';
-import { ProfileImage } from '@components/index';
+import { ProfileImage, FollowButton } from '@components/index';
 import { Wrapper, Button } from './style';
-import { useSetRecoilState } from 'recoil';
+import { useSetRecoilState, useRecoilValue } from 'recoil';
 import { modalAtomState } from '@recoil/modal';
+import { userAtomState } from '@recoil/user';
 import { UserInfoType } from '@lib/types';
 
 interface Props {
@@ -11,6 +12,7 @@ interface Props {
 
 const ProfileCard = ({ profile }: Props) => {
   const setModalState = useSetRecoilState(modalAtomState);
+  const user = useRecoilValue(userAtomState);
 
   const handleOpenModal = () => {
     setModalState(true);
@@ -29,7 +31,10 @@ const ProfileCard = ({ profile }: Props) => {
         <span>팔로워 20 |</span>
         <span> 팔로잉 20</span>
       </div>
-      <Button onClick={handleOpenModal}>프로필 수정</Button>
+      {user.id === profile.id && (
+        <Button onClick={handleOpenModal}>프로필 수정</Button>
+      )}
+      {user.id !== profile.id && <FollowButton user={user} profile={profile} />}
     </Wrapper>
   );
 };
