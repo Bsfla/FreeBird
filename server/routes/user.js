@@ -116,7 +116,7 @@ router.patch("/:userId/follow", async (req, res, next) => {
 
     await user.addFollowers(req.user.id);
 
-    res.status(200).json({ UserId: req.user.Id });
+    res.status(200).send("팔로우에 성공했습니다");
   } catch (err) {
     console.error(err);
     next(err);
