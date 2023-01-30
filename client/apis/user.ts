@@ -30,8 +30,14 @@ export const loadMyInfo = async (): Promise<UserInfoType> => {
 };
 
 export const followUser = (userId: number) => {
-  console.log(1);
   return api.patch({
+    url: `/user/${userId}/follow`,
+  });
+};
+
+export const removeFollowing = (userId: number) => {
+  console.log(1);
+  return api.delete({
     url: `/user/${userId}/follow`,
   });
 };

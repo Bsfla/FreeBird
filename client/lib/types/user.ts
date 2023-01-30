@@ -12,6 +12,8 @@ export interface UserInfoType {
   email: string;
   intro: string;
   ProfileImage: ProfileImageType;
+  Followings: { id: number }[];
+  Followers: { id: number }[];
 }
 
 export interface UserProfileEditType {

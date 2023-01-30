@@ -44,6 +44,18 @@ router.get("/:userId", isLoggedIn, async (req, res, next) => {
           as: "ProfileImage",
           attributes: ["src"],
         },
+        {
+          model: User,
+          as: "Followings",
+          attributes: ['id']
+
+        },
+        {
+          model: User,
+          as: "Followers",
+          attributes: ['id']
+
+        }
       ],
     });
 
