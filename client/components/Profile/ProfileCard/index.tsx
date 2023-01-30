@@ -28,8 +28,8 @@ const ProfileCard = ({ profile }: Props) => {
         {profile.intro.length ? profile.intro : '소개글이 비어있습니다'}
       </span>
       <div className="follow">
-        <span>팔로워 20 |</span>
-        <span> 팔로잉 20</span>
+        <span>{`팔로워 ${profile.Followers.length} |`}</span>
+        <span> {`팔로잉 ${profile.Followings.length}`}</span>
       </div>
       {user.id === profile.id && (
         <Button onClick={handleOpenModal}>프로필 수정</Button>

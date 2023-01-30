@@ -1,9 +1,9 @@
 import React, { ReactElement } from 'react';
 import type { NextPageWithLayout } from 'pages/_app';
-import { FollowLayout } from '@components/Follow';
+import { FollowLayout, FollowCard } from '@components/Follow';
 
 const Follower: NextPageWithLayout = () => {
-  return <div></div>;
+  return <FollowCard />;
 };
 
 Follower.getLayout = function getLayout(page: ReactElement) {
