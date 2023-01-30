@@ -11,6 +11,7 @@ const hashtags = require("./routes/hashtags");
 const posts = require("./routes/posts");
 const comment = require("./routes/comment");
 const profile = require("./routes/profile");
+const follow = require("./routes/follow");
 const passport = require("passport");
 const morgan = require("morgan");
 const path = require("path");
@@ -55,6 +56,7 @@ app.use("/posts", posts);
 app.use("/hashtags", hashtags);
 app.use("/comment", comment);
 app.use("/profile", profile);
+app.use("/follow", follow);
 
 app.listen(3065, () => {
   console.log("서버 실행 중!");

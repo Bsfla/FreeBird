@@ -157,7 +157,8 @@ router.delete("/follower/:userId", async (req, res, next) => {
   }
 });
 
-router.get("/followers", async (req, res, next) => {
+/*
+router.get("/:userId/followers", async (req, res, next) => {
   try {
     const user = await User.findOne({
       where: { id: req.user.id },
@@ -194,5 +195,6 @@ router.get("/followings", async (req, res, next) => {
     next(err);
   }
 });
+*/
 
 module.exports = router;

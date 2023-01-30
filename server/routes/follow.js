@@ -8,24 +8,31 @@ const router = express.Router();
 
 router.get("/:userId/follower", async (req, res, next) => {
   try {
-    const where = {
-      FollowingId: req.params.userId,
-    };
+    const user = await User.findOne({
+      where: {
+        id: req.params.userId,
+      },
+    });
+
+    if (!user) return res.status(404).send("유저가 존재하지 않습니다");
+
+    const where = {};
+
     const lastId = parseInt(req.query.lastId, 10);
 
     if (lastId) {
       where.id = { [Op.lt]: lastId };
     }
 
-    const followers = await db.sequelize.models.follow.findAll({
+    const followers = await user.getFollowers({
       where,
       limit: 10,
-
+      attributes: ["id", "nickname"],
       include: [
         {
-          model: User,
-          as: "Followers",
-          attribute: ["id"],
+          model: Image,
+          as: "ProfileImage",
+          attributes: ["src"],
         },
       ],
     });
@@ -35,3 +42,5 @@ router.get("/:userId/follower", async (req, res, next) => {
     next(err);
   }
 });
+
+module.exports = router;
