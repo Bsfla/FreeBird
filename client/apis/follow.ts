@@ -5,6 +5,7 @@ export const getFollowers = async (
   body: InfiniteFetchingType
 ): Promise<FollowUserType[]> => {
   const { lastId, optionId } = body;
+  console.log(lastId);
   const response = await api.get({
     url: `follow/${optionId}/followers`,
     params: {
@@ -27,4 +28,10 @@ export const getFollowings = async (
   });
 
   return response.data;
+};
+
+export const deleteFollowers = async (userId: number) => {
+  return api.delete({
+    url: `follow/${userId}/follower`,
+  });
 };

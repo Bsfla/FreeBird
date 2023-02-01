@@ -14,8 +14,9 @@ import { useRouter } from 'next/router';
 
 const Profile: NextPage = () => {
   const router = useRouter();
-  const { data: profile } = useQuery(queryKeys.profile, () =>
-    getProfile(Number(router.query.id))
+  const userId = Number(router.query.id);
+  const { data: profile } = useQuery([queryKeys.profile, userId], () =>
+    getProfile(userId)
   );
 
   return (

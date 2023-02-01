@@ -4,16 +4,19 @@ import { Wrrapper, Button, DeleteButton } from './style';
 import { FollowUserType } from '@lib/types';
 
 interface Props {
-  followUser: FollowUserType
+  followUser: FollowUserType;
+  handleDeleteFollow: (followId: number) => () => void;
 }
 
-const FollowCard = ({followUser}: Props) => {
+const FollowCard = ({ followUser, handleDeleteFollow }: Props) => {
   return (
     <Wrrapper>
       <ProfileImage imgPath={followUser.ProfileImage} />
       <span className="nickname">{followUser.nickname}</span>
       <Button>프로필 보기</Button>
-      <DeleteButton>삭제하기</DeleteButton>
+      <DeleteButton onClick={handleDeleteFollow(followUser.id)}>
+        삭제하기
+      </DeleteButton>
     </Wrrapper>
   );
 };

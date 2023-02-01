@@ -2,16 +2,23 @@ import React, { ReactElement } from 'react';
 import type { NextPageWithLayout } from 'pages/_app';
 import { FollowLayout, FollowUserList } from '@components/Follow';
 import { GetServerSideProps } from 'next';
-import { dehydrate, QueryClient } from 'react-query';
+import {
+  dehydrate,
+  QueryClient,
+  useQueryClient,
+  useMutation,
+} from 'react-query';
 import { useInfiniteScroll } from '@hooks/common';
 import { queryKeys } from '@consts/queryKeys';
 import { getFollowings } from '@apis/follow';
 import { FollowUserType } from '@lib/types';
 import { useRouter } from 'next/router';
+import { removeFollowing } from '@apis/user';
 
 const Following: NextPageWithLayout = () => {
   const router = useRouter();
   const userId = Number(router.query.id);
+  const queryClient = useQueryClient();
 
   const { ref, resultData: followers } = useInfiniteScroll<FollowUserType[]>(
     queryKeys.following,
@@ -19,9 +26,29 @@ const Following: NextPageWithLayout = () => {
     userId
   );
 
+  const { mutate } = useMutation(removeFollowing, {
+    onSuccess: () => {
+      alert('팔로잉을 삭제했습니다');
+      queryClient.invalidateQueries(queryKeys.following);
+    },
+
+    onError: (error) => {
+      alert(error);
+    },
+  });
+
+  const handleDelteFollowing = (followId: number) => () => {
+    mutate(followId);
+  };
+
   return (
     <>
-      {followers && <FollowUserList followUsers={followers} />}
+      {followers && (
+        <FollowUserList
+          followUsers={followers}
+          handleDeleteFollow={handleDelteFollowing}
+        />
+      )}
       <div ref={ref}>d</div>
     </>
   );
