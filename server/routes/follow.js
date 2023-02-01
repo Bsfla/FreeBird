@@ -80,4 +80,21 @@ router.get("/:userId/followings", isLoggedIn, async (req, res, next) => {
   }
 });
 
+router.delete("/:userId/follower", isLoggedIn, async (req, res, next) => {
+  try {
+    const user = await User.findOne({
+      where: {
+        id: req.user.id,
+      },
+    });
+
+    if (!user) res.status(403).send("유저가 존재하지 않습니다");
+
+    await user.removeFollowers(req.params.userId);
+    res.status(200).send("팔로워 삭제 성공");
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;
