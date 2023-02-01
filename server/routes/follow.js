@@ -1,12 +1,11 @@
 const express = require("express");
 const { Comment, Post, Image, User, Hashtag } = require("../models");
-const sequelize = require("sequelize");
 
 const db = require("../models");
 const { isLoggedIn } = require("./middleware");
 const router = express.Router();
 
-router.get("/:userId/followers", isLoggedIn, async (req, res, next) => {
+router.get("/:userId/followers", async (req, res, next) => {
   try {
     const user = await User.findOne({
       where: {
@@ -43,7 +42,7 @@ router.get("/:userId/followers", isLoggedIn, async (req, res, next) => {
   }
 });
 
-router.get("/:userId/followings", isLoggedIn, async (req, res, next) => {
+router.get("/:userId/followings", async (req, res, next) => {
   try {
     const user = await User.findOne({
       where: {
@@ -80,7 +79,7 @@ router.get("/:userId/followings", isLoggedIn, async (req, res, next) => {
   }
 });
 
-router.delete("/:userId/follower", isLoggedIn, async (req, res, next) => {
+router.delete("/:userId/follower", async (req, res, next) => {
   try {
     const user = await User.findOne({
       where: {
@@ -91,7 +90,7 @@ router.delete("/:userId/follower", isLoggedIn, async (req, res, next) => {
     if (!user) res.status(403).send("유저가 존재하지 않습니다");
 
     await user.removeFollowers(req.params.userId);
-    res.status(200).send("팔로워 삭제 성공");
+    res.status(200).json({ UserId: req.params.userId });
   } catch (err) {
     next(err);
   }
