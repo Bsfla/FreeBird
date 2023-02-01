@@ -1,12 +1,17 @@
 import React from 'react';
 import { ProfileImage } from '@components/index';
 import { Wrrapper, Button, DeleteButton } from './style';
+import { FollowUserType } from '@lib/types';
 
-const FollowCard = () => {
+interface Props {
+  followUser: FollowUserType
+}
+
+const FollowCard = ({followUser}: Props) => {
   return (
     <Wrrapper>
-      <ProfileImage imgPath={null} />
-      <span className="nickname">랜턴랜턴</span>
+      <ProfileImage imgPath={followUser.ProfileImage} />
+      <span className="nickname">{followUser.nickname}</span>
       <Button>프로필 보기</Button>
       <DeleteButton>삭제하기</DeleteButton>
     </Wrrapper>

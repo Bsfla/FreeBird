@@ -5,6 +5,7 @@ export interface UserFormType {
   passwordconfirm: string;
 }
 export type ProfileImageType = { src: string } | null;
+export type FollowUserType = Pick<UserInfoType, 'id' | 'nickname' | 'ProfileImage'>
 
 export interface UserInfoType {
   id: number;

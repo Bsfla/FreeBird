@@ -3,6 +3,7 @@ import theme from 'styles/theme';
 
 export const Header = styled.header`
   width: 100%;
+  position: sticky;
 
   .user_nickname {
     margin-left: 50px;

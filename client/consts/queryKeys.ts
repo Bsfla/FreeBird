@@ -4,4 +4,6 @@ export const queryKeys = {
   comment: 'comment',
   user: 'user',
   profile: 'profile',
+  follower: ['follower'],
+  following: ['following'],
 } as const;

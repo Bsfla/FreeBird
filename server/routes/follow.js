@@ -6,7 +6,7 @@ const db = require("../models");
 const { isLoggedIn } = require("./middleware");
 const router = express.Router();
 
-router.get("/:userId/followers", async (req, res, next) => {
+router.get("/:userId/followers", isLoggedIn, async (req, res, next) => {
   try {
     const user = await User.findOne({
       where: {
@@ -43,7 +43,7 @@ router.get("/:userId/followers", async (req, res, next) => {
   }
 });
 
-router.get("/:userId/followings", async (req, res, next) => {
+router.get("/:userId/followings", isLoggedIn, async (req, res, next) => {
   try {
     const user = await User.findOne({
       where: {
