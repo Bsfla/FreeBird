@@ -6,7 +6,7 @@ import { Wrrapper } from './style';
 
 interface Props {
   followUsers: FollowUserType[];
-  handleDeleteFollow: (followId: number) => void;
+  handleDeleteFollow: (followId: number) => () => void;
 }
 
 const FollowUserList = ({ followUsers, handleDeleteFollow }: Props) => {

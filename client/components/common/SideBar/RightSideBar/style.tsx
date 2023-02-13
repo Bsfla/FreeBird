@@ -7,6 +7,8 @@ export const Wrrapper = styled.aside`
   right: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 70px;
   width: 30rem;
   height: 100vh;
   padding: 20px;

@@ -43,3 +43,7 @@ export interface InfiniteFetchingType {
   lastId?: number;
   optionId?: number;
 }
+
+export interface SearchPostsFetchingType extends InfiniteFetchingType {
+  hashtag: string
+}

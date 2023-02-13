@@ -26,10 +26,10 @@ export const editProfile = (body: UserProfileEditType) => {
 export const getProfilePosts = async (
   body: InfiniteFetchingType
 ): Promise<PostType[]> => {
-  const { lastId, optionId } = body;
+  const { lastId, paramId } = body;
 
   const response = await api.get({
-    url: `/profile/posts/${optionId}`,
+    url: `/profile/posts/${paramId}`,
     params: {
       lastId,
     },

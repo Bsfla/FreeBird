@@ -1,5 +1,10 @@
 import api from '@apis/base';
-import { InfiniteFetchingType, PostEditType, PostType } from '@lib/types';
+import {
+  InfiniteFetchingType,
+  PostEditType,
+  PostType,
+  SearchPostsFetchingType,
+} from '@lib/types';
 
 export const createPost = (data: FormData) => {
   return api.post({
@@ -21,6 +26,20 @@ export const getPosts = async (
   const { lastId } = body;
   const response = await api.get({
     url: '/posts',
+    params: {
+      lastId,
+    },
+  });
+
+  return response.data;
+};
+
+export const searchPosts = async (
+  body: InfiniteFetchingType
+): Promise<PostType[]> => {
+  const { lastId, paramId } = body;
+  const response = await api.get({
+    url: `/posts/${paramId}`,
     params: {
       lastId,
     },
