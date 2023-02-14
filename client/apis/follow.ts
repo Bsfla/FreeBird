@@ -4,10 +4,9 @@ import api from '@apis/base';
 export const getFollowers = async (
   body: InfiniteFetchingType
 ): Promise<FollowUserType[]> => {
-  const { lastId, optionId } = body;
-  console.log(lastId);
+  const { lastId, paramId } = body;
   const response = await api.get({
-    url: `follow/${optionId}/followers`,
+    url: `follow/${paramId}/followers`,
     params: {
       lastId,
     },
@@ -19,9 +18,9 @@ export const getFollowers = async (
 export const getFollowings = async (
   body: InfiniteFetchingType
 ): Promise<FollowUserType[]> => {
-  const { lastId, optionId } = body;
+  const { lastId, paramId } = body;
   const response = await api.get({
-    url: `follow/${optionId}/followings`,
+    url: `follow/${paramId}/followings`,
     params: {
       lastId,
     },

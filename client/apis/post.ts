@@ -1,10 +1,5 @@
 import api from '@apis/base';
-import {
-  InfiniteFetchingType,
-  PostEditType,
-  PostType,
-  SearchPostsFetchingType,
-} from '@lib/types';
+import { InfiniteFetchingType, PostEditType, PostType } from '@lib/types';
 
 export const createPost = (data: FormData) => {
   return api.post({
