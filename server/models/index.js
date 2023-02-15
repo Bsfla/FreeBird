@@ -27,4 +27,6 @@ Object.keys(db).forEach((modelName) => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+sequelize.models.PostHashtag.belongsTo(db.Hashtag);
+
 module.exports = db;
