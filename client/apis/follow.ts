@@ -1,35 +1,31 @@
 import { InfiniteFetchingType, FollowUserType } from '@lib/types';
 import api from '@apis/base';
 
-export const getFollowers = async (
+export const getFollowers = (
   body: InfiniteFetchingType
 ): Promise<FollowUserType[]> => {
   const { lastId, paramId } = body;
-  const response = await api.get({
+  return api.get({
     url: `follow/${paramId}/followers`,
     params: {
       lastId,
     },
   });
-
-  return response.data;
 };
 
-export const getFollowings = async (
+export const getFollowings = (
   body: InfiniteFetchingType
 ): Promise<FollowUserType[]> => {
   const { lastId, paramId } = body;
-  const response = await api.get({
+  return api.get({
     url: `follow/${paramId}/followings`,
     params: {
       lastId,
     },
   });
-
-  return response.data;
 };
 
-export const deleteFollowers = async (userId: number) => {
+export const deleteFollowers = (userId: number) => {
   return api.delete({
     url: `follow/${userId}/follower`,
   });

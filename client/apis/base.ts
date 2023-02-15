@@ -9,7 +9,11 @@ export const customAxios: AxiosInstance = axios.create({
 
 const createApiMethod =
   (_axiosInstace: AxiosInstance, methodType: Method) =>
-  (config: AxiosRequestConfig) => {
+  (config: AxiosRequestConfig): Promise<any> => {
+    _axiosInstace.interceptors.response.use((response) => {
+      if (!response.data) return response;
+      return response.data;
+    });
     return _axiosInstace({
       ...config,
       method: methodType,

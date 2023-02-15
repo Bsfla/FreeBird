@@ -2,34 +2,36 @@ import { getHashtag } from '@apis/hashtag';
 import Link from 'next/link';
 import React from 'react';
 import { useQuery } from 'react-query';
+import { SEARCH_PAGE } from '@consts/route';
 import { Wrrapper, HashtagContainer, Hashtag } from './style';
 
 const HashtagRank = () => {
-  const { data } = useQuery('hashtag', () => getHashtag());
+  const { data: hashtags } = useQuery('hashtag', () => getHashtag());
 
-  console.log(data);
   return (
     <Wrrapper>
       <div className="title">
         <span>#인기순위</span>
       </div>
-      <HashtagContainer>
-        <Link href="/login">
-          <Hashtag>
-            1.<span>#테스트</span>
-          </Hashtag>
-        </Link>
-        <Link href="/login">
-          <Hashtag>
-            2.<span>#테스트</span>
-          </Hashtag>
-        </Link>
-        <Link href="/login">
-          <Hashtag>
-            3.<span>#테스트</span>
-          </Hashtag>
-        </Link>
-      </HashtagContainer>
+      {hashtags && (
+        <HashtagContainer>
+          <Link href={`${SEARCH_PAGE}/${hashtags[0].Hashtag.name}`}>
+            <Hashtag>
+              1.<span>#{hashtags[0].Hashtag.name}</span>
+            </Hashtag>
+          </Link>
+          <Link href={`${SEARCH_PAGE}/${hashtags[1].Hashtag.name}`}>
+            <Hashtag>
+              2.<span>#{hashtags[1].Hashtag.name}</span>
+            </Hashtag>
+          </Link>
+          <Link href={`${SEARCH_PAGE}/${hashtags[2].Hashtag.name}`}>
+            <Hashtag>
+              3.<span>#{hashtags[2].Hashtag.name}</span>
+            </Hashtag>
+          </Link>
+        </HashtagContainer>
+      )}
     </Wrrapper>
   );
 };

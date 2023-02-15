@@ -30,6 +30,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   } else {
     return { redirect: { destination: LOGIN_PAGE, permanent: false } };
   }
+
   await queryClient.prefetchInfiniteQuery(queryKeys.posts, () =>
     getPosts({ lastId: 0 })
   );

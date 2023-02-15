@@ -32,6 +32,7 @@ export const Hashtag = styled.div`
   border-bottom: solid ${theme.colors.gray3};
   align-items: center;
   font-weight: bold;
+  cursor: pointer;
 
   span {
     color: ${theme.colors.sub2};

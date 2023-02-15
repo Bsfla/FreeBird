@@ -21,12 +21,10 @@ export const logout = () => {
   });
 };
 
-export const loadMyInfo = async (): Promise<UserInfoType> => {
-  const response = await api.get({
+export const loadMyInfo = (): Promise<UserInfoType> => {
+  return api.get({
     url: '/user',
   });
-
-  return response.data;
 };
 
 export const followUser = (userId: number) => {
@@ -36,7 +34,6 @@ export const followUser = (userId: number) => {
 };
 
 export const removeFollowing = (userId: number) => {
-  console.log(1);
   return api.delete({
     url: `/user/${userId}/follow`,
   });

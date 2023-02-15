@@ -15,40 +15,32 @@ export const upLoadImages = (data: FormData) => {
   });
 };
 
-export const getPosts = async (
-  body: InfiniteFetchingType
-): Promise<PostType[]> => {
+export const getPosts = (body: InfiniteFetchingType): Promise<PostType[]> => {
   const { lastId } = body;
-  const response = await api.get({
+  return api.get({
     url: '/posts',
     params: {
       lastId,
     },
   });
-
-  return response.data;
 };
 
-export const searchPosts = async (
+export const searchPosts = (
   body: InfiniteFetchingType
 ): Promise<PostType[]> => {
   const { lastId, paramId } = body;
-  const response = await api.get({
+  return api.get({
     url: `/posts/${paramId}`,
     params: {
       lastId,
     },
   });
-
-  return response.data;
 };
 
-export const getPost = async (postId: number): Promise<PostType> => {
-  const response = await api.get({
+export const getPost = (postId: number): Promise<PostType> => {
+  return api.get({
     url: `/post/${postId}`,
   });
-
-  return response.data;
 };
 
 export const editPost = (body: PostEditType): Promise<any> => {
