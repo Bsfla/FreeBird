@@ -5,9 +5,24 @@ import {
   StyleModalFrame,
   StyleModalHeader,
   StyleOverlay,
+  StyleCustomFrame,
 } from './style';
 
 import { ModalProps } from '@lib/types';
+
+const ModalCustomFrame = ({
+  isOpen,
+  children,
+  handleCloseModal,
+}: ModalProps) => {
+  return (
+    <>
+      <StyleCustomFrame isOpen={isOpen} onClick={handleCloseModal}>
+        {children}
+      </StyleCustomFrame>
+    </>
+  );
+};
 
 const ModalFrame = ({ isOpen, children, handleCloseModal }: ModalProps) => {
   return (
@@ -35,6 +50,7 @@ const Modal = {
   Header: ModalHeader,
   Body: ModalBody,
   Footer: ModalFooter,
+  CustomFrame: ModalCustomFrame,
 };
 
 export default Modal;

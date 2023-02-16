@@ -4,6 +4,7 @@ import { PostType } from '@lib/types';
 import PostButtonGroup from './PostButtonGroup';
 import PostContainer from './PostContainer';
 import PostEditForm from '../PostForm/PostEditForm';
+import { PostImageCarousel } from '@components/index';
 import Link from 'next/link';
 import { POST_PAGE } from '@consts/route';
 
@@ -33,12 +34,13 @@ const PostCard = ({ post }: Props) => {
   }
 
   return (
-    <Link href={`${POST_PAGE}/${post.id}`}>
+    <>
       <Wrraper>
         <PostContainer post={post} />
         <PostButtonGroup post={post} handleToggleEdit={handleToggleEdit} />
       </Wrraper>
-    </Link>
+      <PostImageCarousel images={post.Images} />
+    </>
   );
 };
 

@@ -7,18 +7,17 @@ import { AxiosError } from 'axios';
 const useInfiniteScroll = <T extends FetchingDataType[]>(
   queryKey: QueryKey,
   api: (body: InfiniteFetchingType) => Promise<T>,
-  optionId?: number
+  paramId?: number | string
 ) => {
   const { data, fetchNextPage, hasNextPage } = useInfiniteQuery<
     T,
     AxiosError,
     T
-  >(queryKey, ({ pageParam = 0 }) => api({ lastId: pageParam, optionId }), {
+  >(queryKey, ({ pageParam = 0 }) => api({ lastId: pageParam, paramId }), {
     getNextPageParam: (lastPage) => {
       return lastPage?.[lastPage.length - 1]?.id;
     },
     staleTime: 3000,
-    refetchOnWindowFocus: false,
   });
 
   const [ref, inView] = useInView();

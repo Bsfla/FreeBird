@@ -16,6 +16,7 @@ router.get("/", async (req, res, next) => {
       include: [
         {
           model: Hashtag,
+          attributes: ["name"],
         },
       ],
     });

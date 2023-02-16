@@ -39,8 +39,8 @@ const PostForm = () => {
     });
 
     try {
-      const { data } = await upLoadImages(imageFormData);
-      setImagePaths((prev) => [...prev, ...data]);
+      const images = await upLoadImages(imageFormData);
+      setImagePaths((prev) => [...prev, images]);
     } catch (err: any) {
       console.log(err);
     }

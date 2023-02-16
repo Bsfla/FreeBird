@@ -26,6 +26,8 @@ export const getProfilePosts = (
 ): Promise<PostType[]> => {
   const { lastId, paramId } = body;
 
+  console.log(paramId);
+
   return api.get({
     url: `/profile/posts/${paramId}`,
     params: {
