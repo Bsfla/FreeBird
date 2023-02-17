@@ -10,7 +10,7 @@ import {
   ImageEditButton,
 } from './style';
 import { useRecoilState } from 'recoil';
-import { modalAtomState } from '@recoil/modal';
+import { modalAtomState } from '@recoil/modal/atom';
 import { ProfileImageType, UserInfoType } from '@lib/types';
 import { useInput, useEditProfile } from '@hooks/index';
 import { upLoadImages } from '@apis/post';

@@ -1,6 +1,2 @@
-import { atom } from 'recoil';
-
-export const modalAtomState = atom({
-  key: 'modal',
-  default: false,
-});
+export * from './atom';
+export * from './selector';

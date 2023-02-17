@@ -11,13 +11,8 @@ import { getComments } from '@apis/comment';
 const Post: NextPage = () => {
   const router = useRouter();
   const { id } = router.query;
-  const { data: post } = useQuery<PostType>(
-    [queryKeys.post, id],
-    () => getPost(Number(id)),
-    {
-      staleTime: 1000 * 60 * 60 * 2,
-      refetchOnWindowFocus: false,
-    }
+  const { data: post } = useQuery<PostType>([queryKeys.post, id], () =>
+    getPost(Number(id))
   );
 
   return (

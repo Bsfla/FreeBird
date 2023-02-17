@@ -1,4 +1,4 @@
-import React, { useState, ReactNode, cloneElement } from 'react';
+import React, { ReactNode, cloneElement } from 'react';
 import {
   Wrapper,
   SlideContainer,
@@ -39,7 +39,7 @@ const Carousel = ({ children }: Props) => {
             <Slide
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}>
-              {cloneElement(child as any)}
+              {child}
             </Slide>
           );
         })}

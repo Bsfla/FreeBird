@@ -2,7 +2,7 @@ import React from 'react';
 import { ProfileImage, FollowButton } from '@components/index';
 import { Wrapper, Button } from './style';
 import { useSetRecoilState, useRecoilValue } from 'recoil';
-import { modalAtomState } from '@recoil/modal';
+import { modalAtomState } from '@recoil/modal/atom';
 import { userAtomState } from '@recoil/user';
 import { UserInfoType } from '@lib/types';
 

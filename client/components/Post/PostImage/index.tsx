@@ -1,30 +1,27 @@
 import React, { useState } from 'react';
 import { ImageWrapper, ImageSection } from './style';
 import { createImagePath } from '@lib/utils';
-import { useRecoilState } from 'recoil';
-import { modalAtomState } from '@recoil/modal';
-import PostImageCarousel from '../PostImageCarousel';
+import { useModal } from '@hooks/common';
+import { modalName } from '@consts/modal';
 
 interface Props {
   images: { src: string }[];
 }
 
 const PostImage = ({ images }: Props) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { showImageModal } = useModal(modalName.POST_IMAGE);
 
-  const handleOpenModal = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const handleOpenZoomImage = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
     e.stopPropagation();
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
+    showImageModal(images);
   };
 
   if (images.length === 2) {
     return (
       <>
-        <ImageWrapper onClick={handleOpenModal}>
+        <ImageWrapper onClick={handleOpenZoomImage}>
           <ImageSection>
             <img
               src={createImagePath(images[0].src)}
@@ -47,7 +44,7 @@ const PostImage = ({ images }: Props) => {
   if (images.length === 3) {
     return (
       <>
-        <ImageWrapper onClick={handleOpenModal}>
+        <ImageWrapper onClick={handleOpenZoomImage}>
           <ImageSection>
             <img
               src={createImagePath(images[0].src)}
@@ -70,18 +67,13 @@ const PostImage = ({ images }: Props) => {
             />
           </ImageSection>
         </ImageWrapper>
-        <PostImageCarousel
-          images={images}
-          isOpenModal={isModalOpen}
-          handleCloseModal={handleCloseModal}
-        />
       </>
     );
   }
 
   if (images.length === 1) {
     return (
-      <ImageWrapper>
+      <ImageWrapper onClick={handleOpenZoomImage}>
         <img
           src={createImagePath(images[0].src)}
           alt="이미지"

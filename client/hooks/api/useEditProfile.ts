@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from 'react-query';
 import { editProfile } from '@apis/profile';
 import { queryKeys } from '@consts/queryKeys';
 import { useSetRecoilState } from 'recoil';
-import { modalAtomState } from '@recoil/modal';
+import { modalAtomState } from '@recoil/modal/atom';
 
 const useEditProfile = () => {
   const queryClient = useQueryClient();

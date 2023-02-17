@@ -1,24 +1,21 @@
 import React, { useState } from 'react';
 import { Modal, Carousel } from '@components/index';
-import { useRecoilState } from 'recoil';
-import { modalAtomState } from '@recoil/modal';
+import { useModal } from '@hooks/index';
 import { createImagePath } from '@lib/utils';
+import { modalName } from '@consts/modal';
+import { ModalType } from '@lib/types';
 
 interface Props {
-  images: { src: string }[];
-  isOpenModal: boolean;
-  handleCloseModal: () => void;
+  isShow: boolean;
+  hideModal: () => void;
+  modal: ModalType;
 }
 
-const PostImageCarousel = ({
-  images,
-  isOpenModal,
-  handleCloseModal,
-}: Props) => {
+const PostImageCarousel = ({ isShow, hideModal, modal }: Props) => {
   return (
-    <Modal.CustomFrame isOpen={isOpenModal} handleCloseModal={handleCloseModal}>
+    <Modal.CustomFrame isOpen={isShow} handleCloseModal={hideModal}>
       <Carousel>
-        {images.map((image) => (
+        {modal.images?.map((image) => (
           <img key={image.src} src={createImagePath(image.src)} />
         ))}
       </Carousel>

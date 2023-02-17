@@ -13,11 +13,7 @@ interface Props {
 const CommentContainer = ({ post }: Props) => {
   const { data: comments } = useQuery<CommentType[]>(
     [queryKeys.comment, post.id],
-    () => getComments(Number(post.id)),
-    {
-      staleTime: 1000 * 60 * 60 * 2,
-      refetchOnWindowFocus: false,
-    }
+    () => getComments(Number(post.id))
   );
 
   return (
