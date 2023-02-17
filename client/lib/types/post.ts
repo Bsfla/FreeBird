@@ -41,7 +41,7 @@ export interface HashTagType {
 
 export interface InfiniteFetchingType {
   lastId?: number;
-  optionId?: number;
+  paramId?: number | string;
 }
 
 export interface SearchPostsFetchingType extends InfiniteFetchingType {

@@ -22,6 +22,7 @@ export const Wrraper = styled.div`
       right: 10px;
       cursor: pointer;
     }
+
   }
 `;
 

@@ -39,7 +39,6 @@ const PostCard = ({ post }: Props) => {
         <PostContainer post={post} />
         <PostButtonGroup post={post} handleToggleEdit={handleToggleEdit} />
       </Wrraper>
-      <PostImageCarousel images={post.Images} />
     </>
   );
 };

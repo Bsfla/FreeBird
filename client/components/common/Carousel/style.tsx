@@ -23,3 +23,39 @@ export const Slide = styled.div`
     height: 100%;
   }
 `;
+
+export const SlideButton = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 27px;
+
+  svg {
+    &:active {
+      background-color: black;
+    }
+  }
+`;
+
+export const DotWrapper = styled.div`
+  display: flex;
+  gap: 13px;
+`;
+
+export const SlideDot = styled.div<{
+  currentSlide: number;
+  slideLocation: number;
+}>`
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+
+  background-color: ${(props) => {
+    const { currentSlide, slideLocation } = props;
+
+    if (currentSlide === slideLocation) return 'black';
+    return theme.colors.white;
+  }};
+`;
