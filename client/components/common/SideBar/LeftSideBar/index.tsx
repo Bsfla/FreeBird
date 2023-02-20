@@ -12,7 +12,6 @@ import {
 import profile from '@assets/img/profile.png';
 import { ImProfile } from 'react-icons/im';
 import { FaUserFriends } from 'react-icons/fa';
-import { MdPersonAddAlt1 } from 'react-icons/md';
 import { logout } from '@apis/user';
 import { useRouter } from 'next/router';
 import { LOGIN_PAGE, PROFILE_PAGE, FOLLOW_PAGE } from '@consts/route';

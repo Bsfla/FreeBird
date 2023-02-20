@@ -15,5 +15,9 @@ export const modalListState = atom<ModalListType>({
       isShow: false,
       images: [],
     },
+    {
+      name: modalName.PROFILE_EDIT,
+      isShow: false,
+    },
   ],
 });

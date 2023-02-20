@@ -5,17 +5,19 @@ import { useSetRecoilState, useRecoilValue } from 'recoil';
 import { modalAtomState } from '@recoil/modal/atom';
 import { userAtomState } from '@recoil/user';
 import { UserInfoType } from '@lib/types';
+import { useModal } from '@hooks/common';
+import { modalName } from '@consts/modal';
 
 interface Props {
   profile: UserInfoType;
 }
 
 const ProfileCard = ({ profile }: Props) => {
-  const setModalState = useSetRecoilState(modalAtomState);
+  const { showModal } = useModal(modalName.PROFILE_EDIT);
   const user = useRecoilValue(userAtomState);
 
   const handleOpenModal = () => {
-    setModalState(true);
+    showModal();
   };
 
   return (

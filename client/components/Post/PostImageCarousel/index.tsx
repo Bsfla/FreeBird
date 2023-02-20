@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Modal, Carousel } from '@components/index';
-import { useModal } from '@hooks/index';
 import { createImagePath } from '@lib/utils';
-import { modalName } from '@consts/modal';
 import { ModalType } from '@lib/types';
 
 interface Props {

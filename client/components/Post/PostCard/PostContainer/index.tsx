@@ -38,7 +38,7 @@ const PostContainer = ({ post }: Props) => {
         />
       </PostHeader>
       <PostContent post={post} />
-      {post.Images && <PostImage images={post.Images} />}
+      {post.Images.length > 0 && <PostImage images={post.Images} />}
     </Wrraper>
   );
 };

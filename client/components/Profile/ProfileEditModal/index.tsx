@@ -9,10 +9,9 @@ import {
   ImageWrapper,
   ImageEditButton,
 } from './style';
-import { useRecoilState } from 'recoil';
-import { modalAtomState } from '@recoil/modal/atom';
 import { ProfileImageType, UserInfoType } from '@lib/types';
-import { useInput, useEditProfile } from '@hooks/index';
+import { useInput, useEditProfile, useModal } from '@hooks/index';
+import { modalName } from '@consts/modal';
 import { upLoadImages } from '@apis/post';
 
 interface Props {
@@ -20,25 +19,25 @@ interface Props {
 }
 
 const ProfileEditModal = ({ profile }: Props) => {
-  const [isModalOpen, setIsModalOpen] = useRecoilState(modalAtomState);
   const { form, setForm, handleChangeInput } = useInput({
     nickname: profile.nickname,
     intro: profile.intro,
   });
+  const { hideModal, modal, isShow } = useModal(modalName.PROFILE_EDIT);
   const { mutate } = useEditProfile();
   const [imgPath, setImagePath] = useState<ProfileImageType>(
     profile.ProfileImage
   );
 
   const handleCloseModal = () => {
-    setIsModalOpen(false);
+    hideModal();
     setImagePath(profile.ProfileImage);
     setForm({
       nickname: profile.nickname,
       intro: profile.intro,
     });
   };
-
+  console.log(isShow);
   const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const imageFormData = new FormData();
 
@@ -76,7 +75,7 @@ const ProfileEditModal = ({ profile }: Props) => {
   };
 
   return (
-    <Modal.Frame isOpen={isModalOpen} handleCloseModal={handleCloseModal}>
+    <Modal.Frame isOpen={isShow} handleCloseModal={handleCloseModal}>
       <Modal.Header>
         <ModalTitle>
           <span>프로필 수정</span>
