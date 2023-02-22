@@ -42,11 +42,13 @@ const Follower: NextPageWithLayout = () => {
 
   return (
     <>
-      {followers && (
+      {followers?.length ? (
         <FollowUserList
           followUsers={followers}
           handleDeleteFollow={handleDeleteFollower}
         />
+      ) : (
+        <span>팔로워가 없습니다</span>
       )}
       <div ref={ref}>d</div>
     </>
@@ -62,7 +64,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const userId = context.params?.id;
 
   await queryClient.prefetchInfiniteQuery(queryKeys.follower, () =>
-    getFollowers({ lastId: 0, optionId: Number(userId) })
+    getFollowers({ lastId: 0, paramId: Number(userId) })
   );
 
   return {

@@ -32,6 +32,10 @@ const PostForm = () => {
   };
 
   const handleImagesChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (imgPaths.length === 3) {
+      alert('이미지는 3장까지 추가 가능합니다');
+      return;
+    }
     const imageFormData = new FormData();
 
     [].forEach.call(e.target.files, (f) => {

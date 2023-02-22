@@ -15,7 +15,6 @@ const FollowPageLayout = ({ children }: Props) => {
 
   const isLocated = useMemo(() => {
     const routeLocation = router.pathname.slice(13);
-
     if (routeLocation === 'follower') return true;
     else return false;
   }, [router]);

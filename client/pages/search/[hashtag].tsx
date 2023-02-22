@@ -1,12 +1,7 @@
 import React from 'react';
-import {
-  MainLayout,
-  PostList,
-  PostEndBar,
-  SearchPostIntroBar,
-} from '@components/index';
+import { MainLayout, PostList, SearchPostIntroBar } from '@components/index';
 import { GetServerSideProps, NextPage } from 'next';
-import { dehydrate, QueryClient, useInfiniteQuery } from 'react-query';
+import { dehydrate, QueryClient } from 'react-query';
 import { queryKeys } from '@consts/queryKeys';
 import { customAxios } from '@apis/base';
 import { searchPosts } from '@apis/post';
@@ -26,8 +21,11 @@ const Search: NextPage = () => {
   return (
     <MainLayout>
       <SearchPostIntroBar hashtag={hashtag} />
-      {posts && <PostList posts={posts} />}
-      <PostEndBar endPost={ref} />
+      {posts?.length ? (
+        <PostList posts={posts} endPost={ref} />
+      ) : (
+        <span>게시글이 존재하지 않습니다</span>
+      )}
     </MainLayout>
   );
 };

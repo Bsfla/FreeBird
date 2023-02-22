@@ -3,8 +3,6 @@ import { PostHeader, SharePostBlock, Wrraper } from './style';
 import { PostType } from '@lib/types';
 import PostContent from '../PostContent';
 import { PostImage, WriteInfo } from '@components/Post';
-import { useModal } from '@hooks/common';
-import { modalName } from '@consts/modal';
 
 interface Props {
   post: PostType;

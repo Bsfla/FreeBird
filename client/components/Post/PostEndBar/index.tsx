@@ -11,7 +11,7 @@ const PostEndBar = ({ endPost }: Props) => {
   return (
     <Wrrapper ref={endPost}>
       <BsArrowDownSquare color={theme.colors.sub3} size={30} />
-      <span>더이상의 게시물이 없습니다</span>
+      <span>더이상의 목록이 없습니다</span>
     </Wrrapper>
   );
 };

@@ -9,7 +9,7 @@ const useInfiniteScroll = <T extends FetchingDataType[]>(
   api: (body: InfiniteFetchingType) => Promise<T>,
   paramId?: number | string
 ) => {
-  const { data, fetchNextPage, hasNextPage } = useInfiniteQuery<
+  const { data, fetchNextPage, hasNextPage, isFetching } = useInfiniteQuery<
     T,
     AxiosError,
     T
@@ -30,7 +30,7 @@ const useInfiniteScroll = <T extends FetchingDataType[]>(
     if (!isLast && hasNextPage && inView) fetchNextPage();
   }, [inView]);
 
-  return { ref, resultData };
+  return { ref, resultData, isFetching };
 };
 
 export default useInfiniteScroll;

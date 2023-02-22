@@ -23,7 +23,7 @@ const ProfileEditModal = ({ profile }: Props) => {
     nickname: profile.nickname,
     intro: profile.intro,
   });
-  const { hideModal, modal, isShow } = useModal(modalName.PROFILE_EDIT);
+  const { hideModal, isShow } = useModal(modalName.PROFILE_EDIT);
   const { mutate } = useEditProfile();
   const [imgPath, setImagePath] = useState<ProfileImageType>(
     profile.ProfileImage
@@ -37,7 +37,7 @@ const ProfileEditModal = ({ profile }: Props) => {
       intro: profile.intro,
     });
   };
-  console.log(isShow);
+
   const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const imageFormData = new FormData();
 
@@ -46,7 +46,7 @@ const ProfileEditModal = ({ profile }: Props) => {
     });
 
     try {
-      const { data } = await upLoadImages(imageFormData);
+      const data = await upLoadImages(imageFormData);
 
       setImagePath({ src: data[0] });
     } catch (err: any) {

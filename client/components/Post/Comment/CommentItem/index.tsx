@@ -40,7 +40,11 @@ const CommentItem = ({ comment }: Props) => {
   return (
     <Wrapper>
       <CommentHead>
-        <WriteInfo nickName={writer.nickname} date={createdAt} />
+        <WriteInfo
+          nickName={writer.nickname}
+          date={createdAt}
+          imgPath={writer.ProfileImage}
+        />
         {writer.id === user.id && (
           <CommentEdit>
             <span onClick={handleToggleEditMode}>수정</span>

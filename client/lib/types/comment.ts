@@ -1,3 +1,5 @@
+import { ProfileImageType } from './user';
+
 export interface CommentFormType {
   postId: number;
   content: string;
@@ -11,6 +13,7 @@ export interface CommentType {
   User: {
     id: number;
     nickname: string;
+    ProfileImage: ProfileImageType;
   };
   Reply?: CommentType[];
 }

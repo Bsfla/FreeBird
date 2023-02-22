@@ -63,7 +63,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const userId = context.params?.id;
 
   await queryClient.prefetchInfiniteQuery(queryKeys.following, () =>
-    getFollowings({ lastId: 0, optionId: Number(userId) })
+    getFollowings({ lastId: 0, paramId: Number(userId) })
   );
 
   return {

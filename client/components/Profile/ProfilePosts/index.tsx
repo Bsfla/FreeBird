@@ -23,8 +23,11 @@ const ProfilePosts = ({ profile }: Props) => {
   return (
     <>
       <PostIntroBar userName={profile.nickname} />
-      {posts && <PostList posts={posts} />}
-      <PostEndBar endPost={ref} />
+      {posts?.length ? (
+        <PostList posts={posts} endPost={ref} />
+      ) : (
+        <span>게시물이 존재하지 않습니다.</span>
+      )}
     </>
   );
 };

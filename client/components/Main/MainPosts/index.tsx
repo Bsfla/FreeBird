@@ -1,6 +1,6 @@
 import React from 'react';
 import { getPosts } from '@apis/post';
-import { PostList, PostEndBar } from '@components/index';
+import { PostList } from '@components/index';
 import { PostType } from '@lib/types';
 import { useInfiniteScroll } from '@hooks/common';
 import { queryKeys } from '@consts/queryKeys';
@@ -10,10 +10,14 @@ const MainPosts = () => {
     queryKeys.posts,
     getPosts
   );
+
   return (
     <>
-      {posts && <PostList posts={posts} />}
-      <PostEndBar endPost={ref} />
+      {posts?.length ? (
+        <PostList posts={posts} endPost={ref} />
+      ) : (
+        <span>게시물이 존재하지 않습니다</span>
+      )}
     </>
   );
 };

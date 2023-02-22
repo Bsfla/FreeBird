@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   margin-top: 18px;
   font-size: 14px;
   flex: 1;
+  white-space: pre-line;
 `;
 
 export const HashTag = styled.div`
