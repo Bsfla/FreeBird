@@ -1,7 +1,12 @@
 import React from 'react';
 import { Wrapper } from './style';
 import { PostType } from '@lib/types';
-import { PostCard, PostImageCarousel, PostEndBar } from '@components/index';
+import {
+  PostCard,
+  PostImageCarousel,
+  PostEndBar,
+  NotList,
+} from '@components/index';
 import { useModal } from '@hooks/common';
 import { modalName } from '@consts/modal';
 

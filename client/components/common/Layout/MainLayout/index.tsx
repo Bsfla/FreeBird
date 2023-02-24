@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
-import { LeftSideBar, RightSideBar } from '@components/common';
+import { LeftSideBar, RightSideBar, Spinner } from '@components/common';
+import { useRouteLodaing } from '@hooks/index';
 import { Wrapper, MainContents } from './style';
 
 interface Props {
@@ -7,10 +8,11 @@ interface Props {
 }
 
 const MainLayout = ({ children }: Props) => {
+  const { loading } = useRouteLodaing();
   return (
     <Wrapper>
       <LeftSideBar />
-      <MainContents>{children}</MainContents>
+      <MainContents>{loading ? <Spinner /> : children}</MainContents>
       <RightSideBar />
     </Wrapper>
   );

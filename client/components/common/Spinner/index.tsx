@@ -4,15 +4,13 @@ import { LoadingDot, LoadingDots, Wrapper } from './style';
 
 const Spinner = () => {
   return (
-    <MainLayout>
-      <Wrapper>
-        <LoadingDots>
-          <LoadingDot />
-          <LoadingDot />
-          <LoadingDot />
-        </LoadingDots>
-      </Wrapper>
-    </MainLayout>
+    <Wrapper>
+      <LoadingDots>
+        <LoadingDot />
+        <LoadingDot />
+        <LoadingDot />
+      </LoadingDots>
+    </Wrapper>
   );
 };
 

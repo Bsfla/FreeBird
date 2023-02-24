@@ -42,13 +42,11 @@ const Follower: NextPageWithLayout = () => {
 
   return (
     <>
-      {followers?.length ? (
+      {followers && (
         <FollowUserList
           followUsers={followers}
           handleDeleteFollow={handleDeleteFollower}
         />
-      ) : (
-        <span>팔로워가 없습니다</span>
       )}
       <div ref={ref}>d</div>
     </>

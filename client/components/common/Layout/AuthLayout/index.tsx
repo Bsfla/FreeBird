@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
-import { Header } from '@components/common';
+import { Header, Spinner } from '@components/common';
+import { useRouteLodaing } from '@hooks/index';
 import { Wrrper } from './style';
 
 interface Props {
@@ -7,10 +8,11 @@ interface Props {
 }
 
 const AuthLayout = ({ children }: Props) => {
+  const { loading } = useRouteLodaing();
   return (
     <>
       <Header />
-      <Wrrper>{children}</Wrrper>
+      <Wrrper>{loading ? <Spinner /> : children}</Wrrper>
     </>
   );
 };

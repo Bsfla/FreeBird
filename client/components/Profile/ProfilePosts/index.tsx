@@ -1,5 +1,5 @@
 import React from 'react';
-import { PostList, PostEndBar, PostIntroBar } from '@components/index';
+import { PostList, PostEndBar, PostIntroBar, NotList } from '@components/index';
 import { PostType, UserInfoType } from '@lib/types';
 import { useInfiniteScroll } from '@hooks/common';
 import { queryKeys } from '@consts/queryKeys';
@@ -23,11 +23,7 @@ const ProfilePosts = ({ profile }: Props) => {
   return (
     <>
       <PostIntroBar userName={profile.nickname} />
-      {posts?.length ? (
-        <PostList posts={posts} endPost={ref} />
-      ) : (
-        <span>게시물이 존재하지 않습니다.</span>
-      )}
+      {posts?.length ? <PostList posts={posts} endPost={ref} /> : <NotList />}
     </>
   );
 };

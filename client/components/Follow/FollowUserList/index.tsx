@@ -2,7 +2,8 @@ import { followUser } from '@apis/user';
 import { FollowUserType } from '@lib/types';
 import React from 'react';
 import FollowCard from '../FollowCard';
-import { Wrrapper, NotList } from './style';
+import { NotList } from '@components/index';
+import { Wrrapper } from './style';
 
 interface Props {
   followUsers: FollowUserType[];
@@ -19,11 +20,7 @@ const FollowUserList = ({ followUsers, handleDeleteFollow }: Props) => {
           handleDeleteFollow={handleDeleteFollow}
         />
       ))}
-      {followUsers.length < 1 && (
-        <NotList>
-          <span>목록이 없습니다.</span>
-        </NotList>
-      )}
+      {followUsers.length < 1 && <NotList />}
     </Wrrapper>
   );
 };

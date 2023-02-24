@@ -8,3 +8,5 @@ export { default as PostList } from './PostList';
 export { default as Modal } from './Modal';
 export { default as Tooltip } from './Tooltip';
 export { default as Carousel } from './Carousel';
+export { default as NotList } from './NotList';
+export { default as Spinner } from './Spinner';

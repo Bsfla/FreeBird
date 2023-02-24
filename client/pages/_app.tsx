@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import type { ReactElement, ReactNode } from 'react';
 import type { AppProps } from 'next/app';
 import type { NextPage } from 'next';
@@ -9,8 +9,6 @@ import GlobalStyle from 'styles/globalStyles';
 import { ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';
 import Head from 'next/head';
-import { Router } from 'next/router';
-import Spinner from '@components/common/Spinner';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -21,25 +19,6 @@ export type AppPropsWithLayout = AppProps & {
 };
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const start = () => {
-      setLoading(true);
-    };
-    const end = () => {
-      setLoading(false);
-    };
-    Router.events.on('routeChangeStart', start);
-    Router.events.on('routeChangeComplete', end);
-    Router.events.on('routeChangeError', end);
-    return () => {
-      Router.events.off('routeChangeStart', start);
-      Router.events.off('routeChangeComplete', end);
-      Router.events.off('routeChangeError', end);
-    };
-  }, []);
-
   const [queryClient] = React.useState(
     () =>
       new QueryClient({
@@ -66,9 +45,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         </Head>
         <GlobalStyle />
         <ThemeProvider theme={theme}>
-          <RecoilRoot>
-            {loading ? <Spinner /> : getLayout(<Component {...pageProps} />)}
-          </RecoilRoot>
+          <RecoilRoot>{getLayout(<Component {...pageProps} />)}</RecoilRoot>
         </ThemeProvider>
         <ReactQueryDevtools initialIsOpen={false} />
       </Hydrate>

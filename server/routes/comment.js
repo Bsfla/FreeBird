@@ -1,5 +1,5 @@
 const express = require("express");
-const { Comment, Post, User } = require("../models");
+const { Comment, Post, User, Image } = require("../models");
 const { isLoggedIn } = require("./middleware");
 
 const router = express.Router();
@@ -47,6 +47,13 @@ router.get("/:postId", async (req, res, next) => {
         {
           model: User,
           attributes: ["id", "nickname"],
+          include: [
+            {
+              model: Image,
+              as: "ProfileImage",
+              attributes: ["src"],
+            },
+          ],
         },
         {
           model: Comment,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { getPosts } from '@apis/post';
-import { PostList } from '@components/index';
+import { PostList, NotList } from '@components/index';
 import { PostType } from '@lib/types';
 import { useInfiniteScroll } from '@hooks/common';
 import { queryKeys } from '@consts/queryKeys';
@@ -13,11 +13,7 @@ const MainPosts = () => {
 
   return (
     <>
-      {posts?.length ? (
-        <PostList posts={posts} endPost={ref} />
-      ) : (
-        <span>게시물이 존재하지 않습니다</span>
-      )}
+      {posts?.length ? <PostList posts={posts} endPost={ref} /> : <NotList />}
     </>
   );
 };
