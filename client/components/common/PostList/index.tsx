@@ -9,6 +9,8 @@ import {
 } from '@components/index';
 import { useModal } from '@hooks/common';
 import { modalName } from '@consts/modal';
+import { LOGIN_PAGE } from '@consts/route';
+import Link from 'next/link';
 
 interface Props {
   posts: PostType[];
@@ -21,7 +23,9 @@ const PostList = ({ posts, endPost }: Props) => {
   return (
     <Wrapper>
       {posts.map((post) => (
-        <PostCard post={post} key={post.id} />
+        <Link href={LOGIN_PAGE} key={post.id}>
+          <PostCard post={post} />
+        </Link>
       ))}
       <PostEndBar endPost={endPost} />
       <PostImageCarousel {...modalProps} />

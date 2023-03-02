@@ -2,7 +2,8 @@ import React from 'react';
 import { PostType } from '@lib/index';
 import { Wrapper, HashTag } from './style';
 import Link from 'next/link';
-import { SEARCH_PAGE } from '@consts/route';
+import { LOGIN_PAGE, SEARCH_PAGE } from '@consts/route';
+import router, { useRouter } from 'next/router';
 
 interface Props {
   post: PostType;

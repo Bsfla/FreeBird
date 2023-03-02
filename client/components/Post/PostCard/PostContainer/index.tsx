@@ -3,23 +3,29 @@ import { PostHeader, SharePostBlock, Wrraper } from './style';
 import { PostType } from '@lib/types';
 import PostContent from '../PostContent';
 import { PostImage, WriteInfo } from '@components/Post';
+import { POST_PAGE } from '@consts/route';
+import { useRouter } from 'next/router';
 
 interface Props {
   post: PostType;
 }
 
 const PostContainer = ({ post }: Props) => {
+  const router = useRouter();
+  const handleRoutePost = (id: number) => () => {
+    router.push(`${POST_PAGE}/${id}`);
+  };
   if (post.RetweetId && post.Retweet) {
     const { Retweet: sharePost, User: user } = post;
 
     return (
-      <Wrraper>
+      <Wrraper onClick={handleRoutePost(post.id)}>
         <WriteInfo
           nickName={user.nickname}
           date={post.createdAt}
           imgPath={user.ProfileImage}
         />
-        <SharePostBlock>
+        <SharePostBlock onClick={handleRoutePost(sharePost.id)}>
           <PostContainer post={sharePost} />
         </SharePostBlock>
       </Wrraper>
@@ -27,7 +33,7 @@ const PostContainer = ({ post }: Props) => {
   }
 
   return (
-    <Wrraper>
+    <Wrraper onClick={handleRoutePost(post.id)}>
       <PostHeader>
         <WriteInfo
           nickName={post.User.nickname}

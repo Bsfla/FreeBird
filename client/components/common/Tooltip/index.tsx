@@ -11,7 +11,7 @@ const Tooltip = ({ children }: Props) => {
   useEffect(() => {
     const handleClickOutside = (e: any) => {
       if (ref.current && !ref.current.contains(e.target)) {
-        console.log(1);
+        return;
       }
     };
 
