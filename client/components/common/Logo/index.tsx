@@ -1,12 +1,16 @@
 import React from 'react';
 import { LogoWrapper } from './style';
 import LogoIcon from '@assets/svg/LogoIcon.svg';
+import Link from 'next/link';
+import { MAIN_PAGE } from '@consts/route';
 
 const Logo = () => {
   return (
     <LogoWrapper>
       <LogoIcon />
-      <span>PokeBird</span>
+      <Link href={MAIN_PAGE}>
+        <span>PokeBird</span>
+      </Link>
     </LogoWrapper>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@components/common';
+import Button from '@components/common/Button';
 import { useLogin } from '@hooks/page';
 import { Wrapper, Title, Input } from './style';
 

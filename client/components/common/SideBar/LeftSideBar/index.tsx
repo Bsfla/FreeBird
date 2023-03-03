@@ -1,62 +1,62 @@
 import React from 'react';
-import { Logo } from '@components/common';
-import {
-  Wrraper,
-  MainProfile,
-  Image,
-  ProfileWrapper,
-  Button,
-  PageMenuList,
-  PageMenu,
-} from './style';
-import profile from '@assets/img/profile.png';
+import Logo from '@components/common/Logo';
+import { Wrraper, PageMenuList, PageMenu, AuthPageList } from './style';
 import { ImProfile } from 'react-icons/im';
 import { FaUserFriends } from 'react-icons/fa';
-import { logout } from '@apis/user';
-import { useRouter } from 'next/router';
-import { LOGIN_PAGE, PROFILE_PAGE, FOLLOW_PAGE } from '@consts/route';
-import { useSetUserAtomState } from '@hooks/page';
+import { loadMyInfo, logout } from '@apis/user';
+import {
+  PROFILE_PAGE,
+  FOLLOW_PAGE,
+  LOGIN_PAGE,
+  SIGNUP_PAGE,
+} from '@consts/route';
 import Link from 'next/link';
+import { useQuery } from 'react-query';
+import { queryKeys } from '@consts/queryKeys';
+import UserMenu from './UserMenu';
 
 const LeftSideBar = () => {
-  const router = useRouter();
-  const { user } = useSetUserAtomState();
+  const { data: user } = useQuery(queryKeys.user, () => loadMyInfo());
 
-  const handleLogout = async () => {
-    try {
-      await logout();
-      router.replace(LOGIN_PAGE);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  console.log(user);
 
   return (
     <Wrraper>
       <Logo />
-      <MainProfile>
-        <Image>
-          <img src={profile} alt="프로필 이미지" />
-        </Image>
-        <ProfileWrapper>
-          <span className="nickname">{user.nickname}</span>
-          <Button onClick={handleLogout}>로그아웃</Button>
-        </ProfileWrapper>
-      </MainProfile>
-      <PageMenuList>
-        <Link href={`${PROFILE_PAGE}/${user.id}`}>
-          <PageMenu>
-            <ImProfile size={20} />
-            <span>프로필 정보</span>
-          </PageMenu>
-        </Link>
-        <Link href={`${FOLLOW_PAGE}/${user.id}/following`}>
-          <PageMenu>
-            <FaUserFriends size={20} />
-            팔로우 목록
-          </PageMenu>
-        </Link>
-      </PageMenuList>
+      {!user ? (
+        <AuthPageList>
+          <Link href={LOGIN_PAGE}>
+            <PageMenu>
+              <ImProfile size={20} />
+              <span>로그인</span>
+            </PageMenu>
+          </Link>
+          <Link href={SIGNUP_PAGE}>
+            <PageMenu>
+              <ImProfile size={20} />
+              <span>회원가입</span>
+            </PageMenu>
+          </Link>
+        </AuthPageList>
+      ) : (
+        <>
+          <UserMenu />
+          <PageMenuList>
+            <Link href={`${PROFILE_PAGE}/${user?.id}`}>
+              <PageMenu>
+                <ImProfile size={20} />
+                <span>프로필 정보</span>
+              </PageMenu>
+            </Link>
+            <Link href={`${FOLLOW_PAGE}/${user?.id}/following`}>
+              <PageMenu>
+                <FaUserFriends size={20} />
+                팔로우 목록
+              </PageMenu>
+            </Link>
+          </PageMenuList>
+        </>
+      )}
     </Wrraper>
   );
 };

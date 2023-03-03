@@ -13,6 +13,11 @@ const HashtagRank = () => {
       <div className="title">
         <span>#인기순위</span>
       </div>
+      <HashtagContainer>
+        <Hashtag>#안녕</Hashtag>
+        <Hashtag>#안녕</Hashtag>
+        <Hashtag>#안녕</Hashtag>
+      </HashtagContainer>
     </Wrrapper>
   );
 };

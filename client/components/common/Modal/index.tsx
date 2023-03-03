@@ -10,7 +10,7 @@ import {
 
 import { ModalProps } from '@lib/types';
 
-const ModalCustomFrame = ({
+export const ModalCustomFrame = ({
   isOpen,
   children,
   handleCloseModal,
@@ -24,7 +24,11 @@ const ModalCustomFrame = ({
   );
 };
 
-const ModalFrame = ({ isOpen, children, handleCloseModal }: ModalProps) => {
+export const ModalFrame = ({
+  isOpen,
+  children,
+  handleCloseModal,
+}: ModalProps) => {
   return (
     <>
       <StyleOverlay isOpen={isOpen} onClick={handleCloseModal} />
@@ -33,24 +37,14 @@ const ModalFrame = ({ isOpen, children, handleCloseModal }: ModalProps) => {
   );
 };
 
-const ModalHeader = ({ children }: Pick<ModalProps, 'children'>) => {
+export const ModalHeader = ({ children }: Pick<ModalProps, 'children'>) => {
   return <StyleModalHeader>{children}</StyleModalHeader>;
 };
 
-const ModalBody = ({ children }: Pick<ModalProps, 'children'>) => {
+export const ModalBody = ({ children }: Pick<ModalProps, 'children'>) => {
   return <StyleModalBody>{children}</StyleModalBody>;
 };
 
-const ModalFooter = ({ children }: Pick<ModalProps, 'children'>) => {
+export const ModalFooter = ({ children }: Pick<ModalProps, 'children'>) => {
   return <StyleModalFooter>{children}</StyleModalFooter>;
 };
-
-const Modal = {
-  Frame: ModalFrame,
-  Header: ModalHeader,
-  Body: ModalBody,
-  Footer: ModalFooter,
-  CustomFrame: ModalCustomFrame,
-};
-
-export default Modal;

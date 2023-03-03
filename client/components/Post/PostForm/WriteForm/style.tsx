@@ -6,7 +6,6 @@ export const Wrraper = styled.div`
   flex-direction: column;
 
   .image_upload {
-    width: 100%;
     display: flex;
     justify-content: flex-end;
     position: relative;
@@ -22,7 +21,6 @@ export const Wrraper = styled.div`
       right: 10px;
       cursor: pointer;
     }
-
   }
 `;
 

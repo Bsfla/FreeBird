@@ -1,5 +1,6 @@
 import React from 'react';
-import { Modal, Carousel } from '@components/index';
+import { ModalCustomFrame } from '@components/common/Modal';
+import Carousel from '@components/common/Carousel';
 import { createImagePath } from '@lib/utils';
 import { ModalType } from '@lib/types';
 
@@ -11,13 +12,13 @@ interface Props {
 
 const PostImageCarousel = ({ isShow, hideModal, modal }: Props) => {
   return (
-    <Modal.CustomFrame isOpen={isShow} handleCloseModal={hideModal}>
+    <ModalCustomFrame isOpen={isShow} handleCloseModal={hideModal}>
       <Carousel>
         {modal.images?.map((image) => (
           <img key={image.src} src={createImagePath(image.src)} />
         ))}
       </Carousel>
-    </Modal.CustomFrame>
+    </ModalCustomFrame>
   );
 };
 

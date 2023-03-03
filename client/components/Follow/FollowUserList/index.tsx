@@ -2,7 +2,7 @@ import { followUser } from '@apis/user';
 import { FollowUserType } from '@lib/types';
 import React from 'react';
 import FollowCard from '../FollowCard';
-import { NotList } from '@components/index';
+import NotList from '@components/common/NotList';
 import { Wrrapper } from './style';
 
 interface Props {

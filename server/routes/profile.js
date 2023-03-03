@@ -47,15 +47,13 @@ router.get("/:userId", isLoggedIn, async (req, res, next) => {
         {
           model: User,
           as: "Followings",
-          attributes: ['id']
-
+          attributes: ["id"],
         },
         {
           model: User,
           as: "Followers",
-          attributes: ['id']
-
-        }
+          attributes: ["id"],
+        },
       ],
     });
 
@@ -148,6 +146,13 @@ router.get("/posts/:userId", async (req, res, next) => {
             {
               model: User,
               attributes: ["id", "nickname"],
+              include: [
+                {
+                  model: Image,
+                  as: "ProfileImage",
+                  attributes: ["src"],
+                },
+              ],
             },
             {
               model: Image,

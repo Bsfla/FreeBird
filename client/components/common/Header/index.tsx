@@ -1,13 +1,15 @@
 import React from 'react';
 import { Wrapper, HeaderButton, ButtonGroup } from './style';
-import { Logo } from '@components/common';
+import Logo from '@components/common/Logo';
 import Link from 'next/link';
-import { LOGIN_PAGE, SIGNUP_PAGE } from '@consts/route';
+import { LOGIN_PAGE, SIGNUP_PAGE, MAIN_PAGE } from '@consts/route';
 
 const Header = () => {
   return (
     <Wrapper>
-      <Logo />
+      <Link href={MAIN_PAGE}>
+        <Logo />
+      </Link>
       <ButtonGroup>
         <Link href={LOGIN_PAGE}>
           <HeaderButton>로그인</HeaderButton>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Wrapper, Title, Input } from './style';
-import { Button } from '@components/common';
+import Button from '@components/common/Button';
 import { useSignup } from '@hooks/page';
 
 const RegisterForm = () => {

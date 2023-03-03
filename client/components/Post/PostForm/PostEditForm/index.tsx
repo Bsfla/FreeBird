@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useEditPost } from '@hooks/page';
 import { upLoadImages } from '@apis/post';
-import { Button } from '@components/common';
+import Button from '@components/common/Button';
 import WriteForm from '../WriteForm';
 import { PostType } from '@lib/types';
 import { FormHeader, Wrraper } from './style';

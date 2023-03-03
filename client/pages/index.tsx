@@ -1,5 +1,5 @@
 import React from 'react';
-import { MainLayout } from '@components/common';
+import { MainLayout } from '@components/common/Layout';
 import { PostForm } from '@components/Post';
 import { MainPosts } from '@components/Main';
 import { dehydrate, QueryClient } from 'react-query';
@@ -27,8 +27,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     customAxios.defaults.headers.Cookie = cookie;
 
     await queryClient.prefetchQuery(queryKeys.user, () => loadMyInfo());
-  } else {
-    return { redirect: { destination: LOGIN_PAGE, permanent: false } };
   }
 
   await queryClient.prefetchInfiniteQuery(queryKeys.posts, () =>

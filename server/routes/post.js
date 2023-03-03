@@ -116,6 +116,13 @@ router.get("/:postId", async (req, res, next) => {
             {
               model: User,
               attributes: ["id", "nickname"],
+              include: [
+                {
+                  model: Image,
+                  as: "ProfileImage",
+                  attributes: ["src"],
+                },
+              ],
             },
             {
               model: Image,

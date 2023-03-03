@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
-import { Header, Spinner } from '@components/common';
+import Header from '@components/common/Header';
+import Spinner from '@components/common/Spinner';
 import { useRouteLodaing } from '@hooks/index';
 import { Wrrper } from './style';
 
@@ -9,6 +10,7 @@ interface Props {
 
 const AuthLayout = ({ children }: Props) => {
   const { loading } = useRouteLodaing();
+
   return (
     <>
       <Header />

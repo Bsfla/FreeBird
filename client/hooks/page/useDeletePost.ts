@@ -10,7 +10,7 @@ const useDeletePost = (post?: PostType) => {
     onSuccess: () => {
       alert('게시글을 삭제했습니다 ');
       queryClient.invalidateQueries('posts');
-      router.push('/');
+      if (router.query.postId) router.push('/');
     },
 
     onError: (error) => {

@@ -12,9 +12,11 @@ interface Props {
 
 const PostContainer = ({ post }: Props) => {
   const router = useRouter();
-  const handleRoutePost = (id: number) => () => {
-    router.push(`${POST_PAGE}/${id}`);
-  };
+  const handleRoutePost =
+    (id: number) => (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+      e.stopPropagation();
+      router.push(`${POST_PAGE}/${id}`);
+    };
   if (post.RetweetId && post.Retweet) {
     const { Retweet: sharePost, User: user } = post;
 
@@ -25,7 +27,7 @@ const PostContainer = ({ post }: Props) => {
           date={post.createdAt}
           imgPath={user.ProfileImage}
         />
-        <SharePostBlock onClick={handleRoutePost(sharePost.id)}>
+        <SharePostBlock onClick={(e) => handleRoutePost(sharePost.id)}>
           <PostContainer post={sharePost} />
         </SharePostBlock>
       </Wrraper>

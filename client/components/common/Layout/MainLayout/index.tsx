@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
-import { LeftSideBar, RightSideBar, Spinner } from '@components/common';
+import { LeftSideBar, RightSideBar } from '@components/common/SideBar';
+import Spinner from '@components/common/Spinner';
 import { useRouteLodaing } from '@hooks/index';
 import { Wrapper, MainContents } from './style';
 

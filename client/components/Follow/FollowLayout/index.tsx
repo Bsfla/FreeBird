@@ -1,4 +1,4 @@
-import { MainLayout } from '@components/common';
+import { MainLayout } from '@components/common/Layout';
 import { FOLLOWER_PAGE, FOLLOWING_PAGE } from '@consts/route';
 import Link from 'next/link';
 import { useRouter } from 'next/router';

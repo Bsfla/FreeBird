@@ -1,5 +1,7 @@
 import React from 'react';
-import { PostList, PostEndBar, PostIntroBar, NotList } from '@components/index';
+import { PostIntroBar } from '@components/index';
+import PostList from '@components/common/PostList';
+import NotList from '@components/common/NotList';
 import { PostType, UserInfoType } from '@lib/types';
 import { useInfiniteScroll } from '@hooks/common';
 import { queryKeys } from '@consts/queryKeys';

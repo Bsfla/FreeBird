@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProfileImage } from '@components/index';
+import ProfileImage from '@components/common/ProfileImage';
 import { Wrrapper, Button, DeleteButton } from './style';
 import { FollowUserType } from '@lib/types';
 

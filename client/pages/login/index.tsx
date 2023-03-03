@@ -1,6 +1,7 @@
 import React from 'react';
 import type { GetServerSideProps, NextPage } from 'next';
-import { AuthLayout, LoginForm } from '@components/index';
+import { LoginForm } from '@components/index';
+import { AuthLayout } from '@components/common/Layout';
 
 const Login: NextPage = () => {
   return (
@@ -12,7 +13,6 @@ const Login: NextPage = () => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const cookie = context.req ? context.req.headers.cookie : '';
-  console.log(cookie);
 
   return {
     props: {},

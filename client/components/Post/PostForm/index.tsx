@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useCreatePost } from '@hooks/api';
 import { upLoadImages } from '@apis/post';
-import { Button } from '@components/common';
+import Button from '@components/common/Button';
 import WriteForm from './WriteForm';
 import { Wrraper } from './style';
 

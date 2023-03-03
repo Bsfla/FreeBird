@@ -1,4 +1,4 @@
-import { ProfileImage } from '@components/common';
+import ProfileImage from '@components/common/ProfileImage';
 import { ProfileImageType } from '@lib/types';
 import { createDate } from '@lib/utils';
 import React from 'react';

@@ -1,10 +1,6 @@
 import React from 'react';
-import {
-  MainLayout,
-  ProfileCard,
-  ProfileEditModal,
-  ProfilePosts,
-} from '@components/index';
+import { ProfileCard, ProfileEditModal, ProfilePosts } from '@components/index';
+import { MainLayout } from '@components/common/Layout';
 import { GetServerSideProps, NextPage } from 'next';
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { queryKeys } from '@consts/queryKeys';

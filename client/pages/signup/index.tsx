@@ -1,6 +1,7 @@
 import React from 'react';
 import type { NextPage } from 'next';
-import { AuthLayout, RegisterForm } from '@components/index';
+import AuthLayout from '@components/common/Layout/AuthLayout';
+import RegisterForm from '@components/Signup';
 
 const Signup: NextPage = () => {
   return (

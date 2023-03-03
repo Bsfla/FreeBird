@@ -1,7 +1,8 @@
 import React from 'react';
 import { GetServerSideProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { PostCard, CommentContainer, MainLayout } from '@components/index';
+import { PostCard, CommentContainer } from '@components/index';
+import { MainLayout } from '@components/common/Layout';
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { queryKeys } from '@consts/queryKeys';
 import { getPost } from '@apis/post';
@@ -10,9 +11,9 @@ import { getComments } from '@apis/comment';
 
 const Post: NextPage = () => {
   const router = useRouter();
-  const { id } = router.query;
-  const { data: post } = useQuery<PostType>([queryKeys.post, id], () =>
-    getPost(Number(id))
+  const { postId } = router.query;
+  const { data: post } = useQuery<PostType>([queryKeys.post, postId], () =>
+    getPost(Number(postId))
   );
 
   return (

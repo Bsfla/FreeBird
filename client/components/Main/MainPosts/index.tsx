@@ -1,6 +1,7 @@
 import React from 'react';
 import { getPosts } from '@apis/post';
-import { PostList, NotList } from '@components/index';
+import NotList from '@components/common/NotList';
+import PostList from '@components/common/PostList';
 import { PostType } from '@lib/types';
 import { useInfiniteScroll } from '@hooks/common';
 import { queryKeys } from '@consts/queryKeys';

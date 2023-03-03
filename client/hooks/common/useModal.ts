@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { modalListState, modalState } from '@recoil/modal';
 import { ModalName } from '@lib/types';
@@ -42,6 +42,11 @@ const useModal = (modalName: ModalName) => {
       })
     );
   };
+
+  useEffect(() => {
+    if (isShow) document.body.style.overflow = 'hidden';
+    else document.body.style.removeProperty('overflow');
+  }, [isShow]);
 
   return { isShow, showModal, hideModal, showImageModal, modal };
 };
