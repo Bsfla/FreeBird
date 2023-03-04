@@ -16,7 +16,7 @@ const UserMenu = () => {
   const handleLogout = async () => {
     try {
       await logout();
-      queryClient.invalidateQueries(queryKeys.user);
+      router.replace(LOGIN_PAGE);
     } catch (err) {
       console.log(err);
     }
