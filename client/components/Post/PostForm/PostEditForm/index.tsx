@@ -15,8 +15,8 @@ interface Props {
 }
 
 const PostEditForm = ({ post, handleToggleEdit, setIsEdit }: Props) => {
-  const [text, setText] = useState<string>(post.content);
-  const [imgPaths, setImagePaths] = useState<string[]>(
+  const [text, setText] = useState(post.content);
+  const [imgPaths, setImagePaths] = useState(
     post.Images.map((image) => image.src)
   );
   const { mutate, isSuccess } = useEditPost();
