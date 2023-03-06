@@ -10,7 +10,8 @@ import { addLike, deleteLike } from '@apis/post';
 import { loadMyInfo } from '@apis/user';
 
 const usePostLike = (post: PostType) => {
-  const { data: user } = useQuery<UserInfoType>('user', loadMyInfo);
+  //const { data: user } = useQuery<UserInfoType>('user', loadMyInfo);
+  const user = { id: 1 };
   const queryClient = useQueryClient();
   const isLike = post.Likers.find((found) => found.id === user?.id);
 

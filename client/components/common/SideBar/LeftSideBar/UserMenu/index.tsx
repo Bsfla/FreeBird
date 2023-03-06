@@ -16,7 +16,7 @@ const UserMenu = () => {
   const handleLogout = async () => {
     try {
       await logout();
-      router.replace(LOGIN_PAGE);
+      window.location.reload();
     } catch (err) {
       console.log(err);
     }

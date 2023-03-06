@@ -1,8 +1,9 @@
 import React from 'react';
 import { GetServerSideProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { PostCard, CommentContainer } from '@components/index';
-import { MainLayout } from '@components/common/Layout';
+import { PostCard } from '@components/Post';
+import CommentContainer from '@components/Post/Comment/CommentContainer';
+import MainLayout from '@components/common/Layout/MainLayout';
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { queryKeys } from '@consts/queryKeys';
 import { getPost } from '@apis/post';

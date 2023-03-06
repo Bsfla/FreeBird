@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { Modal, ProfileImage } from '@components/index';
+import {
+  ModalFrame,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+} from '@components/common/Modal';
+import ProfileImage from '@components/common/ProfileImage';
 import {
   ModalTitle,
   ModalBodyLayout,
@@ -75,13 +81,13 @@ const ProfileEditModal = ({ profile }: Props) => {
   };
 
   return (
-    <Modal.Frame isOpen={isShow} handleCloseModal={handleCloseModal}>
-      <Modal.Header>
+    <ModalFrame isOpen={isShow} handleCloseModal={handleCloseModal}>
+      <ModalHeader>
         <ModalTitle>
           <span>프로필 수정</span>
         </ModalTitle>
-      </Modal.Header>
-      <Modal.Body>
+      </ModalHeader>
+      <ModalBody>
         <ModalBodyLayout>
           <ImageWrapper>
             <label>
@@ -114,11 +120,11 @@ const ProfileEditModal = ({ profile }: Props) => {
             />
           </ModalEditContent>
         </ModalBodyLayout>
-      </Modal.Body>
-      <Modal.Footer>
+      </ModalBody>
+      <ModalFooter>
         <Button onClick={handleSubmitProfile}>수정 하기</Button>
-      </Modal.Footer>
-    </Modal.Frame>
+      </ModalFooter>
+    </ModalFrame>
   );
 };
 

@@ -17,20 +17,16 @@ export const ButtonGroup = styled.div`
   gap: 10px;
 `;
 
-export const HeaderButton = styled.button`
+export const HeaderButton = styled.button<{ isLocated: boolean }>`
   width: 100px;
   padding: 12px;
-  background-color: ${theme.colors.sub};
+  background-color: ${(props) =>
+    props.isLocated ? theme.colors.sub : theme.colors.main};
   border: none;
   border-radius: 10px;
-  color: ${theme.colors.white};
+  color: ${(props) =>
+    props.isLocated ? theme.colors.white : theme.colors.sub};
   font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
-  &:active {
-    background-color: ${theme.colors.sub};
-  }
-
-  &:hover {
-    background-color: ${theme.colors.sub2};
-  }
 `;

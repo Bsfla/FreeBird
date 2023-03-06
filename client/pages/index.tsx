@@ -9,7 +9,7 @@ import { getPosts } from '@apis/post';
 import { loadMyInfo } from '@apis/user';
 import { customAxios } from '@apis/base';
 
-const Main: NextPage = () => {
+const Main = () => {
   return (
     <MainLayout>
       <PostForm />
@@ -19,15 +19,11 @@ const Main: NextPage = () => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const cookie = context.req ? context.req.headers.cookie : '';
+  const cookie = context.req?.headers.cookie
+    ? context.req.headers.cookie
+    : null;
   customAxios.defaults.headers.Cookie = '';
   const queryClient = new QueryClient();
-
-  if (context.req && cookie) {
-    customAxios.defaults.headers.Cookie = cookie;
-
-    await queryClient.prefetchQuery(queryKeys.user, () => loadMyInfo());
-  }
 
   await queryClient.prefetchInfiniteQuery(queryKeys.posts, () =>
     getPosts({ lastId: 0 })

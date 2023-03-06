@@ -13,12 +13,12 @@ const CommentEditForm = ({ comment, handleToggleEditMode }: Props) => {
   const { mutate, isSuccess } = useEditComment();
 
   const handleChangeComment = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        
     setForm(e.target.value);
   };
 
   const handleSubmitComment = () => {
     if (!form.length) return alert('내용을 입력해주세요');
-    
     const body = { postId: comment.id, content: form };
 
     mutate(body);

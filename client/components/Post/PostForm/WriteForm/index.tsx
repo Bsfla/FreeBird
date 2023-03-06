@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from '@components/common';
 import Image from '../Image';
 import { Wrraper, TextForm, ImagesContainer } from './style';
 import { BsCardImage } from 'react-icons/bs';

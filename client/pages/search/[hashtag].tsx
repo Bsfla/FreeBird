@@ -1,5 +1,7 @@
 import React from 'react';
-import { MainLayout, PostList, SearchPostIntroBar } from '@components/index';
+import { SearchPostIntroBar } from '@components/index';
+import { MainLayout } from '@components/common/Layout';
+import PostList from '@components/common/PostList';
 import { GetServerSideProps, NextPage } from 'next';
 import { dehydrate, QueryClient } from 'react-query';
 import { queryKeys } from '@consts/queryKeys';

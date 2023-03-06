@@ -8,7 +8,7 @@ import { AxiosError } from 'axios';
 import { queryKeys } from '@consts/queryKeys';
 
 interface Props {
-  user: Partial<UserInfoType>;
+  user?: UserInfoType;
   profile: UserInfoType;
 }
 
@@ -51,7 +51,7 @@ const FollowButton = ({ user, profile }: Props) => {
   const { Followers: followers } = profile;
 
   const isFollowing = useMemo(() => {
-    const findFollower = followers.find((follower) => follower.id === user.id);
+    const findFollower = followers.find((follower) => follower.id === user?.id);
 
     if (findFollower) return true;
     else return false;

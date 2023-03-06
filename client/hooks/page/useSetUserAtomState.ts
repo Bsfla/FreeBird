@@ -9,9 +9,7 @@ const useSetUserAtomState = () => {
   const [user, setUser] = useRecoilState(userAtomState);
   const { data } = useQuery(queryKeys.user, () => loadMyInfo(), {
     onSuccess: (data) => setUser(data),
-
-    staleTime: 1000 * 60 * 60 * 2,
-    refetchOnWindowFocus: false,
+    staleTime: Infinity
   });
 
   return { user };

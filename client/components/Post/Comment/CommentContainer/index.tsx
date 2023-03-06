@@ -1,5 +1,5 @@
 import React from 'react';
-import { CommentList, CommentWriteForm } from '@components/index';
+import { CommentList, CommentWriteForm } from '@components/Post';
 import { Wrraper } from './style';
 import { useQuery } from 'react-query';
 import { getComments } from '@apis/comment';

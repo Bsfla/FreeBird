@@ -45,5 +45,5 @@ export interface InfiniteFetchingType {
 }
 
 export interface SearchPostsFetchingType extends InfiniteFetchingType {
-  hashtag: string
+  hashtag: string;
 }

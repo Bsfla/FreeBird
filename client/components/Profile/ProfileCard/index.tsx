@@ -1,11 +1,13 @@
 import React from 'react';
-import { ProfileImage, FollowButton } from '@components/index';
+import { FollowButton } from '@components/index';
+import ProfileImage from '@components/common/ProfileImage';
 import { Wrapper, Button } from './style';
-import {  useRecoilValue } from 'recoil';
-import { userAtomState } from '@recoil/user';
 import { UserInfoType } from '@lib/types';
 import { useModal } from '@hooks/common';
 import { modalName } from '@consts/modal';
+import { loadMyInfo } from '@apis/user';
+import { useQuery } from 'react-query';
+import { queryKeys } from '@consts/queryKeys';
 
 interface Props {
   profile: UserInfoType;
@@ -13,7 +15,7 @@ interface Props {
 
 const ProfileCard = ({ profile }: Props) => {
   const { showModal } = useModal(modalName.PROFILE_EDIT);
-  const user = useRecoilValue(userAtomState);
+  const { data: user } = useQuery(queryKeys.user, () => loadMyInfo());
 
   const handleOpenModal = () => {
     showModal();
@@ -32,10 +34,12 @@ const ProfileCard = ({ profile }: Props) => {
         <span>{`팔로워 ${profile.Followers.length} |`}</span>
         <span> {`팔로잉 ${profile.Followings.length}`}</span>
       </div>
-      {user.id === profile.id && (
+      {user?.id === profile.id && (
         <Button onClick={handleOpenModal}>프로필 수정</Button>
       )}
-      {user.id !== profile.id && <FollowButton user={user} profile={profile} />}
+      {user?.id !== profile.id && (
+        <FollowButton user={user} profile={profile} />
+      )}
     </Wrapper>
   );
 };
