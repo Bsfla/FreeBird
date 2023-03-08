@@ -1,16 +1,21 @@
-import { followUser } from '@apis/user';
 import { FollowUserType } from '@lib/types';
 import React from 'react';
 import FollowCard from '../FollowCard';
 import NotList from '@components/common/NotList';
-import { Wrrapper } from './style';
+import { Wrrapper, EndUserList } from './style';
 
 interface Props {
   followUsers: FollowUserType[];
+  endUserList: (node?: Element | null | undefined) => void;
   handleDeleteFollow: (followId: number) => () => void;
 }
 
-const FollowUserList = ({ followUsers, handleDeleteFollow }: Props) => {
+const FollowUserList = ({
+  followUsers,
+  handleDeleteFollow,
+  endUserList,
+}: Props) => {
+  console.log(followUsers);
   return (
     <Wrrapper>
       {followUsers.map((followUser) => (
@@ -21,6 +26,7 @@ const FollowUserList = ({ followUsers, handleDeleteFollow }: Props) => {
         />
       ))}
       {followUsers.length < 1 && <NotList />}
+      <EndUserList ref={endUserList} />
     </Wrrapper>
   );
 };

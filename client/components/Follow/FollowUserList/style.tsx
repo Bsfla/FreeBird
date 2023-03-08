@@ -19,3 +19,8 @@ export const NotUserList = styled.div`
     font-weight: bold;
   }
 `;
+
+export const EndUserList = styled.div`
+  width: 100%;
+  height: 10px;
+`;

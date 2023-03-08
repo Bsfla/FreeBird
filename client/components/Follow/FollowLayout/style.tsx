@@ -4,6 +4,10 @@ import theme from 'styles/theme';
 export const Header = styled.header`
   width: 100%;
   position: sticky;
+  top: 0px;
+  z-index: 100000;
+  background-color: ${theme.colors.main};
+  padding-top: 15px;
 
   .user_nickname {
     margin-left: 50px;
@@ -20,7 +24,7 @@ export const Navigation = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 31px;
+  margin-top: 11px;
   font-weight: bold;
 `;
 

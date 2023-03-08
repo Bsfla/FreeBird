@@ -8,7 +8,6 @@ export function middleware(req: NextRequest) {
     if (hasCookie) return NextResponse.next();
     return NextResponse.redirect(new URL('/login', req.url));
   } else {
-    if (hasCookie) return NextResponse.redirect(new URL('/', req.url));
     return NextResponse.next();
   }
 }

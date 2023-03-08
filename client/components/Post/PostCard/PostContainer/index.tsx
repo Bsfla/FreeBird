@@ -3,8 +3,9 @@ import { PostHeader, SharePostBlock, Wrraper } from './style';
 import { PostType } from '@lib/types';
 import PostContent from '../PostContent';
 import { PostImage, WriteInfo } from '@components/Post';
-import { POST_PAGE } from '@consts/route';
+import { POST_PAGE, PROFILE_PAGE } from '@consts/route';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 interface Props {
   post: PostType;
@@ -26,6 +27,7 @@ const PostContainer = ({ post }: Props) => {
           nickName={user.nickname}
           date={post.createdAt}
           imgPath={user.ProfileImage}
+          writerId={post.User.id}
         />
         <SharePostBlock onClick={(e) => handleRoutePost(sharePost.id)}>
           <PostContainer post={sharePost} />
@@ -36,11 +38,12 @@ const PostContainer = ({ post }: Props) => {
 
   return (
     <Wrraper onClick={handleRoutePost(post.id)}>
-      <PostHeader>
+      <PostHeader onClick={(e) => e.stopPropagation()}>
         <WriteInfo
           nickName={post.User.nickname}
           date={post.createdAt}
           imgPath={post.User.ProfileImage}
+          writerId={post.User.id}
         />
       </PostHeader>
       <PostContent post={post} />

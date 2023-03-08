@@ -19,11 +19,9 @@ const Follower: NextPageWithLayout = () => {
   const userId = Number(router.query.id);
   const queryClient = useQueryClient();
 
-  const { ref, resultData: followers } = useInfiniteScroll<FollowUserType[]>(
-    queryKeys.follower,
-    getFollowers,
-    userId
-  );
+  const { ref: endUserList, resultData: followers } = useInfiniteScroll<
+    FollowUserType[]
+  >(queryKeys.follower, getFollowers, userId);
 
   const { mutate } = useMutation(deleteFollowers, {
     onSuccess: () => {
@@ -46,9 +44,9 @@ const Follower: NextPageWithLayout = () => {
         <FollowUserList
           followUsers={followers}
           handleDeleteFollow={handleDeleteFollower}
+          endUserList={endUserList}
         />
       )}
-      <div ref={ref}>d</div>
     </>
   );
 };

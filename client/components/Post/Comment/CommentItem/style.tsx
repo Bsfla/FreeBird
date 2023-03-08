@@ -8,14 +8,18 @@ export const Wrapper = styled.div`
   margin-bottom: 15px;
   font-size: 14px;
 
-  span {
+  .comment_content {
     margin-top: 15px;
+    padding-left: 5px;
+    margin-bottom: 15px;
+    white-space: pre-line;
   }
 
   .reply_comment {
     display: flex;
     align-items: center;
     margin-top: 10px;
+    cursor: pointer;
 
     span {
       display: flex;
@@ -31,12 +35,14 @@ export const Wrapper = styled.div`
 export const CommentHead = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const CommentEdit = styled.div`
   display: flex;
   gap: 10px;
   font-size: 11px;
+  cursor: pointer;
 `;
 
 export const ReplyWrapper = styled.div`

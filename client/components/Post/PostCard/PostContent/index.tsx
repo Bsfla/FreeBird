@@ -17,7 +17,7 @@ const PostContent = ({ post }: Props) => {
           return <span key={index}>{v}</span>;
         }
       })}
-      <HashTag>
+      <HashTag onClick={(e) => e.stopPropagation()}>
         {post.Hashtags?.map((el) => (
           <Link href={`${SEARCH_PAGE}/${el.name}`} key={el.name}>
             <span>#{el.name}</span>

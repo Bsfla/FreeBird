@@ -7,6 +7,7 @@ import { Wrrapper, HashtagContainer, Hashtag } from './style';
 
 const HashtagRank = () => {
   const { data: hashtags } = useQuery('hashtag', () => getHashtag());
+  console.log(hashtags);
 
   return (
     <Wrrapper>
@@ -14,9 +15,9 @@ const HashtagRank = () => {
         <span>#인기순위</span>
       </div>
       <HashtagContainer>
-        <Hashtag>#안녕</Hashtag>
-        <Hashtag>#안녕</Hashtag>
-        <Hashtag>#안녕</Hashtag>
+        <Hashtag>{`1. #${hashtags && hashtags[0]?.Hashtag.name}`}</Hashtag>
+        <Hashtag>{`2. #${hashtags && hashtags[1]?.Hashtag.name}`}</Hashtag>
+        <Hashtag>{`3. #${hashtags && hashtags[2]?.Hashtag.name}`}</Hashtag>
       </HashtagContainer>
     </Wrrapper>
   );

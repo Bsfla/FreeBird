@@ -8,9 +8,10 @@ import {
 import { Wrapper, CommentHead, CommentEdit, ReplyWrapper } from './style';
 import { CommentType } from '@lib/types';
 import useDeleteComment from '@hooks/page/useDeleteComment';
-import { useRecoilValue } from 'recoil';
-import { userAtomState } from '@recoil/user';
 import { AiOutlinePlusSquare, AiOutlineMinusSquare } from 'react-icons/ai';
+import { queryKeys } from '@consts/queryKeys';
+import { loadMyInfo } from '@apis/user';
+import { useQuery } from 'react-query';
 
 interface Props {
   comment: CommentType;
@@ -27,7 +28,7 @@ const CommentItem = ({ comment }: Props) => {
     Reply: replyComments,
     isReply,
   } = comment;
-  const user = useRecoilValue(userAtomState);
+  const { data: user } = useQuery(queryKeys.user, () => loadMyInfo());
 
   const handleToggleEditMode = () => {
     setIsEdit(!isEdit);
@@ -44,8 +45,9 @@ const CommentItem = ({ comment }: Props) => {
           nickName={writer.nickname}
           date={createdAt}
           imgPath={writer.ProfileImage}
+          writerId={writer.id}
         />
-        {writer.id === user.id && (
+        {writer.id === user?.id && (
           <CommentEdit>
             <span onClick={handleToggleEditMode}>수정</span>
             <span onClick={handleDeleteComment}>삭제</span>
@@ -58,7 +60,7 @@ const CommentItem = ({ comment }: Props) => {
           handleToggleEditMode={handleToggleEditMode}
         />
       ) : (
-        <span>{content}</span>
+        <span className="comment_content">{content}</span>
       )}
       {!isReply && (
         <div className="reply_comment" onClick={handleOpenReplyComment}>
