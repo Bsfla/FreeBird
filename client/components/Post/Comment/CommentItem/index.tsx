@@ -4,7 +4,7 @@ import {
   CommentEditForm,
   CommentReplyForm,
   CommentList,
-} from '@components/index';
+} from '@components/Post';
 import { Wrapper, CommentHead, CommentEdit, ReplyWrapper } from './style';
 import { CommentType } from '@lib/types';
 import useDeleteComment from '@hooks/page/useDeleteComment';

@@ -3,15 +3,25 @@ import {
   AiOutlineRetweet,
   AiTwotoneHeart,
   AiOutlineHeart,
+  AiOutlineComment,
 } from 'react-icons/ai';
 import { SlOptions } from 'react-icons/sl';
-import { ButtonGroup, RetwwetButton, LikeButton, Option } from './style';
+import {
+  ButtonGroup,
+  RetwwetButton,
+  LikeButton,
+  Option,
+  CommentButton,
+} from './style';
 import { PostType } from '@lib/types';
-import { useRecoilValue } from 'recoil';
-import { userAtomState } from '@recoil/user';
 import { usePostLike, useSharePost } from '@hooks/index';
 import Tooltip from '../Tooltip/index.';
 import useDeletePost from '@hooks/page/useDeletePost';
+import { loadMyInfo } from '@apis/user';
+import { queryKeys } from '@consts/queryKeys';
+import { useQuery } from 'react-query';
+import Link from 'next/link';
+import { POST_PAGE } from '@consts/route';
 
 interface Props {
   post: PostType;
@@ -24,7 +34,7 @@ const PostButtonGroup = ({ post, handleToggleEdit }: Props) => {
   const { isLike, handleAddLike, handleDeleteLike } = usePostLike(post);
   const { handleSharePost } = useSharePost(post);
   const { handleDeletePost } = useDeletePost(post);
-  const user = useRecoilValue(userAtomState);
+  const { data: user } = useQuery(queryKeys.user, () => loadMyInfo());
   const [isOpenOption, setIsOpenOption] = useState(false);
 
   const handleToggleOption = (e: React.MouseEvent<Element, MouseEvent>) => {
@@ -32,7 +42,6 @@ const PostButtonGroup = ({ post, handleToggleEdit }: Props) => {
 
     setIsOpenOption(!isOpenOption);
   };
-
   return (
     <ButtonGroup>
       <RetwwetButton>
@@ -51,7 +60,13 @@ const PostButtonGroup = ({ post, handleToggleEdit }: Props) => {
         )}
         <span>{post.Likers.length}</span>
       </LikeButton>
-      {post.User.id === user.id && (
+      <Link href={`${POST_PAGE}/${post.id}`}>
+        <CommentButton>
+          <AiOutlineComment size={22} />
+          <span>{post.Comments?.length}</span>
+        </CommentButton>
+      </Link>
+      {post.User.id == user?.id && (
         <Option>
           <SlOptions size={22} onClick={handleToggleOption} />
           {isOpenOption && (

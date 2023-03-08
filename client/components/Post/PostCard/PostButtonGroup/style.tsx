@@ -39,6 +39,19 @@ export const LikeButton = styled.button`
   }
 `;
 
+export const CommentButton = styled.button`
+  display: flex;
+  align-items: center;
+  width: 4rem;
+  background-color: ${theme.colors.white};
+  border: none;
+  cursor: pointer;
+
+  svg {
+    margin-right: 15px;
+  }
+`;
+
 export const Option = styled.div`
   position: relative;
 `;

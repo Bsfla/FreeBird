@@ -6,7 +6,7 @@ import CommentForm from '../CommentForm';
 const CommentWriteForm = () => {
   const [form, setForm] = useState<string>('');
   const router = useRouter();
-  const { id } = router.query;
+  const { postId } = router.query;
   const { mutate } = useCreateComment();
 
   const handleChangeComment = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -15,7 +15,7 @@ const CommentWriteForm = () => {
 
   const handleSubmitComment = () => {
     if (!form.length) return alert('내용을 입력해주세요');
-    const body = { postId: Number(id), content: form };
+    const body = { postId: Number(postId), content: form };
 
     mutate(body);
     setForm('');

@@ -12,6 +12,8 @@ const MainPosts = () => {
     getPosts
   );
 
+  console.log(posts);
+
   return (
     <>
       {posts?.length ? <PostList posts={posts} endPost={ref} /> : <NotList />}

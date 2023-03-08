@@ -10,6 +10,7 @@ import { searchPosts } from '@apis/post';
 import { useRouter } from 'next/router';
 import { useInfiniteScroll } from '@hooks/index';
 import { PostType } from '@lib/types';
+import NotList from '@components/common/NotList';
 
 const Search: NextPage = () => {
   const router = useRouter();
@@ -23,11 +24,7 @@ const Search: NextPage = () => {
   return (
     <MainLayout>
       <SearchPostIntroBar hashtag={hashtag} />
-      {posts?.length ? (
-        <PostList posts={posts} endPost={ref} />
-      ) : (
-        <span>게시글이 존재하지 않습니다</span>
-      )}
+      {posts?.length ? <PostList posts={posts} endPost={ref} /> : <NotList />}
     </MainLayout>
   );
 };

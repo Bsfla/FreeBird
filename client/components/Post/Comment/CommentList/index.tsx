@@ -1,4 +1,4 @@
-import { CommentItem } from '@components/index';
+import { CommentItem } from '@components/Post';
 import { CommentType } from '@lib/types';
 import React from 'react';
 import { Wrrapper } from './style';
