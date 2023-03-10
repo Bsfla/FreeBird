@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 
   .comment_content {
     margin-top: 15px;
-    padding-left: 5px;
+    padding-left: 12px;
     margin-bottom: 15px;
     white-space: pre-line;
   }

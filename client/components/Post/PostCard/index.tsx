@@ -4,9 +4,6 @@ import { PostType } from '@lib/types';
 import PostButtonGroup from './PostButtonGroup';
 import PostContainer from './PostContainer';
 import PostEditForm from '../PostForm/PostEditForm';
-import Link from 'next/link';
-import { LOGIN_PAGE, POST_PAGE } from '@consts/route';
-import { useRouter } from 'next/router';
 
 interface Props {
   post: PostType;
@@ -14,7 +11,6 @@ interface Props {
 
 const PostCard = ({ post }: Props) => {
   const [isEdit, setIsEdit] = useState<boolean>(false);
-  const router = useRouter();
 
   const handleToggleEdit = (
     e: React.MouseEvent<HTMLSpanElement, globalThis.MouseEvent>

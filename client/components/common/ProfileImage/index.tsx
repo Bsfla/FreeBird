@@ -6,11 +6,12 @@ import { ProfileImageType } from '@lib/types';
 
 interface Props {
   imgPath: ProfileImageType;
+  size?: string;
 }
 
-const ProfileImage = ({ imgPath }: Props) => {
+const ProfileImage = ({ imgPath, size }: Props) => {
   return (
-    <Image>
+    <Image size={size}>
       <img src={imgPath !== null ? createImagePath(imgPath.src) : profile} />
     </Image>
   );

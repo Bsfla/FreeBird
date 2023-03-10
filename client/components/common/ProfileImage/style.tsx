@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import theme from 'styles/theme';
 
-export const Image = styled.div`
+export const Image = styled.div<{ size?: string }>`
   display: flex;
   justify-content: center;
-  width: 3rem;
-  height: 50px;
+  width: ${(props) => (props.size === 'Large' ? '4rem' : '3rem')};
+  height: ${(props) => (props.size === 'Large' ? '70px' : '50px')};
   background-color: ${theme.colors.gray2};
   border-radius: 5px;
 

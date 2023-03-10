@@ -1,7 +1,7 @@
 import React from 'react';
 import type { ReactElement, ReactNode } from 'react';
 import type { AppProps } from 'next/app';
-import type { GetServerSideProps, NextPage } from 'next';
+import type { NextPage } from 'next';
 import { QueryClient, QueryClientProvider, Hydrate } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { RecoilRoot } from 'recoil';
@@ -9,7 +9,6 @@ import GlobalStyle from 'styles/globalStyles';
 import { ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';
 import Head from 'next/head';
-import { CookiesProvider, Cookies } from 'react-cookie';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -39,10 +38,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
         <Head>
-          <title>PokeBird</title>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Catamaran:wght@700&family=Poppins:wght@600&display=swap"
-            rel="stylesheet"></link>
+          <title>FreeBird</title>
         </Head>
         <GlobalStyle />
         <ThemeProvider theme={theme}>

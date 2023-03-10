@@ -12,6 +12,7 @@ const useEditProfile = () => {
     onSuccess: () => {
       queryClient.invalidateQueries(queryKeys.profile);
       queryClient.invalidateQueries(queryKeys.user);
+      queryClient.invalidateQueries(queryKeys.posts);
       alert('프로필 수정에 성공했습니다');
       setModalAtomState(false);
     },
