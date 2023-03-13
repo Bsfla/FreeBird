@@ -2,18 +2,21 @@ import styled from 'styled-components';
 import theme from 'styles/theme';
 
 export const Wrraper = styled.nav`
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: 0px;
   left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
   padding-left: 35px;
-  padding-top: 20px;
 
   ${theme.media.laptop} {
     display: none;
+  }
+
+  ${theme.media.large} {
+    position: sticky;
   }
 `;
 
@@ -25,10 +28,12 @@ export const MainProfile = styled.div`
   border-radius: 20px;
   margin-top: 25px;
   padding: 20px;
+  position: sticky;
 `;
 
 export const LogoContainer = styled.div`
   width: 100%;
+  margin-top: 15px;
 `;
 
 export const Button = styled.button`

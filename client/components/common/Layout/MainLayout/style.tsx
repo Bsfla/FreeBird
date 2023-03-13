@@ -14,6 +14,7 @@ export const MainContents = styled.section`
   flex-direction: column;
   align-items: center;
   padding-top: 50px;
+  margin-left: 50px;
   width: 100%;
   ${theme.media.large} {
     width: auto;
