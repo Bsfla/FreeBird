@@ -20,6 +20,7 @@ declare module 'styled-components' {
       tablet: string;
       laptop: string;
       desktop: string;
+      large: string;
     };
 
     font: {

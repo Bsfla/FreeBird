@@ -7,9 +7,14 @@ export const Wrraper = styled.nav`
   left: 0;
   display: flex;
   flex-direction: column;
-  width: 22rem;
+  align-items: center;
   height: 100vh;
-  padding: 20px;
+  padding-left: 35px;
+  padding-top: 20px;
+
+  ${theme.media.laptop} {
+    display: none;
+  }
 `;
 
 export const MainProfile = styled.div`
@@ -20,6 +25,10 @@ export const MainProfile = styled.div`
   border-radius: 20px;
   margin-top: 25px;
   padding: 20px;
+`;
+
+export const LogoContainer = styled.div`
+  width: 100%;
 `;
 
 export const Button = styled.button`

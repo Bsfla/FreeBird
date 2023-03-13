@@ -3,7 +3,7 @@ import { FOLLOWER_PAGE, FOLLOWING_PAGE } from '@consts/route';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { ReactElement, useMemo } from 'react';
-import { Header, Navigation, Menu } from './style';
+import { Header, Navigation, Menu, UserList } from './style';
 
 interface Props {
   children: ReactElement;

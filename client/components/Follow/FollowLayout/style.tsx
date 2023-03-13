@@ -2,17 +2,16 @@ import styled from 'styled-components';
 import theme from 'styles/theme';
 
 export const Header = styled.header`
-  width: 100%;
   position: sticky;
   top: 0px;
   z-index: 100000;
   background-color: ${theme.colors.main};
   padding-top: 15px;
+  width: 33rem;
 
   .user_nickname {
-    margin-left: 50px;
     font-weight: bold;
-
+    margin-left: 20px;
     .nickname {
       color: ${theme.colors.sub3};
     }
@@ -47,4 +46,11 @@ export const Menu = styled.div<{ isLocated: boolean }>`
     width: 70px;
     border: solid ${theme.colors.sub3};
   }
+`;
+
+export const UserList = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
 `;

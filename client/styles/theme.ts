@@ -6,9 +6,12 @@ const breakpoints = {
   tablet: '768px',
   laptop: '1024px',
   desktop: '1200px',
+  large: '1700px',
 } as const;
 
 const mediaQuery = (maxWidth: string) => `@media (max-width: ${maxWidth})`;
+const deskTopmediaQuery = (minWidth: string) =>
+  `@media (min-width: ${minWidth})`;
 
 const colors = {
   main: '#e0e0e0',
@@ -32,7 +35,8 @@ const media = {
   mobile2: `(max-width: ${breakpoints.mobile2})`,
   tablet: mediaQuery(breakpoints.tablet),
   laptop: mediaQuery(breakpoints.laptop),
-  desktop: `(max-width: ${breakpoints.desktop})`,
+  desktop: mediaQuery(breakpoints.desktop),
+  large: deskTopmediaQuery(breakpoints.large),
 } as const;
 
 const theme: DefaultTheme = {

@@ -3,17 +3,21 @@ import theme from 'styles/theme';
 
 export const Wrapper = styled.main`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   height: 100%;
+  gap: 50px;
 `;
 
 export const MainContents = styled.section`
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 50px;
+  width: 100%;
+  ${theme.media.large} {
+    width: auto;
+  }
 `;
 
 export const IntroBar = styled.div`
@@ -30,4 +34,8 @@ export const IntroBar = styled.div`
     color: ${theme.colors.gray1};
     font-weight: bold;
   }
+`;
+
+export const LoadingContainer = styled.div`
+  min-width: 33rem;
 `;

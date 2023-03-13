@@ -4,9 +4,10 @@ export const Wrrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  width: 80%;
   height: 100%;
-  margin-top: 30px;
+  max-width: 33rem;
+  margin: 0 auto;
+  padding-left: 13px;
 `;
 
 export const NotUserList = styled.div`

@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '@components/common/Logo';
-import { Wrraper, PageMenuList, PageMenu } from './style';
+import { Wrraper, PageMenuList, PageMenu, LogoContainer } from './style';
 import { ImProfile } from 'react-icons/im';
 import { FaUserFriends } from 'react-icons/fa';
 import { loadMyInfo } from '@apis/user';
@@ -15,7 +15,9 @@ const LeftSideBar = () => {
 
   return (
     <Wrraper>
-      <Logo />
+      <LogoContainer>
+        <Logo />
+      </LogoContainer>
       <UserMenu />
       <PageMenuList>
         <Link href={`${PROFILE_PAGE}/${user?.id}`}>
