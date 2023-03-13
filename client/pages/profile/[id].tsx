@@ -1,27 +1,43 @@
-import React from 'react';
-import { ProfileCard, ProfileEditModal, ProfilePosts } from '@components/index';
+import React, { ReactElement } from 'react';
+import { PostIntroBar, ProfileCard, ProfileEditModal } from '@components/index';
 import { MainLayout } from '@components/common/Layout';
-import { GetServerSideProps, NextPage } from 'next';
+import { GetServerSideProps } from 'next';
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { queryKeys } from '@consts/queryKeys';
 import { customAxios } from '@apis/base';
-import { getProfile } from '@apis/profile';
+import { getProfile, getProfilePosts } from '@apis/profile';
 import { useRouter } from 'next/router';
+import { useInfiniteScroll } from '@hooks/common';
+import { PostType } from '@lib/types';
+import PostList from '@components/common/PostList';
+import NotList from '@components/common/NotList';
+import { NextPageWithLayout } from 'pages/_app';
 
-const Profile: NextPage = () => {
+const Profile: NextPageWithLayout = () => {
   const router = useRouter();
   const userId = Number(router.query.id);
   const { data: profile } = useQuery([queryKeys.profile, userId], () =>
     getProfile(userId)
   );
 
+  const { ref, resultData: posts } = useInfiniteScroll<PostType[]>(
+    queryKeys.posts,
+    getProfilePosts,
+    userId
+  );
+
   return (
-    <MainLayout>
+    <>
       {profile && <ProfileCard profile={profile} />}
       {profile && <ProfileEditModal profile={profile} />}
-      {profile && <ProfilePosts profile={profile} />}
-    </MainLayout>
+      {profile && <PostIntroBar userName={profile.nickname} />}
+      {posts?.length ? <PostList posts={posts} endPost={ref} /> : <NotList />}
+    </>
   );
+};
+
+Profile.getLayout = function getLayout(page: ReactElement) {
+  return <MainLayout>{page}</MainLayout>;
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {

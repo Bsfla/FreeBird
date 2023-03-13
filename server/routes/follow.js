@@ -1,6 +1,6 @@
 const express = require("express");
 const { Comment, Post, Image, User, Hashtag } = require("../models");
-
+const { Op } = require("sequelize");
 const db = require("../models");
 const { isLoggedIn } = require("./middleware");
 const router = express.Router();
@@ -20,7 +20,7 @@ router.get("/:userId/followers", async (req, res, next) => {
     const lastId = parseInt(req.query.lastId, 10);
 
     if (lastId) {
-      where.id = { [Op.lt]: lastId };
+      where.id = { [Op.gt]: lastId };
     }
 
     const followers = await user.getFollowers({

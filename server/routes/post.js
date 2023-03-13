@@ -95,6 +95,10 @@ router.get("/:postId", async (req, res, next) => {
             },
           ],
         },
+        {
+          model: Comment,
+          attributes: ["id"],
+        },
 
         {
           model: Image,

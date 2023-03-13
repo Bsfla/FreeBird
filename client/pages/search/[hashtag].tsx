@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { SearchPostIntroBar } from '@components/index';
 import { MainLayout } from '@components/common/Layout';
 import PostList from '@components/common/PostList';
@@ -11,8 +11,9 @@ import { useRouter } from 'next/router';
 import { useInfiniteScroll } from '@hooks/index';
 import { PostType } from '@lib/types';
 import NotList from '@components/common/NotList';
+import { NextPageWithLayout } from 'pages/_app';
 
-const Search: NextPage = () => {
+const Search: NextPageWithLayout = () => {
   const router = useRouter();
   const hashtag = router.query.hashtag as string;
   const { ref, resultData: posts } = useInfiniteScroll<PostType[]>(
@@ -22,11 +23,15 @@ const Search: NextPage = () => {
   );
 
   return (
-    <MainLayout>
+    <>
       <SearchPostIntroBar hashtag={hashtag} />
       {posts?.length ? <PostList posts={posts} endPost={ref} /> : <NotList />}
-    </MainLayout>
+    </>
   );
+};
+
+Search.getLayout = function getLayout(page: ReactElement) {
+  return <MainLayout>{page}</MainLayout>;
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {

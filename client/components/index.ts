@@ -1,5 +1,4 @@
 export * from './Post';
-export * from './Main';
 export * from './Profile';
 export * from './Follow';
 export * from './Search';

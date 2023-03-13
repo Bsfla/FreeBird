@@ -1,21 +1,33 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { MainLayout } from '@components/common/Layout';
 import { PostForm } from '@components/Post';
-import { MainPosts } from '@components/Main';
 import { dehydrate, QueryClient } from 'react-query';
-import { queryKeys, LOGIN_PAGE } from '@consts/index';
-import type { GetServerSideProps, NextPage } from 'next';
+import { queryKeys } from '@consts/index';
+import type { GetServerSideProps } from 'next';
 import { getPosts } from '@apis/post';
-import { loadMyInfo } from '@apis/user';
 import { customAxios } from '@apis/base';
+import { useInfiniteScroll } from '@hooks/common';
+import { PostType } from '@lib/types';
+import PostList from '@components/common/PostList';
+import NotList from '@components/common/NotList';
+import { NextPageWithLayout } from './_app';
 
-const Main = () => {
-  return (
-    <MainLayout>
-      <PostForm />
-      <MainPosts />
-    </MainLayout>
+const Main: NextPageWithLayout = () => {
+  const { ref, resultData: posts } = useInfiniteScroll<PostType[]>(
+    queryKeys.posts,
+    getPosts
   );
+
+  return (
+    <>
+      <PostForm />
+      {posts?.length ? <PostList posts={posts} endPost={ref} /> : <NotList />}
+    </>
+  );
+};
+
+Main.getLayout = function getLayout(page: ReactElement) {
+  return <MainLayout>{page}</MainLayout>;
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {

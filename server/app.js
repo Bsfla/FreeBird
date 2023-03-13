@@ -44,6 +44,9 @@ app.use(
     saveUnitialized: false,
     resave: false,
     secret: process.env.COOKIE_SECRET,
+    cookie: {
+      httpOnly: true,
+    },
   })
 );
 

@@ -1,7 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
-const { User, Post } = require("../models");
+const { User, Post, Image } = require("../models");
 const db = require("../models");
 
 const { isLoggedIn, isNotLoggedIn } = require("./middleware");
@@ -15,6 +15,13 @@ router.get("/", isLoggedIn, async (req, res, next) => {
         where: {
           id: req.user.id,
         },
+        include: [
+          {
+            model: Image,
+            as: "ProfileImage",
+            attributes: ["src"],
+          },
+        ],
         attributes: {
           exclude: ["password", "createdAt", "updatedAt"],
         },
@@ -59,7 +66,7 @@ router.post("/logout", isLoggedIn, async (req, res) => {
       return next(err);
     }
     req.session.destroy(() => {
-      res.clearCookie("connect.sid");
+      res.clearCookie("connect.sid", { httpOnly: true });
       res.status(200).send("로그아웃을 완료하였습니다.");
     });
   });

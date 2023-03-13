@@ -1,5 +1,5 @@
-import React from 'react';
-import { GetServerSideProps, NextPage } from 'next';
+import React, { ReactElement } from 'react';
+import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import { PostCard } from '@components/Post';
 import CommentContainer from '@components/Post/Comment/CommentContainer';
@@ -9,8 +9,9 @@ import { queryKeys } from '@consts/queryKeys';
 import { getPost } from '@apis/post';
 import { PostType } from '@lib/types';
 import { getComments } from '@apis/comment';
+import { NextPageWithLayout } from 'pages/_app';
 
-const Post: NextPage = () => {
+const Post: NextPageWithLayout = () => {
   const router = useRouter();
   const { postId } = router.query;
   const { data: post } = useQuery<PostType>([queryKeys.post, postId], () =>
@@ -18,11 +19,15 @@ const Post: NextPage = () => {
   );
 
   return (
-    <MainLayout>
+    <>
       {post && <PostCard post={post} />}
       {post && <CommentContainer post={post} />}
-    </MainLayout>
+    </>
   );
+};
+
+Post.getLayout = function getLayout(page: ReactElement) {
+  return <MainLayout>{page}</MainLayout>;
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
