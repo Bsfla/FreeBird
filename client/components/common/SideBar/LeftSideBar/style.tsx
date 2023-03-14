@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import theme from 'styles/theme';
 
-export const Wrraper = styled.nav`
+export const Wrraper = styled.aside`
   position: fixed;
   top: 0px;
   left: 0;
@@ -9,7 +9,8 @@ export const Wrraper = styled.nav`
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  padding-left: 35px;
+  padding-left: 30px;
+  padding-top: 12px;
 
   ${theme.media.laptop} {
     display: none;

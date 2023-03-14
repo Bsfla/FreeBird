@@ -7,6 +7,10 @@ export const Wrapper = styled.main`
   width: 100%;
   height: 100%;
   gap: 50px;
+
+  ${theme.media.laptop} {
+    flex-direction: column;
+  }
 `;
 
 export const MainContents = styled.section`
@@ -18,6 +22,11 @@ export const MainContents = styled.section`
   width: 100%;
   ${theme.media.large} {
     width: auto;
+  }
+
+  ${theme.media.laptop} {
+    margin-left: 0px;
+    padding-top: 0px;
   }
 `;
 
