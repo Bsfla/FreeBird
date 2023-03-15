@@ -2,16 +2,17 @@ import styled from 'styled-components';
 import theme from 'styles/theme';
 
 export const Wrraper = styled.aside`
-  position: fixed;
-  top: 0px;
+  position: sticky;
+  top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  padding-left: 30px;
+  padding-left: 22px;
   padding-top: 12px;
-
+  overflow: hidden;
+  width: 38em;
   ${theme.media.laptop} {
     display: none;
   }
@@ -61,7 +62,7 @@ export const PageMenuList = styled.ul`
 `;
 
 export const PageMenu = styled.li`
-  width: 19rem;
+  width: 16.7rem;
   background-color: ${theme.colors.white};
   padding: 10px;
   border-radius: 20px;

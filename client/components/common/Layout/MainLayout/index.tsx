@@ -11,6 +11,7 @@ interface Props {
 
 const MainLayout = ({ children }: Props) => {
   const { loading } = useRouteLodaing();
+
   return (
     <Wrapper>
       <MobileHeader />

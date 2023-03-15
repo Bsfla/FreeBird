@@ -15,7 +15,6 @@ const FollowUserList = ({
   handleDeleteFollow,
   endUserList,
 }: Props) => {
-  console.log(followUsers);
   return (
     <Wrrapper>
       {followUsers.map((followUser) => (

@@ -3,11 +3,10 @@ import theme from 'styles/theme';
 
 export const Header = styled.header`
   position: sticky;
-  top: 0px;
-  z-index: 100000;
   background-color: ${theme.colors.main};
-  padding-top: 15px;
   width: 33rem;
+  padding-top: 15px;
+  top: 0px;
 
   .user_nickname {
     font-weight: bold;
@@ -15,6 +14,12 @@ export const Header = styled.header`
     .nickname {
       color: ${theme.colors.sub3};
     }
+  }
+
+  ${theme.media.laptop} {
+    top: 58px;
+    padding-top: 10px;
+    height: 100%;
   }
 `;
 

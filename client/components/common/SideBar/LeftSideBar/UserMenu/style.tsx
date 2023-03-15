@@ -3,12 +3,13 @@ import theme from 'styles/theme';
 
 export const MainProfile = styled.div`
   display: flex;
-  width: 19rem;
+  width: 16.7rem;
   height: 7rem;
   background-color: ${theme.colors.white};
   border-radius: 20px;
   margin-top: 25px;
   padding: 20px;
+  position: sticky;
 `;
 
 export const Image = styled.div`

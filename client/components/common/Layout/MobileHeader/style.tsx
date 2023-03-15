@@ -16,8 +16,7 @@ export const Wrapper = styled.header`
 
   ${theme.media.laptop} {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
   }
 `;
 
@@ -36,5 +35,36 @@ export const Logo = styled.div`
     font-family: ${theme.font.title};
     font-size: 20px;
     margin-left: 10px;
+  }
+`;
+
+export const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const MenuList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  gap: 10px;
+`;
+
+export const Menu = styled.ul`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 15rem;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+
+  span {
+    color: ${theme.colors.white};
+    font-weight: bold;
   }
 `;
