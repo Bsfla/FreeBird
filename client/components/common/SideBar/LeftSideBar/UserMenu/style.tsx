@@ -9,7 +9,6 @@ export const MainProfile = styled.div`
   border-radius: 20px;
   margin-top: 25px;
   padding: 20px;
-  position: sticky;
 `;
 
 export const Image = styled.div`

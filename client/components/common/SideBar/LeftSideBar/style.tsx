@@ -12,13 +12,13 @@ export const Wrraper = styled.aside`
   padding-left: 22px;
   padding-top: 12px;
   overflow: hidden;
-  width: 38em;
+  width: 38rem;
   ${theme.media.laptop} {
     display: none;
   }
 
   ${theme.media.large} {
-    position: sticky;
+    width: auto;
   }
 `;
 
@@ -36,6 +36,7 @@ export const MainProfile = styled.div`
 export const LogoContainer = styled.div`
   width: 100%;
   margin-top: 15px;
+  margin-left: 29px;
 `;
 
 export const Button = styled.button`

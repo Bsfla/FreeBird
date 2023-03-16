@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import theme from 'styles/theme';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -10,5 +11,9 @@ export const Wrapper = styled.div`
   span {
     font-weight: bold;
     margin-top: 15px;
+  }
+
+  ${theme.media.mobile2} {
+    width: 100%;
   }
 `;

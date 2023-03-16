@@ -5,7 +5,7 @@ export const Header = styled.header`
   position: sticky;
   background-color: ${theme.colors.main};
   width: 33rem;
-  padding-top: 15px;
+  margin-top: 10px;
   top: 0px;
 
   .user_nickname {
@@ -18,8 +18,22 @@ export const Header = styled.header`
 
   ${theme.media.laptop} {
     top: 58px;
-    padding-top: 10px;
     height: 100%;
+  }
+
+  ${theme.media.tablet} {
+    width: 80%;
+  }
+
+  ${theme.media.mobile2} {
+    width: 100%;
+    margin-top: 0;
+    top: 30px;
+
+    .user_nickname {
+      margin-left: 50px;
+      margin-top: 55px;
+    }
   }
 `;
 

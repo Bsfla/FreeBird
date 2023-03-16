@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import theme from 'styles/theme';
 
 export const Wrrapper = styled.div`
   display: flex;
@@ -7,6 +8,11 @@ export const Wrrapper = styled.div`
   max-width: 33rem;
   margin: 0 auto;
   padding-left: 13px;
+
+  ${theme.media.mobile2} {
+    justify-content: center;
+    margin-top: 20px;
+  }
 `;
 
 export const NotUserList = styled.div`

@@ -15,4 +15,8 @@ export const Wrrapper = styled.div`
   .user_name {
     color: ${theme.colors.sub3};
   }
+
+  ${theme.media.tablet} {
+    width: 90%;
+  }
 `;

@@ -21,4 +21,8 @@ export const Wrraper = styled.div`
     font-weight: bold;
     margin-bottom: 20px;
   }
+
+  ${theme.media.tablet} {
+    width: 90%;
+  }
 `;

@@ -43,6 +43,10 @@ export const Wrapper = styled.div`
     gap: 5px;
     font-size: 13px;
   }
+
+  ${theme.media.tablet} {
+    width: 90%;
+  }
 `;
 
 export const Button = styled.button`

@@ -13,9 +13,12 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     width: 100%;
-    margin: 0 auto;
     font-family: 'Noto Sans KR', sans-serif;
     background-color: ${theme.colors.main};
+
+    ${theme.media.mobile1} {
+      display: flex;
+    }
    
   }
 
@@ -29,28 +32,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
 
-  // animations
-  @keyframes fadeInOut {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideTop {
-    from {
-      opacity: 0;
-      transform: translateY(-10%);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0%);
-    }
-  }
+  
 `;
 
 export default GlobalStyle;

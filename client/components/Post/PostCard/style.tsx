@@ -10,6 +10,10 @@ export const Wrraper = styled.article`
   border-radius: 20px;
   padding: 18px;
   cursor: pointer;
+
+  ${theme.media.tablet} {
+    width: 90%;
+  }
 `;
 
 export const SharePostBlock = styled.div`

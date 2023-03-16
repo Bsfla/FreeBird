@@ -18,6 +18,10 @@ export const Wrrapper = styled.div`
     color: ${theme.colors.gray1};
     margin-top: 5px;
   }
+
+  ${theme.media.mobile2} {
+    width: 7.5rem;
+  }
 `;
 
 export const Button = styled.button`

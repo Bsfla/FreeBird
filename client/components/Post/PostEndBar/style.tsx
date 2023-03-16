@@ -19,4 +19,8 @@ export const Wrrapper = styled.div`
   svg {
     margin-bottom: 15px;
   }
+
+  ${theme.media.tablet} {
+    width: 90%;
+  }
 `;

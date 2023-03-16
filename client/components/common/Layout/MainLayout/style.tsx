@@ -48,5 +48,10 @@ export const IntroBar = styled.div`
 `;
 
 export const LoadingContainer = styled.div`
-  min-width: 33rem;
+  width: 100%;
+  height: 100%;
+
+  ${theme.media.tablet} {
+    width: 90%;
+  }
 `;

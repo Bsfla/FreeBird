@@ -32,7 +32,7 @@ const font = {
 
 const media = {
   mobile1: mediaQuery(breakpoints.mobile1),
-  mobile2: `(max-width: ${breakpoints.mobile2})`,
+  mobile2: mediaQuery(breakpoints.mobile2),
   tablet: mediaQuery(breakpoints.tablet),
   laptop: mediaQuery(breakpoints.laptop),
   desktop: mediaQuery(breakpoints.desktop),

@@ -5,7 +5,6 @@ export const getFollowers = (
   body: InfiniteFetchingType
 ): Promise<FollowUserType[]> => {
   const { lastId, paramId } = body;
-  console.log(lastId);
   return api.get({
     url: `follow/${paramId}/followers`,
     params: {
