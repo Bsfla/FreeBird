@@ -50,6 +50,8 @@ export const IntroBar = styled.div`
 export const LoadingContainer = styled.div`
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
 
   ${theme.media.tablet} {
     width: 90%;

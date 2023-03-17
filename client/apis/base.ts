@@ -3,7 +3,6 @@ import { HTTP_METHODS } from '@consts/net';
 
 export const customAxios: AxiosInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_KEY,
-  timeout: 10000,
   withCredentials: true,
 });
 

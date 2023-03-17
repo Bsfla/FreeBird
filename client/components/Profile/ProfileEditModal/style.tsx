@@ -28,6 +28,7 @@ export const ImageWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 
   div:nth-of-type(1) {
     width: 8rem;
@@ -44,10 +45,15 @@ export const ModalEditContent = styled.div`
   flex-direction: column;
   width: 100%;
   margin-top: 20px;
+  gap: 5px;
 
   label {
     margin-top: 10px;
     font-size: 11px;
+
+    ${theme.media.mobile2} {
+      margin-left: 15px;
+    }
   }
 `;
 
@@ -65,7 +71,7 @@ export const Input = styled.input`
   }
 
   ${theme.media.laptop} {
-    width: 60%;
+    width: 100%;
   }
 `;
 

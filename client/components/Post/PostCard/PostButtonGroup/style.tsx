@@ -3,10 +3,13 @@ import theme from 'styles/theme';
 
 export const ButtonGroup = styled.div`
   width: 100%;
-
   display: flex;
   justify-content: center;
   gap: 29px;
+
+  ${theme.media.mobile2} {
+    gap: 12px;
+  }
 `;
 
 export const RetwwetButton = styled.button`

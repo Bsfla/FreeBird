@@ -19,6 +19,7 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     margin-top: 10px;
+    margin-left: 9px;
     cursor: pointer;
 
     span {

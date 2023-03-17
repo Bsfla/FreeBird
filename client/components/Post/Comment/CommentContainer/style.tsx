@@ -13,4 +13,9 @@ export const Wrraper = styled.section`
   .comment_count {
     font-weight: bold;
   }
+
+  ${theme.media.tablet} {
+    width: 90%;
+    height: 100%;
+  }
 `;

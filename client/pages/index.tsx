@@ -19,17 +19,16 @@ const Main: NextPageWithLayout = () => {
   );
 
   return (
-    <MainLayout>
+    <>
       <PostForm />
       {posts?.length ? <PostList posts={posts} endPost={ref} /> : <NotList />}
-    </MainLayout>
+    </>
   );
 };
-/*
+
 Main.getLayout = function getLayout(page: ReactElement) {
   return <MainLayout>{page}</MainLayout>;
 };
-*/
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const cookie = context.req?.headers.cookie

@@ -11,12 +11,4 @@ const Login: NextPage = () => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const cookie = context.req ? context.req.headers.cookie : '';
-
-  return {
-    props: {},
-  };
-};
-
 export default Login;
