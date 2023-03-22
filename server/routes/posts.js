@@ -7,7 +7,22 @@ const router = express.Router();
 
 router.get("/", async (req, res, next) => {
   try {
-    const where = {};
+    const followings = await User.findAll({
+      attributes: ["id"],
+      include: [
+        {
+          model: User,
+          as: "Followers",
+          where: { id: req.user.id },
+        },
+      ],
+    });
+
+    const followingsId = followings.map((v) => v.dataValues.id);
+
+    const where = {
+      UserId: { [Op.in]: [req.user.id, ...followingsId] },
+    };
     const lastId = parseInt(req.query.lastId, 10);
 
     if (lastId) {
