@@ -96,4 +96,42 @@ router.delete("/:userId/follower", async (req, res, next) => {
   }
 });
 
+router.get("/unfollowing", async (req, res, next) => {
+  try {
+    const followings = await User.findAll({
+      attributes: ["id"],
+      include: [
+        {
+          model: User,
+          as: "Followers",
+          where: { id: req.user.id },
+        },
+      ],
+    });
+
+    const followingsId = followings.map((v) => v.dataValues.id);
+
+    const where = {
+      id: { [Op.notIn]: [req.user.id, ...followingsId] },
+    };
+
+    const unFollowings = await User.findAll({
+      attributes: ["id", "nickname"],
+      where,
+      include: [
+        {
+          model: Image,
+          as: "ProfileImage",
+          attributes: ["src"],
+        },
+      ],
+    });
+
+    res.status(200).json(unFollowings);
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+});
+
 module.exports = router;
