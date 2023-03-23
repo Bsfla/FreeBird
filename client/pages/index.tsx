@@ -21,7 +21,7 @@ const Main: NextPageWithLayout = () => {
   return (
     <>
       <PostForm />
-      {posts?.length ? <PostList posts={posts} endPost={ref} /> : <NotList />}
+      {posts?.length && <PostList posts={posts} endPost={ref} />}
     </>
   );
 };
@@ -31,10 +31,18 @@ Main.getLayout = function getLayout(page: ReactElement) {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const cookie = context.req?.headers.cookie
-    ? context.req.headers.cookie
-    : null;
   customAxios.defaults.headers.Cookie = '';
+  const cookie = context.req ? context.req.headers.cookie : '';
+  if (!cookie)
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    };
+
+  customAxios.defaults.headers.Cookie = cookie;
+
   const queryClient = new QueryClient();
 
   await queryClient.prefetchInfiniteQuery(queryKeys.posts, () =>

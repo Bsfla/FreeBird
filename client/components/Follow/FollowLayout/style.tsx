@@ -7,6 +7,7 @@ export const Header = styled.header`
   width: 33rem;
   margin-top: 10px;
   top: 0px;
+  margin-bottom: 15px;
 
   .user_nickname {
     font-weight: bold;

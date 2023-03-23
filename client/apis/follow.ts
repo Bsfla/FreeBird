@@ -30,3 +30,9 @@ export const deleteFollowers = (userId: number) => {
     url: `follow/${userId}/follower`,
   });
 };
+
+export const getUnFollowings = (): Promise<FollowUserType[]> => {
+  return api.get({
+    url: `follow/unfollowing`,
+  });
+};

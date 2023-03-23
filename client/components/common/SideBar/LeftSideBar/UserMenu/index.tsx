@@ -5,14 +5,17 @@ import ProfileImage from '@components/common/ProfileImage';
 import { MainProfile, ProfileWrapper, Button } from './style';
 import { useQuery } from 'react-query';
 import { queryKeys } from '@consts/queryKeys';
+import { useRouter } from 'next/router';
+import { LOGIN_PAGE } from '@consts/route';
 
 const UserMenu = () => {
   const { data: user } = useQuery(queryKeys.user, () => loadMyInfo());
+  const router = useRouter();
 
   const handleLogout = async () => {
     try {
       await logout();
-      window.location.reload();
+      router.push(LOGIN_PAGE);
     } catch (err) {
       console.log(err);
     }

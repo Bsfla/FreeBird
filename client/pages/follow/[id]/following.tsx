@@ -14,6 +14,7 @@ import { getFollowings } from '@apis/follow';
 import { FollowUserType } from '@lib/types';
 import { useRouter } from 'next/router';
 import { removeFollowing } from '@apis/user';
+import { customAxios } from '@apis/base';
 
 const Following: NextPageWithLayout = () => {
   const router = useRouter();
@@ -57,6 +58,15 @@ Following.getLayout = function getLayout(page: ReactElement) {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+  const cookie = context.req ? context.req.headers.cookie : '';
+  customAxios.defaults.headers.Cookie = '';
+  if (!cookie)
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    };
   const queryClient = new QueryClient();
   const userId = context.params?.id;
 

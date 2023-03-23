@@ -1,5 +1,5 @@
 import React from 'react';
-import type { GetServerSideProps, NextPage } from 'next';
+import type { NextPage } from 'next';
 import { LoginForm } from '@components/index';
 import { AuthLayout } from '@components/common/Layout';
 

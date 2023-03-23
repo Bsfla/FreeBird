@@ -43,6 +43,16 @@ Profile.getLayout = function getLayout(page: ReactElement) {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const cookie = context.req ? context.req.headers.cookie : '';
   customAxios.defaults.headers.Cookie = '';
+
+  if (!cookie)
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    };
+
+  customAxios.defaults.headers.Cookie = cookie;
   const queryClient = new QueryClient();
   const userId = context.params?.id;
 

@@ -48,19 +48,23 @@ export const MenuList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
   margin-top: 20px;
-  gap: 10px;
+  gap: 20px;
+
+  .mypage {
+    padding-left: 15px;
+  }
 `;
 
 export const Menu = styled.ul`
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 7px;
+  align-items: center;
+  gap: 10px;
   width: 15rem;
   border-radius: 10px;
-  padding: 10px;
   cursor: pointer;
 
   span {

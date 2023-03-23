@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
-import { FOLLOW_PAGE, MAIN_PAGE, PROFILE_PAGE } from '@consts/route';
+import {
+  FOLLOW_PAGE,
+  FREIND_RECOMMEND_PAGE,
+  MAIN_PAGE,
+  PROFILE_PAGE,
+} from '@consts/route';
 import LogoIcon from '@assets/svg/birdicon.svg';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { IoMdClose } from 'react-icons/io';
 import { ImProfile } from 'react-icons/im';
-import { FaUserFriends } from 'react-icons/fa';
+import { FaUserFriends, FaUserPlus } from 'react-icons/fa';
 import Link from 'next/link';
 import { Wrapper, Logo, Container, MenuList, Menu } from './style';
 import theme from 'styles/theme';
@@ -29,24 +35,38 @@ const MobileHeader = () => {
             <span>FreeBird</span>
           </Link>
         </Logo>
-        <GiHamburgerMenu
-          size={20}
-          color={theme.colors.white}
-          onClick={handleToggleMenu}
-        />
+        {!isOpenMenu ? (
+          <GiHamburgerMenu
+            size={20}
+            color={theme.colors.white}
+            onClick={handleToggleMenu}
+          />
+        ) : (
+          <IoMdClose
+            size={30}
+            color={theme.colors.white}
+            onClick={handleToggleMenu}
+          />
+        )}
       </Container>
       {isOpenMenu && (
         <MenuList>
           <Link href={`${PROFILE_PAGE}/${user?.id}`}>
-            <Menu>
+            <Menu className="mypage">
               <ImProfile color={theme.colors.white} />
-              <span>프로필 정보</span>
+              <span>마이 페이지</span>
             </Menu>
           </Link>
           <Link href={`${FOLLOW_PAGE}/${user?.id}/following`}>
-            <Menu>
+            <Menu className="friend">
               <FaUserFriends color={theme.colors.white} />
-              <span>팔로우 목록</span>
+              <span>친구 목록</span>
+            </Menu>
+          </Link>
+          <Link href={`${FREIND_RECOMMEND_PAGE}`}>
+            <Menu className="friend">
+              <FaUserPlus color={theme.colors.white} />
+              <span>친구 찾기</span>
             </Menu>
           </Link>
           <SearchInput />
