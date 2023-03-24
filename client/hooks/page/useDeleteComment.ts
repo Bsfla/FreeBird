@@ -1,12 +1,15 @@
 import { deleteComment } from '@apis/comment';
+import { ALERT_MESSAGE } from '@consts/alert';
 import { queryKeys } from '@consts/queryKeys';
+import { useAlert } from '@hooks/common';
 import { useMutation, useQueryClient } from 'react-query';
 
 const useDeleteComment = (commentId: number) => {
   const queryClient = useQueryClient();
+  const { showAlert } = useAlert();
   const { mutate } = useMutation(deleteComment, {
     onSuccess: () => {
-      alert('댓글을 삭제했습니다 ');
+      showAlert(ALERT_MESSAGE.COMMENT_DELETE);
       queryClient.invalidateQueries(queryKeys.comment);
     },
 

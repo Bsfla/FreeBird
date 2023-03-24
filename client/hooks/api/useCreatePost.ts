@@ -1,11 +1,14 @@
 import { useMutation, useQueryClient } from 'react-query';
 import { createPost } from '@apis/post';
+import { useAlert } from '@hooks/common';
+import { ALERT_MESSAGE } from '@consts/alert';
 
 const useCreatePost = () => {
+  const { showAlert } = useAlert();
   const queryClient = useQueryClient();
   const { mutate } = useMutation(createPost, {
     onSuccess: () => {
-      alert('게시글 생성에 성공했습니다');
+      showAlert(ALERT_MESSAGE.POST_CREATE);
       queryClient.invalidateQueries('posts');
     },
 

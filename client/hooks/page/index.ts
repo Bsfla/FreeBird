@@ -4,4 +4,3 @@ export { default as usePostLike } from './usePostLike';
 export { default as useEditPost } from './useEditPost';
 export { default as useCreateComment } from './useCreateComment';
 export { default as useEditComment } from './useEditComment';
-export { default as useSetUserAtomState } from './useSetUserAtomState';

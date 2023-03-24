@@ -18,6 +18,7 @@ const colors = {
   sub: '#9c4dcc',
   sub2: '#6a1b9a',
   sub3: '#7b1fa2',
+  sub4: '#bface0',
   light: '#4b3d31',
   white: '#ffff',
   gray1: '#9e9e9e',

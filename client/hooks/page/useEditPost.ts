@@ -1,12 +1,15 @@
 import React from 'react';
 import { useMutation, useQueryClient } from 'react-query';
 import { editPost } from '@apis/post';
+import { useAlert } from '@hooks/common';
+import { ALERT_MESSAGE } from '@consts/alert';
 
 const useEditPost = () => {
   const queryClient = useQueryClient();
+  const { showAlert } = useAlert();
   const { mutate, isSuccess } = useMutation(editPost, {
     onSuccess: () => {
-      alert('게시글 수정에 성공했습니다');
+      showAlert(ALERT_MESSAGE.POST_EDIT);
       queryClient.invalidateQueries('posts');
       queryClient.invalidateQueries('post');
     },
