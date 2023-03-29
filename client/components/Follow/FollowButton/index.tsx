@@ -6,6 +6,8 @@ import { useMutation, useQueryClient } from 'react-query';
 import { followUser, removeFollowing } from '@apis/user';
 import { AxiosError } from 'axios';
 import { queryKeys } from '@consts/queryKeys';
+import { useAlert } from '@hooks/common';
+import { ALERT_MESSAGE } from '@consts/alert';
 
 interface Props {
   user?: UserInfoType;
@@ -14,8 +16,10 @@ interface Props {
 
 const FollowButton = ({ user, profile }: Props) => {
   const queryClient = useQueryClient();
+  const { showAlert } = useAlert();
   const { mutate: followMutate } = useMutation(followUser, {
     onSuccess: () => {
+      showAlert(ALERT_MESSAGE.FOLLOWING_SUCCESS);
       queryClient.invalidateQueries(queryKeys.profile);
     },
     onError: (error) => {

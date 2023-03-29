@@ -8,18 +8,20 @@ import {
   useQueryClient,
   useMutation,
 } from 'react-query';
-import { useInfiniteScroll } from '@hooks/common';
+import { useAlert, useInfiniteScroll } from '@hooks/common';
 import { queryKeys } from '@consts/queryKeys';
 import { getFollowings } from '@apis/follow';
 import { FollowUserType } from '@lib/types';
 import { useRouter } from 'next/router';
 import { removeFollowing } from '@apis/user';
 import { customAxios } from '@apis/base';
+import { ALERT_MESSAGE } from '@consts/alert';
 
 const Following: NextPageWithLayout = () => {
   const router = useRouter();
   const userId = Number(router.query.id);
   const queryClient = useQueryClient();
+  const { showAlert } = useAlert();
 
   const { ref: endUserList, resultData: followers } = useInfiniteScroll<
     FollowUserType[]
@@ -27,7 +29,7 @@ const Following: NextPageWithLayout = () => {
 
   const { mutate } = useMutation(removeFollowing, {
     onSuccess: () => {
-      alert('팔로잉을 삭제했습니다');
+      showAlert(ALERT_MESSAGE.FOLLOWING_DELETE);
       queryClient.invalidateQueries(queryKeys.following);
     },
 

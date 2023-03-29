@@ -10,6 +10,7 @@ import { getPost } from '@apis/post';
 import { PostType } from '@lib/types';
 import { getComments } from '@apis/comment';
 import { NextPageWithLayout } from 'pages/_app';
+import { customAxios } from '@apis/base';
 
 const Post: NextPageWithLayout = () => {
   const router = useRouter();
@@ -31,6 +32,17 @@ Post.getLayout = function getLayout(page: ReactElement) {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+  customAxios.defaults.headers.Cookie = '';
+  const cookie = context.req ? context.req.headers.cookie : '';
+  if (!cookie)
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    };
+
+  customAxios.defaults.headers.Cookie = cookie;
   const queryClient = new QueryClient();
   const postId = context.params?.id;
 

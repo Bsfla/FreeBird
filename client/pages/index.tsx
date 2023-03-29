@@ -9,7 +9,6 @@ import { customAxios } from '@apis/base';
 import { useInfiniteScroll } from '@hooks/common';
 import { PostType } from '@lib/types';
 import PostList from '@components/common/PostList';
-import NotList from '@components/common/NotList';
 import { NextPageWithLayout } from './_app';
 
 const Main: NextPageWithLayout = () => {
