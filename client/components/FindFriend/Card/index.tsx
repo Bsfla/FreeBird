@@ -10,6 +10,8 @@ import { useMutation, useQueryClient } from 'react-query';
 import { followUser } from '@apis/user';
 import { queryKeys } from '@consts/queryKeys';
 import { AxiosError } from 'axios';
+import { useAlert } from '@hooks/common';
+import { ALERT_MESSAGE } from '@consts/alert';
 
 interface Props {
   user: FollowUserType;
@@ -17,10 +19,11 @@ interface Props {
 
 const Card = ({ user }: Props) => {
   const queryClient = useQueryClient();
+  const { showAlert } = useAlert();
   const { mutate: followMutate } = useMutation(followUser, {
     onSuccess: () => {
       queryClient.invalidateQueries('unfollowings');
-      alert('팔로우 했습니다');
+      showAlert(ALERT_MESSAGE.FOLLOWING_SUCCESS);
     },
     onError: (error) => {
       if (error instanceof AxiosError) {

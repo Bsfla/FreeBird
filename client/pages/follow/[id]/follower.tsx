@@ -8,19 +8,22 @@ import {
   useMutation,
   useQueryClient,
 } from 'react-query';
-import { useAlert, useInfiniteScroll } from '@hooks/common';
+import { useAlert, useInfiniteScroll, useModal } from '@hooks/common';
 import { queryKeys } from '@consts/queryKeys';
 import { deleteFollowers, getFollowers } from '@apis/follow';
 import { FollowUserType } from '@lib/types';
 import { useRouter } from 'next/router';
 import { customAxios } from '@apis/base';
 import { ALERT_MESSAGE } from '@consts/alert';
+import { modalName } from '@consts/modal';
+import ConfirmModal from '@components/common/ConfirmModal';
 
 const Follower: NextPageWithLayout = () => {
   const router = useRouter();
   const userId = Number(router.query.id);
   const queryClient = useQueryClient();
   const { showAlert } = useAlert();
+  const { showModal } = useModal(modalName.CONFIRM_REMOVE);
 
   const { ref: endUserList, resultData: followers } = useInfiniteScroll<
     FollowUserType[]
@@ -37,8 +40,8 @@ const Follower: NextPageWithLayout = () => {
     },
   });
 
-  const handleDeleteFollower = (followId: number) => () => {
-    mutate(followId);
+  const handleDeleteFollower = (id: number) => () => {
+    mutate(id);
   };
 
   return (

@@ -18,9 +18,6 @@ import path from 'path';
 
 const LeftSideBar = () => {
   const { data: user } = useQuery(queryKeys.user, () => loadMyInfo());
-  const router = useRouter();
-
-  const pathName = router.pathname;
 
   return (
     <Wrraper>
@@ -30,19 +27,19 @@ const LeftSideBar = () => {
       <UserMenu />
       <PageMenuList>
         <Link href={`${PROFILE_PAGE}/${user?.id}`}>
-          <PageMenu isLocation={pathName === PROFILE_PAGE}>
+          <PageMenu>
             <ImProfile size={20} />
             <span>마이 페이지</span>
           </PageMenu>
         </Link>
         <Link href={`${FOLLOW_PAGE}/${user?.id}/following`}>
-          <PageMenu isLocation={pathName.includes(FOLLOW_PAGE)}>
+          <PageMenu>
             <FaUserFriends size={20} />
             친구 목록
           </PageMenu>
         </Link>
         <Link href={`${FREIND_RECOMMEND_PAGE}`}>
-          <PageMenu isLocation={pathName === FREIND_RECOMMEND_PAGE}>
+          <PageMenu>
             <FaUserPlus size={20} />
             친구 찾기
           </PageMenu>

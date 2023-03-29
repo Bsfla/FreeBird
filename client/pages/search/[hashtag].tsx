@@ -16,7 +16,7 @@ import { NextPageWithLayout } from 'pages/_app';
 const Search: NextPageWithLayout = () => {
   const router = useRouter();
   const hashtag = router.query.hashtag as string;
-  const { ref, resultData: posts } = useInfiniteScroll<PostType[]>(
+  const { ref: endPost, resultData: posts } = useInfiniteScroll<PostType[]>(
     queryKeys.posts,
     searchPosts,
     hashtag
@@ -25,7 +25,11 @@ const Search: NextPageWithLayout = () => {
   return (
     <>
       <SearchPostIntroBar hashtag={hashtag} />
-      {posts?.length ? <PostList posts={posts} endPost={ref} /> : <NotList />}
+      {posts?.length ? (
+        <PostList posts={posts} endPost={endPost} />
+      ) : (
+        <NotList />
+      )}
     </>
   );
 };

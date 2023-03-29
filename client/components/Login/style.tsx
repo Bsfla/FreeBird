@@ -16,7 +16,8 @@ export const Wrapper = styled.form`
   flex-direction: column;
   align-items: center;
   width: 40rem;
-  height: 26rem;
+  height: auto;
+  padding-bottom: 40px;
   background-color: ${theme.colors.white};
   border-radius: 20px;
 
@@ -43,19 +44,27 @@ export const Title = styled.span`
 export const Input = styled.input`
   width: 30rem;
   padding: 15px;
-  border: solid ${theme.colors.main};
-  border-radius: 20px;
+  border: none;
+  outline: none;
+  border-bottom: solid ${theme.colors.main};
   font-weight: bold;
-  font-size: 15px;
+  font-size: 12px;
   margin-top: 15px;
-
-  &:focus {
-    outline: solid ${theme.colors.sub};
-    border: none;
-  }
 
   ${theme.media.laptop} {
     width: 60%;
   }
 `;
 
+export const Error = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  width: 30rem;
+
+  span {
+    margin-left: 15px;
+    margin-top: 5px;
+    font-size: 13px;
+    color: red;
+  }
+`;

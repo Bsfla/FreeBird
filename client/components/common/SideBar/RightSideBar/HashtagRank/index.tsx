@@ -16,13 +16,29 @@ const HashtagRank = () => {
       {hashtags && hashtags?.length > 2 && (
         <HashtagContainer>
           <Link href={`${SEARCH_PAGE}/${hashtags[0]?.Hashtag.name}`}>
-            <Hashtag>{`1.#${hashtags && hashtags[0]?.Hashtag.name}`}</Hashtag>
+            <Hashtag>
+              1.
+              <span className="name">{`#${
+                hashtags && hashtags[0]?.Hashtag.name
+              }`}</span>
+            </Hashtag>
           </Link>
           <Link href={`${SEARCH_PAGE}/${hashtags[1]?.Hashtag.name}`}>
-            <Hashtag>{`2.#${hashtags && hashtags[1]?.Hashtag.name}`}</Hashtag>
+            <Hashtag>
+              {' '}
+              2.
+              <span className="name">{`#${
+                hashtags && hashtags[1]?.Hashtag.name
+              }`}</span>
+            </Hashtag>
           </Link>
           <Link href={`${SEARCH_PAGE}/${hashtags[2]?.Hashtag.name}`}>
-            <Hashtag>{`3.#${hashtags && hashtags[2]?.Hashtag.name}`}</Hashtag>
+            <Hashtag>
+              3.
+              <span className="name">{`#${
+                hashtags && hashtags[2]?.Hashtag.name
+              }`}</span>
+            </Hashtag>
           </Link>
         </HashtagContainer>
       )}

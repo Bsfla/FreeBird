@@ -12,6 +12,9 @@ import { AiOutlinePlusSquare, AiOutlineMinusSquare } from 'react-icons/ai';
 import { queryKeys } from '@consts/queryKeys';
 import { loadMyInfo } from '@apis/user';
 import { useQuery } from 'react-query';
+import { modalName } from '@consts/modal';
+import { useModal } from '@hooks/common';
+import ConfirmModal from '@components/common/ConfirmModal';
 
 interface Props {
   comment: CommentType;
@@ -20,6 +23,7 @@ interface Props {
 const CommentItem = ({ comment }: Props) => {
   const [isEdit, setIsEdit] = useState<boolean>(false);
   const [isOpenReplyComment, setIsOpenReplyComment] = useState<boolean>(false);
+  const { showModal } = useModal(modalName.CONFIRM_REMOVE);
   const { handleDeleteComment } = useDeleteComment(comment.id);
   const {
     content,
@@ -38,6 +42,10 @@ const CommentItem = ({ comment }: Props) => {
     setIsOpenReplyComment(!isOpenReplyComment);
   };
 
+  const handleConfirmRemove = () => {
+    showModal();
+  };
+
   return (
     <Wrapper>
       <CommentHead>
@@ -50,7 +58,7 @@ const CommentItem = ({ comment }: Props) => {
         {writer.id === user?.id && (
           <CommentEdit>
             <span onClick={handleToggleEditMode}>수정</span>
-            <span onClick={handleDeleteComment}>삭제</span>
+            <span onClick={handleConfirmRemove}>삭제</span>
           </CommentEdit>
         )}
       </CommentHead>
@@ -85,6 +93,7 @@ const CommentItem = ({ comment }: Props) => {
           {!isReply && <CommentReplyForm parentComment={comment} />}
         </ReplyWrapper>
       )}
+      <ConfirmModal remove={handleDeleteComment} title="댓글" />
     </Wrapper>
   );
 };

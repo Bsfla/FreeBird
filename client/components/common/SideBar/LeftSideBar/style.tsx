@@ -62,14 +62,12 @@ export const PageMenuList = styled.ul`
   gap: 20px;
 `;
 
-export const PageMenu = styled.li<{ isLocation: boolean }>`
+export const PageMenu = styled.li`
   width: 16.7rem;
-  background-color: ${(props) =>
-    props.isLocation ? theme.colors.sub : theme.colors.white};
+  background-color: ${theme.colors.white};
   padding: 10px;
-  border-radius: 20px;
-  color: ${(props) =>
-    props.isLocation ? theme.colors.white : theme.colors.sub};
+  border-radius: 12px;
+  color: ${theme.colors.sub};
   font-weight: bold;
   font-size: 14px;
   display: flex;

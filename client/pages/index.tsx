@@ -12,7 +12,7 @@ import PostList from '@components/common/PostList';
 import { NextPageWithLayout } from './_app';
 
 const Main: NextPageWithLayout = () => {
-  const { ref, resultData: posts } = useInfiniteScroll<PostType[]>(
+  const { ref: endPost, resultData: posts } = useInfiniteScroll<PostType[]>(
     queryKeys.posts,
     getPosts
   );
@@ -20,7 +20,7 @@ const Main: NextPageWithLayout = () => {
   return (
     <>
       <PostForm />
-      {posts?.length && <PostList posts={posts} endPost={ref} />}
+      {posts?.length && <PostList posts={posts} endPost={endPost} />}
     </>
   );
 };

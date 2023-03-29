@@ -10,7 +10,6 @@ import { modalName } from '@consts/modal';
 const useDeletePost = (post?: PostType) => {
   const router = useRouter();
   const { showAlert } = useAlert();
-  const { showModal } = useModal(modalName.CONFIRM_REMOVE);
   const queryClient = useQueryClient();
   const { mutate } = useMutation(deletePost, {
     onSuccess: () => {
@@ -24,11 +23,7 @@ const useDeletePost = (post?: PostType) => {
     },
   });
 
-  const mutateDeletePost = () => {
-    if (post) mutate(post.id);
-  };
-
-  return { mutateDeletePost, mutate };
+  return { mutate };
 };
 
 export default useDeletePost;

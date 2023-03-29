@@ -22,20 +22,29 @@ export const HashtagContainer = styled.div`
   background-color: ${theme.colors.white};
   border-radius: 15px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 `;
 
 export const Hashtag = styled.div`
   width: 100%;
   height: 5rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   border-bottom: solid ${theme.colors.gray3};
   align-items: center;
   font-weight: bold;
+  padding-left: 20px;
   cursor: pointer;
 
-  span {
-    color: ${theme.colors.sub2};
-    margin-left: 5px;
+  .name {
+    font-size: 18px;
+    color: ${theme.colors.sub};
+    margin-left: 20px;
+  }
+  .tag {
+    color: ${theme.colors.sub};
   }
 `;

@@ -1,6 +1,6 @@
 import { useEditComment } from '@hooks/page';
 import React, { useEffect, useState } from 'react';
-import { CommentForm } from '@components/index';
+import { CommentForm } from '@components/Post';
 import { CommentType } from '@lib/types';
 
 interface Props {
@@ -13,7 +13,6 @@ const CommentEditForm = ({ comment, handleToggleEditMode }: Props) => {
   const { mutate, isSuccess } = useEditComment();
 
   const handleChangeComment = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        
     setForm(e.target.value);
   };
 

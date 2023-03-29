@@ -1,30 +1,48 @@
 import React from 'react';
 import Button from '@components/common/Button';
 import { useLogin } from '@hooks/page';
-import { Wrapper, Title, Input } from './style';
+import { Wrapper, Title, Input, Error } from './style';
 
 const LoginForm = () => {
-  const { form, handleChangeInput, isDisabled, handleLogin } = useLogin();
-  const { email, password } = form;
+  const {
+    email,
+    password,
+    isDisabled,
+    handleLogin,
+    handleChangeEmail,
+    handleChangePassword,
+    emailError,
+    passwordError,
+  } = useLogin();
 
   return (
     <Wrapper onSubmit={handleLogin}>
       <Title>Login</Title>
       <span>로그인이 필요한 서비스입니다</span>
       <Input
-        placeholder="이메일"
+        placeholder="이메일을 입력해주세요."
         name="email"
         value={email}
-        onChange={handleChangeInput}
+        onChange={handleChangeEmail}
       />
+      {emailError && (
+        <Error>
+          <span>{emailError}</span>
+        </Error>
+      )}
       <Input
-        placeholder="비밀번호"
+        placeholder="비밀번호를 입력해주세요."
         type="password"
         name="password"
         value={password}
-        onChange={handleChangeInput}
+        onChange={handleChangePassword}
       />
-      <Button name="로그인" disabled={isDisabled} />
+      {passwordError && (
+        <Error>
+          <span>{passwordError}</span>
+        </Error>
+      )}
+      <Button name="로그인" disabled={!isDisabled} />
     </Wrapper>
   );
 };

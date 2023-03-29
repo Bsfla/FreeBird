@@ -20,7 +20,7 @@ const Profile: NextPageWithLayout = () => {
     getProfile(userId)
   );
 
-  const { ref, resultData: posts } = useInfiniteScroll<PostType[]>(
+  const { ref: endPost, resultData: posts } = useInfiniteScroll<PostType[]>(
     queryKeys.posts,
     getProfilePosts,
     userId
@@ -31,7 +31,11 @@ const Profile: NextPageWithLayout = () => {
       {profile && <ProfileCard profile={profile} />}
       {profile && <ProfileEditModal profile={profile} />}
       {profile && <PostIntroBar userName={profile.nickname} />}
-      {posts?.length ? <PostList posts={posts} endPost={ref} /> : <NotList />}
+      {posts?.length ? (
+        <PostList posts={posts} endPost={endPost} />
+      ) : (
+        <NotList />
+      )}
     </>
   );
 };
