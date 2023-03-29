@@ -3,7 +3,7 @@ import theme from 'styles/theme';
 
 export const Wrapper = styled.div<{ isOpen: boolean }>`
   background-color: ${theme.colors.sub4};
-  font-size: 12px;
+  font-size: 15px;
   font-weight: bold;
   color: ${theme.colors.sub};
   position: fixed;
@@ -19,8 +19,8 @@ export const Wrapper = styled.div<{ isOpen: boolean }>`
     props.isOpen
       ? css`
           opacity: 1;
-          width: 150px;
-          height: 40px;
+          width: 250px;
+          height: 50px;
           transition: width 0.1s, height 0.1s, opacity 0.1s 0.1s;
         `
       : css`

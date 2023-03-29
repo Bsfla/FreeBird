@@ -21,7 +21,7 @@ export const StyleOverlay = styled.div<{ isOpen: boolean }>`
   right: 0;
   position: fixed;
   z-index: 999;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.6);
 `;
 
 export const StyleCustomFrame = styled.div<{ isOpen: boolean }>`
@@ -36,7 +36,7 @@ export const StyleCustomFrame = styled.div<{ isOpen: boolean }>`
   right: 0;
   position: fixed;
   z-index: 999;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.1); ;
 `;
 
 export const StyleModalFrame = styled.div<{ isOpen: boolean }>`

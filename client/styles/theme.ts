@@ -6,7 +6,7 @@ const breakpoints = {
   tablet: '768px',
   laptop: '1200px',
   desktop: '1200px',
-  large: '1700px',
+  large: '1600px',
 } as const;
 
 const mediaQuery = (maxWidth: string) => `@media (max-width: ${maxWidth})`;

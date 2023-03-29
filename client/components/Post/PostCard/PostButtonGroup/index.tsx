@@ -14,7 +14,7 @@ import {
   CommentButton,
 } from './style';
 import { PostType } from '@lib/types';
-import { usePostLike, useSharePost } from '@hooks/index';
+import { useModal, usePostLike, useSharePost } from '@hooks/index';
 import Tooltip from '../Tooltip/index.';
 import useDeletePost from '@hooks/page/useDeletePost';
 import { loadMyInfo } from '@apis/user';
@@ -22,6 +22,8 @@ import { queryKeys } from '@consts/queryKeys';
 import { useQuery } from 'react-query';
 import Link from 'next/link';
 import { POST_PAGE } from '@consts/route';
+import ConfirmModal from '@components/common/ConfirmModal';
+import { modalName } from '@consts/modal';
 
 interface Props {
   post: PostType;
@@ -33,7 +35,8 @@ interface Props {
 const PostButtonGroup = ({ post, handleToggleEdit }: Props) => {
   const { isLike, handleAddLike, handleDeleteLike } = usePostLike(post);
   const { handleSharePost } = useSharePost(post);
-  const { handleDeletePost } = useDeletePost(post);
+  const { mutate } = useDeletePost(post);
+  const { showModal } = useModal(modalName.CONFIRM_REMOVE);
   const { data: user } = useQuery(queryKeys.user, () => loadMyInfo());
   const [isOpenOption, setIsOpenOption] = useState(false);
 
@@ -42,6 +45,16 @@ const PostButtonGroup = ({ post, handleToggleEdit }: Props) => {
 
     setIsOpenOption(!isOpenOption);
   };
+
+  const handleDeletePost = (e: React.MouseEvent<Element, MouseEvent>) => {
+    e.stopPropagation();
+    showModal();
+  };
+
+  const mutateDeletePost = () => {
+    mutate(post.id);
+  };
+
   return (
     <ButtonGroup>
       <RetwwetButton>
@@ -78,6 +91,7 @@ const PostButtonGroup = ({ post, handleToggleEdit }: Props) => {
           )}
         </Option>
       )}
+      <ConfirmModal remove={mutateDeletePost} title="게시글" />
     </ButtonGroup>
   );
 };

@@ -19,5 +19,9 @@ export const modalListState = atom<ModalListType>({
       name: modalName.PROFILE_EDIT,
       isShow: false,
     },
+    {
+      name: modalName.CONFIRM_REMOVE,
+      isShow: false,
+    },
   ],
 });

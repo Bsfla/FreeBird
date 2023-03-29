@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   border-radius: 5px;
   top: 20px;
   left: 0;
-  z-index: 99999;
+  z-index: 100;
   position: absolute;
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
 

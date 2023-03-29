@@ -53,7 +53,7 @@ export const LoadingContainer = styled.div`
   display: flex;
   justify-content: center;
 
-  ${theme.media.tablet} {
-    width: 90%;
+  ${theme.media.large} {
+    width: 40rem;
   }
 `;
