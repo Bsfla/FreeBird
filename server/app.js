@@ -53,13 +53,13 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use("/user", user);
-app.use("/post", post);
-app.use("/posts", posts);
-app.use("/hashtags", hashtags);
-app.use("/comment", comment);
-app.use("/profile", profile);
-app.use("/follow", follow);
+app.use("/api/user", user);
+app.use("/api/post", post);
+app.use("/api/posts", posts);
+app.use("/api/hashtags", hashtags);
+app.use("/api/comment", comment);
+app.use("/api/profile", profile);
+app.use("/api/follow", follow);
 
 app.listen(3065, () => {
   console.log("서버 실행 중!");
