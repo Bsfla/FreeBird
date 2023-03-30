@@ -8,7 +8,11 @@ export const Wrapper = styled.header`
   background-color: ${theme.colors.main};
   margin-bottom: 23px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+
+  div {
+    margin-right: 35px;
+  }
 `;
 
 export const ButtonGroup = styled.div`

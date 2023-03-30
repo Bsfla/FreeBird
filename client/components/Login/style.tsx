@@ -17,7 +17,6 @@ export const Wrapper = styled.form`
   align-items: center;
   width: 40rem;
   height: auto;
-  padding-bottom: 40px;
   background-color: ${theme.colors.white};
   border-radius: 20px;
 
@@ -31,6 +30,16 @@ export const Wrapper = styled.form`
 
   ${theme.media.laptop} {
     width: 80%;
+  }
+
+  ${theme.media.mobile2} {
+    width: 428px;
+    height: 100vh;
+  }
+
+  .signup {
+    margin-top: 20px;
+    cursor: pointer;
   }
 `;
 
@@ -63,8 +72,12 @@ export const Error = styled.div`
 
   span {
     margin-left: 15px;
-    margin-top: 5px;
+    margin-top: 10px;
     font-size: 13px;
     color: red;
+  }
+
+  ${theme.media.laptop} {
+    width: 60%;
   }
 `;

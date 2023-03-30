@@ -1,36 +1,39 @@
-import React from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { useRouter } from 'next/router';
-import { useInput } from '@hooks/common';
-import { UserFormType } from '@lib/types';
 import { signUp } from '@apis/user';
 import { AxiosError } from 'axios';
 import { LOGIN_PAGE } from '@consts/route';
+import {
+  validateEmail,
+  validateNickname,
+  validatePassword,
+  validatePasswordConfirm,
+} from '@lib/utils';
 
 const useSignup = () => {
-  const { form, handleChangeInput } = useInput<UserFormType>({
-    email: '',
-    nickname: '',
-    password: '',
-    passwordconfirm: '',
+  const [email, setEmail] = useState({ content: '', errorMessage: '' });
+  const [password, setPassword] = useState({ content: '', errorMessage: '' });
+  const [nickname, setNickname] = useState({ content: '', errorMessage: '' });
+  const [passwordConfirm, setPasswordConfirm] = useState({
+    content: '',
+    errorMessage: '',
   });
   const router = useRouter();
-  const { email, nickname, password, passwordconfirm } = form;
 
-  const isDisabled = 
-    !email ||
-    !nickname ||
-    !password ||
-    !passwordconfirm ||
-    password !== passwordconfirm;
+  const isDisabled =
+    email.errorMessage === '' &&
+    nickname.errorMessage === '' &&
+    password.errorMessage === '' &&
+    passwordConfirm.errorMessage === '';
 
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
       await signUp({
-        email,
-        nickname,
-        password,
+        email: email.content,
+        nickname: nickname.content,
+        password: password.content,
       });
       alert('회원가입에 성공했습니다');
       router.push(LOGIN_PAGE);
@@ -40,7 +43,55 @@ const useSignup = () => {
     }
   };
 
-  return { form, isDisabled, handleChangeInput, handleSignup };
+  const handleChangeEmail = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail({
+      content: e.target.value,
+      errorMessage: validateEmail(e.target.value),
+    });
+  };
+
+  const handleChangePassword = (e: ChangeEvent<HTMLInputElement>) => {
+    setPassword({
+      content: e.target.value,
+      errorMessage: validatePassword(e.target.value),
+    });
+
+    if (passwordConfirm.content)
+      setPasswordConfirm({
+        ...passwordConfirm,
+        errorMessage: validatePasswordConfirm(
+          e.target.value,
+          passwordConfirm.content
+        ),
+      });
+  };
+
+  const handleChangeNickname = (e: ChangeEvent<HTMLInputElement>) => {
+    setNickname({
+      content: e.target.value,
+      errorMessage: validateNickname(e.target.value),
+    });
+  };
+
+  const handleChangePasswordConfirm = (e: ChangeEvent<HTMLInputElement>) => {
+    setPasswordConfirm({
+      content: e.target.value,
+      errorMessage: validatePasswordConfirm(password.content, e.target.value),
+    });
+  };
+
+  return {
+    email,
+    isDisabled,
+    password,
+    passwordConfirm,
+    nickname,
+    handleSignup,
+    handleChangeEmail,
+    handleChangeNickname,
+    handleChangePassword,
+    handleChangePasswordConfirm,
+  };
 };
 
 export default useSignup;

@@ -2,7 +2,7 @@ import axios, { AxiosInstance, AxiosRequestConfig, Method } from 'axios';
 import { HTTP_METHODS } from '@consts/net';
 
 export const customAxios: AxiosInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_KEY,
+  baseURL: ` ${process.env.NEXT_PUBLIC_API_KEY}/api`,
   withCredentials: true,
 });
 
@@ -15,7 +15,7 @@ const createApiMethod =
         return response.data;
       },
       (error) => {
-        console.log(error, 1);
+        return error;
       }
     );
     return _axiosInstace({

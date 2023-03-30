@@ -19,8 +19,6 @@ const useLogin = () => {
     email.length > 0 &&
     password.length > 0;
 
-  console.log(isDisabled, emailError, passwordError);
-
   const handleChangeEmail = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
     setEmailError(validateEmail(e.target.value));
@@ -38,6 +36,7 @@ const useLogin = () => {
       await login({ email, password });
       router.push(MAIN_PAGE);
     } catch (err) {
+      console.log(err);
       if (err instanceof AxiosError) {
         alert(err.response?.data);
       }

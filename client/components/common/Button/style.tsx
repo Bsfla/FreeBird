@@ -8,7 +8,7 @@ export const StyledButton = styled.button`
   color: ${theme.colors.white};
   font-size: 20px;
   margin-top: 20px;
-  border-radius: 20px;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
 

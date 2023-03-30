@@ -2,6 +2,8 @@ import React from 'react';
 import Button from '@components/common/Button';
 import { useLogin } from '@hooks/page';
 import { Wrapper, Title, Input, Error } from './style';
+import Link from 'next/link';
+import { SIGNUP_PAGE } from '@consts/route';
 
 const LoginForm = () => {
   const {
@@ -43,6 +45,9 @@ const LoginForm = () => {
         </Error>
       )}
       <Button name="로그인" disabled={!isDisabled} />
+      <Link href={SIGNUP_PAGE}>
+        <span className="signup">회원가입</span>
+      </Link>
     </Wrapper>
   );
 };

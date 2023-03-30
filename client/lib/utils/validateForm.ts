@@ -11,3 +11,17 @@ export const validatePassword = (password: string) => {
   if (password.length === 0) return '비밀번호는 필수입력 입니다.';
   else return '';
 };
+
+export const validateNickname = (nickname: string) => {
+  if (nickname.length === 0) return '닉네임은 필수입력 입니다.';
+  else if (nickname.length > 4) return '닉네임은 4글자 이내로 입력해주세요.';
+  else return '';
+};
+
+export const validatePasswordConfirm = (
+  password: string,
+  passwordConfirm: string
+) => {
+  if (password !== passwordConfirm) return '비밀번호가 다릅니다';
+  else return '';
+};
