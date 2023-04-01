@@ -63,6 +63,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.get("/", (req, res) => {
+  res.send("hello express");
+});
+
 app.use("/api/user", user);
 app.use("/api/post", post);
 app.use("/api/posts", posts);
