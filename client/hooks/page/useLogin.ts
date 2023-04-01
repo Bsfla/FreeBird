@@ -36,10 +36,7 @@ const useLogin = () => {
       await login({ email, password });
       router.push(MAIN_PAGE);
     } catch (err) {
-      console.log(err);
-      if (err instanceof AxiosError) {
-        alert(err.response?.data);
-      }
+      alert('존재하지 않는 이메일입니다');
     }
   };
 

@@ -1,8 +1,9 @@
 import axios, { AxiosInstance, AxiosRequestConfig, Method } from 'axios';
 import { HTTP_METHODS } from '@consts/net';
+import { baseURL } from 'config/config';
 
 export const customAxios: AxiosInstance = axios.create({
-  baseURL: ` ${process.env.NEXT_PUBLIC_API_KEY}/api`,
+  baseURL: ` ${baseURL}/api`,
   withCredentials: true,
 });
 
