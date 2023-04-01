@@ -1,7 +1,5 @@
-import { baseURL } from 'config/config';
-
 const createImagePath = (imgPath: string): string => {
-  return `${baseURL}/${imgPath}`;
+  return `${process.env.NEXT_PUBLIC_API_KEY}/${imgPath}`;
 };
 
 export default createImagePath;
