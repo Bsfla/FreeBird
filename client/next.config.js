@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const withImages = require('next-images');
 const path = require('path');
-const { config } = require('process');
 
 module.exports = withImages({
   images: {
