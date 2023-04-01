@@ -34,6 +34,11 @@ export const Wrapper = styled.form`
     width: 80%;
   }
 
+  ${theme.media.mobile2} {
+    width: 428px;
+    height: 100vh;
+  }
+
   .login {
     margin-top: 20px;
     cursor: pointer;
