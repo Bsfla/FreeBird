@@ -2,7 +2,7 @@
 const withImages = require('next-images');
 const path = require('path');
 
-module.exports = withImages({
+const nextConfig = withImages({
   images: {
     disableStaticImages: true,
   },
@@ -28,3 +28,5 @@ module.exports = withImages({
     return config;
   },
 });
+
+module.exports = nextConfig;

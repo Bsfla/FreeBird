@@ -1,22 +1,15 @@
 import React from 'react';
+import { Fragment } from 'react';
 import Document, {
-  Html,
+  DocumentContext,
   Head,
+  Html,
   Main,
   NextScript,
-  DocumentContext,
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
-class MyDocument implements Document {
-  styles: any;
-  context: any;
-  setState: any;
-  forceUpdate: any;
-  props: any;
-  state: any;
-  refs: any;
-
+export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
@@ -24,19 +17,20 @@ class MyDocument implements Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App: any) => (props: any) =>
+          enhanceApp: (App) => (props) =>
             sheet.collectStyles(<App {...props} />),
         });
 
       const initialProps = await Document.getInitialProps(ctx);
+
       return {
         ...initialProps,
-        styles: (
-          <>
+        styles: [
+          <div>
             {initialProps.styles}
             {sheet.getStyleElement()}
-          </>
-        ),
+          </div>,
+        ],
       };
     } finally {
       sheet.seal();
@@ -45,16 +39,13 @@ class MyDocument implements Document {
 
   render() {
     return (
-      <Html lang="ko">
+      <Html>
         <Head>
           <meta charSet="utf-8" />
-          <meta name="description" content="My First Static Website" />
-          <meta name="keywords" content="nextjs,static,website" />
           <link
             href="https://fonts.googleapis.com/css2?family=Catamaran:wght@700&family=Poppins:wght@600&display=swap"
             rel="stylesheet"></link>
           <link rel="shortcut icon" href="/favicon.ico" />
-          {/* <Favicon /> */}
         </Head>
         <body>
           <Main />
@@ -64,5 +55,3 @@ class MyDocument implements Document {
     );
   }
 }
-
-export default MyDocument;

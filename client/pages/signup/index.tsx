@@ -1,9 +1,9 @@
 import React from 'react';
-import type { NextPage } from 'next';
 import AuthLayout from '@components/common/Layout/AuthLayout';
 import RegisterForm from '@components/Signup';
+import { NextPageWithLayout } from 'pages/_app';
 
-const Signup: NextPage = () => {
+const Signup: NextPageWithLayout = () => {
   return (
     <AuthLayout>
       <RegisterForm />
