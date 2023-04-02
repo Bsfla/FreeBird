@@ -1,0 +1,16 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_documents": "pages/_documents.js",
+  "/findfriend": "pages/findfriend.html",
+  "/login": "pages/login.html",
+  "/signup": "pages/signup.html",
+  "/follow/[id]/following": "pages/follow/[id]/following.js",
+  "/_document": "pages/_document.js",
+  "/post/[postId]": "pages/post/[postId].js",
+  "/profile/[id]": "pages/profile/[id].js",
+  "/search/[hashtag]": "pages/search/[hashtag].js",
+  "/": "pages/index.js",
+  "/follow/[id]/follower": "pages/follow/[id]/follower.js",
+  "/404": "pages/404.html"
+}
