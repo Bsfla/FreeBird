@@ -24,7 +24,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 const customAxios = axios__WEBPACK_IMPORTED_MODULE_0__["default"].create({
-  baseURL: ` ${"http://freebirdapp.site:3065"}/api`,
+  baseURL: ` ${"http://43.200.73.99:3065"}/api`,
   withCredentials: true
 });
 
@@ -1672,7 +1672,7 @@ __webpack_require__.d(__webpack_exports__, {
 
 ;// CONCATENATED MODULE: ./lib/utils/createImagePath.ts
 const createImagePath = imgPath => {
-  return `${"http://freebirdapp.site:3065"}/${imgPath}`;
+  return `${"http://43.200.73.99:3065"}/${imgPath}`;
 };
 
 /* harmony default export */ const utils_createImagePath = (createImagePath);
