@@ -264,24 +264,10 @@ module.exports = require("react-icons/fa");
 
 /***/ }),
 
-/***/ 8866:
-/***/ ((module) => {
-
-module.exports = require("react-icons/gi");
-
-/***/ }),
-
 /***/ 924:
 /***/ ((module) => {
 
 module.exports = require("react-icons/im");
-
-/***/ }),
-
-/***/ 4751:
-/***/ ((module) => {
-
-module.exports = require("react-icons/io");
 
 /***/ }),
 
@@ -341,7 +327,7 @@ module.exports = import("react-intersection-observer");;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [922,664,55,762,760,231,299,209,992,640], () => (__webpack_exec__(7161)));
+var __webpack_exports__ = __webpack_require__.X(0, [922,664,55,762,760,231,209,299,992,640], () => (__webpack_exec__(7161)));
 module.exports = __webpack_exports__;
 
 })();
