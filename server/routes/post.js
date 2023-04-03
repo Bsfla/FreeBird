@@ -19,7 +19,7 @@ try {
 AWS.config.update({
   accessKeyId: process.env.S3_ACCESS_KEY_ID,
   secretAccessKey: process.env.S3.SECRET_ACCESS_KEY,
-  region: " ap-northeast-2",
+  region: "ap-northeast-2",
 });
 
 const upload = multer({
