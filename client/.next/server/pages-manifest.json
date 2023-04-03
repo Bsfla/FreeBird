@@ -5,12 +5,12 @@
   "/findfriend": "pages/findfriend.html",
   "/login": "pages/login.html",
   "/signup": "pages/signup.html",
-  "/_document": "pages/_document.js",
-  "/post/[postId]": "pages/post/[postId].js",
+  "/": "pages/index.js",
   "/profile/[id]": "pages/profile/[id].js",
   "/search/[hashtag]": "pages/search/[hashtag].js",
-  "/": "pages/index.html",
-  "/follow/[id]/follower": "pages/follow/[id]/follower.js",
+  "/post/[postId]": "pages/post/[postId].js",
   "/follow/[id]/following": "pages/follow/[id]/following.js",
+  "/_document": "pages/_document.js",
+  "/follow/[id]/follower": "pages/follow/[id]/follower.js",
   "/404": "pages/404.html"
 }

@@ -15,6 +15,8 @@ const MainLayout = ({ children }: Props) => {
 
   return (
     <Wrapper>
+      <MobileHeader />
+      <LeftSideBar />
       <MainContents>
         {loading ? (
           <LoadingContainer>

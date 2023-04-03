@@ -265,12 +265,12 @@ __webpack_async_result__();
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "P_": () => (/* binding */ followUser),
+/* harmony export */   "kS": () => (/* binding */ logout),
 /* harmony export */   "uU": () => (/* binding */ removeFollowing),
 /* harmony export */   "x4": () => (/* binding */ login),
 /* harmony export */   "y1": () => (/* binding */ signUp),
 /* harmony export */   "zf": () => (/* binding */ loadMyInfo)
 /* harmony export */ });
-/* unused harmony export logout */
 /* harmony import */ var _apis_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(889);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_apis_base__WEBPACK_IMPORTED_MODULE_0__]);
 _apis_base__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
@@ -288,7 +288,7 @@ const login = data => {
   });
 };
 const logout = () => {
-  return api.post({
+  return _apis_base__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .Z.post({
     url: '/user/logout'
   });
 };
@@ -503,13 +503,14 @@ const queryKeys = {
 /* harmony export */   "C1": () => (/* binding */ SIGNUP_PAGE),
 /* harmony export */   "DV": () => (/* binding */ LOGIN_PAGE),
 /* harmony export */   "DW": () => (/* binding */ MAIN_PAGE),
+/* harmony export */   "Gi": () => (/* binding */ FOLLOW_PAGE),
 /* harmony export */   "Hv": () => (/* binding */ POST_PAGE),
 /* harmony export */   "Jt": () => (/* binding */ PROFILE_PAGE),
 /* harmony export */   "WC": () => (/* binding */ FOLLOWING_PAGE),
 /* harmony export */   "iG": () => (/* binding */ FOLLOWER_PAGE),
-/* harmony export */   "nF": () => (/* binding */ SEARCH_PAGE)
+/* harmony export */   "nF": () => (/* binding */ SEARCH_PAGE),
+/* harmony export */   "yz": () => (/* binding */ FREIND_RECOMMEND_PAGE)
 /* harmony export */ });
-/* unused harmony exports FOLLOW_PAGE, FREIND_RECOMMEND_PAGE */
 const LOGIN_PAGE = '/login';
 const SIGNUP_PAGE = '/signup';
 const MAIN_PAGE = '/';
@@ -519,7 +520,7 @@ const FOLLOW_PAGE = '/follow';
 const SEARCH_PAGE = `/search`;
 const FOLLOWING_PAGE = id => `/follow/${id}/following`;
 const FOLLOWER_PAGE = id => `/follow/${id}/follower`;
-const FREIND_RECOMMEND_PAGE = (/* unused pure expression or super */ null && (`/findfriend`));
+const FREIND_RECOMMEND_PAGE = `/findfriend`;
 
 /***/ }),
 

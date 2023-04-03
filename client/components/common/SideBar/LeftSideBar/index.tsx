@@ -13,8 +13,6 @@ import Link from 'next/link';
 import { useQuery } from 'react-query';
 import { queryKeys } from '@consts/queryKeys';
 import UserMenu from './UserMenu';
-import { useRouter } from 'next/router';
-import path from 'path';
 
 const LeftSideBar = () => {
   const { data: user } = useQuery(queryKeys.user, () => loadMyInfo());

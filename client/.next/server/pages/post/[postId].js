@@ -260,10 +260,24 @@ module.exports = require("react-icons/fa");
 
 /***/ }),
 
+/***/ 8866:
+/***/ ((module) => {
+
+module.exports = require("react-icons/gi");
+
+/***/ }),
+
 /***/ 924:
 /***/ ((module) => {
 
 module.exports = require("react-icons/im");
+
+/***/ }),
+
+/***/ 4751:
+/***/ ((module) => {
+
+module.exports = require("react-icons/io");
 
 /***/ }),
 

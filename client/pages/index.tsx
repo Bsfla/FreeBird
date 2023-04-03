@@ -20,6 +20,7 @@ const Main: NextPageWithLayout = () => {
   return (
     <>
       <PostForm />
+      {posts?.length && <PostList posts={posts} endPost={endPost} />}
     </>
   );
 };
@@ -27,7 +28,7 @@ const Main: NextPageWithLayout = () => {
 Main.getLayout = function getLayout(page: ReactElement) {
   return <MainLayout>{page}</MainLayout>;
 };
-/*
+
 export const getServerSideProps: GetServerSideProps = async (context) => {
   customAxios.defaults.headers.Cookie = '';
   const cookie = context.req ? context.req.headers.cookie : '';
@@ -40,19 +41,16 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
 
   customAxios.defaults.headers.Cookie = cookie;
-
+  /*
   const queryClient = new QueryClient();
 
   await queryClient.prefetchInfiniteQuery(queryKeys.posts, () =>
     getPosts({ lastId: 0 })
   );
-
+ */
   return {
-    props: {
-      dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
-    },
+    props: {},
   };
 };
-*/
 
 export default Main;
