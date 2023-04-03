@@ -1,5 +1,5 @@
 const createImagePath = (imgPath: string): string => {
-  return `${process.env.NEXT_PUBLIC_API_KEY}/${imgPath}`;
+  return `${imgPath}`;
 };
 
 export default createImagePath;
