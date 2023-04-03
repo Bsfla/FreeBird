@@ -1672,7 +1672,7 @@ __webpack_require__.d(__webpack_exports__, {
 
 ;// CONCATENATED MODULE: ./lib/utils/createImagePath.ts
 const createImagePath = imgPath => {
-  return `${"http://freebirdapp.site:3065"}/${imgPath}`;
+  return `${imgPath}`;
 };
 
 /* harmony default export */ const utils_createImagePath = (createImagePath);

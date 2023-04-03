@@ -4,13 +4,13 @@
   "/_documents": "pages/_documents.js",
   "/findfriend": "pages/findfriend.html",
   "/login": "pages/login.html",
+  "/": "pages/index.js",
+  "/post/[postId]": "pages/post/[postId].js",
+  "/profile/[id]": "pages/profile/[id].js",
+  "/search/[hashtag]": "pages/search/[hashtag].js",
   "/signup": "pages/signup.html",
+  "/follow/[id]/following": "pages/follow/[id]/following.js",
   "/follow/[id]/follower": "pages/follow/[id]/follower.js",
   "/_document": "pages/_document.js",
-  "/post/[postId]": "pages/post/[postId].js",
-  "/search/[hashtag]": "pages/search/[hashtag].js",
-  "/profile/[id]": "pages/profile/[id].js",
-  "/follow/[id]/following": "pages/follow/[id]/following.js",
-  "/": "pages/index.js",
   "/404": "pages/404.html"
 }
