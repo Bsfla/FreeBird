@@ -36,7 +36,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(helmet());
   app.use(
     cors({
-      origin: true,
+      origin: "http://freebirdapp.site:3060",
       credentials: true,
     })
   );
