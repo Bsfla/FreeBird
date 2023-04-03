@@ -17,15 +17,13 @@ const morgan = require("morgan");
 const path = require("path");
 const helmet = require("helmet");
 const hpp = require("hpp");
-const multerS3 = require("multer-s3");
-const AWS = require("aws-sdk");
 
 const app = express();
 
 dotenv.config();
 
 db.sequelize
-  .sync()
+  .sync({ force: true })
   .then(() => {
     console.log("db연결 성공");
   })
