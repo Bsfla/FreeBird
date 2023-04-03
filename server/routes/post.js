@@ -4,6 +4,8 @@ const path = require("path");
 const fs = require("fs");
 const { Comment, Post, Image, User, Hashtag } = require("../models");
 const { isLoggedIn } = require("./middleware");
+const multerS3 = require("multer-s3");
+const AWS = require("aws-sdk");
 
 const router = express.Router();
 
@@ -14,22 +16,25 @@ try {
   fs.mkdirSync("uploads");
 }
 
+AWS.config.update({
+  accessKeyId: process.env.S3_ACCESS_KEY_ID,
+  secretAccessKey: process.env.S3.SECRET_ACCESS_KEY,
+  region: " ap-northeast-2",
+});
+
 const upload = multer({
-  storage: multer.diskStorage({
-    destination(req, file, done) {
-      done(null, "uploads");
+  storage: multerS3({
+    s3: new AWS.S3(),
+    bucket: "freebird-s3",
+    key(req, file, cb) {
+      cb(null, `original/${Date.now()}_${path.basename(file.originalname)}`);
     },
-    filename(req, file, done) {
-      const ext = path.extname(file.originalname); //확장자 추출
-      const basename = path.basename(file.originalname, ext); //제로초
-      done(null, basename + "_" + new Date().getTime() + ext); //제로초150252.Png
-    },
-    limits: { fileSize: 20 * 1824 * 1824 }, //20MB
   }),
+  limits: { fileSize: 20 * 1024 * 1024 }, // 20MB
 });
 
 router.post("/images", upload.array("image"), (req, res, next) => {
-  res.json(req.files.map((v) => v.filename));
+  res.json(req.files.map((v) => v.location));
 });
 
 router.post("/", upload.none(), async (req, res, next) => {
