@@ -41,13 +41,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
 
   customAxios.defaults.headers.Cookie = cookie;
-  /*
+
   const queryClient = new QueryClient();
 
   await queryClient.prefetchInfiniteQuery(queryKeys.posts, () =>
     getPosts({ lastId: 0 })
   );
- */
+
   return {
     props: {},
   };
