@@ -16,7 +16,9 @@ const Main: NextPageWithLayout = () => {
     queryKeys.posts,
     getPosts
   );
-
+  const array =
+    'https://freebird-s3.s3.ap-northeast-2.amazonaws.com/original/1680530469519_%C3%AB%C2%82%C2%98%C3%AC%C2%99%C2%80%20%C3%AA%C2%B0%C2%80%C3%AC%C2%9E%C2%A5%20%C3%AC%C2%9E%C2%98%20%C3%AB%C2%A7%C2%9E%C3%AB%C2%8A%C2%94%20%C3%AC%C2%8B%C2%9D%C3%AB%C2%AC%C2%BC%20%C3%AC%C2%95%C2%84%C3%AC%C2%9D%C2%B4%C3%AB%C2%B9%C2%84.jpg';
+  console.log(array.length);
   return (
     <>
       <PostForm />

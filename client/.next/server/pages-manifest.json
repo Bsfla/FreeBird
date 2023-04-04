@@ -1,16 +1,16 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_documents": "pages/_documents.js",
   "/findfriend": "pages/findfriend.html",
   "/login": "pages/login.html",
   "/": "pages/index.js",
+  "/follow/[id]/follower": "pages/follow/[id]/follower.js",
+  "/follow/[id]/following": "pages/follow/[id]/following.js",
   "/post/[postId]": "pages/post/[postId].js",
+  "/signup": "pages/signup.html",
   "/profile/[id]": "pages/profile/[id].js",
   "/search/[hashtag]": "pages/search/[hashtag].js",
-  "/signup": "pages/signup.html",
-  "/follow/[id]/following": "pages/follow/[id]/following.js",
-  "/follow/[id]/follower": "pages/follow/[id]/follower.js",
+  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/404": "pages/404.html"
 }
