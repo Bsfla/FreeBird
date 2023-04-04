@@ -63,8 +63,6 @@ const Main = () => {
     ref: endPost,
     resultData: posts
   } = (0,_hooks_common__WEBPACK_IMPORTED_MODULE_7__/* .useInfiniteScroll */ .MQ)(_consts_index__WEBPACK_IMPORTED_MODULE_4__/* .queryKeys.posts */ .ad.posts, _apis_post__WEBPACK_IMPORTED_MODULE_5__/* .getPosts */ .Jq);
-  const array = 'https://freebird-s3.s3.ap-northeast-2.amazonaws.com/original/1680530469519_%C3%AB%C2%82%C2%98%C3%AC%C2%99%C2%80%20%C3%AA%C2%B0%C2%80%C3%AC%C2%9E%C2%A5%20%C3%AC%C2%9E%C2%98%20%C3%AB%C2%A7%C2%9E%C3%AB%C2%8A%C2%94%20%C3%AC%C2%8B%C2%9D%C3%AB%C2%AC%C2%BC%20%C3%AC%C2%95%C2%84%C3%AC%C2%9D%C2%B4%C3%AB%C2%B9%C2%84.jpg';
-  console.log(array.length);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
     children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx(_components_Post__WEBPACK_IMPORTED_MODULE_2__/* .PostForm */ .sA, {}), (posts === null || posts === void 0 ? void 0 : posts.length) && /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx(_components_common_PostList__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
       posts: posts,
