@@ -79,10 +79,36 @@ function MyApp({
     client: queryClient,
     children: /*#__PURE__*/(0,jsx_runtime_.jsxs)(external_react_query_.Hydrate, {
       state: pageProps.dehydratedState,
-      children: [/*#__PURE__*/jsx_runtime_.jsx((head_default()), {
-        children: /*#__PURE__*/jsx_runtime_.jsx("title", {
+      children: [/*#__PURE__*/(0,jsx_runtime_.jsxs)((head_default()), {
+        children: [/*#__PURE__*/jsx_runtime_.jsx("title", {
           children: "FreeBird"
-        })
+        }), /*#__PURE__*/jsx_runtime_.jsx("meta", {
+          charSet: "utf-8"
+        }), /*#__PURE__*/jsx_runtime_.jsx("meta", {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1.0, user-scalable=no"
+        }), /*#__PURE__*/jsx_runtime_.jsx("meta", {
+          name: "keyword",
+          content: "Freebird"
+        }), /*#__PURE__*/jsx_runtime_.jsx("meta", {
+          property: "og:title",
+          content: "Freebird"
+        }), /*#__PURE__*/jsx_runtime_.jsx("meta", {
+          name: "description",
+          content: "\uD504\uB9AC\uBC84\uB4DC\uC5D0\uC11C \uB2E4\uC591\uD55C \uC0AC\uB78C\uB4E4\uACFC \uB2F9\uC2E0\uC758 \uC77C\uC0C1\uC744 \uACF5\uC720\uD574\uC694."
+        }), /*#__PURE__*/jsx_runtime_.jsx("meta", {
+          property: "og:type",
+          content: "website"
+        }), /*#__PURE__*/jsx_runtime_.jsx("meta", {
+          property: "og:url",
+          content: "https://freebirdapp.site/"
+        }), /*#__PURE__*/jsx_runtime_.jsx("meta", {
+          property: "og:article:author",
+          content: "Freebird"
+        }), /*#__PURE__*/jsx_runtime_.jsx("link", {
+          rel: "shortcut icon",
+          href: "/favicon.ico"
+        })]
       }), /*#__PURE__*/jsx_runtime_.jsx(react_.Global, {
         styles: globalStyles
       }), /*#__PURE__*/jsx_runtime_.jsx(react_.ThemeProvider, {
