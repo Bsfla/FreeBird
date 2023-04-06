@@ -3,14 +3,14 @@
   "/_error": "pages/_error.js",
   "/_documents": "pages/_documents.js",
   "/findfriend": "pages/findfriend.html",
-  "/login": "pages/login.html",
   "/signup": "pages/signup.html",
-  "/follow/[id]/follower": "pages/follow/[id]/follower.js",
   "/follow/[id]/following": "pages/follow/[id]/following.js",
   "/": "pages/index.js",
-  "/_document": "pages/_document.js",
   "/post/[postId]": "pages/post/[postId].js",
   "/profile/[id]": "pages/profile/[id].js",
   "/search/[hashtag]": "pages/search/[hashtag].js",
+  "/_document": "pages/_document.js",
+  "/login": "pages/login.html",
+  "/follow/[id]/follower": "pages/follow/[id]/follower.js",
   "/404": "pages/404.html"
 }
