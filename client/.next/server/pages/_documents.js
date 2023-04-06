@@ -35,31 +35,9 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1__["default"] {
 
   render() {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(next_document__WEBPACK_IMPORTED_MODULE_1__.Html, {
+      lang: "ko",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(next_document__WEBPACK_IMPORTED_MODULE_1__.Head, {
-        children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("meta", {
-          charSet: "utf-8"
-        }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("meta", {
-          name: "viewport",
-          content: "width=device-width, initial-scale=1.0, user-scalable=no"
-        }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("meta", {
-          name: "keyword",
-          content: "Freebird"
-        }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("meta", {
-          property: "og:title",
-          content: "Freebird"
-        }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("meta", {
-          name: "description",
-          content: "\uD504\uB9AC\uBC84\uB4DC\uC5D0\uC11C \uB2E4\uC591\uD55C \uC0AC\uB78C\uB4E4\uACFC \uB2F9\uC2E0\uC758 \uC77C\uC0C1\uC744 \uACF5\uC720\uD574\uC694."
-        }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("meta", {
-          property: "og:type",
-          content: "website"
-        }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("meta", {
-          property: "og:url",
-          content: "https://freebirdapp.site/"
-        }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("meta", {
-          property: "og:article:author",
-          content: "Freebird"
-        }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("link", {
+        children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("link", {
           href: "https://fonts.googleapis.com/css2?family=Catamaran:wght@700&family=Poppins:wght@600&display=swap",
           rel: "stylesheet"
         }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("link", {
