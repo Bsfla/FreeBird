@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import theme from 'styles/theme';
 
 export const Wrraper = styled.aside`
@@ -36,7 +36,7 @@ export const MainProfile = styled.div`
 export const LogoContainer = styled.div`
   width: 100%;
   margin-top: 15px;
-  margin-left: 29px;
+  margin-left: 42px;
 `;
 
 export const Button = styled.button`

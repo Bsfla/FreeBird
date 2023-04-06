@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import theme from 'styles/theme';
 
 export const Wrapper = styled.div`
@@ -18,6 +18,10 @@ export const Wrapper = styled.div`
   .content {
     margin-top: 40px;
     font-size: 18px;
+  }
+
+  ${theme.media.mobile2} {
+    width: 80%;
   }
 `;
 

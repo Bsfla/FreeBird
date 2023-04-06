@@ -1,10 +1,10 @@
-import { createGlobalStyle } from 'styled-components';
+import { css } from '@emotion/react';
 import theme from './theme';
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = css`
   * {
     margin: 0;
-    padding: 0;  
+    padding: 0;
     box-sizing: border-box;
   }
   html {
@@ -19,20 +19,18 @@ const GlobalStyle = createGlobalStyle`
     ${theme.media.mobile1} {
       display: flex;
     }
-   
   }
 
-  ul, li, ol {
+  ul,
+  li,
+  ol {
     list-style: none;
   }
-  
+
   a {
     text-decoration: none;
     color: #111;
   }
-
-
-  
 `;
 
 export default GlobalStyle;

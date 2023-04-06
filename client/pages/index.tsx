@@ -19,7 +19,7 @@ const Main: NextPageWithLayout = () => {
   return (
     <>
       <PostForm />
-      {posts?.length && <PostList posts={posts} endPost={endPost} />}
+      {posts !== undefined && <PostList posts={posts} endPost={endPost} />}
     </>
   );
 };

@@ -123,15 +123,14 @@ __webpack_async_result__();
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "z": () => (/* binding */ Button)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
 
 
-const Button = styled_components__WEBPACK_IMPORTED_MODULE_0___default().button.withConfig({
-  displayName: "style__Button",
-  componentId: "sc-18waa9a-0"
-})(["width:10rem;height:30px;background-color:", ";color:", ";font-size:13px;margin-top:20px;margin-bottom:20px;border-radius:20px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;svg{margin-right:8px;}"], props => props.isFollowing ? styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.gray3 */ .Z.colors.gray3 : styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub3 */ .Z.colors.sub3, props => props.isFollowing ? 'black' : styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white);
+const Button = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("button",  true ? {
+  target: "e1j288i90"
+} : 0)("width:10rem;height:30px;background-color:", props => props.isFollowing ? styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.gray3 */ .Z.colors.gray3 : styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub3 */ .Z.colors.sub3, ";color:", props => props.isFollowing ? 'black' : styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";font-size:13px;margin-top:20px;margin-bottom:20px;border-radius:20px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;svg{margin-right:8px;}" + ( true ? "" : 0));
 
 /***/ }),
 
@@ -148,26 +147,23 @@ __webpack_require__.d(__webpack_exports__, {
 var external_react_ = __webpack_require__(6689);
 // EXTERNAL MODULE: ./components/common/ProfileImage/index.tsx + 2 modules
 var ProfileImage = __webpack_require__(9863);
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(7518);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+// EXTERNAL MODULE: external "@emotion/styled/base"
+var base_ = __webpack_require__(777);
+var base_default = /*#__PURE__*/__webpack_require__.n(base_);
 // EXTERNAL MODULE: ./styles/theme.ts
 var theme = __webpack_require__(3055);
 ;// CONCATENATED MODULE: ./components/Follow/FollowCard/style.tsx
 
 
-const Wrrapper = external_styled_components_default().div.withConfig({
-  displayName: "style__Wrrapper",
-  componentId: "sc-19uo0dw-0"
-})(["width:7rem;height:10rem;background-color:", ";border-radius:10px;display:flex;flex-direction:column;align-items:center;padding:10px;gap:5px;.nickname{font-size:12px;font-weight:bold;color:", ";margin-top:5px;}", "{width:7.5rem;}"], theme/* default.colors.white */.Z.colors.white, theme/* default.colors.gray1 */.Z.colors.gray1, theme/* default.media.mobile2 */.Z.media.mobile2);
-const Button = external_styled_components_default().button.withConfig({
-  displayName: "style__Button",
-  componentId: "sc-19uo0dw-1"
-})(["width:4rem;height:20px;padding:3px;font-size:8px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background-color:", ";color:", ";"], theme/* default.colors.sub */.Z.colors.sub, theme/* default.colors.white */.Z.colors.white);
-const DeleteButton = external_styled_components_default().button.withConfig({
-  displayName: "style__DeleteButton",
-  componentId: "sc-19uo0dw-2"
-})(["width:4rem;height:20px;padding:3px;font-size:8px;margin-bottom:20px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background-color:", ";color:", ";"], theme/* default.colors.gray1 */.Z.colors.gray1, theme/* default.colors.white */.Z.colors.white);
+const Wrrapper = /*#__PURE__*/base_default()("div",  true ? {
+  target: "e1ont1ra2"
+} : 0)("width:7rem;height:10rem;background-color:", theme/* default.colors.white */.Z.colors.white, ";border-radius:10px;display:flex;flex-direction:column;align-items:center;padding:10px;gap:5px;.nickname{font-size:12px;font-weight:bold;color:", theme/* default.colors.gray1 */.Z.colors.gray1, ";margin-top:5px;}", theme/* default.media.mobile2 */.Z.media.mobile2, "{width:7.5rem;}" + ( true ? "" : 0));
+const Button = /*#__PURE__*/base_default()("button",  true ? {
+  target: "e1ont1ra1"
+} : 0)("width:4rem;height:20px;padding:3px;font-size:8px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background-color:", theme/* default.colors.sub */.Z.colors.sub, ";color:", theme/* default.colors.white */.Z.colors.white, ";" + ( true ? "" : 0));
+const DeleteButton = /*#__PURE__*/base_default()("button",  true ? {
+  target: "e1ont1ra0"
+} : 0)("width:4rem;height:20px;padding:3px;font-size:8px;margin-bottom:20px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background-color:", theme/* default.colors.gray1 */.Z.colors.gray1, ";color:", theme/* default.colors.white */.Z.colors.white, ";" + ( true ? "" : 0));
 // EXTERNAL MODULE: ./consts/route.ts
 var route = __webpack_require__(423);
 // EXTERNAL MODULE: ./node_modules/next/link.js
@@ -300,27 +296,32 @@ __webpack_async_result__();
 /* harmony export */   "v2": () => (/* binding */ Menu)
 /* harmony export */ });
 /* unused harmony export UserList */
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
 
 
-const Header = styled_components__WEBPACK_IMPORTED_MODULE_0___default().header.withConfig({
-  displayName: "style__Header",
-  componentId: "sc-1ifjbeu-0"
-})(["position:sticky;background-color:", ";width:33rem;margin-top:10px;top:0px;margin-bottom:15px;.user_nickname{font-weight:bold;margin-left:20px;.nickname{color:", ";}}", "{top:58px;height:100%;}", "{width:80%;}", "{width:100%;margin-top:0;top:30px;.user_nickname{margin-left:50px;margin-top:55px;}}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.main */ .Z.colors.main, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub3 */ .Z.colors.sub3, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.laptop */ .Z.media.laptop, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.tablet */ .Z.media.tablet, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.mobile2 */ .Z.media.mobile2);
-const Navigation = styled_components__WEBPACK_IMPORTED_MODULE_0___default().nav.withConfig({
-  displayName: "style__Navigation",
-  componentId: "sc-1ifjbeu-1"
-})(["width:100%;display:flex;justify-content:space-around;align-items:center;margin-top:11px;font-weight:bold;"]);
-const Menu = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__Menu",
-  componentId: "sc-1ifjbeu-2"
-})(["width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:15px;cursor:pointer;span{margin-bottom:5px;color:", ";}.location{display:", ";width:70px;border:solid ", ";}"], props => props.isLocated ? '' : styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.gray1 */ .Z.colors.gray1, props => props.isLocated ? 'inline' : 'none', styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub3 */ .Z.colors.sub3);
-const UserList = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__UserList",
-  componentId: "sc-1ifjbeu-3"
-})(["display:flex;justify-content:center;width:100%;align-items:center;"]);
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+
+const Header = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("header",  true ? {
+  target: "e1hluyy3"
+} : 0)("position:sticky;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.main */ .Z.colors.main, ";width:33rem;margin-top:10px;top:0px;margin-bottom:15px;.user_nickname{font-weight:bold;margin-left:20px;.nickname{color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub3 */ .Z.colors.sub3, ";}}", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.laptop */ .Z.media.laptop, "{top:58px;height:100%;}", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.tablet */ .Z.media.tablet, "{width:80%;}", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.mobile2 */ .Z.media.mobile2, "{width:100%;margin-top:0;top:30px;.user_nickname{margin-left:50px;margin-top:55px;}}" + ( true ? "" : 0));
+const Navigation = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("nav",  true ? {
+  target: "e1hluyy2"
+} : 0)( true ? {
+  name: "k3eciq",
+  styles: "width:100%;display:flex;justify-content:space-around;align-items:center;margin-top:11px;font-weight:bold"
+} : 0);
+const Menu = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1hluyy1"
+} : 0)("width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:15px;cursor:pointer;span{margin-bottom:5px;color:", props => props.isLocated ? '' : styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.gray1 */ .Z.colors.gray1, ";}.location{display:", props => props.isLocated ? 'inline' : 'none', ";width:70px;border:solid ", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub3 */ .Z.colors.sub3, ";}" + ( true ? "" : 0));
+const UserList = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1hluyy0"
+} : 0)( true ? {
+  name: "13wv5s9",
+  styles: "display:flex;justify-content:center;width:100%;align-items:center"
+} : 0);
 
 /***/ }),
 
@@ -339,26 +340,32 @@ var external_react_ = __webpack_require__(6689);
 var FollowCard = __webpack_require__(994);
 // EXTERNAL MODULE: ./components/common/NotList/index.tsx + 2 modules
 var NotList = __webpack_require__(2907);
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(7518);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+// EXTERNAL MODULE: external "@emotion/styled/base"
+var base_ = __webpack_require__(777);
+var base_default = /*#__PURE__*/__webpack_require__.n(base_);
 // EXTERNAL MODULE: ./styles/theme.ts
 var theme = __webpack_require__(3055);
 ;// CONCATENATED MODULE: ./components/Follow/FollowUserList/style.tsx
 
 
-const Wrrapper = external_styled_components_default().div.withConfig({
-  displayName: "style__Wrrapper",
-  componentId: "sc-1gx3eo6-0"
-})(["display:flex;flex-wrap:wrap;gap:20px;max-width:33rem;margin:0 auto;padding-left:13px;", "{justify-content:center;margin-top:20px;}"], theme/* default.media.mobile2 */.Z.media.mobile2);
-const NotUserList = external_styled_components_default().div.withConfig({
-  displayName: "style__NotUserList",
-  componentId: "sc-1gx3eo6-1"
-})(["display:flex;flex-direction:column;justify-content:center;align-items:center;margin:0 auto;span{font-weight:bold;}"]);
-const EndUserList = external_styled_components_default().div.withConfig({
-  displayName: "style__EndUserList",
-  componentId: "sc-1gx3eo6-2"
-})(["width:100%;height:10px;"]);
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+
+const Wrrapper = /*#__PURE__*/base_default()("div",  true ? {
+  target: "etz2enh2"
+} : 0)("display:flex;flex-wrap:wrap;gap:20px;max-width:33rem;margin:0 auto;padding-left:13px;", theme/* default.media.mobile2 */.Z.media.mobile2, "{justify-content:center;margin-top:20px;}" + ( true ? "" : 0));
+const NotUserList = /*#__PURE__*/base_default()("div",  true ? {
+  target: "etz2enh1"
+} : 0)( true ? {
+  name: "1lg4k8a",
+  styles: "display:flex;flex-direction:column;justify-content:center;align-items:center;margin:0 auto;span{font-weight:bold;}"
+} : 0);
+const EndUserList = /*#__PURE__*/base_default()("div",  true ? {
+  target: "etz2enh0"
+} : 0)( true ? {
+  name: "g9zdbb",
+  styles: "width:100%;height:10px"
+} : 0);
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
 ;// CONCATENATED MODULE: ./components/Follow/FollowUserList/index.tsx
@@ -459,18 +466,17 @@ var SvgNot = function SvgNot(props) {
   })));
 };
 /* harmony default export */ const not = (SvgNot);
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(7518);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+// EXTERNAL MODULE: external "@emotion/styled/base"
+var base_ = __webpack_require__(777);
+var base_default = /*#__PURE__*/__webpack_require__.n(base_);
 // EXTERNAL MODULE: ./styles/theme.ts
 var theme = __webpack_require__(3055);
 ;// CONCATENATED MODULE: ./components/common/NotList/style.tsx
 
 
-const Wrapper = external_styled_components_default().div.withConfig({
-  displayName: "style__Wrapper",
-  componentId: "sc-umudl2-0"
-})(["display:flex;flex-direction:column;justify-content:center;align-items:center;margin:0 auto;margin-bottom:150px;span{font-weight:bold;margin-top:15px;}", "{width:100%;}"], theme/* default.media.mobile2 */.Z.media.mobile2);
+const Wrapper = /*#__PURE__*/base_default()("div",  true ? {
+  target: "e1d549240"
+} : 0)("display:flex;flex-direction:column;justify-content:center;align-items:center;margin:0 auto;margin-bottom:150px;span{font-weight:bold;margin-top:15px;}", theme/* default.media.mobile2 */.Z.media.mobile2, "{width:100%;}" + ( true ? "" : 0));
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
 ;// CONCATENATED MODULE: ./components/common/NotList/index.tsx

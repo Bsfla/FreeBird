@@ -25,14 +25,14 @@ var external_react_query_ = __webpack_require__(1175);
 const devtools_namespaceObject = require("react-query/devtools");
 // EXTERNAL MODULE: external "recoil"
 var external_recoil_ = __webpack_require__(9755);
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(7518);
+// EXTERNAL MODULE: external "@emotion/react"
+var react_ = __webpack_require__(2805);
 // EXTERNAL MODULE: ./styles/theme.ts
 var theme = __webpack_require__(3055);
 ;// CONCATENATED MODULE: ./styles/globalStyles.ts
 
 
-const GlobalStyle = (0,external_styled_components_.createGlobalStyle)(["*{margin:0;padding:0;box-sizing:border-box;}html{width:100%;}body{width:100%;font-family:'Noto Sans KR',sans-serif;background-color:", ";", "{display:flex;}}ul,li,ol{list-style:none;}a{text-decoration:none;color:#111;}"], theme/* default.colors.main */.Z.colors.main, theme/* default.media.mobile1 */.Z.media.mobile1);
+const GlobalStyle = /*#__PURE__*/(0,react_.css)("*{margin:0;padding:0;box-sizing:border-box;}html{width:100%;}body{width:100%;font-family:'Noto Sans KR',sans-serif;background-color:", theme/* default.colors.main */.Z.colors.main, ";", theme/* default.media.mobile1 */.Z.media.mobile1, "{display:flex;}}ul,li,ol{list-style:none;}a{text-decoration:none;color:#111;}" + ( true ? "" : 0),  true ? "" : 0);
 /* harmony default export */ const globalStyles = (GlobalStyle);
 ;// CONCATENATED MODULE: external "next/head"
 const head_namespaceObject = require("next/head");
@@ -45,6 +45,7 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -82,7 +83,9 @@ function MyApp({
         children: /*#__PURE__*/jsx_runtime_.jsx("title", {
           children: "FreeBird"
         })
-      }), /*#__PURE__*/jsx_runtime_.jsx(globalStyles, {}), /*#__PURE__*/jsx_runtime_.jsx(external_styled_components_.ThemeProvider, {
+      }), /*#__PURE__*/jsx_runtime_.jsx(react_.Global, {
+        styles: globalStyles
+      }), /*#__PURE__*/jsx_runtime_.jsx(react_.ThemeProvider, {
         theme: theme/* default */.Z,
         children: /*#__PURE__*/jsx_runtime_.jsx(external_recoil_.RecoilRoot, {
           children: getLayout( /*#__PURE__*/jsx_runtime_.jsx(Component, _objectSpread({}, pageProps)))
@@ -95,6 +98,13 @@ function MyApp({
 }
 
 /* harmony default export */ const _app = (MyApp);
+
+/***/ }),
+
+/***/ 2805:
+/***/ ((module) => {
+
+module.exports = require("@emotion/react");
 
 /***/ }),
 
@@ -123,13 +133,6 @@ module.exports = require("react/jsx-runtime");
 /***/ ((module) => {
 
 module.exports = require("recoil");
-
-/***/ }),
-
-/***/ 7518:
-/***/ ((module) => {
-
-module.exports = require("styled-components");
 
 /***/ })
 

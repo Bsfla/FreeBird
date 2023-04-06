@@ -95,28 +95,36 @@ __webpack_async_result__();
 /* harmony export */   "im": () => (/* binding */ Wrapper),
 /* harmony export */   "jj": () => (/* binding */ Error)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2805);
+/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3055);
 
 
-const SlideUp = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__.keyframes)(["from{opacity:0;transform:translateY(5%);}to{opacity:1;transform:translateY(0);}"]);
-const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().form.withConfig({
-  displayName: "style__Wrapper",
-  componentId: "sc-xwi4y8-0"
-})(["display:flex;flex-direction:column;align-items:center;width:40rem;height:auto;background-color:", ";border-radius:20px;animation:", " 0.5s;span{color:", ";font-weight:bold;margin-bottom:25px;}", "{width:80%;}", "{width:428px;height:100vh;}.signup{margin-top:20px;cursor:pointer;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, SlideUp, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.laptop */ .Z.media.laptop, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.mobile2 */ .Z.media.mobile2);
-const Title = styled_components__WEBPACK_IMPORTED_MODULE_0___default().span.withConfig({
-  displayName: "style__Title",
-  componentId: "sc-xwi4y8-1"
-})(["font-family:", ";font-size:40px;color:", ";margin-bottom:30px;"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].font.title */ .Z.font.title, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub);
-const Input = styled_components__WEBPACK_IMPORTED_MODULE_0___default().input.withConfig({
-  displayName: "style__Input",
-  componentId: "sc-xwi4y8-2"
-})(["width:30rem;padding:15px;border:none;outline:none;border-bottom:solid ", ";font-weight:bold;font-size:12px;margin-top:15px;", "{width:60%;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.main */ .Z.colors.main, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.laptop */ .Z.media.laptop);
-const Error = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__Error",
-  componentId: "sc-xwi4y8-3"
-})(["display:flex;justify-content:flex-start;width:30rem;span{margin-left:15px;margin-top:10px;font-size:13px;color:red;}", "{width:60%;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.laptop */ .Z.media.laptop);
+
+const SlideUp = _emotion_react__WEBPACK_IMPORTED_MODULE_1__.keyframes`
+  from {
+    opacity:0;
+    transform: translateY(5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+const Wrapper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("form",  true ? {
+  target: "e1j1ui0p3"
+} : 0)("display:flex;flex-direction:column;align-items:center;width:40rem;height:auto;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_2__/* ["default"].colors.white */ .Z.colors.white, ";border-radius:20px;animation:", SlideUp, " 0.5s;span{color:", styles_theme__WEBPACK_IMPORTED_MODULE_2__/* ["default"].colors.sub */ .Z.colors.sub, ";font-weight:bold;margin-bottom:25px;}", styles_theme__WEBPACK_IMPORTED_MODULE_2__/* ["default"].media.laptop */ .Z.media.laptop, "{width:80%;}", styles_theme__WEBPACK_IMPORTED_MODULE_2__/* ["default"].media.mobile2 */ .Z.media.mobile2, "{width:428px;height:100vh;}.signup{margin-top:20px;cursor:pointer;}" + ( true ? "" : 0));
+const Title = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("span",  true ? {
+  target: "e1j1ui0p2"
+} : 0)("font-family:", styles_theme__WEBPACK_IMPORTED_MODULE_2__/* ["default"].font.title */ .Z.font.title, ";font-size:40px;color:", styles_theme__WEBPACK_IMPORTED_MODULE_2__/* ["default"].colors.sub */ .Z.colors.sub, ";margin-bottom:30px;" + ( true ? "" : 0));
+const Input = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("input",  true ? {
+  target: "e1j1ui0p1"
+} : 0)("width:30rem;padding:15px;border:none;outline:none;border-bottom:solid ", styles_theme__WEBPACK_IMPORTED_MODULE_2__/* ["default"].colors.main */ .Z.colors.main, ";font-weight:bold;font-size:12px;margin-top:15px;", styles_theme__WEBPACK_IMPORTED_MODULE_2__/* ["default"].media.laptop */ .Z.media.laptop, "{width:60%;}" + ( true ? "" : 0));
+const Error = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1j1ui0p0"
+} : 0)("display:flex;justify-content:flex-start;width:30rem;span{margin-left:15px;margin-top:10px;font-size:13px;color:red;}", styles_theme__WEBPACK_IMPORTED_MODULE_2__/* ["default"].media.laptop */ .Z.media.laptop, "{width:60%;}" + ( true ? "" : 0));
 
 /***/ }),
 
@@ -131,18 +139,17 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(7518);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+// EXTERNAL MODULE: external "@emotion/styled/base"
+var base_ = __webpack_require__(777);
+var base_default = /*#__PURE__*/__webpack_require__.n(base_);
 // EXTERNAL MODULE: ./styles/theme.ts
 var theme = __webpack_require__(3055);
 ;// CONCATENATED MODULE: ./components/Profile/PostIntroBar/style.tsx
 
 
-const Wrrapper = external_styled_components_default().div.withConfig({
-  displayName: "style__Wrrapper",
-  componentId: "sc-11j03sm-0"
-})(["background-color:", ";margin-bottom:50px;border-radius:20px;padding:18px;width:36rem;padding-left:42px;span{font-weight:bold;}.user_name{color:", ";}", "{width:90%;}"], theme/* default.colors.white */.Z.colors.white, theme/* default.colors.sub3 */.Z.colors.sub3, theme/* default.media.tablet */.Z.media.tablet);
+const Wrrapper = /*#__PURE__*/base_default()("div",  true ? {
+  target: "e1fd8tzu0"
+} : 0)("background-color:", theme/* default.colors.white */.Z.colors.white, ";margin-bottom:50px;border-radius:20px;padding:18px;width:36rem;padding-left:42px;span{font-weight:bold;}.user_name{color:", theme/* default.colors.sub3 */.Z.colors.sub3, ";}", theme/* default.media.tablet */.Z.media.tablet, "{width:90%;}" + ( true ? "" : 0));
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
 ;// CONCATENATED MODULE: ./components/Profile/PostIntroBar/index.tsx
@@ -257,19 +264,17 @@ __webpack_async_result__();
 /* harmony export */   "i": () => (/* binding */ Wrapper),
 /* harmony export */   "z": () => (/* binding */ Button)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
 
 
-const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__Wrapper",
-  componentId: "sc-gbb2sl-0"
-})(["display:flex;flex-direction:column;align-items:center;background-color:", ";border-radius:20px;width:28rem;height:15rem;margin-bottom:50px;div:nth-of-type(1){margin-top:15px;width:4rem;height:4rem;}div:nth-of-type(2){margin-top:15px;font-size:14px;font-weight:bold;}.nickname{color:", ";font-weight:bold;margin-right:5px;}.intro{margin-top:15px;font-size:13px;font-weight:bold;}.follow{display:flex;align-items:center;margin-top:12px;gap:5px;font-size:13px;}", "{width:90%;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.tablet */ .Z.media.tablet);
-const Button = styled_components__WEBPACK_IMPORTED_MODULE_0___default().button.withConfig({
-  displayName: "style__Button",
-  componentId: "sc-gbb2sl-1"
-})(["width:10rem;height:30px;background-color:", ";color:", ";font-size:13px;margin-top:20px;margin-bottom:20px;border-radius:20px;border:none;cursor:pointer;svg{margin-right:8px;}&:active{background-color:", ";}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub2 */ .Z.colors.sub2);
+const Wrapper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "exi3bif1"
+} : 0)("display:flex;flex-direction:column;align-items:center;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";border-radius:20px;width:28rem;height:15rem;margin-bottom:50px;div:nth-of-type(1){margin-top:15px;width:4rem;height:4rem;}div:nth-of-type(2){margin-top:15px;font-size:14px;font-weight:bold;}.nickname{color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, ";font-weight:bold;margin-right:5px;}.intro{margin-top:15px;font-size:13px;font-weight:bold;}.follow{display:flex;align-items:center;margin-top:12px;gap:5px;font-size:13px;}", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.tablet */ .Z.media.tablet, "{width:90%;}" + ( true ? "" : 0));
+const Button = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("button",  true ? {
+  target: "exi3bif0"
+} : 0)("width:10rem;height:30px;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, ";color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";font-size:13px;margin-top:20px;margin-bottom:20px;border-radius:20px;border:none;cursor:pointer;svg{margin-right:8px;}&:active{background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub2 */ .Z.colors.sub2, ";}" + ( true ? "" : 0));
 
 /***/ }),
 
@@ -444,39 +449,41 @@ __webpack_async_result__();
 /* harmony export */   "yU": () => (/* binding */ ModalBodyLayout),
 /* harmony export */   "zx": () => (/* binding */ Button)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
 
 
-const ModalTitle = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__ModalTitle",
-  componentId: "sc-12zcauf-0"
-})(["width:100%;height:3rem;border-bottom:solid ", ";display:flex;align-items:center;span{color:", ";margin-left:20px;font-weight:bold;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.gray2 */ .Z.colors.gray2, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub);
-const ModalBodyLayout = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__ModalBodyLayout",
-  componentId: "sc-12zcauf-1"
-})(["display:flex;flex-direction:column;align-items:center;width:100%;"]);
-const ImageWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__ImageWrapper",
-  componentId: "sc-12zcauf-2"
-})(["display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;cursor:pointer;div:nth-of-type(1){width:8rem;height:8rem;}input{display:none;}"]);
-const ModalEditContent = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__ModalEditContent",
-  componentId: "sc-12zcauf-3"
-})(["display:flex;flex-direction:column;width:100%;margin-top:20px;gap:5px;label{margin-top:10px;font-size:11px;", "{margin-left:15px;}}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.mobile2 */ .Z.media.mobile2);
-const Input = styled_components__WEBPACK_IMPORTED_MODULE_0___default().input.withConfig({
-  displayName: "style__Input",
-  componentId: "sc-12zcauf-4"
-})(["width:100%;padding:10px;border:solid ", ";border-radius:20px;font-size:8px;margin-top:5px;&:focus{outline:solid ", ";border:none;}", "{width:100%;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.main */ .Z.colors.main, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.laptop */ .Z.media.laptop);
-const Button = styled_components__WEBPACK_IMPORTED_MODULE_0___default().button.withConfig({
-  displayName: "style__Button",
-  componentId: "sc-12zcauf-5"
-})(["width:10rem;height:30px;background-color:", ";color:", ";font-size:13px;border-radius:20px;border:none;cursor:pointer;margin-bottom:15px;margin-top:15px;&:active{background-color:", ";}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub2 */ .Z.colors.sub2);
-const ImageEditButton = styled_components__WEBPACK_IMPORTED_MODULE_0___default().button.withConfig({
-  displayName: "style__ImageEditButton",
-  componentId: "sc-12zcauf-6"
-})(["background-color:red;color:", ";font-size:8px;width:5rem;border:none;padding:8px;border-radius:20px;"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white);
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+
+const ModalTitle = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "ec2xfww6"
+} : 0)("width:100%;height:3rem;border-bottom:solid ", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.gray2 */ .Z.colors.gray2, ";display:flex;align-items:center;span{color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, ";margin-left:20px;font-weight:bold;}" + ( true ? "" : 0));
+const ModalBodyLayout = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "ec2xfww5"
+} : 0)( true ? {
+  name: "1uxkh7x",
+  styles: "display:flex;flex-direction:column;align-items:center;width:100%"
+} : 0);
+const ImageWrapper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "ec2xfww4"
+} : 0)( true ? {
+  name: "12ydupe",
+  styles: "display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;cursor:pointer;div:nth-of-type(1){width:8rem;height:8rem;}input{display:none;}"
+} : 0);
+const ModalEditContent = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "ec2xfww3"
+} : 0)("display:flex;flex-direction:column;width:100%;margin-top:20px;gap:5px;label{margin-top:10px;font-size:11px;", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.mobile2 */ .Z.media.mobile2, "{margin-left:15px;}}" + ( true ? "" : 0));
+const Input = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("input",  true ? {
+  target: "ec2xfww2"
+} : 0)("width:100%;padding:10px;border:solid ", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.main */ .Z.colors.main, ";border-radius:20px;font-size:8px;margin-top:5px;&:focus{outline:solid ", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, ";border:none;}", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.laptop */ .Z.media.laptop, "{width:100%;}" + ( true ? "" : 0));
+const Button = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("button",  true ? {
+  target: "ec2xfww1"
+} : 0)("width:10rem;height:30px;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, ";color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";font-size:13px;border-radius:20px;border:none;cursor:pointer;margin-bottom:15px;margin-top:15px;&:active{background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub2 */ .Z.colors.sub2, ";}" + ( true ? "" : 0));
+const ImageEditButton = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("button",  true ? {
+  target: "ec2xfww0"
+} : 0)("background-color:red;color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";font-size:8px;width:5rem;border:none;padding:8px;border-radius:20px;" + ( true ? "" : 0));
 
 /***/ }),
 
@@ -570,18 +577,17 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(7518);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+// EXTERNAL MODULE: external "@emotion/styled/base"
+var base_ = __webpack_require__(777);
+var base_default = /*#__PURE__*/__webpack_require__.n(base_);
 // EXTERNAL MODULE: ./styles/theme.ts
 var theme = __webpack_require__(3055);
 ;// CONCATENATED MODULE: ./components/Search/SearchPostIntroBar/style.tsx
 
 
-const Wrrapper = external_styled_components_default().div.withConfig({
-  displayName: "style__Wrrapper",
-  componentId: "sc-z52hnn-0"
-})(["background-color:", ";margin-bottom:50px;border-radius:20px;padding:18px;width:36rem;padding-left:42px;span{font-weight:bold;}.user_name{color:", ";}", "{width:80%;}"], theme/* default.colors.white */.Z.colors.white, theme/* default.colors.sub3 */.Z.colors.sub3, theme/* default.media.mobile2 */.Z.media.mobile2);
+const Wrrapper = /*#__PURE__*/base_default()("div",  true ? {
+  target: "e2xrhv30"
+} : 0)("background-color:", theme/* default.colors.white */.Z.colors.white, ";margin-bottom:50px;border-radius:20px;padding:18px;width:36rem;padding-left:42px;span{font-weight:bold;}.user_name{color:", theme/* default.colors.sub3 */.Z.colors.sub3, ";}", theme/* default.media.mobile2 */.Z.media.mobile2, "{width:80%;}" + ( true ? "" : 0));
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
 ;// CONCATENATED MODULE: ./components/Search/SearchPostIntroBar/index.tsx
@@ -674,13 +680,18 @@ __webpack_async_result__();
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "i": () => (/* binding */ Wrapper)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 
-const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().section.withConfig({
-  displayName: "style__Wrapper",
-  componentId: "sc-ewrfc2-0"
-})(["display:flex;flex-direction:column;align-items:center;width:100%;height:100%;gap:30px;"]);
+
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+const Wrapper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("section",  true ? {
+  target: "eluo7r20"
+} : 0)( true ? {
+  name: "1apgpm8",
+  styles: "display:flex;flex-direction:column;align-items:center;width:100%;height:100%;gap:30px"
+} : 0);
 
 /***/ }),
 

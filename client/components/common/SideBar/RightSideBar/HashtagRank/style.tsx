@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import theme from 'styles/theme';
 
 export const Wrrapper = styled.div`

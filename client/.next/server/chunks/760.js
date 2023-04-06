@@ -104,15 +104,31 @@ __webpack_async_result__();
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "i": () => (/* binding */ Wrapper)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2805);
+/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3055);
 
 
-const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__Wrapper",
-  componentId: "sc-1g0nzte-0"
-})(["background-color:", ";font-size:15px;font-weight:bold;color:", ";position:fixed;top:50;border-radius:8px;display:flex;justify-content:center;align-items:center;span{display:flex;}", ""], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub4 */ .Z.colors.sub4, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, props => props.isOpen ? (0,styled_components__WEBPACK_IMPORTED_MODULE_0__.css)(["opacity:1;width:250px;height:50px;transition:width 0.1s,height 0.1s,opacity 0.1s 0.1s;"]) : (0,styled_components__WEBPACK_IMPORTED_MODULE_0__.css)(["opacity:0;width:0;height:0;padding:0;transition:width 0.5s 0.5s,height 0.5s 0.5s,opacity 0.5s;span{display:none;}"]));
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+
+
+
+var _ref =  true ? {
+  name: "6nm2pe",
+  styles: "opacity:0;width:0;height:0;padding:0;transition:width 0.5s 0.5s,height 0.5s 0.5s,opacity 0.5s;span{display:none;}"
+} : 0;
+
+var _ref2 =  true ? {
+  name: "g09zed",
+  styles: "opacity:1;width:250px;height:50px;transition:width 0.1s,height 0.1s,opacity 0.1s 0.1s"
+} : 0;
+
+const Wrapper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1vtkiou0"
+} : 0)("background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_2__/* ["default"].colors.sub4 */ .Z.colors.sub4, ";font-size:15px;font-weight:bold;color:", styles_theme__WEBPACK_IMPORTED_MODULE_2__/* ["default"].colors.sub */ .Z.colors.sub, ";position:fixed;top:50;border-radius:8px;display:flex;justify-content:center;align-items:center;span{display:flex;}", props => props.isOpen ? _ref2 : _ref, ";" + ( true ? "" : 0));
 
 /***/ }),
 
@@ -175,27 +191,23 @@ __webpack_async_result__();
 /* harmony export */   "mD": () => (/* binding */ MainContents)
 /* harmony export */ });
 /* unused harmony export IntroBar */
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
 
 
-const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().main.withConfig({
-  displayName: "style__Wrapper",
-  componentId: "sc-1s06vvi-0"
-})(["display:flex;justify-content:center;width:100%;height:100%;gap:50px;", "{flex-direction:column;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.laptop */ .Z.media.laptop);
-const MainContents = styled_components__WEBPACK_IMPORTED_MODULE_0___default().section.withConfig({
-  displayName: "style__MainContents",
-  componentId: "sc-1s06vvi-1"
-})(["display:flex;flex-direction:column;align-items:center;padding-top:50px;width:100%;z-index:500;", "{width:auto;padding-top:20px;}", "{margin-left:0px;padding-top:0px;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.large */ .Z.media.large, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.laptop */ .Z.media.laptop);
-const IntroBar = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__IntroBar",
-  componentId: "sc-1s06vvi-2"
-})(["width:36rem;height:50px;background-color:", ";border-radius:20px;margin-bottom:20px;display:flex;justify-content:center;align-items:center;span{color:", ";font-weight:bold;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.gray1 */ .Z.colors.gray1);
-const LoadingContainer = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__LoadingContainer",
-  componentId: "sc-1s06vvi-3"
-})(["width:100%;height:100%;display:flex;justify-content:center;", "{width:40rem;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.large */ .Z.media.large);
+const Wrapper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("main",  true ? {
+  target: "ef80j3q3"
+} : 0)("display:flex;justify-content:center;width:100%;height:100%;gap:50px;", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.laptop */ .Z.media.laptop, "{flex-direction:column;}" + ( true ? "" : 0));
+const MainContents = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("section",  true ? {
+  target: "ef80j3q2"
+} : 0)("display:flex;flex-direction:column;align-items:center;padding-top:50px;width:100%;z-index:500;", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.large */ .Z.media.large, "{width:auto;padding-top:20px;}", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.laptop */ .Z.media.laptop, "{margin-left:0px;padding-top:0px;}" + ( true ? "" : 0));
+const IntroBar = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "ef80j3q1"
+} : 0)("width:36rem;height:50px;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";border-radius:20px;margin-bottom:20px;display:flex;justify-content:center;align-items:center;span{color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.gray1 */ .Z.colors.gray1, ";font-weight:bold;}" + ( true ? "" : 0));
+const LoadingContainer = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "ef80j3q0"
+} : 0)("width:100%;height:100%;display:flex;justify-content:center;", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.large */ .Z.media.large, "{width:40rem;}" + ( true ? "" : 0));
 
 /***/ }),
 
@@ -331,31 +343,35 @@ __webpack_async_result__();
 /* harmony export */   "qy": () => (/* binding */ MenuList),
 /* harmony export */   "v2": () => (/* binding */ Menu)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
 
 
-const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().header.withConfig({
-  displayName: "style__Wrapper",
-  componentId: "sc-1gwv94w-0"
-})(["width:100%;display:none;background-color:", ";padding:20px;position:sticky;top:0;z-index:100000;svg{cursor:pointer;}", "{display:flex;flex-direction:column;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.laptop */ .Z.media.laptop);
-const Logo = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__Logo",
-  componentId: "sc-1gwv94w-1"
-})(["display:flex;align-items:center;cursor:pointer;svg{width:20px;height:20px;}span{color:", ";font-family:", ";font-size:20px;margin-left:10px;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].font.title */ .Z.font.title);
-const Container = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__Container",
-  componentId: "sc-1gwv94w-2"
-})(["display:flex;justify-content:space-between;align-items:center;"]);
-const MenuList = styled_components__WEBPACK_IMPORTED_MODULE_0___default().ul.withConfig({
-  displayName: "style__MenuList",
-  componentId: "sc-1gwv94w-3"
-})(["display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;margin-top:20px;gap:20px;.mypage{padding-left:15px;}"]);
-const Menu = styled_components__WEBPACK_IMPORTED_MODULE_0___default().ul.withConfig({
-  displayName: "style__Menu",
-  componentId: "sc-1gwv94w-4"
-})(["display:flex;justify-content:center;align-items:center;gap:10px;width:15rem;border-radius:10px;cursor:pointer;span{color:", ";font-weight:bold;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white);
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+
+const Wrapper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("header",  true ? {
+  target: "e1e52mnz4"
+} : 0)("width:100%;display:none;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, ";padding:20px;position:sticky;top:0;z-index:100000;svg{cursor:pointer;}", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.laptop */ .Z.media.laptop, "{display:flex;flex-direction:column;}" + ( true ? "" : 0));
+const Logo = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1e52mnz3"
+} : 0)("display:flex;align-items:center;cursor:pointer;svg{width:20px;height:20px;}span{color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";font-family:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].font.title */ .Z.font.title, ";font-size:20px;margin-left:10px;}" + ( true ? "" : 0));
+const Container = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1e52mnz2"
+} : 0)( true ? {
+  name: "1066lcq",
+  styles: "display:flex;justify-content:space-between;align-items:center"
+} : 0);
+const MenuList = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("ul",  true ? {
+  target: "e1e52mnz1"
+} : 0)( true ? {
+  name: "ml3snm",
+  styles: "display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;margin-top:20px;gap:20px;.mypage{padding-left:15px;}"
+} : 0);
+const Menu = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("ul",  true ? {
+  target: "e1e52mnz0"
+} : 0)("display:flex;justify-content:center;align-items:center;gap:10px;width:15rem;border-radius:10px;cursor:pointer;span{color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";font-weight:bold;}" + ( true ? "" : 0));
 
 /***/ }),
 
@@ -370,18 +386,17 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(7518);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+// EXTERNAL MODULE: external "@emotion/styled/base"
+var base_ = __webpack_require__(777);
+var base_default = /*#__PURE__*/__webpack_require__.n(base_);
 // EXTERNAL MODULE: ./styles/theme.ts
 var theme = __webpack_require__(3055);
 ;// CONCATENATED MODULE: ./components/common/ProfileImage/style.tsx
 
 
-const Image = external_styled_components_default().div.withConfig({
-  displayName: "style__Image",
-  componentId: "sc-1cpui8w-0"
-})(["display:flex;justify-content:center;width:", ";height:", ";background-color:", ";border-radius:5px;img{width:100%;border-radius:5px;height:100%;}"], props => props.size === 'Large' ? '4rem' : '3rem', props => props.size === 'Large' ? '70px' : '50px', theme/* default.colors.gray2 */.Z.colors.gray2);
+const Image = /*#__PURE__*/base_default()("div",  true ? {
+  target: "e13yimyd0"
+} : 0)("display:flex;justify-content:center;width:", props => props.size === 'Large' ? '4rem' : '3rem', ";height:", props => props.size === 'Large' ? '70px' : '50px', ";background-color:", theme/* default.colors.gray2 */.Z.colors.gray2, ";border-radius:5px;img{width:100%;border-radius:5px;height:100%;}" + ( true ? "" : 0));
 // EXTERNAL MODULE: ./lib/utils/index.ts + 3 modules
 var utils = __webpack_require__(9461);
 ;// CONCATENATED MODULE: ./assets/img/profile.png
@@ -490,27 +505,23 @@ __webpack_async_result__();
 /* harmony export */   "zx": () => (/* binding */ Button)
 /* harmony export */ });
 /* unused harmony export Image */
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
 
 
-const MainProfile = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__MainProfile",
-  componentId: "sc-12dvfl7-0"
-})(["display:flex;width:16.7rem;height:7rem;background-color:", ";border-radius:20px;margin-top:25px;padding:20px;"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white);
-const Image = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__Image",
-  componentId: "sc-12dvfl7-1"
-})(["display:flex;justify-content:center;width:5rem;height:75px;background-color:", ";border-radius:5px;img{width:80%;height:100%;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.gray2 */ .Z.colors.gray2);
-const ProfileWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__ProfileWrapper",
-  componentId: "sc-12dvfl7-2"
-})(["display:flex;flex-direction:column;margin-left:20px;.nickname{font-size:14px;color:", ";font-weight:bold;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub);
-const Button = styled_components__WEBPACK_IMPORTED_MODULE_0___default().button.withConfig({
-  displayName: "style__Button",
-  componentId: "sc-12dvfl7-3"
-})(["width:10rem;height:100%;background-color:", ";color:", ";font-size:13px;margin-top:20px;border-radius:8px;border:none;cursor:pointer;&:active{background-color:", ";}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub2 */ .Z.colors.sub2);
+const MainProfile = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1k4lcbj3"
+} : 0)("display:flex;width:16.7rem;height:7rem;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";border-radius:20px;margin-top:25px;padding:20px;" + ( true ? "" : 0));
+const Image = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1k4lcbj2"
+} : 0)("display:flex;justify-content:center;width:5rem;height:75px;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.gray2 */ .Z.colors.gray2, ";border-radius:5px;img{width:80%;height:100%;}" + ( true ? "" : 0));
+const ProfileWrapper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1k4lcbj1"
+} : 0)("display:flex;flex-direction:column;margin-left:20px;.nickname{font-size:14px;color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, ";font-weight:bold;}" + ( true ? "" : 0));
+const Button = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("button",  true ? {
+  target: "e1k4lcbj0"
+} : 0)("width:10rem;height:100%;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, ";color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";font-size:13px;margin-top:20px;border-radius:8px;border:none;cursor:pointer;&:active{background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub2 */ .Z.colors.sub2, ";}" + ( true ? "" : 0));
 
 /***/ }),
 
@@ -607,39 +618,44 @@ __webpack_async_result__();
 /* harmony export */   "xg": () => (/* binding */ LogoContainer)
 /* harmony export */ });
 /* unused harmony exports MainProfile, Button, AuthPageList */
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
 
 
-const Wrraper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().aside.withConfig({
-  displayName: "style__Wrraper",
-  componentId: "sc-1hz9wn3-0"
-})(["position:sticky;top:0;left:0;display:flex;flex-direction:column;align-items:center;height:100vh;padding-left:22px;padding-top:12px;overflow:hidden;width:38rem;", "{display:none;}", "{width:auto;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.laptop */ .Z.media.laptop, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.large */ .Z.media.large);
-const MainProfile = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__MainProfile",
-  componentId: "sc-1hz9wn3-1"
-})(["display:flex;width:17rem;height:4rem;background-color:", ";border-radius:20px;margin-top:25px;padding:20px;position:sticky;"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white);
-const LogoContainer = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__LogoContainer",
-  componentId: "sc-1hz9wn3-2"
-})(["width:100%;margin-top:15px;margin-left:29px;"]);
-const Button = styled_components__WEBPACK_IMPORTED_MODULE_0___default().button.withConfig({
-  displayName: "style__Button",
-  componentId: "sc-1hz9wn3-3"
-})(["width:10rem;height:100%;background-color:", ";color:", ";font-size:13px;margin-top:20px;border-radius:20px;border:none;cursor:pointer;&:active{background-color:", ";}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub2 */ .Z.colors.sub2);
-const PageMenuList = styled_components__WEBPACK_IMPORTED_MODULE_0___default().ul.withConfig({
-  displayName: "style__PageMenuList",
-  componentId: "sc-1hz9wn3-4"
-})(["margin-top:40px;display:flex;flex-direction:column;gap:20px;"]);
-const PageMenu = styled_components__WEBPACK_IMPORTED_MODULE_0___default().li.withConfig({
-  displayName: "style__PageMenu",
-  componentId: "sc-1hz9wn3-5"
-})(["width:16.7rem;background-color:", ";padding:10px;border-radius:12px;color:", ";font-weight:bold;font-size:14px;display:flex;align-items:center;padding-left:20px;cursor:pointer;svg{margin-right:15px;}&:hover{background-color:", ";color:", ";}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white);
-const AuthPageList = styled_components__WEBPACK_IMPORTED_MODULE_0___default().ul.withConfig({
-  displayName: "style__AuthPageList",
-  componentId: "sc-1hz9wn3-6"
-})(["margin-top:90px;display:flex;flex-direction:column;gap:40px;"]);
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+
+const Wrraper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("aside",  true ? {
+  target: "e18q9k6b6"
+} : 0)("position:sticky;top:0;left:0;display:flex;flex-direction:column;align-items:center;height:100vh;padding-left:22px;padding-top:12px;overflow:hidden;width:38rem;", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.laptop */ .Z.media.laptop, "{display:none;}", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.large */ .Z.media.large, "{width:auto;}" + ( true ? "" : 0));
+const MainProfile = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e18q9k6b5"
+} : 0)("display:flex;width:17rem;height:4rem;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";border-radius:20px;margin-top:25px;padding:20px;position:sticky;" + ( true ? "" : 0));
+const LogoContainer = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e18q9k6b4"
+} : 0)( true ? {
+  name: "r5362",
+  styles: "width:100%;margin-top:15px;margin-left:42px"
+} : 0);
+const Button = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("button",  true ? {
+  target: "e18q9k6b3"
+} : 0)("width:10rem;height:100%;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, ";color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";font-size:13px;margin-top:20px;border-radius:20px;border:none;cursor:pointer;&:active{background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub2 */ .Z.colors.sub2, ";}" + ( true ? "" : 0));
+const PageMenuList = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("ul",  true ? {
+  target: "e18q9k6b2"
+} : 0)( true ? {
+  name: "vfsius",
+  styles: "margin-top:40px;display:flex;flex-direction:column;gap:20px"
+} : 0);
+const PageMenu = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("li",  true ? {
+  target: "e18q9k6b1"
+} : 0)("width:16.7rem;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";padding:10px;border-radius:12px;color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, ";font-weight:bold;font-size:14px;display:flex;align-items:center;padding-left:20px;cursor:pointer;svg{margin-right:15px;}&:hover{background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, ";color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";}" + ( true ? "" : 0));
+const AuthPageList = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("ul",  true ? {
+  target: "e18q9k6b0"
+} : 0)( true ? {
+  name: "se7dy4",
+  styles: "margin-top:90px;display:flex;flex-direction:column;gap:40px"
+} : 0);
 
 /***/ }),
 
@@ -728,23 +744,20 @@ __webpack_async_result__();
 /* harmony export */   "S8": () => (/* binding */ HashtagContainer),
 /* harmony export */   "t9": () => (/* binding */ Wrrapper)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
 
 
-const Wrrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__Wrrapper",
-  componentId: "sc-1ci81ew-0"
-})(["display:flex;flex-direction:column;.title{display:flex;justify-content:space-between;width:100%;color:", ";margin-bottom:15px;font-weight:bold;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white);
-const HashtagContainer = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__HashtagContainer",
-  componentId: "sc-1ci81ew-1"
-})(["width:15rem;height:15rem;background-color:", ";border-radius:15px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-content:center;"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white);
-const Hashtag = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__Hashtag",
-  componentId: "sc-1ci81ew-2"
-})(["width:100%;height:5rem;display:flex;justify-content:flex-start;border-bottom:solid ", ";align-items:center;font-weight:bold;padding-left:20px;cursor:pointer;.name{font-size:18px;color:", ";margin-left:20px;}.tag{color:", ";}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.gray3 */ .Z.colors.gray3, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub);
+const Wrrapper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1j1kig72"
+} : 0)("display:flex;flex-direction:column;.title{display:flex;justify-content:space-between;width:100%;color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";margin-bottom:15px;font-weight:bold;}" + ( true ? "" : 0));
+const HashtagContainer = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1j1kig71"
+} : 0)("width:15rem;height:15rem;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";border-radius:15px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-content:center;" + ( true ? "" : 0));
+const Hashtag = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1j1kig70"
+} : 0)("width:100%;height:5rem;display:flex;justify-content:flex-start;border-bottom:solid ", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.gray3 */ .Z.colors.gray3, ";align-items:center;font-weight:bold;padding-left:20px;cursor:pointer;.name{font-size:18px;color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, ";margin-left:20px;}.tag{color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, ";}" + ( true ? "" : 0));
 
 /***/ }),
 
@@ -759,22 +772,26 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(7518);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+// EXTERNAL MODULE: external "@emotion/styled/base"
+var base_ = __webpack_require__(777);
+var base_default = /*#__PURE__*/__webpack_require__.n(base_);
 // EXTERNAL MODULE: ./styles/theme.ts
 var theme = __webpack_require__(3055);
 ;// CONCATENATED MODULE: ./components/common/SideBar/RightSideBar/SearchInput/style.tsx
 
 
-const Wrrapper = external_styled_components_default().form.withConfig({
-  displayName: "style__Wrrapper",
-  componentId: "sc-stw8jp-0"
-})(["width:88%;margin-top:20px;padding:5px 5px 5px 12px;background-color:", ";border-radius:10px;display:flex;align-items:center;"], theme/* default.colors.white */.Z.colors.white);
-const Input = external_styled_components_default().input.withConfig({
-  displayName: "style__Input",
-  componentId: "sc-stw8jp-1"
-})(["width:100%;height:100%;border:none;outline:none;padding:5px;font-size:12px;"]);
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+
+const Wrrapper = /*#__PURE__*/base_default()("form",  true ? {
+  target: "elzgvu31"
+} : 0)("width:88%;margin-top:20px;padding:5px 5px 5px 12px;background-color:", theme/* default.colors.white */.Z.colors.white, ";border-radius:10px;display:flex;align-items:center;" + ( true ? "" : 0));
+const Input = /*#__PURE__*/base_default()("input",  true ? {
+  target: "elzgvu30"
+} : 0)( true ? {
+  name: "83lbis",
+  styles: "width:100%;height:100%;border:none;outline:none;padding:5px;font-size:12px"
+} : 0);
 // EXTERNAL MODULE: external "react-icons/bi"
 var bi_ = __webpack_require__(6652);
 // EXTERNAL MODULE: external "next/router"
@@ -865,15 +882,14 @@ __webpack_async_result__();
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "t": () => (/* binding */ Wrrapper)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
 
 
-const Wrrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().aside.withConfig({
-  displayName: "style__Wrrapper",
-  componentId: "sc-95h1ku-0"
-})(["position:sticky;top:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;gap:70px;height:100vh;padding:20px 30px 20px 20px;background-color:", ";", "{display:none;}", "{position:sticky;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.laptop */ .Z.media.laptop, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.large */ .Z.media.large);
+const Wrrapper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("aside",  true ? {
+  target: "ebbudwy0"
+} : 0)("position:sticky;top:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;gap:70px;height:100vh;padding:20px 30px 20px 20px;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, ";", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.laptop */ .Z.media.laptop, "{display:none;}", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.large */ .Z.media.large, "{position:sticky;}" + ( true ? "" : 0));
 
 /***/ }),
 

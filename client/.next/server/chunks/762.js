@@ -24,7 +24,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 const customAxios = axios__WEBPACK_IMPORTED_MODULE_0__["default"].create({
-  baseURL: ` ${"http://freebirdapp.site"}/api`,
+  baseURL: ` ${"https://freebirdapp.site"}/api`,
   withCredentials: true
 });
 
@@ -323,22 +323,20 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(7518);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+// EXTERNAL MODULE: external "@emotion/styled/base"
+var base_ = __webpack_require__(777);
+var base_default = /*#__PURE__*/__webpack_require__.n(base_);
 // EXTERNAL MODULE: ./styles/theme.ts
 var theme = __webpack_require__(3055);
 ;// CONCATENATED MODULE: ./components/common/Logo/style.tsx
 
 
-const LogoWrapper = external_styled_components_default().div.withConfig({
-  displayName: "style__LogoWrapper",
-  componentId: "sc-13v0yz0-0"
-})(["display:flex;align-items:center;cursor:pointer;svg{width:40px;height:40px;}span{color:", ";font-family:", ";font-size:30px;margin-left:10px;}"], theme/* default.colors.sub */.Z.colors.sub, theme/* default.font.title */.Z.font.title);
-const Button = external_styled_components_default().button.withConfig({
-  displayName: "style__Button",
-  componentId: "sc-13v0yz0-1"
-})([""]);
+const LogoWrapper = /*#__PURE__*/base_default()("div",  true ? {
+  target: "e5qqsyk1"
+} : 0)("display:flex;align-items:center;cursor:pointer;svg{width:40px;height:40px;}span{color:", theme/* default.colors.sub */.Z.colors.sub, ";font-family:", theme/* default.font.title */.Z.font.title, ";font-size:30px;margin-left:10px;}" + ( true ? "" : 0));
+const Button = /*#__PURE__*/(/* unused pure expression or super */ null && (_styled("button",  true ? {
+  target: "e5qqsyk0"
+} : 0)( true ? "" : 0)));
 // EXTERNAL MODULE: ./node_modules/next/link.js
 var next_link = __webpack_require__(1664);
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
@@ -385,27 +383,43 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(7518);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+// EXTERNAL MODULE: external "@emotion/styled/base"
+var base_ = __webpack_require__(777);
+var base_default = /*#__PURE__*/__webpack_require__.n(base_);
+// EXTERNAL MODULE: external "@emotion/react"
+var react_ = __webpack_require__(2805);
 // EXTERNAL MODULE: ./styles/theme.ts
 var theme = __webpack_require__(3055);
 ;// CONCATENATED MODULE: ./components/common/Spinner/style.tsx
 
 
-const bounce = (0,external_styled_components_.keyframes)(["0%,80%,100%{transform:scale(0);}40%{transform:scale(1);}"]);
-const LoadingDots = external_styled_components_default().div.withConfig({
-  displayName: "style__LoadingDots",
-  componentId: "sc-12gfk54-0"
-})(["height:100vh;display:flex;justify-content:center;"]);
-const LoadingDot = external_styled_components_default().div.withConfig({
-  displayName: "style__LoadingDot",
-  componentId: "sc-12gfk54-1"
-})(["width:1.5rem;height:1.5rem;background-color:", ";border-radius:60%;animation:1.5s ", " infinite ease-in-out both;margin-top:150px;"], theme/* default.colors.sub3 */.Z.colors.sub3, bounce);
-const Wrapper = external_styled_components_default().div.withConfig({
-  displayName: "style__Wrapper",
-  componentId: "sc-12gfk54-2"
-})(["width:100%;height:100vh;display:flex;justify-content:center;align-items:center;overflow:hidden;"]);
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+
+
+const bounce = react_.keyframes`
+  0%, 80%, 100% {
+      transform: scale(0);
+  }
+  40% {
+      transform: scale(1);
+  }
+`;
+const LoadingDots = /*#__PURE__*/base_default()("div",  true ? {
+  target: "e2rjhsy2"
+} : 0)( true ? {
+  name: "1gv4qbr",
+  styles: "height:100vh;display:flex;justify-content:center"
+} : 0);
+const LoadingDot = /*#__PURE__*/base_default()("div",  true ? {
+  target: "e2rjhsy1"
+} : 0)("width:1.5rem;height:1.5rem;background-color:", theme/* default.colors.sub3 */.Z.colors.sub3, ";border-radius:60%;animation:1.5s ", bounce, " infinite ease-in-out both;margin-top:150px;" + ( true ? "" : 0));
+const Wrapper = /*#__PURE__*/base_default()("div",  true ? {
+  target: "e2rjhsy0"
+} : 0)( true ? {
+  name: "1rd8vxc",
+  styles: "width:100%;height:100vh;display:flex;justify-content:center;align-items:center;overflow:hidden"
+} : 0);
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
 ;// CONCATENATED MODULE: ./components/common/Spinner/index.tsx
@@ -1344,11 +1358,13 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9461);
 /* harmony import */ var _apis_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6649);
-/* harmony import */ var _consts_route__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(423);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6689);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_apis_user__WEBPACK_IMPORTED_MODULE_2__]);
-_apis_user__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9648);
+/* harmony import */ var _consts_route__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(423);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_apis_user__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_3__]);
+([_apis_user__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_3__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -1359,19 +1375,19 @@ const useLogin = () => {
   const {
     0: email,
     1: setEmail
-  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)('');
+  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)('');
   const {
     0: password,
     1: setPassword
-  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)('');
+  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)('');
   const {
     0: emailError,
     1: setEmailError
-  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)('');
+  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)('');
   const {
     0: passwordError,
     1: setPasswordError
-  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)('');
+  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)('');
   const router = (0,next_router__WEBPACK_IMPORTED_MODULE_0__.useRouter)();
   const isDisabled = emailError == '' && passwordError == '' && email.length > 0 && password.length > 0;
 
@@ -1389,13 +1405,22 @@ const useLogin = () => {
     e.preventDefault();
 
     try {
-      await (0,_apis_user__WEBPACK_IMPORTED_MODULE_2__/* .login */ .x4)({
+      const {
+        response
+      } = await (0,_apis_user__WEBPACK_IMPORTED_MODULE_2__/* .login */ .x4)({
         email,
         password
       });
-      router.push(_consts_route__WEBPACK_IMPORTED_MODULE_4__/* .MAIN_PAGE */ .DW);
-    } catch (err) {
-      alert('존재하지 않는 이메일입니다');
+
+      if ((response === null || response === void 0 ? void 0 : response.status) === 401) {
+        return alert('아이디와 비밀 번호를 다시 확인해주세요.');
+      }
+
+      router.push(_consts_route__WEBPACK_IMPORTED_MODULE_5__/* .MAIN_PAGE */ .DW);
+    } catch (error) {
+      if (axios__WEBPACK_IMPORTED_MODULE_3__["default"].isAxiosError(error)) {
+        alert(error);
+      }
     }
   };
   /*
@@ -1593,11 +1618,18 @@ const useSignup = () => {
     e.preventDefault();
 
     try {
-      await (0,_apis_user__WEBPACK_IMPORTED_MODULE_2__/* .signUp */ .y1)({
+      const {
+        response
+      } = await (0,_apis_user__WEBPACK_IMPORTED_MODULE_2__/* .signUp */ .y1)({
         email: email.content,
         nickname: nickname.content,
         password: password.content
       });
+
+      if ((response === null || response === void 0 ? void 0 : response.status) === 403) {
+        return alert('이미 등록되어 있는 아이디입니다.');
+      }
+
       alert('회원가입에 성공했습니다');
       router.push(_consts_route__WEBPACK_IMPORTED_MODULE_5__/* .LOGIN_PAGE */ .DV);
     } catch (err) {

@@ -59,15 +59,14 @@ __webpack_async_result__();
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "B": () => (/* binding */ Wrraper)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
 
 
-const Wrraper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().section.withConfig({
-  displayName: "style__Wrraper",
-  componentId: "sc-2ujv0q-0"
-})(["width:36rem;min-height:15rem;background-color:", ";border-radius:20px;padding:18px;margin-top:20px;margin-bottom:20px;.comment_count{font-weight:bold;}", "{width:90%;height:100%;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.tablet */ .Z.media.tablet);
+const Wrraper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("section",  true ? {
+  target: "ex10vs50"
+} : 0)("width:36rem;min-height:15rem;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";border-radius:20px;padding:18px;margin-top:20px;margin-bottom:20px;.comment_count{font-weight:bold;}", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.tablet */ .Z.media.tablet, "{width:90%;height:100%;}" + ( true ? "" : 0));
 
 /***/ }),
 
@@ -145,26 +144,29 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(7518);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+// EXTERNAL MODULE: external "@emotion/styled/base"
+var base_ = __webpack_require__(777);
+var base_default = /*#__PURE__*/__webpack_require__.n(base_);
 // EXTERNAL MODULE: ./styles/theme.ts
 var theme = __webpack_require__(3055);
 ;// CONCATENATED MODULE: ./components/Post/Comment/CommentForm/style.tsx
 
 
-const Wrraper = external_styled_components_default().div.withConfig({
-  displayName: "style__Wrraper",
-  componentId: "sc-hapds4-0"
-})(["display:flex;flex-direction:column;margin-top:20px;.button_wrapper{display:flex;justify-content:flex-end;}"]);
-const Form = external_styled_components_default().textarea.withConfig({
-  displayName: "style__Form",
-  componentId: "sc-hapds4-1"
-})(["width:100%;height:80px;padding:20px;resize:none;border:solid ", ";border-radius:10px;&:focus{outline:solid ", ";border:none;}"], theme/* default.colors.gray2 */.Z.colors.gray2, theme/* default.colors.sub */.Z.colors.sub);
-const Button = external_styled_components_default().button.withConfig({
-  displayName: "style__Button",
-  componentId: "sc-hapds4-2"
-})(["width:6rem;height:30px;background-color:", ";color:", ";font-size:13px;margin-top:20px;border-radius:8px;border:none;cursor:pointer;position:relative;&:active{background-color:", ";}"], theme/* default.colors.sub */.Z.colors.sub, theme/* default.colors.white */.Z.colors.white, theme/* default.colors.sub2 */.Z.colors.sub2);
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+
+const Wrraper = /*#__PURE__*/base_default()("div",  true ? {
+  target: "e1tcyk6q2"
+} : 0)( true ? {
+  name: "1sbdfrb",
+  styles: "display:flex;flex-direction:column;margin-top:20px;.button_wrapper{display:flex;justify-content:flex-end;}"
+} : 0);
+const Form = /*#__PURE__*/base_default()("textarea",  true ? {
+  target: "e1tcyk6q1"
+} : 0)("width:100%;height:80px;padding:20px;resize:none;border:solid ", theme/* default.colors.gray2 */.Z.colors.gray2, ";border-radius:10px;&:focus{outline:solid ", theme/* default.colors.sub */.Z.colors.sub, ";border:none;}" + ( true ? "" : 0));
+const Button = /*#__PURE__*/base_default()("button",  true ? {
+  target: "e1tcyk6q0"
+} : 0)("width:6rem;height:30px;background-color:", theme/* default.colors.sub */.Z.colors.sub, ";color:", theme/* default.colors.white */.Z.colors.white, ";font-size:13px;margin-top:20px;border-radius:8px;border:none;cursor:pointer;position:relative;&:active{background-color:", theme/* default.colors.sub2 */.Z.colors.sub2, ";}" + ( true ? "" : 0));
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
 ;// CONCATENATED MODULE: ./components/Post/Comment/CommentForm/index.tsx
@@ -334,25 +336,36 @@ __webpack_async_result__();
 /* harmony export */   "im": () => (/* binding */ Wrapper),
 /* harmony export */   "zS": () => (/* binding */ CommentEdit)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 
-const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__Wrapper",
-  componentId: "sc-1hc31or-0"
-})(["display:flex;flex-direction:column;margin-top:30px;margin-bottom:15px;font-size:14px;.comment_content{margin-top:15px;padding-left:12px;margin-bottom:15px;white-space:pre-line;}.reply_comment{display:flex;align-items:center;margin-top:10px;margin-left:9px;cursor:pointer;span{display:flex;align-items:center;}svg{margin-right:5px;}}"]);
-const CommentHead = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__CommentHead",
-  componentId: "sc-1hc31or-1"
-})(["display:flex;justify-content:space-between;align-items:center;"]);
-const CommentEdit = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__CommentEdit",
-  componentId: "sc-1hc31or-2"
-})(["display:flex;gap:10px;font-size:11px;cursor:pointer;"]);
-const ReplyWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__ReplyWrapper",
-  componentId: "sc-1hc31or-3"
-})(["display:flex;flex-direction:column;width:100%;background-color:#fafafa;margin-top:20px;padding-left:25px;padding-right:25px;padding-bottom:25px;"]);
+
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+const Wrapper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "eywnvpz3"
+} : 0)( true ? {
+  name: "ueiekc",
+  styles: "display:flex;flex-direction:column;margin-top:30px;margin-bottom:15px;font-size:14px;.comment_content{margin-top:15px;padding-left:12px;margin-bottom:15px;white-space:pre-line;}.reply_comment{display:flex;align-items:center;margin-top:10px;margin-left:9px;cursor:pointer;span{display:flex;align-items:center;}svg{margin-right:5px;}}"
+} : 0);
+const CommentHead = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "eywnvpz2"
+} : 0)( true ? {
+  name: "1066lcq",
+  styles: "display:flex;justify-content:space-between;align-items:center"
+} : 0);
+const CommentEdit = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "eywnvpz1"
+} : 0)( true ? {
+  name: "tocgkb",
+  styles: "display:flex;gap:10px;font-size:11px;cursor:pointer"
+} : 0);
+const ReplyWrapper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "eywnvpz0"
+} : 0)( true ? {
+  name: "1403z48",
+  styles: "display:flex;flex-direction:column;width:100%;background-color:#fafafa;margin-top:20px;padding-left:25px;padding-right:25px;padding-bottom:25px"
+} : 0);
 
 /***/ }),
 
@@ -398,13 +411,18 @@ __webpack_async_result__();
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "t": () => (/* binding */ Wrrapper)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 
-const Wrrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__Wrrapper",
-  componentId: "sc-p7pbx7-0"
-})(["display:flex;flex-direction:column;"]);
+
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+const Wrrapper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e11ozdce0"
+} : 0)( true ? {
+  name: "1fttcpj",
+  styles: "display:flex;flex-direction:column"
+} : 0);
 
 /***/ }),
 
@@ -710,31 +728,32 @@ __webpack_async_result__();
 /* harmony export */   "dJ": () => (/* binding */ LikeButton),
 /* harmony export */   "hE": () => (/* binding */ ButtonGroup)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
 
 
-const ButtonGroup = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__ButtonGroup",
-  componentId: "sc-16sy3tj-0"
-})(["width:100%;display:flex;justify-content:center;gap:29px;", "{gap:12px;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.mobile2 */ .Z.media.mobile2);
-const RetwwetButton = styled_components__WEBPACK_IMPORTED_MODULE_0___default().button.withConfig({
-  displayName: "style__RetwwetButton",
-  componentId: "sc-16sy3tj-1"
-})(["display:flex;align-items:center;width:4rem;background-color:", ";border:none;cursor:pointer;svg{margin-right:15px;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white);
-const LikeButton = styled_components__WEBPACK_IMPORTED_MODULE_0___default().button.withConfig({
-  displayName: "style__LikeButton",
-  componentId: "sc-16sy3tj-2"
-})(["display:flex;align-items:center;width:4rem;background-color:", ";border:none;cursor:pointer;svg{margin-right:15px;}.like_heart{color:#f06292;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white);
-const CommentButton = styled_components__WEBPACK_IMPORTED_MODULE_0___default().button.withConfig({
-  displayName: "style__CommentButton",
-  componentId: "sc-16sy3tj-3"
-})(["display:flex;align-items:center;width:4rem;background-color:", ";border:none;cursor:pointer;svg{margin-right:15px;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white);
-const Option = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__Option",
-  componentId: "sc-16sy3tj-4"
-})(["position:relative;"]);
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+
+const ButtonGroup = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1h5b2qa4"
+} : 0)("width:100%;display:flex;justify-content:center;gap:29px;", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.mobile2 */ .Z.media.mobile2, "{gap:12px;}" + ( true ? "" : 0));
+const RetwwetButton = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("button",  true ? {
+  target: "e1h5b2qa3"
+} : 0)("display:flex;align-items:center;width:4rem;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";border:none;cursor:pointer;svg{margin-right:15px;}" + ( true ? "" : 0));
+const LikeButton = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("button",  true ? {
+  target: "e1h5b2qa2"
+} : 0)("display:flex;align-items:center;width:4rem;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";border:none;cursor:pointer;svg{margin-right:15px;}.like_heart{color:#f06292;}" + ( true ? "" : 0));
+const CommentButton = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("button",  true ? {
+  target: "e1h5b2qa1"
+} : 0)("display:flex;align-items:center;width:4rem;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";border:none;cursor:pointer;svg{margin-right:15px;}" + ( true ? "" : 0));
+const Option = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1h5b2qa0"
+} : 0)( true ? {
+  name: "bjn8wh",
+  styles: "position:relative"
+} : 0);
 
 /***/ }),
 
@@ -829,21 +848,30 @@ __webpack_async_result__();
 /* harmony export */   "Px": () => (/* binding */ SharePostBlock),
 /* harmony export */   "mV": () => (/* binding */ PostHeader)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 
-const Wrraper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__Wrraper",
-  componentId: "sc-abzx29-0"
-})(["display:flex;flex-direction:column;margin-bottom:30px;padding:8px;width:100%;"]);
-const PostHeader = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__PostHeader",
-  componentId: "sc-abzx29-1"
-})(["display:flex;"]);
-const SharePostBlock = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__SharePostBlock",
-  componentId: "sc-abzx29-2"
-})(["margin-top:20px;border:3px solid #eeeeee;border-radius:15px;margin-bottom:15px;cursor:pointer;"]);
+
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+const Wrraper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1wbkuh32"
+} : 0)( true ? {
+  name: "1jaaj2m",
+  styles: "display:flex;flex-direction:column;margin-bottom:30px;padding:8px;width:100%"
+} : 0);
+const PostHeader = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1wbkuh31"
+} : 0)( true ? {
+  name: "zjik7",
+  styles: "display:flex"
+} : 0);
+const SharePostBlock = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1wbkuh30"
+} : 0)( true ? {
+  name: "kgnkq",
+  styles: "margin-top:20px;border:3px solid #eeeeee;border-radius:15px;margin-bottom:15px;cursor:pointer"
+} : 0);
 
 /***/ }),
 
@@ -858,19 +886,26 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(7518);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+// EXTERNAL MODULE: external "@emotion/styled/base"
+var base_ = __webpack_require__(777);
+var base_default = /*#__PURE__*/__webpack_require__.n(base_);
 ;// CONCATENATED MODULE: ./components/Post/PostCard/PostContent/style.tsx
 
-const Wrapper = external_styled_components_default().div.withConfig({
-  displayName: "style__Wrapper",
-  componentId: "sc-14zys9a-0"
-})(["width:100%;margin-top:18px;font-size:13px;font-weight:bold;flex:1;white-space:pre-line;padding-left:8px;"]);
-const HashTag = external_styled_components_default().div.withConfig({
-  displayName: "style__HashTag",
-  componentId: "sc-14zys9a-1"
-})(["display:flex;margin-top:50px;gap:10px;cursor:pointer;span{color:blue;font-weight:bold;}"]);
+
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+const Wrapper = /*#__PURE__*/base_default()("div",  true ? {
+  target: "ejv5mm41"
+} : 0)( true ? {
+  name: "czu97d",
+  styles: "width:100%;margin-top:18px;font-size:13px;font-weight:bold;flex:1;white-space:pre-line;padding-left:8px"
+} : 0);
+const HashTag = /*#__PURE__*/base_default()("div",  true ? {
+  target: "ejv5mm40"
+} : 0)( true ? {
+  name: "1w44fca",
+  styles: "display:flex;margin-top:50px;gap:10px;cursor:pointer;span{color:blue;font-weight:bold;}"
+} : 0);
 // EXTERNAL MODULE: ./node_modules/next/link.js
 var next_link = __webpack_require__(1664);
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
@@ -925,18 +960,17 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(7518);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+// EXTERNAL MODULE: external "@emotion/styled/base"
+var base_ = __webpack_require__(777);
+var base_default = /*#__PURE__*/__webpack_require__.n(base_);
 // EXTERNAL MODULE: ./styles/theme.ts
 var theme = __webpack_require__(3055);
 ;// CONCATENATED MODULE: ./components/Post/PostCard/Tooltip/style.tsx
 
 
-const Wrapper = external_styled_components_default().div.withConfig({
-  displayName: "style__Wrapper",
-  componentId: "sc-1oj4g2t-0"
-})(["width:5rem;height:3rem;background-color:", ";border-radius:5px;top:20px;left:0;z-index:100;position:absolute;box-shadow:0px 2px 2px 0px rgba(0,0,0,0.2);.rect{top:0;left:10px;transform:rotate(135deg);position:absolute;box-shadow:0px 2px 2px 0px rgba(0,0,0,0.2);width:10px;height:4px;}.option{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;.edit{color:green;}.delete{color:red;}span{font-size:13px;width:100%;display:flex;justify-content:center;&:hover{background-color:#fafafa;}}}"], theme/* default.colors.white */.Z.colors.white);
+const Wrapper = /*#__PURE__*/base_default()("div",  true ? {
+  target: "ezqfd3i0"
+} : 0)("width:5rem;height:3rem;background-color:", theme/* default.colors.white */.Z.colors.white, ";border-radius:5px;top:20px;left:0;z-index:100;position:absolute;box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.2);.rect{top:0;left:10px;transform:rotate(135deg);position:absolute;box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.2);width:10px;height:4px;}.option{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;.edit{color:green;}.delete{color:red;}span{font-size:13px;width:100%;display:flex;justify-content:center;&:hover{background-color:#fafafa;}}}" + ( true ? "" : 0));
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
 ;// CONCATENATED MODULE: ./components/Post/PostCard/Tooltip/index..tsx
@@ -1055,19 +1089,23 @@ __webpack_async_result__();
 /* harmony export */   "B": () => (/* binding */ Wrraper)
 /* harmony export */ });
 /* unused harmony export SharePostBlock */
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
 
 
-const Wrraper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().article.withConfig({
-  displayName: "style__Wrraper",
-  componentId: "sc-18a8gn0-0"
-})(["display:flex;flex-direction:column;width:36rem;min-height:15rem;background-color:", ";border-radius:20px;padding:18px;cursor:pointer;", "{width:90%;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.tablet */ .Z.media.tablet);
-const SharePostBlock = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__SharePostBlock",
-  componentId: "sc-18a8gn0-1"
-})(["margin-top:20px;border:3px solid #eeeeee;border-radius:15px;margin-bottom:15px;cursor:pointer;"]);
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+
+const Wrraper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("article",  true ? {
+  target: "e1dy2bqc1"
+} : 0)("display:flex;flex-direction:column;width:36rem;min-height:15rem;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";border-radius:20px;padding:18px;cursor:pointer;", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.tablet */ .Z.media.tablet, "{width:90%;}" + ( true ? "" : 0));
+const SharePostBlock = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1dy2bqc0"
+} : 0)( true ? {
+  name: "kgnkq",
+  styles: "margin-top:20px;border:3px solid #eeeeee;border-radius:15px;margin-bottom:15px;cursor:pointer"
+} : 0);
 
 /***/ }),
 
@@ -1080,18 +1118,17 @@ __webpack_require__.d(__webpack_exports__, {
   "Z": () => (/* binding */ Post_PostEndBar)
 });
 
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(7518);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+// EXTERNAL MODULE: external "@emotion/styled/base"
+var base_ = __webpack_require__(777);
+var base_default = /*#__PURE__*/__webpack_require__.n(base_);
 // EXTERNAL MODULE: ./styles/theme.ts
 var theme = __webpack_require__(3055);
 ;// CONCATENATED MODULE: ./components/Post/PostEndBar/style.tsx
 
 
-const Wrrapper = external_styled_components_default().div.withConfig({
-  displayName: "style__Wrrapper",
-  componentId: "sc-1whk0cd-0"
-})(["display:flex;flex-direction:column;justify-content:center;align-items:center;width:36rem;background-color:", ";margin-top:50px;margin-bottom:50px;border-radius:20px;padding:18px;font-weight:bold;svg{margin-bottom:15px;}", "{width:90%;}"], theme/* default.colors.white */.Z.colors.white, theme/* default.media.tablet */.Z.media.tablet);
+const Wrrapper = /*#__PURE__*/base_default()("div",  true ? {
+  target: "e1wblqnn0"
+} : 0)("display:flex;flex-direction:column;justify-content:center;align-items:center;width:36rem;background-color:", theme/* default.colors.white */.Z.colors.white, ";margin-top:50px;margin-bottom:50px;border-radius:20px;padding:18px;font-weight:bold;svg{margin-bottom:15px;}", theme/* default.media.tablet */.Z.media.tablet, "{width:90%;}" + ( true ? "" : 0));
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
 // EXTERNAL MODULE: external "react-icons/bs"
@@ -1249,19 +1286,17 @@ __webpack_async_result__();
 /* harmony export */   "B": () => (/* binding */ Wrraper),
 /* harmony export */   "p": () => (/* binding */ FormHeader)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
 
 
-const Wrraper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__Wrraper",
-  componentId: "sc-1vl0dwo-0"
-})(["display:flex;flex-direction:column;width:36rem;background-color:", ";border-radius:20px;padding:20px;margin-bottom:30px;position:relative;button{margin:0 auto;font-size:15px;}span{color:", ";font-weight:bold;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub);
-const FormHeader = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__FormHeader",
-  componentId: "sc-1vl0dwo-1"
-})(["display:flex;align-items:center;width:100%;margin-bottom:20px;span{flex:1;}button{width:5rem;border-radius:10px;margin-right:15px;background-color:", ";border:none;padding:6px;cursor:pointer;font-size:12px;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.gray3 */ .Z.colors.gray3);
+const Wrraper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e2rya7l1"
+} : 0)("display:flex;flex-direction:column;width:36rem;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";border-radius:20px;padding:20px;margin-bottom:30px;position:relative;button{margin:0 auto;font-size:15px;}span{color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, ";font-weight:bold;}" + ( true ? "" : 0));
+const FormHeader = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e2rya7l0"
+} : 0)("display:flex;align-items:center;width:100%;margin-bottom:20px;span{flex:1;}button{width:5rem;border-radius:10px;margin-right:15px;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.gray3 */ .Z.colors.gray3, ";border:none;padding:6px;cursor:pointer;font-size:12px;}" + ( true ? "" : 0));
 
 /***/ }),
 
@@ -1278,15 +1313,20 @@ __webpack_require__.d(__webpack_exports__, {
 var external_react_ = __webpack_require__(6689);
 // EXTERNAL MODULE: external "react-icons/ai"
 var ai_ = __webpack_require__(9847);
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(7518);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+// EXTERNAL MODULE: external "@emotion/styled/base"
+var base_ = __webpack_require__(777);
+var base_default = /*#__PURE__*/__webpack_require__.n(base_);
 ;// CONCATENATED MODULE: ./components/Post/PostForm/Image/style.tsx
 
-const StyledImage = external_styled_components_default().div.withConfig({
-  displayName: "style__StyledImage",
-  componentId: "sc-e7j49c-0"
-})(["width:120px;height:160px;position:relative;img{width:100%;height:100%;}svg{position:absolute;right:0;cursor:pointer;}"]);
+
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+const StyledImage = /*#__PURE__*/base_default()("div",  true ? {
+  target: "e9nl4q50"
+} : 0)( true ? {
+  name: "17r4kf7",
+  styles: "width:120px;height:160px;position:relative;img{width:100%;height:100%;}svg{position:absolute;right:0;cursor:pointer;}"
+} : 0);
 // EXTERNAL MODULE: ./lib/utils/index.ts + 3 modules
 var utils = __webpack_require__(9461);
 // EXTERNAL MODULE: external "react/jsx-runtime"
@@ -1320,18 +1360,24 @@ var theme = __webpack_require__(3055);
 ;// CONCATENATED MODULE: ./components/Post/PostForm/WriteForm/style.tsx
 
 
-const Wrraper = external_styled_components_default().div.withConfig({
-  displayName: "style__Wrraper",
-  componentId: "sc-dise8x-0"
-})(["display:flex;flex-direction:column;.image_upload{display:flex;justify-content:flex-end;position:relative;margin-bottom:20px;input{display:none;}svg{margin-top:15px;position:relative;right:10px;cursor:pointer;}}"]);
-const TextForm = external_styled_components_default().textarea.withConfig({
-  displayName: "style__TextForm",
-  componentId: "sc-dise8x-1"
-})(["height:10rem;resize:none;border:solid ", ";border-radius:10px;padding:15px;font-weight:bold;&:focus{outline:solid ", ";border:none;}"], theme/* default.colors.gray2 */.Z.colors.gray2, theme/* default.colors.sub */.Z.colors.sub);
-const ImagesContainer = external_styled_components_default().div.withConfig({
-  displayName: "style__ImagesContainer",
-  componentId: "sc-dise8x-2"
-})(["width:100%;display:flex;gap:15px;margin-bottom:20px;"]);
+function style_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+
+const Wrraper = /*#__PURE__*/base_default()("div",  true ? {
+  target: "et3hzdp2"
+} : 0)( true ? {
+  name: "1a0u9xk",
+  styles: "display:flex;flex-direction:column;.image_upload{display:flex;justify-content:flex-end;position:relative;margin-bottom:20px;input{display:none;}svg{margin-top:15px;position:relative;right:10px;cursor:pointer;}}"
+} : 0);
+const TextForm = /*#__PURE__*/base_default()("textarea",  true ? {
+  target: "et3hzdp1"
+} : 0)("height:10rem;resize:none;border:solid ", theme/* default.colors.gray2 */.Z.colors.gray2, ";border-radius:10px;padding:15px;font-weight:bold;&:focus{outline:solid ", theme/* default.colors.sub */.Z.colors.sub, ";border:none;}" + ( true ? "" : 0));
+const ImagesContainer = /*#__PURE__*/base_default()("div",  true ? {
+  target: "et3hzdp0"
+} : 0)( true ? {
+  name: "1velu79",
+  styles: "width:100%;display:flex;gap:15px;margin-bottom:20px"
+} : 0);
 // EXTERNAL MODULE: external "react-icons/bs"
 var bs_ = __webpack_require__(567);
 ;// CONCATENATED MODULE: ./components/Post/PostForm/WriteForm/index.tsx
@@ -1490,15 +1536,14 @@ __webpack_async_result__();
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "B": () => (/* binding */ Wrraper)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
 
 
-const Wrraper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__Wrraper",
-  componentId: "sc-3slrjn-0"
-})(["display:flex;flex-direction:column;width:36rem;background-color:", ";border-radius:20px;padding:20px;margin-bottom:30px;position:relative;button{margin:0 auto;font-size:15px;}span{color:", ";font-weight:bold;margin-bottom:20px;}", "{width:90%;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.tablet */ .Z.media.tablet);
+const Wrraper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e1otu9yu0"
+} : 0)("display:flex;flex-direction:column;width:36rem;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";border-radius:20px;padding:20px;margin-bottom:30px;position:relative;button{margin:0 auto;font-size:15px;}span{color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, ";font-weight:bold;margin-bottom:20px;}", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.tablet */ .Z.media.tablet, "{width:90%;}" + ( true ? "" : 0));
 
 /***/ }),
 
@@ -1661,17 +1706,24 @@ __webpack_async_result__();
 /* harmony export */   "R": () => (/* binding */ ImageSection),
 /* harmony export */   "f": () => (/* binding */ ImageWrapper)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 
-const ImageWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__ImageWrapper",
-  componentId: "sc-2ymn4o-0"
-})(["width:100%;height:20rem;background-color:black;margin-top:20px;margin-bottom:30px;display:flex;justify-content:center;border-radius:20px;.image_content{width:100%;height:100%;border-radius:20px;}"]);
-const ImageSection = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__ImageSection",
-  componentId: "sc-2ymn4o-1"
-})(["width:50%;height:100%;.first_image{width:100%;height:100%;border-top-left-radius:20px;border-bottom-left-radius:20px;}.center_image{width:100%;height:100%;}.second_image{width:100%;height:100%;border-top-right-radius:20px;border-bottom-right-radius:20px;}"]);
+
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+const ImageWrapper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "eltidc11"
+} : 0)( true ? {
+  name: "1niysw8",
+  styles: "width:100%;height:20rem;background-color:black;margin-top:20px;margin-bottom:30px;display:flex;justify-content:center;border-radius:20px;.image_content{width:100%;height:100%;border-radius:20px;}"
+} : 0);
+const ImageSection = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "eltidc10"
+} : 0)( true ? {
+  name: "80ky8h",
+  styles: "width:50%;height:100%;.first_image{width:100%;height:100%;border-top-left-radius:20px;border-bottom-left-radius:20px;}.center_image{width:100%;height:100%;}.second_image{width:100%;height:100%;border-top-right-radius:20px;border-bottom-right-radius:20px;}"
+} : 0);
 
 /***/ }),
 
@@ -1695,22 +1747,26 @@ var next_link = __webpack_require__(1664);
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(7518);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+// EXTERNAL MODULE: external "@emotion/styled/base"
+var base_ = __webpack_require__(777);
+var base_default = /*#__PURE__*/__webpack_require__.n(base_);
 // EXTERNAL MODULE: ./styles/theme.ts
 var theme = __webpack_require__(3055);
 ;// CONCATENATED MODULE: ./components/Post/WriteInfo/style.tsx
 
 
-const PostInfo = external_styled_components_default().div.withConfig({
-  displayName: "style__PostInfo",
-  componentId: "sc-1q3eq7g-0"
-})(["display:flex;flex-direction:column;margin-left:15px;.user_name{color:", ";font-weight:bold;font-size:13px;}.date{font-size:11px;margin-top:6px;}"], theme/* default.colors.gray1 */.Z.colors.gray1);
-const PostHead = external_styled_components_default().div.withConfig({
-  displayName: "style__PostHead",
-  componentId: "sc-1q3eq7g-1"
-})(["display:flex;align-items:center;"]);
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+
+const PostInfo = /*#__PURE__*/base_default()("div",  true ? {
+  target: "es3iiye1"
+} : 0)("display:flex;flex-direction:column;margin-left:15px;.user_name{color:", theme/* default.colors.gray1 */.Z.colors.gray1, ";font-weight:bold;font-size:13px;}.date{font-size:11px;margin-top:6px;}" + ( true ? "" : 0));
+const PostHead = /*#__PURE__*/base_default()("div",  true ? {
+  target: "es3iiye0"
+} : 0)( true ? {
+  name: "s5xdrg",
+  styles: "display:flex;align-items:center"
+} : 0);
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
 ;// CONCATENATED MODULE: ./components/Post/WriteInfo/index.tsx
@@ -1788,52 +1844,6 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_Pos
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
-
-/***/ }),
-
-/***/ 1829:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ common_Button)
-});
-
-// EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__(6689);
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(7518);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
-// EXTERNAL MODULE: ./styles/theme.ts
-var theme = __webpack_require__(3055);
-;// CONCATENATED MODULE: ./components/common/Button/style.tsx
-
-
-const StyledButton = external_styled_components_default().button.withConfig({
-  displayName: "style__StyledButton",
-  componentId: "sc-17rpp5s-0"
-})(["width:20rem;padding:15px;background-color:", ";color:", ";font-size:20px;margin-top:20px;border-radius:8px;border:none;cursor:pointer;&:active{background-color:", ";}", "{width:50%;}&:disabled{background-color:", ";}"], theme/* default.colors.sub */.Z.colors.sub, theme/* default.colors.white */.Z.colors.white, theme/* default.colors.sub2 */.Z.colors.sub2, theme/* default.media.laptop */.Z.media.laptop, theme/* default.colors.gray2 */.Z.colors.gray2);
-// EXTERNAL MODULE: external "react/jsx-runtime"
-var jsx_runtime_ = __webpack_require__(997);
-;// CONCATENATED MODULE: ./components/common/Button/index.tsx
-
-
-
-
-const Button = ({
-  name,
-  disabled,
-  onClick
-}) => {
-  return /*#__PURE__*/jsx_runtime_.jsx(StyledButton, {
-    disabled: disabled,
-    onClick: onClick,
-    children: name
-  });
-};
-
-/* harmony default export */ const common_Button = (Button);
 
 /***/ }),
 
@@ -1925,42 +1935,51 @@ __webpack_async_result__();
 /* harmony export */   "im": () => (/* binding */ Wrapper),
 /* harmony export */   "rB": () => (/* binding */ DotWrapper)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
 
 
-const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__Wrapper",
-  componentId: "sc-is2mvk-0"
-})(["width:500px;overflow:hidden;"]);
-const SlideContainer = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__SlideContainer",
-  componentId: "sc-is2mvk-1"
-})(["display:flex;transition:all 0.5s ease-in-out;transform:", ";margin:0 auto;"], props => `translateX(-${props.currentSlide}00%)`);
-const Slide = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__Slide",
-  componentId: "sc-is2mvk-2"
-})(["min-width:500px;height:400px;display:flex;justify-content:center;img{height:100%;}"]);
-const SlideButton = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__SlideButton",
-  componentId: "sc-is2mvk-3"
-})(["width:100%;display:flex;align-items:center;justify-content:center;margin-top:20px;gap:27px;svg{&:active{background-color:black;}}"]);
-const DotWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__DotWrapper",
-  componentId: "sc-is2mvk-4"
-})(["display:flex;gap:13px;"]);
-const SlideDot = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__SlideDot",
-  componentId: "sc-is2mvk-5"
-})(["width:15px;height:15px;border-radius:50%;background-color:", ";"], props => {
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+
+const Wrapper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e33f0k45"
+} : 0)( true ? {
+  name: "6elrgp",
+  styles: "width:500px;overflow:hidden"
+} : 0);
+const SlideContainer = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e33f0k44"
+} : 0)("display:flex;transition:all 0.5s ease-in-out;transform:", props => `translateX(-${props.currentSlide}00%)`, ";margin:0 auto;" + ( true ? "" : 0));
+const Slide = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e33f0k43"
+} : 0)( true ? {
+  name: "9u11aa",
+  styles: "min-width:500px;height:400px;display:flex;justify-content:center;img{height:100%;}"
+} : 0);
+const SlideButton = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e33f0k42"
+} : 0)( true ? {
+  name: "15dmw7p",
+  styles: "width:100%;display:flex;align-items:center;justify-content:center;margin-top:20px;gap:27px;svg{&:active{background-color:black;}}"
+} : 0);
+const DotWrapper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e33f0k41"
+} : 0)( true ? {
+  name: "1utko1x",
+  styles: "display:flex;gap:13px"
+} : 0);
+const SlideDot = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "e33f0k40"
+} : 0)("width:15px;height:15px;border-radius:50%;background-color:", props => {
   const {
     currentSlide,
     slideLocation
   } = props;
   if (currentSlide === slideLocation) return 'black';
   return styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white;
-});
+}, ";" + ( true ? "" : 0));
 
 /***/ }),
 
@@ -2045,23 +2064,20 @@ __webpack_async_result__();
 /* harmony export */   "im": () => (/* binding */ Wrapper),
 /* harmony export */   "zx": () => (/* binding */ Button)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(777);
+/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styles_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3055);
 
 
-const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__Wrapper",
-  componentId: "sc-1foddxg-0"
-})(["display:flex;flex-direction:column;width:25rem;height:15rem;background-color:", ";padding:28px;position:relative;.title{font-weight:bold;font-size:25px;}.content{margin-top:40px;font-size:18px;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white);
-const ButtonGroup = styled_components__WEBPACK_IMPORTED_MODULE_0___default().div.withConfig({
-  displayName: "style__ButtonGroup",
-  componentId: "sc-1foddxg-1"
-})(["display:flex;align-items:center;position:absolute;bottom:20px;right:10px;div{width:4rem;height:30px;color:", ";font-size:15px;font-weight:bold;margin-top:20px;border-radius:8px;border:none;cursor:pointer;display:flex;justify-content:center;align-items:center;}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub);
-const Button = styled_components__WEBPACK_IMPORTED_MODULE_0___default().button.withConfig({
-  displayName: "style__Button",
-  componentId: "sc-1foddxg-2"
-})(["width:4rem;height:30px;background-color:", ";color:", ";font-size:13px;font-weight:bold;margin-top:20px;border-radius:8px;border:none;cursor:pointer;&:active{background-color:", ";}"], styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub2 */ .Z.colors.sub2);
+const Wrapper = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "el0odb42"
+} : 0)("display:flex;flex-direction:column;width:25rem;height:15rem;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";padding:28px;position:relative;.title{font-weight:bold;font-size:25px;}.content{margin-top:40px;font-size:18px;}", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].media.mobile2 */ .Z.media.mobile2, "{width:80%;}" + ( true ? "" : 0));
+const ButtonGroup = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("div",  true ? {
+  target: "el0odb41"
+} : 0)("display:flex;align-items:center;position:absolute;bottom:20px;right:10px;div{width:4rem;height:30px;color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, ";font-size:15px;font-weight:bold;margin-top:20px;border-radius:8px;border:none;cursor:pointer;display:flex;justify-content:center;align-items:center;}" + ( true ? "" : 0));
+const Button = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("button",  true ? {
+  target: "el0odb40"
+} : 0)("width:4rem;height:30px;background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub */ .Z.colors.sub, ";color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.white */ .Z.colors.white, ";font-size:13px;font-weight:bold;margin-top:20px;border-radius:8px;border:none;cursor:pointer;&:active{background-color:", styles_theme__WEBPACK_IMPORTED_MODULE_1__/* ["default"].colors.sub2 */ .Z.colors.sub2, ";}" + ( true ? "" : 0));
 
 /***/ }),
 
@@ -2080,40 +2096,55 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
-// EXTERNAL MODULE: external "styled-components"
-var external_styled_components_ = __webpack_require__(7518);
-var external_styled_components_default = /*#__PURE__*/__webpack_require__.n(external_styled_components_);
+// EXTERNAL MODULE: external "@emotion/styled/base"
+var base_ = __webpack_require__(777);
+var base_default = /*#__PURE__*/__webpack_require__.n(base_);
+// EXTERNAL MODULE: external "@emotion/react"
+var react_ = __webpack_require__(2805);
 ;// CONCATENATED MODULE: ./components/common/Modal/style.tsx
 
-const popUpAnimation = (0,external_styled_components_.keyframes)(["from{opacity:0;transform:translateY(3rem);}to{opacity:1;transform:translateY(0rem);}"]);
-const StyleOverlay = external_styled_components_default().div.withConfig({
-  displayName: "style__StyleOverlay",
-  componentId: "sc-5xcwiv-0"
-})(["display:", ";width:100%;height:100vh;top:0;left:0;bottom:0;right:0;position:fixed;z-index:999;background-color:rgba(0,0,0,0.6);"], props => props.isOpen ? 'flex' : 'none');
-const StyleCustomFrame = external_styled_components_default().div.withConfig({
-  displayName: "style__StyleCustomFrame",
-  componentId: "sc-5xcwiv-1"
-})(["display:", ";justify-content:center;align-items:center;width:100%;height:100vh;top:0;left:0;bottom:0;right:0;position:fixed;z-index:999;background-color:rgba(0,0,0,0.1);;"], props => props.isOpen ? 'flex' : 'none');
-const StyleModalFrame = external_styled_components_default().div.withConfig({
-  displayName: "style__StyleModalFrame",
-  componentId: "sc-5xcwiv-2"
-})(["display:", ";flex-direction:column;z-index:1000;width:20rem;position:fixed;animation:", " 0.2s linear;background-color:", ";border-radius:0.625rem;"], props => props.isOpen ? 'flex' : 'none', popUpAnimation, ({
+
+function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
+
+
+const popUpAnimation = react_.keyframes`
+from{
+  opacity: 0;
+  transform: translateY(3rem);
+}
+to{
+  opacity: 1;
+  transform: translateY(0rem);
+}
+`;
+const StyleOverlay = /*#__PURE__*/base_default()("div",  true ? {
+  target: "e1iwekl65"
+} : 0)("display:", props => props.isOpen ? 'flex' : 'none', ";width:100%;height:100vh;top:0;left:0;bottom:0;right:0;position:fixed;z-index:999;background-color:rgba(0, 0, 0, 0.6);" + ( true ? "" : 0));
+const StyleCustomFrame = /*#__PURE__*/base_default()("div",  true ? {
+  target: "e1iwekl64"
+} : 0)("display:", props => props.isOpen ? 'flex' : 'none', ";justify-content:center;align-items:center;width:100%;height:100vh;top:0;left:0;bottom:0;right:0;position:fixed;z-index:999;background-color:rgba(0, 0, 0, 0.1);" + ( true ? "" : 0));
+const StyleModalFrame = /*#__PURE__*/base_default()("div",  true ? {
+  target: "e1iwekl63"
+} : 0)("display:", props => props.isOpen ? 'flex' : 'none', ";flex-direction:column;z-index:1000;width:20rem;position:fixed;animation:", popUpAnimation, " 0.2s linear;background-color:", ({
   theme
-}) => theme.colors.white);
-const StyleModalHeader = external_styled_components_default().div.withConfig({
-  displayName: "style__StyleModalHeader",
-  componentId: "sc-5xcwiv-3"
-})(["width:100%;color:", ";border-radius:0.625rem 0.625rem 0rem 0rem;"], ({
+}) => theme.colors.white, ";border-radius:0.625rem;" + ( true ? "" : 0));
+const StyleModalHeader = /*#__PURE__*/base_default()("div",  true ? {
+  target: "e1iwekl62"
+} : 0)("width:100%;color:", ({
   theme
-}) => theme.colors.white);
-const StyleModalBody = external_styled_components_default().div.withConfig({
-  displayName: "style__StyleModalBody",
-  componentId: "sc-5xcwiv-4"
-})(["position:relative;padding:1rem;"]);
-const StyleModalFooter = external_styled_components_default().div.withConfig({
-  displayName: "style__StyleModalFooter",
-  componentId: "sc-5xcwiv-5"
-})(["display:flex;justify-content:center;height:100%;"]);
+}) => theme.colors.white, ";border-radius:0.625rem 0.625rem 0rem 0rem;" + ( true ? "" : 0));
+const StyleModalBody = /*#__PURE__*/base_default()("div",  true ? {
+  target: "e1iwekl61"
+} : 0)( true ? {
+  name: "ywrbr6",
+  styles: "position:relative;padding:1rem"
+} : 0);
+const StyleModalFooter = /*#__PURE__*/base_default()("div",  true ? {
+  target: "e1iwekl60"
+} : 0)( true ? {
+  name: "1obhh61",
+  styles: "display:flex;justify-content:center;height:100%"
+} : 0);
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
 ;// CONCATENATED MODULE: ./components/common/Modal/index.tsx

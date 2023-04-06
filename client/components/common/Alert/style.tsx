@@ -1,4 +1,5 @@
-import styled, { css } from 'styled-components';
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import theme from 'styles/theme';
 
 export const Wrapper = styled.div<{ isOpen: boolean }>`

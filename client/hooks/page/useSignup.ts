@@ -30,11 +30,14 @@ const useSignup = () => {
     e.preventDefault();
 
     try {
-      await signUp({
+      const { response } = await signUp({
         email: email.content,
         nickname: nickname.content,
         password: password.content,
       });
+      if (response?.status === 403) {
+        return alert('이미 등록되어 있는 아이디입니다.');
+      }
       alert('회원가입에 성공했습니다');
       router.push(LOGIN_PAGE);
     } catch (err) {

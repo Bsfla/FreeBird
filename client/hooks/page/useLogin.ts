@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { validateEmail, validatePassword } from '@lib/utils';
 import { LoginFormType } from '@lib/types';
 import { login } from '@apis/user';
-import { AxiosError } from 'axios';
+import axios, { AxiosError } from 'axios';
 import { MAIN_PAGE } from '@consts/route';
 import { ChangeEvent, useEffect, useMemo, useState } from 'react';
 
@@ -33,10 +33,16 @@ const useLogin = () => {
     e.preventDefault();
 
     try {
-      await login({ email, password });
+      const { response } = await login({ email, password });
+
+      if (response?.status === 401) {
+        return alert('아이디와 비밀 번호를 다시 확인해주세요.');
+      }
       router.push(MAIN_PAGE);
-    } catch (err) {
-      alert('존재하지 않는 이메일입니다');
+    } catch (error: any) {
+      if (axios.isAxiosError(error)) {
+        alert(error);
+      }
     }
   };
 

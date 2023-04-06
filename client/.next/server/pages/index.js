@@ -64,7 +64,7 @@ const Main = () => {
     resultData: posts
   } = (0,_hooks_common__WEBPACK_IMPORTED_MODULE_7__/* .useInfiniteScroll */ .MQ)(_consts_index__WEBPACK_IMPORTED_MODULE_4__/* .queryKeys.posts */ .ad.posts, _apis_post__WEBPACK_IMPORTED_MODULE_5__/* .getPosts */ .Jq);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
-    children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx(_components_Post__WEBPACK_IMPORTED_MODULE_2__/* .PostForm */ .sA, {}), (posts === null || posts === void 0 ? void 0 : posts.length) && /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx(_components_common_PostList__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
+    children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx(_components_Post__WEBPACK_IMPORTED_MODULE_2__/* .PostForm */ .sA, {}), posts !== undefined && /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx(_components_common_PostList__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
       posts: posts,
       endPost: endPost
     })]
@@ -98,6 +98,20 @@ const getServerSideProps = async context => {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Main);
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 2805:
+/***/ ((module) => {
+
+module.exports = require("@emotion/react");
+
+/***/ }),
+
+/***/ 777:
+/***/ ((module) => {
+
+module.exports = require("@emotion/styled/base");
 
 /***/ }),
 
@@ -311,13 +325,6 @@ module.exports = require("recoil");
 
 /***/ }),
 
-/***/ 7518:
-/***/ ((module) => {
-
-module.exports = require("styled-components");
-
-/***/ }),
-
 /***/ 9648:
 /***/ ((module) => {
 
@@ -339,7 +346,7 @@ module.exports = import("react-intersection-observer");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [922,664,55,762,760,231,299,209,992,640], () => (__webpack_exec__(5006)));
+var __webpack_exports__ = __webpack_require__.X(0, [922,664,55,762,760,231,299,829,209,992,640], () => (__webpack_exec__(5006)));
 module.exports = __webpack_exports__;
 
 })();

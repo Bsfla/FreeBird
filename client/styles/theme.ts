@@ -1,4 +1,4 @@
-import { DefaultTheme } from 'styled-components';
+import { Theme } from '@emotion/react';
 
 const breakpoints = {
   mobile1: '375px',
@@ -40,7 +40,7 @@ const media = {
   large: deskTopmediaQuery(breakpoints.large),
 } as const;
 
-const theme: DefaultTheme = {
+const theme: Theme = {
   colors,
   media,
   font,

@@ -1,14 +1,14 @@
-import React from 'react';
-import type { ReactElement, ReactNode } from 'react';
-import type { AppProps } from 'next/app';
-import type { NextPage } from 'next';
+import React, { ReactElement, ReactNode } from 'react';
 import { QueryClient, QueryClientProvider, Hydrate } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { RecoilRoot } from 'recoil';
 import GlobalStyle from 'styles/globalStyles';
-import { ThemeProvider } from 'styled-components';
+import { Global } from '@emotion/react';
+import { ThemeProvider } from '@emotion/react';
 import theme from 'styles/theme';
 import Head from 'next/head';
+import { AppProps } from 'next/app';
+import { NextPage } from 'next/types';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         <Head>
           <title>FreeBird</title>
         </Head>
-        <GlobalStyle />
+        <Global styles={GlobalStyle} />
         <ThemeProvider theme={theme}>
           <RecoilRoot>{getLayout(<Component {...pageProps} />)}</RecoilRoot>
         </ThemeProvider>
