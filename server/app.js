@@ -23,7 +23,7 @@ const app = express();
 dotenv.config();
 
 db.sequelize
-  .sync({ force: true })
+  .sync()
   .then(() => {
     console.log("db연결 성공");
   })
@@ -63,7 +63,7 @@ app.use(
     proxy: true,
     cookie: {
       httpOnly: true,
-      secure: true,
+      secure: false,
     },
   })
 );
