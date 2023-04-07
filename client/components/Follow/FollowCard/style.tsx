@@ -26,8 +26,7 @@ export const Wrrapper = styled.div`
 
 export const Button = styled.button`
   width: 4rem;
-  height: 20px;
-  padding: 3px;
+  height: 24px;
   font-size: 8px;
   border: none;
   cursor: pointer;
@@ -36,19 +35,27 @@ export const Button = styled.button`
   justify-content: center;
   background-color: ${theme.colors.sub};
   color: ${theme.colors.white};
+  gap: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+
+  svg {
+    margin-top: 2px;
+  }
 `;
 
-export const DeleteButton = styled.button`
+export const ProfileButton = styled.button`
   width: 4rem;
-  height: 20px;
-  padding: 3px;
+  height: 24px;
   font-size: 8px;
-  margin-bottom: 20px;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${theme.colors.gray1};
+  background-color: #bface0;
   color: ${theme.colors.white};
+  gap: 5px;
+  border-radius: 5px;
+  font-weight: bold;
 `;

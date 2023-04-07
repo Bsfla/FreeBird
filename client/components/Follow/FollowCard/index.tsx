@@ -1,7 +1,9 @@
 import React from 'react';
 import ProfileImage from '@components/common/ProfileImage';
-import { Wrrapper, Button, DeleteButton } from './style';
+import { Wrrapper, Button, ProfileButton } from './style';
 import { FollowUserType } from '@lib/types';
+import { SlUserFollow } from 'react-icons/sl';
+import { RiDeleteBin5Line } from 'react-icons/ri';
 import { PROFILE_PAGE } from '@consts/route';
 import Link from 'next/link';
 
@@ -16,11 +18,15 @@ const FollowCard = ({ followUser, handleDeleteFollow }: Props) => {
       <ProfileImage imgPath={followUser.ProfileImage} />
       <span className="nickname">{followUser.nickname}</span>
       <Link href={`${PROFILE_PAGE}/${followUser.id}`}>
-        <Button>프로필 보기</Button>
+        <ProfileButton>
+          <SlUserFollow />
+          프로필
+        </ProfileButton>
       </Link>
-      <DeleteButton onClick={handleDeleteFollow(followUser.id)}>
-        삭제하기
-      </DeleteButton>
+      <Button onClick={handleDeleteFollow(followUser.id)}>
+        <RiDeleteBin5Line />
+        삭제
+      </Button>
     </Wrrapper>
   );
 };

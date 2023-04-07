@@ -310,6 +310,13 @@ module.exports = require("react-icons/io");
 
 /***/ }),
 
+/***/ 8098:
+/***/ ((module) => {
+
+module.exports = require("react-icons/ri");
+
+/***/ }),
+
 /***/ 5065:
 /***/ ((module) => {
 

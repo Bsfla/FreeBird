@@ -78,6 +78,7 @@ const ProfileEditModal = ({ profile }: Props) => {
     if (imgPath) formData.append('image', imgPath.src);
 
     mutate({ formData, userId: profile.id });
+    hideModal();
   };
 
   return (

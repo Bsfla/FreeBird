@@ -160,10 +160,14 @@ const Wrrapper = /*#__PURE__*/base_default()("div",  true ? {
 } : 0)("width:7rem;height:10rem;background-color:", theme/* default.colors.white */.Z.colors.white, ";border-radius:10px;display:flex;flex-direction:column;align-items:center;padding:10px;gap:5px;.nickname{font-size:12px;font-weight:bold;color:", theme/* default.colors.gray1 */.Z.colors.gray1, ";margin-top:5px;}", theme/* default.media.mobile2 */.Z.media.mobile2, "{width:7.5rem;}" + ( true ? "" : 0));
 const Button = /*#__PURE__*/base_default()("button",  true ? {
   target: "e1ont1ra1"
-} : 0)("width:4rem;height:20px;padding:3px;font-size:8px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background-color:", theme/* default.colors.sub */.Z.colors.sub, ";color:", theme/* default.colors.white */.Z.colors.white, ";" + ( true ? "" : 0));
-const DeleteButton = /*#__PURE__*/base_default()("button",  true ? {
+} : 0)("width:4rem;height:24px;font-size:8px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background-color:", theme/* default.colors.sub */.Z.colors.sub, ";color:", theme/* default.colors.white */.Z.colors.white, ";gap:5px;border-radius:5px;font-weight:bold;svg{margin-top:2px;}" + ( true ? "" : 0));
+const ProfileButton = /*#__PURE__*/base_default()("button",  true ? {
   target: "e1ont1ra0"
-} : 0)("width:4rem;height:20px;padding:3px;font-size:8px;margin-bottom:20px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background-color:", theme/* default.colors.gray1 */.Z.colors.gray1, ";color:", theme/* default.colors.white */.Z.colors.white, ";" + ( true ? "" : 0));
+} : 0)("width:4rem;height:24px;font-size:8px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background-color:#bface0;color:", theme/* default.colors.white */.Z.colors.white, ";gap:5px;border-radius:5px;font-weight:bold;" + ( true ? "" : 0));
+// EXTERNAL MODULE: external "react-icons/sl"
+var sl_ = __webpack_require__(5065);
+// EXTERNAL MODULE: external "react-icons/ri"
+var ri_ = __webpack_require__(8098);
 // EXTERNAL MODULE: ./consts/route.ts
 var route = __webpack_require__(423);
 // EXTERNAL MODULE: ./node_modules/next/link.js
@@ -172,6 +176,8 @@ var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
 ;// CONCATENATED MODULE: ./components/Follow/FollowCard/index.tsx
+
+
 
 
 
@@ -192,12 +198,12 @@ const FollowCard = ({
       children: followUser.nickname
     }), /*#__PURE__*/jsx_runtime_.jsx((link_default()), {
       href: `${route/* PROFILE_PAGE */.Jt}/${followUser.id}`,
-      children: /*#__PURE__*/jsx_runtime_.jsx(Button, {
-        children: "\uD504\uB85C\uD544 \uBCF4\uAE30"
+      children: /*#__PURE__*/(0,jsx_runtime_.jsxs)(ProfileButton, {
+        children: [/*#__PURE__*/jsx_runtime_.jsx(sl_.SlUserFollow, {}), "\uD504\uB85C\uD544"]
       })
-    }), /*#__PURE__*/jsx_runtime_.jsx(DeleteButton, {
+    }), /*#__PURE__*/(0,jsx_runtime_.jsxs)(Button, {
       onClick: handleDeleteFollow(followUser.id),
-      children: "\uC0AD\uC81C\uD558\uAE30"
+      children: [/*#__PURE__*/jsx_runtime_.jsx(ri_.RiDeleteBin5Line, {}), "\uC0AD\uC81C"]
     })]
   });
 };

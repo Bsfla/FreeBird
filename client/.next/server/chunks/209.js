@@ -897,14 +897,14 @@ function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringif
 const Wrapper = /*#__PURE__*/base_default()("div",  true ? {
   target: "ejv5mm41"
 } : 0)( true ? {
-  name: "czu97d",
-  styles: "width:100%;margin-top:18px;font-size:13px;font-weight:bold;flex:1;white-space:pre-line;padding-left:8px"
+  name: "1pogckf",
+  styles: "width:100%;margin-top:28px;font-size:13px;font-weight:bold;flex:1;white-space:pre-line;padding-left:1px"
 } : 0);
 const HashTag = /*#__PURE__*/base_default()("div",  true ? {
   target: "ejv5mm40"
 } : 0)( true ? {
-  name: "1w44fca",
-  styles: "display:flex;margin-top:50px;gap:10px;cursor:pointer;span{color:blue;font-weight:bold;}"
+  name: "145ju5d",
+  styles: "display:flex;margin-top:50px;gap:10px;cursor:pointer;padding-left:7px;span{color:blue;font-weight:bold;}"
 } : 0);
 // EXTERNAL MODULE: ./node_modules/next/link.js
 var next_link = __webpack_require__(1664);
