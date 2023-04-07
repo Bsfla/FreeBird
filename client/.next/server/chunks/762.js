@@ -24,7 +24,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 const customAxios = axios__WEBPACK_IMPORTED_MODULE_0__["default"].create({
-  baseURL: ` ${"https://freebirdapp.site"}/api`,
+  baseURL:  true ? `${"https://freebirdapp.site"}/api` : 0,
   withCredentials: true
 });
 

@@ -86,7 +86,7 @@ function MyApp({
           charSet: "utf-8"
         }), /*#__PURE__*/jsx_runtime_.jsx("meta", {
           name: "viewport",
-          content: "width=device-width, initial-scale=1.0, user-scalable=no"
+          content: "width=device-width, initial-scale=1"
         }), /*#__PURE__*/jsx_runtime_.jsx("meta", {
           name: "keyword",
           content: "Freebird"

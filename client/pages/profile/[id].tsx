@@ -12,6 +12,7 @@ import { PostType } from '@lib/types';
 import PostList from '@components/common/PostList';
 import NotList from '@components/common/NotList';
 import { NextPageWithLayout } from 'pages/_app';
+import { loadMyInfo } from '@apis/user';
 
 const Profile: NextPageWithLayout = () => {
   const router = useRouter();
@@ -57,6 +58,17 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
 
   customAxios.defaults.headers.Cookie = cookie;
+
+  const result: any = await loadMyInfo();
+
+  if (result.response?.status === 401)
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    };
+
   const queryClient = new QueryClient();
   const userId = context.params?.id;
 

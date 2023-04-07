@@ -11,6 +11,7 @@ import { PostType } from '@lib/types';
 import { getComments } from '@apis/comment';
 import { NextPageWithLayout } from 'pages/_app';
 import { customAxios } from '@apis/base';
+import { loadMyInfo } from '@apis/user';
 
 const Post: NextPageWithLayout = () => {
   const router = useRouter();
@@ -43,6 +44,17 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
 
   customAxios.defaults.headers.Cookie = cookie;
+
+  const result: any = await loadMyInfo();
+
+  if (result.response?.status === 401)
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    };
+
   const queryClient = new QueryClient();
   const postId = context.params?.id;
 

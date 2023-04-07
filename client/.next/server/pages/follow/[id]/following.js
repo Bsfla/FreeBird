@@ -140,11 +140,19 @@ Following.getLayout = function getLayout(page) {
 };
 
 const getServerSideProps = async context => {
-  var _context$params;
+  var _result$response, _context$params;
 
   const cookie = context.req ? context.req.headers.cookie : '';
   _apis_base__WEBPACK_IMPORTED_MODULE_8__/* .customAxios.defaults.headers.Cookie */ .Y.defaults.headers.Cookie = '';
   if (!cookie) return {
+    redirect: {
+      destination: '/login',
+      permanent: false
+    }
+  };
+  _apis_base__WEBPACK_IMPORTED_MODULE_8__/* .customAxios.defaults.headers.Cookie */ .Y.defaults.headers.Cookie = cookie;
+  const result = await (0,_apis_user__WEBPACK_IMPORTED_MODULE_7__/* .loadMyInfo */ .zf)();
+  if (((_result$response = result.response) === null || _result$response === void 0 ? void 0 : _result$response.status) === 401) return {
     redirect: {
       destination: '/login',
       permanent: false

@@ -10,6 +10,7 @@ import { useInfiniteScroll } from '@hooks/common';
 import { PostType } from '@lib/types';
 import PostList from '@components/common/PostList';
 import { NextPageWithLayout } from './_app';
+import { loadMyInfo } from '@apis/user';
 
 const Main: NextPageWithLayout = () => {
   const { ref: endPost, resultData: posts } = useInfiniteScroll<PostType[]>(
@@ -41,6 +42,16 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   customAxios.defaults.headers.Cookie = cookie;
 
+  const result: any = await loadMyInfo();
+
+  if (result.response?.status === 401)
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    };
+
   const queryClient = new QueryClient();
 
   await queryClient.prefetchInfiniteQuery(queryKeys.posts, () =>
@@ -48,7 +59,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   );
 
   return {
-    props: {},
+    props: {
+      dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
+    },
   };
 };
 

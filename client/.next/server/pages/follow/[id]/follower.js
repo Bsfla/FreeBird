@@ -80,10 +80,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _apis_base__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(889);
 /* harmony import */ var _consts_alert__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(6016);
 /* harmony import */ var _consts_modal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(4266);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(997);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Follow__WEBPACK_IMPORTED_MODULE_1__, _hooks_common__WEBPACK_IMPORTED_MODULE_3__, _apis_follow__WEBPACK_IMPORTED_MODULE_5__, _apis_base__WEBPACK_IMPORTED_MODULE_7__]);
-([_components_Follow__WEBPACK_IMPORTED_MODULE_1__, _hooks_common__WEBPACK_IMPORTED_MODULE_3__, _apis_follow__WEBPACK_IMPORTED_MODULE_5__, _apis_base__WEBPACK_IMPORTED_MODULE_7__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var _apis_user__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(6649);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Follow__WEBPACK_IMPORTED_MODULE_1__, _hooks_common__WEBPACK_IMPORTED_MODULE_3__, _apis_follow__WEBPACK_IMPORTED_MODULE_5__, _apis_base__WEBPACK_IMPORTED_MODULE_7__, _apis_user__WEBPACK_IMPORTED_MODULE_10__]);
+([_components_Follow__WEBPACK_IMPORTED_MODULE_1__, _hooks_common__WEBPACK_IMPORTED_MODULE_3__, _apis_follow__WEBPACK_IMPORTED_MODULE_5__, _apis_base__WEBPACK_IMPORTED_MODULE_7__, _apis_user__WEBPACK_IMPORTED_MODULE_10__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -127,8 +129,8 @@ const Follower = () => {
     mutate(id);
   };
 
-  return /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.Fragment, {
-    children: followers && /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx(_components_Follow__WEBPACK_IMPORTED_MODULE_1__/* .FollowUserList */ ._, {
+  return /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.Fragment, {
+    children: followers && /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx(_components_Follow__WEBPACK_IMPORTED_MODULE_1__/* .FollowUserList */ ._, {
       followUsers: followers,
       handleDeleteFollow: handleDeleteFollower,
       endUserList: endUserList
@@ -137,17 +139,25 @@ const Follower = () => {
 };
 
 Follower.getLayout = function getLayout(page) {
-  return /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx(_components_Follow__WEBPACK_IMPORTED_MODULE_1__/* .FollowLayout */ .aO, {
+  return /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx(_components_Follow__WEBPACK_IMPORTED_MODULE_1__/* .FollowLayout */ .aO, {
     children: page
   });
 };
 
 const getServerSideProps = async context => {
-  var _context$params;
+  var _result$response, _context$params;
 
   const cookie = context.req ? context.req.headers.cookie : '';
   _apis_base__WEBPACK_IMPORTED_MODULE_7__/* .customAxios.defaults.headers.Cookie */ .Y.defaults.headers.Cookie = '';
   if (!cookie) return {
+    redirect: {
+      destination: '/login',
+      permanent: false
+    }
+  };
+  _apis_base__WEBPACK_IMPORTED_MODULE_7__/* .customAxios.defaults.headers.Cookie */ .Y.defaults.headers.Cookie = cookie;
+  const result = await (0,_apis_user__WEBPACK_IMPORTED_MODULE_10__/* .loadMyInfo */ .zf)();
+  if (((_result$response = result.response) === null || _result$response === void 0 ? void 0 : _result$response.status) === 401) return {
     redirect: {
       destination: '/login',
       permanent: false

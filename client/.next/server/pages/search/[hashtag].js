@@ -28,10 +28,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _hooks_index__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(1535);
 /* harmony import */ var _components_common_NotList__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(2907);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(997);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_index__WEBPACK_IMPORTED_MODULE_1__, _components_common_Layout__WEBPACK_IMPORTED_MODULE_2__, _components_common_PostList__WEBPACK_IMPORTED_MODULE_3__, _apis_base__WEBPACK_IMPORTED_MODULE_6__, _apis_post__WEBPACK_IMPORTED_MODULE_7__, _hooks_index__WEBPACK_IMPORTED_MODULE_9__]);
-([_components_index__WEBPACK_IMPORTED_MODULE_1__, _components_common_Layout__WEBPACK_IMPORTED_MODULE_2__, _components_common_PostList__WEBPACK_IMPORTED_MODULE_3__, _apis_base__WEBPACK_IMPORTED_MODULE_6__, _apis_post__WEBPACK_IMPORTED_MODULE_7__, _hooks_index__WEBPACK_IMPORTED_MODULE_9__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var _apis_user__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(6649);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_index__WEBPACK_IMPORTED_MODULE_1__, _components_common_Layout__WEBPACK_IMPORTED_MODULE_2__, _components_common_PostList__WEBPACK_IMPORTED_MODULE_3__, _apis_base__WEBPACK_IMPORTED_MODULE_6__, _apis_post__WEBPACK_IMPORTED_MODULE_7__, _hooks_index__WEBPACK_IMPORTED_MODULE_9__, _apis_user__WEBPACK_IMPORTED_MODULE_11__]);
+([_components_index__WEBPACK_IMPORTED_MODULE_1__, _components_common_Layout__WEBPACK_IMPORTED_MODULE_2__, _components_common_PostList__WEBPACK_IMPORTED_MODULE_3__, _apis_base__WEBPACK_IMPORTED_MODULE_6__, _apis_post__WEBPACK_IMPORTED_MODULE_7__, _hooks_index__WEBPACK_IMPORTED_MODULE_9__, _apis_user__WEBPACK_IMPORTED_MODULE_11__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -54,18 +56,18 @@ const Search = () => {
     ref: endPost,
     resultData: posts
   } = (0,_hooks_index__WEBPACK_IMPORTED_MODULE_9__/* .useInfiniteScroll */ .MQ)(_consts_queryKeys__WEBPACK_IMPORTED_MODULE_5__/* .queryKeys.posts */ .a.posts, _apis_post__WEBPACK_IMPORTED_MODULE_7__/* .searchPosts */ .cl, hashtag);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.Fragment, {
-    children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx(_components_index__WEBPACK_IMPORTED_MODULE_1__/* .SearchPostIntroBar */ .rU, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.Fragment, {
+    children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx(_components_index__WEBPACK_IMPORTED_MODULE_1__/* .SearchPostIntroBar */ .rU, {
       hashtag: hashtag
-    }), posts !== null && posts !== void 0 && posts.length ? /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx(_components_common_PostList__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+    }), posts !== null && posts !== void 0 && posts.length ? /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx(_components_common_PostList__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
       posts: posts,
       endPost: endPost
-    }) : /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx(_components_common_NotList__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {})]
+    }) : /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx(_components_common_NotList__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {})]
   });
 };
 
 Search.getLayout = function getLayout(page) {
-  return /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx(_components_common_Layout__WEBPACK_IMPORTED_MODULE_2__/* .MainLayout */ .Z, {
+  return /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx(_components_common_Layout__WEBPACK_IMPORTED_MODULE_2__/* .MainLayout */ .Z, {
     children: page
   });
 };
@@ -85,7 +87,16 @@ const getServerSideProps = async context => {
   const hashtagName = (_context$params = context.params) === null || _context$params === void 0 ? void 0 : _context$params.hashtag;
 
   if (hashtagName && cookie) {
+    var _result$response;
+
     _apis_base__WEBPACK_IMPORTED_MODULE_6__/* .customAxios.defaults.headers.Cookie */ .Y.defaults.headers.Cookie = cookie;
+    const result = await (0,_apis_user__WEBPACK_IMPORTED_MODULE_11__/* .loadMyInfo */ .zf)();
+    if (((_result$response = result.response) === null || _result$response === void 0 ? void 0 : _result$response.status) === 401) return {
+      redirect: {
+        destination: '/login',
+        permanent: false
+      }
+    };
     await queryClient.prefetchInfiniteQuery(_consts_queryKeys__WEBPACK_IMPORTED_MODULE_5__/* .queryKeys.posts */ .a.posts, () => (0,_apis_post__WEBPACK_IMPORTED_MODULE_7__/* .searchPosts */ .cl)({
       paramId: hashtagName
     }));

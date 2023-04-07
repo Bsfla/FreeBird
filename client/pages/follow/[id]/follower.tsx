@@ -17,6 +17,7 @@ import { customAxios } from '@apis/base';
 import { ALERT_MESSAGE } from '@consts/alert';
 import { modalName } from '@consts/modal';
 import ConfirmModal from '@components/common/ConfirmModal';
+import { loadMyInfo } from '@apis/user';
 
 const Follower: NextPageWithLayout = () => {
   const router = useRouter();
@@ -72,6 +73,17 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         permanent: false,
       },
     };
+  customAxios.defaults.headers.Cookie = cookie;
+  const result: any = await loadMyInfo();
+
+  if (result.response?.status === 401)
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    };
+
   const queryClient = new QueryClient();
   const userId = context.params?.id;
 

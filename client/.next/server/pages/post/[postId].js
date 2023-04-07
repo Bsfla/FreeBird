@@ -27,10 +27,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _apis_post__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(2714);
 /* harmony import */ var _apis_comment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(8693);
 /* harmony import */ var _apis_base__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(889);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(997);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Post__WEBPACK_IMPORTED_MODULE_2__, _components_Post_Comment_CommentContainer__WEBPACK_IMPORTED_MODULE_3__, _components_common_Layout_MainLayout__WEBPACK_IMPORTED_MODULE_4__, _apis_post__WEBPACK_IMPORTED_MODULE_7__, _apis_comment__WEBPACK_IMPORTED_MODULE_8__, _apis_base__WEBPACK_IMPORTED_MODULE_9__]);
-([_components_Post__WEBPACK_IMPORTED_MODULE_2__, _components_Post_Comment_CommentContainer__WEBPACK_IMPORTED_MODULE_3__, _components_common_Layout_MainLayout__WEBPACK_IMPORTED_MODULE_4__, _apis_post__WEBPACK_IMPORTED_MODULE_7__, _apis_comment__WEBPACK_IMPORTED_MODULE_8__, _apis_base__WEBPACK_IMPORTED_MODULE_9__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var _apis_user__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(6649);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Post__WEBPACK_IMPORTED_MODULE_2__, _components_Post_Comment_CommentContainer__WEBPACK_IMPORTED_MODULE_3__, _components_common_Layout_MainLayout__WEBPACK_IMPORTED_MODULE_4__, _apis_post__WEBPACK_IMPORTED_MODULE_7__, _apis_comment__WEBPACK_IMPORTED_MODULE_8__, _apis_base__WEBPACK_IMPORTED_MODULE_9__, _apis_user__WEBPACK_IMPORTED_MODULE_10__]);
+([_components_Post__WEBPACK_IMPORTED_MODULE_2__, _components_Post_Comment_CommentContainer__WEBPACK_IMPORTED_MODULE_3__, _components_common_Layout_MainLayout__WEBPACK_IMPORTED_MODULE_4__, _apis_post__WEBPACK_IMPORTED_MODULE_7__, _apis_comment__WEBPACK_IMPORTED_MODULE_8__, _apis_base__WEBPACK_IMPORTED_MODULE_9__, _apis_user__WEBPACK_IMPORTED_MODULE_10__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -53,23 +55,23 @@ const Post = () => {
   const {
     data: post
   } = (0,react_query__WEBPACK_IMPORTED_MODULE_5__.useQuery)([_consts_queryKeys__WEBPACK_IMPORTED_MODULE_6__/* .queryKeys.post */ .a.post, postId], () => (0,_apis_post__WEBPACK_IMPORTED_MODULE_7__/* .getPost */ .xl)(Number(postId)));
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.Fragment, {
-    children: [post && /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx(_components_Post__WEBPACK_IMPORTED_MODULE_2__/* .PostCard */ .y4, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.Fragment, {
+    children: [post && /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx(_components_Post__WEBPACK_IMPORTED_MODULE_2__/* .PostCard */ .y4, {
       post: post
-    }), post && /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx(_components_Post_Comment_CommentContainer__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+    }), post && /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx(_components_Post_Comment_CommentContainer__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
       post: post
     })]
   });
 };
 
 Post.getLayout = function getLayout(page) {
-  return /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx(_components_common_Layout_MainLayout__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+  return /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx(_components_common_Layout_MainLayout__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
     children: page
   });
 };
 
 const getServerSideProps = async context => {
-  var _context$params;
+  var _result$response, _context$params;
 
   _apis_base__WEBPACK_IMPORTED_MODULE_9__/* .customAxios.defaults.headers.Cookie */ .Y.defaults.headers.Cookie = '';
   const cookie = context.req ? context.req.headers.cookie : '';
@@ -80,6 +82,13 @@ const getServerSideProps = async context => {
     }
   };
   _apis_base__WEBPACK_IMPORTED_MODULE_9__/* .customAxios.defaults.headers.Cookie */ .Y.defaults.headers.Cookie = cookie;
+  const result = await (0,_apis_user__WEBPACK_IMPORTED_MODULE_10__/* .loadMyInfo */ .zf)();
+  if (((_result$response = result.response) === null || _result$response === void 0 ? void 0 : _result$response.status) === 401) return {
+    redirect: {
+      destination: '/login',
+      permanent: false
+    }
+  };
   const queryClient = new react_query__WEBPACK_IMPORTED_MODULE_5__.QueryClient();
   const postId = (_context$params = context.params) === null || _context$params === void 0 ? void 0 : _context$params.id;
 

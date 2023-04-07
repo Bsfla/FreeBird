@@ -13,7 +13,7 @@ import { queryKeys } from '@consts/queryKeys';
 import { getFollowings } from '@apis/follow';
 import { FollowUserType } from '@lib/types';
 import { useRouter } from 'next/router';
-import { removeFollowing } from '@apis/user';
+import { loadMyInfo, removeFollowing } from '@apis/user';
 import { customAxios } from '@apis/base';
 import { ALERT_MESSAGE } from '@consts/alert';
 
@@ -69,6 +69,17 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         permanent: false,
       },
     };
+  customAxios.defaults.headers.Cookie = cookie;
+  const result: any = await loadMyInfo();
+
+  if (result.response?.status === 401)
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    };
+
   const queryClient = new QueryClient();
   const userId = context.params?.id;
 

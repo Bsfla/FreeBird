@@ -12,6 +12,7 @@ import { useInfiniteScroll } from '@hooks/index';
 import { PostType } from '@lib/types';
 import NotList from '@components/common/NotList';
 import { NextPageWithLayout } from 'pages/_app';
+import { loadMyInfo } from '@apis/user';
 
 const Search: NextPageWithLayout = () => {
   const router = useRouter();
@@ -54,6 +55,16 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   if (hashtagName && cookie) {
     customAxios.defaults.headers.Cookie = cookie;
+
+    const result: any = await loadMyInfo();
+
+    if (result.response?.status === 401)
+      return {
+        redirect: {
+          destination: '/login',
+          permanent: false,
+        },
+      };
 
     await queryClient.prefetchInfiniteQuery(queryKeys.posts, () =>
       searchPosts({ paramId: hashtagName })

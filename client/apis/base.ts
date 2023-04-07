@@ -2,7 +2,10 @@ import axios, { AxiosInstance, AxiosRequestConfig, Method } from 'axios';
 import { HTTP_METHODS } from '@consts/net';
 
 export const customAxios: AxiosInstance = axios.create({
-  baseURL: ` ${process.env.NEXT_PUBLIC_API_KEY}/api`,
+  baseURL:
+    process.env.NODE_ENV === 'production'
+      ? `${process.env.NEXT_PUBLIC_API_KEY}/api`
+      : `${process.env.NEXT_PUBLIC_LOCAL_KEY}/api`,
   withCredentials: true,
 });
 
