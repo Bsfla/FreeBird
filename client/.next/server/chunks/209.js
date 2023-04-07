@@ -1409,8 +1409,7 @@ const WriteForm = ({
           type: "file",
           name: "image",
           accept: ".gif, .jpg, .png",
-          onChange: handleImagesChange,
-          multiple: true
+          onChange: handleImagesChange
         })]
       })
     }), /*#__PURE__*/jsx_runtime_.jsx(ImagesContainer, {
@@ -1492,6 +1491,13 @@ const PostForm = () => {
     }
 
     const imageFormData = new FormData();
+    const files = e.currentTarget.files || [];
+
+    if (files[0].size > 5 * 1024 * 1024) {
+      alert('5MB이상 업로드 할 수 없습니다');
+      return;
+    }
+
     [].forEach.call(e.target.files, f => {
       imageFormData.append('image', f);
     });

@@ -5,9 +5,9 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/ghw4bUkfMvGAT2WDRSJ3x/_buildManifest.js",
-    "static/ghw4bUkfMvGAT2WDRSJ3x/_ssgManifest.js",
-    "static/ghw4bUkfMvGAT2WDRSJ3x/_middlewareManifest.js"
+    "static/ULxsF_MZPtDftMhxYG4nf/_buildManifest.js",
+    "static/ULxsF_MZPtDftMhxYG4nf/_ssgManifest.js",
+    "static/ULxsF_MZPtDftMhxYG4nf/_middlewareManifest.js"
   ],
   "pages": {
     "/": [
@@ -27,7 +27,7 @@
       "static/chunks/762-08965841f050df78.js",
       "static/chunks/815-f934ab303a8be6bc.js",
       "static/chunks/233-884c450e7b1c6675.js",
-      "static/chunks/939-281eb20269cf5824.js",
+      "static/chunks/939-b63f76a5b5abd1b9.js",
       "static/chunks/849-0dc6af752cecc252.js",
       "static/chunks/pages/index-9879eaca3874606c.js"
     ],
@@ -118,7 +118,7 @@
       "static/chunks/762-08965841f050df78.js",
       "static/chunks/815-f934ab303a8be6bc.js",
       "static/chunks/233-884c450e7b1c6675.js",
-      "static/chunks/939-281eb20269cf5824.js",
+      "static/chunks/939-b63f76a5b5abd1b9.js",
       "static/chunks/849-0dc6af752cecc252.js",
       "static/chunks/pages/login-a3fd001420a47b71.js"
     ],
@@ -138,7 +138,7 @@
       "static/chunks/725-83c5405f65310e4d.js",
       "static/chunks/762-08965841f050df78.js",
       "static/chunks/815-f934ab303a8be6bc.js",
-      "static/chunks/939-281eb20269cf5824.js",
+      "static/chunks/939-b63f76a5b5abd1b9.js",
       "static/chunks/pages/post/[postId]-e9b1331a67d13a80.js"
     ],
     "/profile/[id]": [
@@ -158,7 +158,7 @@
       "static/chunks/762-08965841f050df78.js",
       "static/chunks/815-f934ab303a8be6bc.js",
       "static/chunks/233-884c450e7b1c6675.js",
-      "static/chunks/939-281eb20269cf5824.js",
+      "static/chunks/939-b63f76a5b5abd1b9.js",
       "static/chunks/849-0dc6af752cecc252.js",
       "static/chunks/pages/profile/[id]-e27895010f756819.js"
     ],
@@ -179,7 +179,7 @@
       "static/chunks/762-08965841f050df78.js",
       "static/chunks/815-f934ab303a8be6bc.js",
       "static/chunks/233-884c450e7b1c6675.js",
-      "static/chunks/939-281eb20269cf5824.js",
+      "static/chunks/939-b63f76a5b5abd1b9.js",
       "static/chunks/849-0dc6af752cecc252.js",
       "static/chunks/pages/search/[hashtag]-2787ef6fd2d7e1bc.js"
     ],

@@ -29,7 +29,6 @@ const WriteForm = ({
             name="image"
             accept=".gif, .jpg, .png"
             onChange={handleImagesChange}
-            multiple
           />
         </label>
       </form>
