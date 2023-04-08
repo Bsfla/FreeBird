@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import {
   AiOutlineRetweet,
   AiTwotoneHeart,
@@ -39,6 +39,7 @@ const PostButtonGroup = ({ post, handleToggleEdit }: Props) => {
   const { showModal } = useModal(modalName.CONFIRM_REMOVE);
   const { data: user } = useQuery(queryKeys.user, () => loadMyInfo());
   const [isOpenOption, setIsOpenOption] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleToggleOption = (e: React.MouseEvent<Element, MouseEvent>) => {
     e.stopPropagation();
@@ -48,11 +49,13 @@ const PostButtonGroup = ({ post, handleToggleEdit }: Props) => {
 
   const handleDeletePost = (e: React.MouseEvent<Element, MouseEvent>) => {
     e.stopPropagation();
+    setIsModalOpen(true);
     showModal();
   };
 
   const mutateDeletePost = () => {
     mutate(post.id);
+    setIsModalOpen(false);
   };
 
   return (
@@ -91,7 +94,7 @@ const PostButtonGroup = ({ post, handleToggleEdit }: Props) => {
           )}
         </Option>
       )}
-      <ConfirmModal remove={mutateDeletePost} title="게시글" />
+      {isModalOpen && <ConfirmModal remove={mutateDeletePost} title="게시글" />}
     </ButtonGroup>
   );
 };

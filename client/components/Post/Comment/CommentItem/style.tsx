@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 
   .comment_content {
     margin-top: 15px;
-    padding-left: 12px;
+    padding-left: 3px;
     margin-bottom: 15px;
     white-space: pre-line;
   }
@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     margin-top: 10px;
-    margin-left: 9px;
+    margin-left: 2px;
     cursor: pointer;
 
     span {

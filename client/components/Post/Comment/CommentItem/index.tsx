@@ -22,6 +22,7 @@ interface Props {
 
 const CommentItem = ({ comment }: Props) => {
   const [isEdit, setIsEdit] = useState<boolean>(false);
+  const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
   const [isOpenReplyComment, setIsOpenReplyComment] = useState<boolean>(false);
   const { showModal } = useModal(modalName.CONFIRM_REMOVE);
   const { handleDeleteComment } = useDeleteComment(comment.id);
@@ -44,6 +45,12 @@ const CommentItem = ({ comment }: Props) => {
 
   const handleConfirmRemove = () => {
     showModal();
+    setIsOpenModal(true);
+  };
+
+  const handleDeleteConfirmRemove = () => {
+    handleDeleteComment();
+    setIsOpenModal(false);
   };
 
   return (
@@ -93,7 +100,9 @@ const CommentItem = ({ comment }: Props) => {
           {!isReply && <CommentReplyForm parentComment={comment} />}
         </ReplyWrapper>
       )}
-      <ConfirmModal remove={handleDeleteComment} title="댓글" />
+      {isOpenModal && (
+        <ConfirmModal remove={handleDeleteConfirmRemove} title="댓글" />
+      )}
     </Wrapper>
   );
 };
