@@ -220,7 +220,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _consts_route__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(423);
+/* harmony import */ var _consts_route__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(423);
 /* harmony import */ var _assets_svg_birdicon_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1993);
 /* harmony import */ var react_icons_gi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8866);
 /* harmony import */ var react_icons_gi__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_icons_gi__WEBPACK_IMPORTED_MODULE_2__);
@@ -239,10 +239,13 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var react_query__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_query__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _apis_user__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(6649);
 /* harmony import */ var _consts_queryKeys__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(4981);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(997);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(1853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_apis_user__WEBPACK_IMPORTED_MODULE_11__]);
 _apis_user__WEBPACK_IMPORTED_MODULE_11__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
 
 
 
@@ -268,61 +271,79 @@ const MobileHeader = () => {
   const {
     data: user
   } = (0,react_query__WEBPACK_IMPORTED_MODULE_10__.useQuery)(_consts_queryKeys__WEBPACK_IMPORTED_MODULE_12__/* .queryKeys.user */ .a.user, () => (0,_apis_user__WEBPACK_IMPORTED_MODULE_11__/* .loadMyInfo */ .zf)());
+  const router = (0,next_router__WEBPACK_IMPORTED_MODULE_13__.useRouter)();
 
   const handleToggleMenu = () => {
     setIsOpenMenu(!isOpenMenu);
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_7__/* .Wrapper */ .im, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_7__/* .Container */ .W2, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_7__/* .Logo */ .TR, {
-        children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx(_assets_svg_birdicon_svg__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {}), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
-          href: _consts_route__WEBPACK_IMPORTED_MODULE_14__/* .MAIN_PAGE */ .DW,
-          children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx("span", {
+  const handleLogout = async () => {
+    try {
+      await (0,_apis_user__WEBPACK_IMPORTED_MODULE_11__/* .logout */ .kS)();
+      router.push(_consts_route__WEBPACK_IMPORTED_MODULE_15__/* .LOGIN_PAGE */ .DV);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_7__/* .Wrapper */ .im, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_7__/* .Container */ .W2, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_7__/* .Logo */ .TR, {
+        children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx(_assets_svg_birdicon_svg__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {}), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
+          href: _consts_route__WEBPACK_IMPORTED_MODULE_15__/* .MAIN_PAGE */ .DW,
+          children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx("span", {
             children: "FreeBird"
           })
         })]
-      }), !isOpenMenu ? /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx(react_icons_gi__WEBPACK_IMPORTED_MODULE_2__.GiHamburgerMenu, {
+      }), !isOpenMenu ? /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx(react_icons_gi__WEBPACK_IMPORTED_MODULE_2__.GiHamburgerMenu, {
         size: 20,
         color: styles_theme__WEBPACK_IMPORTED_MODULE_8__/* ["default"].colors.white */ .Z.colors.white,
         onClick: handleToggleMenu
-      }) : /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_3__.IoMdClose, {
+      }) : /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_3__.IoMdClose, {
         size: 30,
         color: styles_theme__WEBPACK_IMPORTED_MODULE_8__/* ["default"].colors.white */ .Z.colors.white,
         onClick: handleToggleMenu
       })]
-    }), isOpenMenu && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_7__/* .MenuList */ .qy, {
-      children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
-        href: `${_consts_route__WEBPACK_IMPORTED_MODULE_14__/* .PROFILE_PAGE */ .Jt}/${user === null || user === void 0 ? void 0 : user.id}`,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_7__/* .Menu */ .v2, {
+    }), isOpenMenu && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_7__/* .MenuList */ .qy, {
+      children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
+        href: `${_consts_route__WEBPACK_IMPORTED_MODULE_15__/* .PROFILE_PAGE */ .Jt}/${user === null || user === void 0 ? void 0 : user.id}`,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_7__/* .Menu */ .v2, {
           className: "mypage",
-          children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx(react_icons_im__WEBPACK_IMPORTED_MODULE_4__.ImProfile, {
+          children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx(react_icons_im__WEBPACK_IMPORTED_MODULE_4__.ImProfile, {
             color: styles_theme__WEBPACK_IMPORTED_MODULE_8__/* ["default"].colors.white */ .Z.colors.white
-          }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx("span", {
+          }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx("span", {
             children: "\uB9C8\uC774 \uD398\uC774\uC9C0"
           })]
         })
-      }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
-        href: `${_consts_route__WEBPACK_IMPORTED_MODULE_14__/* .FOLLOW_PAGE */ .Gi}/${user === null || user === void 0 ? void 0 : user.id}/following`,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_7__/* .Menu */ .v2, {
+      }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
+        href: `${_consts_route__WEBPACK_IMPORTED_MODULE_15__/* .FOLLOW_PAGE */ .Gi}/${user === null || user === void 0 ? void 0 : user.id}/following`,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_7__/* .Menu */ .v2, {
           className: "friend",
-          children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_5__.FaUserFriends, {
+          children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_5__.FaUserFriends, {
             color: styles_theme__WEBPACK_IMPORTED_MODULE_8__/* ["default"].colors.white */ .Z.colors.white
-          }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx("span", {
+          }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx("span", {
             children: "\uCE5C\uAD6C \uBAA9\uB85D"
           })]
         })
-      }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
-        href: `${_consts_route__WEBPACK_IMPORTED_MODULE_14__/* .FREIND_RECOMMEND_PAGE */ .yz}`,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_7__/* .Menu */ .v2, {
+      }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
+        href: `${_consts_route__WEBPACK_IMPORTED_MODULE_15__/* .FREIND_RECOMMEND_PAGE */ .yz}`,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_7__/* .Menu */ .v2, {
           className: "friend",
-          children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_5__.FaUserPlus, {
+          children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_5__.FaUserPlus, {
             color: styles_theme__WEBPACK_IMPORTED_MODULE_8__/* ["default"].colors.white */ .Z.colors.white
-          }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx("span", {
+          }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx("span", {
             children: "\uCE5C\uAD6C \uCC3E\uAE30"
           })]
         })
-      }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx(_components_common_SideBar_RightSideBar_SearchInput__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {})]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(_style__WEBPACK_IMPORTED_MODULE_7__/* .Menu */ .v2, {
+        className: "logout",
+        onClick: handleLogout,
+        children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx(react_icons_im__WEBPACK_IMPORTED_MODULE_4__.ImExit, {
+          color: styles_theme__WEBPACK_IMPORTED_MODULE_8__/* ["default"].colors.white */ .Z.colors.white
+        }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx("span", {
+          children: "\uB85C\uADF8\uC544\uC6C3"
+        })]
+      }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx(_components_common_SideBar_RightSideBar_SearchInput__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {})]
     })]
   });
 };
@@ -366,8 +387,8 @@ const Container = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__
 const MenuList = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("ul",  true ? {
   target: "e1e52mnz1"
 } : 0)( true ? {
-  name: "ml3snm",
-  styles: "display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;margin-top:20px;gap:20px;.mypage{padding-left:15px;}"
+  name: "1tj63h9",
+  styles: "display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;margin-top:20px;gap:20px;.mypage{padding-left:15px;}.logout{margin-right:7px;}"
 } : 0);
 const Menu = /*#__PURE__*/_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0___default()("ul",  true ? {
   target: "e1e52mnz0"

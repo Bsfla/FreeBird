@@ -2,28 +2,40 @@ import React, { useState } from 'react';
 import {
   FOLLOW_PAGE,
   FREIND_RECOMMEND_PAGE,
+  LOGIN_PAGE,
   MAIN_PAGE,
   PROFILE_PAGE,
 } from '@consts/route';
 import LogoIcon from '@assets/svg/birdicon.svg';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoMdClose } from 'react-icons/io';
-import { ImProfile } from 'react-icons/im';
+import { ImProfile, ImExit } from 'react-icons/im';
 import { FaUserFriends, FaUserPlus } from 'react-icons/fa';
 import Link from 'next/link';
 import { Wrapper, Logo, Container, MenuList, Menu } from './style';
 import theme from 'styles/theme';
 import SearchInput from '@components/common/SideBar/RightSideBar/SearchInput';
 import { useQuery } from 'react-query';
-import { loadMyInfo } from '@apis/user';
+import { loadMyInfo, logout } from '@apis/user';
 import { queryKeys } from '@consts/queryKeys';
+import { useRouter } from 'next/router';
 
 const MobileHeader = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const { data: user } = useQuery(queryKeys.user, () => loadMyInfo());
+  const router = useRouter();
 
   const handleToggleMenu = () => {
     setIsOpenMenu(!isOpenMenu);
+  };
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      router.push(LOGIN_PAGE);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -69,6 +81,10 @@ const MobileHeader = () => {
               <span>친구 찾기</span>
             </Menu>
           </Link>
+          <Menu className="logout" onClick={handleLogout}>
+            <ImExit color={theme.colors.white} />
+            <span>로그아웃</span>
+          </Menu>
           <SearchInput />
         </MenuList>
       )}

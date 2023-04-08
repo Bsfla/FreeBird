@@ -56,6 +56,10 @@ export const MenuList = styled.ul`
   .mypage {
     padding-left: 15px;
   }
+
+  .logout {
+    margin-right: 7px;
+  }
 `;
 
 export const Menu = styled.ul`
