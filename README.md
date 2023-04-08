@@ -48,7 +48,8 @@
 
 ## 프로젝트 구조 📃
 
-![iPhone 12, 12 Pro – 10](https://user-images.githubusercontent.com/80776262/146226681-36ea5744-bc34-4c30-9b55-44b0e8c2ade8.png)
+![캡처1](https://user-images.githubusercontent.com/75163050/230721648-cb003cf1-2e50-47ed-99e2-62f9bc4b6e20.PNG)
+
 
 <br />
 
