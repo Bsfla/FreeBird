@@ -1,34 +1,239 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="middle" >
+ <img width="470" alt="프리버드로고" src="https://user-images.githubusercontent.com/75163050/230713022-1c94e795-63d1-4b92-9a95-c2bfe6bea2e5.PNG">
 
-## Getting Started
+</p>
+<br />
 
-First, run the development server:
+# FreeBird 🕊
+`FreeBird(프리버드)` 는 소셜 네트워크 서비스(SNS)를 제공하는 웹 애플리케이션 입니다.
+<br />
+<br />
+프리버드에서 다양한 사람들과 당신의 소식을 공유해보세요.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+> 개발 기간: 2023.01.13 ~ 2023.03.28 (총 2개월) <br />
+> 개발 인원: 1명 <br />
+<br />
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[FreeBird 바로가기](https://freebirdapp.site/) <br />
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<br />
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+<br />
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 프로젝트 기술 스택 🛠
 
-## Learn More
+### Front-End
+![Next.js](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+<img src="https://img.shields.io/badge/React%20Query-ff4154?style=for-the-badge&logo=ReactQuery&logoColor=white">
+<img src="https://img.shields.io/badge/Recoil-skyblue?style=for-the-badge&logo=Recoil&logoColor=black">
+![Emotion](https://img.shields.io/badge/Emotion-hotpink.svg?style=for-the-badge&logo=Emotion&logoColor=white)
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Back-End
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white">
+<img src="https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white">
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 
-## Deploy on Vercel
+### Deploy
+<img src="https://img.shields.io/badge/AWS_EC2-FF9900?style=for-the-badge&logo=Amazon EC2&logoColor=white"> <img src="https://img.shields.io/badge/AWS_S3-FF9900?style=for-the-badge&logo=Amazon S3&logoColor=white"> <img src="https://img.shields.io/badge/PM2-2B037A?style=for-the-badge&logo=PM2&logoColor=white"> <img src="https://img.shields.io/badge/NGINX-009639?style=for-the-badge&logo=NGINX&logoColor=white">
+<br /><br />
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<br />
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## 프로젝트 구조 📃
+
+![캡처1](https://user-images.githubusercontent.com/75163050/230721648-cb003cf1-2e50-47ed-99e2-62f9bc4b6e20.PNG)
+
+
+<br />
+
+<br />
+
+## 주요기능 미리보기 🖥
+
+<table>
+  <tr>
+    <td>미리보기</td>
+    <td>설명</td>
+  </tr>
+  
+  <tr>
+    <td>
+      <img src=https://user-images.githubusercontent.com/80776262/146194480-98fd79d8-8328-4944-aac4-2e5458d7181d.gif width="600">
+    </td>
+    <td>
+      <b>로그인 & 회원가입</b> <br />
+      - 웹 페이지에 들어오면 제일 먼저 볼 수 있는 로그인 페이지 입니다. <br />
+      - 봉구스는 회원이 인증된 사람만 이용할 수 있기 때문에 회원가입 후 로그인을 해야 서비스 이용이 가능합니다.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src=https://user-images.githubusercontent.com/80776262/146194862-29e31454-b716-47b3-bb69-237105348713.gif width="600">
+    </td>
+    <td>
+      <b>메인 페이지</b> <br />
+      - 봉구스의 메인페이지 입니다. <br />
+      - 최신 글을 빠르게 볼 수 있습니다. <br />
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src=https://user-images.githubusercontent.com/80776262/146195809-937ef86e-dd3d-4083-bfb0-3141a78b54b9.gif width="600">
+    </td>
+    <td>
+      <b>메인 페이지 (글 작성하기)</b> <br />
+      - 글 작성 버튼을 클릭하면 작성할 수 있는 모달창이 보여지게 됩니다. <br />
+      - 내용이 비어있거나 이미지가 4장이상이 될 경우 벨리데이션에 걸리게 됩니다. <br />
+      - # 를 이용해서 해쉬태그를 작성할 수 있습니다.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src=https://user-images.githubusercontent.com/80776262/146197287-e3e983d5-338a-4fa6-b413-efdf8a283eb4.gif width="600">
+    </td>
+    <td>
+      <b>메인 페이지 (글 수정 & 삭제)</b> <br />
+      - 자신이 작성한 글에는 수정 & 삭제하는 버튼이 나오게 됩니다. <br />
+      - 글의 내용을 수정할 수 있으며, 원한다면 삭제도 가능합니다.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src=https://user-images.githubusercontent.com/80776262/146196469-38ca6990-0e8c-4ded-a87a-02b0e32bd4fa.gif width="600">
+    </td>
+    <td>
+      <b>댓글 기능</b> <br />
+      - 각 게시물마다 댓글을 쓰고, 수정하고 삭제를 할 수 있습니다.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src=https://user-images.githubusercontent.com/80776262/146196828-5baa3285-fd2f-4124-928a-34e0390ed6d7.gif width="600">
+    </td>
+    <td>
+      <b>좋아요! & 싫어요! 기능</b> <br />
+      - 각 게시물마다 좋아요와 싫어요를 할 수 있습니다. <br />
+      - 다시 취소도 가능하지만, 좋아요와 싫어요는 동시에 사용 불가 합니다. 
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src=https://user-images.githubusercontent.com/80776262/146198366-2902049c-6bc9-4370-a4ca-fa6597bba703.gif width="600">
+    </td>
+    <td>
+      <b>마이페이지</b> <br />
+      - 마이페이지에서는 자신의 정보를 볼 수 있습니다. <br />
+      - 프로필 수정 버튼을 통해 자신의 프로필 이미지, 닉네임, 1줄 자기 소개를 수정할 수 있습니다. <br />
+      - 최근 사진의 목록을 볼 수 있습니다. <br />
+      - 자신이 작성한 글 목록을 볼 수 있습니다.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src=https://user-images.githubusercontent.com/80776262/146198666-85432c53-d6a2-4a70-9e84-e56b6aa52cc2.gif width="600">
+    </td>
+    <td>
+      <b>친구 목록 페이지</b> <br />
+      - 현재 친구관계가 되어있는 유저들의 정보를 볼 수 있습니다. <br />
+      - 해당 유저의 프로필 보기와 친구 삭제하기가 가능합니다. <br />
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src=https://user-images.githubusercontent.com/80776262/146199170-82ff3f01-23cf-407a-a39d-1439b56cd9d3.gif width="600">
+    </td>
+    <td>
+      <b>친구 찾기 페이지</b> <br />
+      - 친구를 추가할 수 있는 유저들의 목록이 보여집니다. <br />
+      - 원하는 유저에게 친구추가를 하면 친구가 됩니다.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src=https://user-images.githubusercontent.com/80776262/146199756-6eb5caa2-8262-4c4d-afec-1e6fc438f5a3.gif width="600">
+    </td>
+    <td>
+      <b>다른 유저 상세정보 페이지</b> <br />
+      - 친구를 추가할 수 있는 유저들의 목록이 보여집니다. <br />
+      - 원하는 유저에게 친구추가를 하면 친구가 됩니다.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src=https://user-images.githubusercontent.com/80776262/146200346-850358d3-d7aa-4a16-ab94-291a32e9b982.gif width="600">
+    </td>
+    <td>
+      <b>게시물 검색기능</b> <br />
+      - 해시태그 또는 유저닉네임으로 검색을 해서 검색결과를 볼 수 있습니다.
+    </td>
+  </tr>
+</table>
+<br />
+
+## Lesson Learned ✏
+이번 프로젝트를 하면서 많은 이슈를 경험했습니다. <br />
+그중 제일 힘들었던 부분이 **JWT** 로그인 부분 이였는데 <br />
+토큰의 유효기간이 끝나면 리플래쉬 토큰을 이용해 재발급을 받아야 했지만 <br />
+리플래쉬 토큰은 쿠키로 공유가 되기 때문에 여러 번의 CORS를 겪었습니다.
+
+첫 번째는 클라이언트에서 백엔드와 쿠키를 공유하기 위해 <br /> axios에 `withCredentials: true` 옵션을 줬음에도 쿠키가 공유가 안되는 문제 <br />
+이 문제는 `Access-control-Allow-Origin: *`로 설정되어 있기 때문에 <br /> 백엔드 개발자에게 부탁을 해서 이 부분을 해결했습니다. <br />
+하지만 이 문제점을 해결하고도 쿠키 공유가 되지 않았기 때문에 다른 문제점을 찾아볼 수밖에 없었는데요..
+
+두 번째 문제인 **SameSite=Lax 가 기본값**이었기에 공유가 안된 문제였습니다. <br />
+`SameSite`는 웹 애플리케이션에서 CSRF 공격을 방지하기 위해 HTTP 쿠키에서 설정할 수 있는 속성입니다. <br />
+처음 마추친 문제에 많은 시간이 투자하여 공부하였고 문제를 해결해 보며  <br /> 쿠키에 대한 전체적인 흐름을 이해하는데 많은 도움이 된 것 같습니다.
+<br />
+
+---
+<br />
+
+### (추가) 좋은 UX를 위해 로딩 스피너, 스켈레톤 UI를 추가! 👀
+![Hnet com-image (1)](https://user-images.githubusercontent.com/80776262/146219563-2b67dc42-1b9a-415b-9ea1-0827aaf09365.gif)
+
+<br />
+
+### (추가) 모바일 반응형 디자인! 👀
+모바일 환경에서도 이용할 수 있도록 반응형 디자인을 제공합니다!
+
+<table>
+  <tr>
+    <td>
+      <img src="https://user-images.githubusercontent.com/80776262/146205897-f9eb0919-b67a-4af9-a569-9299e40d381b.png">
+    </td>
+    <td>
+      <img src="https://user-images.githubusercontent.com/80776262/146205991-0f48fae4-9dea-4ac5-bc66-af4706261908.png">
+    </td>
+    <td>
+      <img src="https://user-images.githubusercontent.com/80776262/146205996-b772dbab-5fd9-483b-81b3-c51e65ca33fa.png">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://user-images.githubusercontent.com/80776262/146206012-06d60de9-5c82-4943-9212-0c2d10cdaa9f.png">
+    </td>
+    <td>
+      <img src="https://user-images.githubusercontent.com/80776262/146206019-17ecd7fd-ea68-4744-92c4-7c8d906b39ee.png">
+    </td>
+    <td>
+      <img src="https://user-images.githubusercontent.com/80776262/146206017-d5eb1858-f077-4bd0-ae64-8f658418a3c1.png">
+    </td>
+  </tr>
+</table>
