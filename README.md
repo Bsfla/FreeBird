@@ -65,23 +65,23 @@
   
   <tr>
     <td>
-      <img src=https://user-images.githubusercontent.com/80776262/146194480-98fd79d8-8328-4944-aac4-2e5458d7181d.gif width="600">
+      <img src=https://user-images.githubusercontent.com/75163050/230727842-1c259332-9a2d-49b5-af54-dde32574fa0f.gif width="600">
     </td>
     <td>
-      <b>로그인 & 회원가입</b> <br />
+      <b>로그인 & 회원가입</b> <br /><br />
       - 웹 페이지에 들어오면 제일 먼저 볼 수 있는 로그인 페이지 입니다. <br />
-      - 봉구스는 회원이 인증된 사람만 이용할 수 있기 때문에 회원가입 후 로그인을 해야 서비스 이용이 가능합니다.
+      - 프리버드는 회원이 인증된 사람만 이용할 수 있기 때문에 회원가입 후 로그인을 해야 서비스 이용이 가능합니다.
     </td>
   </tr>
 
   <tr>
     <td>
-      <img src=https://user-images.githubusercontent.com/80776262/146194862-29e31454-b716-47b3-bb69-237105348713.gif width="600">
+      <img src=https://user-images.githubusercontent.com/75163050/230728140-830a6606-ebac-492d-a0e0-b48dde68f271.gif width="600">
     </td>
     <td>
-      <b>메인 페이지</b> <br />
-      - 봉구스의 메인페이지 입니다. <br />
-      - 최신 글을 빠르게 볼 수 있습니다. <br />
+      <b>메인 페이지</b> <br /><br />
+      - 프리버드의 메인페이지 입니다. <br />
+      - 팔로잉한 유저의 최신글을 빠르게 볼 수 있습니다. <br />
     </td>
   </tr>
 
